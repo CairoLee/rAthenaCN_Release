@@ -2,6 +2,20 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.0.7(2015-09-25)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/5e18376dc8a84f1f33398aa5db36aacc8b4d9207
+[升级] 若您不是全新安装的话，请删除以下文件
+       - db/quest_db.txt
+[调整] 暂时关闭对官方VIP机制的支持
+[修正] rAthena官方BUG: 使用 @accinfo 指令查询一个pincode不为空的账号时，却看到pincode是“空密码”的问题
+[修正] rAthena官方BUG: 当item_cash_db.txt为空时，cashshop 类型的NPC商店无法正常交易的问题
+[汉化] 完全汉化 @accinfo 指令的回显信息
+[汉化] 汉化战斗配置文件 conf/battle/status.conf 的4个选项说明
+[汉化] 汉化和润色飞空艇上的相关设施 npc/airports/airships.txt(还有2个NPC没校对润色)
+[成员] 欢迎“夜天师”正式加入 rAthenaCN 开发组
+	   
 v1.0.6(2015-09-20)
 ------------------
 [同步] rAthena官方Github库
