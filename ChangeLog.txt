@@ -2,6 +2,13 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.2.0(2015-12-21)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/d8830d21f69c9f6b7577ef13b8ffbe3b348ceff8
+[修正] rAthena官方BUG: 启动地图服务器时提示 Invalid sc group "SC_SEARCH_STORE_INFO" 的问题
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.1.9(2015-12-20)
 ------------------
 [同步] rAthena官方Github库
