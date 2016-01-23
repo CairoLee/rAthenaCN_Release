@@ -21,6 +21,13 @@
 //= 1.0 新增OnBeforeReloadScript和OnAfterReloadScript的测试脚本
 //============================================================
 
+-	script	EVENT_TEST_INIT	-1,{
+end;
+OnPCLoginEvent:
+	dispbottom "[事件演示] 已加载演示脚本，若想关闭请编辑 npc/scripts_custom.conf 配置文件";
+end;
+}
+
 -	script	RELOAD_WARNING	-1,{
 end;
 OnBeforeReloadScript:
@@ -48,13 +55,246 @@ end;
 OnMvpKillEvent:
 	// OnMvpKillEvent 与是玩家无关的
 	// 死了一个MVP魔物的话，此事件只会被触发1次
-	
+	// 
 	// 参数说明
 	// -------------------------------------------------------
-	// killerrid 为击杀了MVP魔物的玩家角色编号(CharID)
-	// killedrid 为被杀死的MVP魔物的魔物编号(MobID)
+	// killerrid 	为击杀了MVP魔物的玩家角色编号(CharID)
+	// killedrid 	为被杀死的MVP魔物的魔物编号(MobID)
+	// @mob_dead_x	魔物死亡时的X坐标
+	// @mob_dead_y	魔物死亡时的Y坐标
 	// -------------------------------------------------------
 	
-	announce "[全服公告] 玩家 “" + strcharinfo(0, killerrid) + "” 杀死了MVP魔物 “" + strmobinfo(2, killedrid) + "”", bc_all|bc_yellow;
+	announce "[全服公告] 玩家 “" + strcharinfo(0, killerrid) + "” 杀死了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的MVP魔物 “" + strmobinfo(2, killedrid) + "”", bc_all|bc_yellow;
 end;
 }
+
+-	script	PC_HOM_LVUP_EVENT	-1,{
+end;
+OnPCHomLvUpEvent:
+	dispbottom "[事件演示] OnPCHomLvUpEvent | " + strcharinfo(0) + " 的人工生命体升级了！";
+end;
+}
+
+-	script	PC_EQUIP_EVENT	-1,{
+end;
+OnPCEquipEvent:
+	// OnPCEquipEvent 是与玩家关联的
+	// 当玩家成功穿戴一件物品的话，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @equip_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @equip_pos 也被赋予了和 @equip_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCEquipEvent | " + strcharinfo(0) + " 穿戴了一件装备，它的背包序号为: " + @equip_idx;
+end;
+OnPCUnequipEvent:
+	// OnPCUnequipEvent 是与玩家关联的
+	// 当玩家成功脱掉一件物品的话，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @unequip_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @unequip_pos 也被赋予了和 @unequip_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUnequipEvent | " + strcharinfo(0) + " 脱下了一件装备，它的背包序号为: " + @unequip_idx;
+end;
+}
+
+-	script	PC_STATUS_CHANGE_EVENT	-1,{
+end;
+OnPCSCStartEvent:
+	// OnPCSCStartEvent 是与玩家关联的
+	// 当玩家获得了一个状态(俗称Buff)后，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @started_sc_id		为这个新增状态的编号
+	// @started_sc_rate		为这个新增状态的触发概率(10000 = 100%)
+	// @started_sc_tick		为这个新增状态的持续时长(单位为毫秒)
+	// 						时长根据内部实现方式的不同，有可能是指多长时间后剩余秒数减一
+	// @started_sc_val1		为这个新增状态的第1个参数的值
+	// @started_sc_val2		为这个新增状态的第2个参数的值
+	// @started_sc_val3		为这个新增状态的第3个参数的值
+	// @started_sc_val4		为这个新增状态的第4个参数的值
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @startedsc 也被赋予了和 @started_sc_id 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCSCStartEvent | " + strcharinfo(0) + " 获得了编号为 " + @started_sc_id + " 的状态！";
+	dispbottom "[状态详情] 概率: " + @started_sc_rate + " | 时长: " + @started_sc_tick + " | 参数1: " + @started_sc_val1 + " | 参数2: " + @started_sc_val2 + " | 参数3: " + @started_sc_val3 + " | 参数4: " + @started_sc_val4;
+end;
+OnPCSCEndEvent:
+	// OnPCSCEndEvent 是与玩家关联的
+	// 当玩家解除了一个状态(俗称Buff)后，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @ended_sc_id			为这个被解除状态的编号
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @endedsc 也被赋予了和 @ended_sc_id 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCSCEndEvent | " + strcharinfo(0) + " 解除了编号为 " + @ended_sc_id + " 的状态！";
+end;
+}
+
+-	script	PARTY_EVENT	-1,{
+end;
+OnPCPartyCreateEvent:
+	// OnPCPartyCreateEvent 是与玩家关联的(关联到队长)
+	// 当玩家创建了一个队伍后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCPartyCreateEvent | 您创建了一个队伍！";
+end;
+OnPCPartyJoinEvent:
+	// OnPCPartyJoinEvent 是与玩家关联的(关联到加入队伍的玩家)
+	// 当玩家加入了一个队伍后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCPartyCreateEvent | 您加入了一个队伍！";
+end;
+OnPCPartyLeaveEvent:
+	// OnPCPartyLeaveEvent 是与玩家关联的(关联到离开队伍的玩家)
+	// 当玩家离开了一个队伍后(无论是自愿还是被踢)，此事件会被触发
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @left_party_id		为已经离开的队伍编号
+	// @left_party_name$	为已经离开的队伍名称
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCPartyCreateEvent | 您离开了编号为 " + @left_party_id + " 的队伍，队名为: " + @left_party_name$;
+end;
+}
+
+-	script	GUILD_EVENT	-1,{
+end;
+OnPCGuildCreateEvent:
+	// OnPCGuildCreateEvent 是与玩家关联的(关联到会长)
+	// 当玩家创建了一个公会后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCGuildCreateEvent | 您创建了一个公会！";
+end;
+OnPCGuildJoinEvent:
+	// OnPCGuildJoinEvent 是与玩家关联的(关联到加入公会的玩家)
+	// 当玩家加入了一个公会后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCGuildJoinEvent | 您加入了一个公会！";
+end;
+OnPCGuildLeaveEvent:
+	// OnPCGuildLeaveEvent 是与玩家关联的(关联到离开公会的玩家)
+	// 当玩家离开了一个公会后，此事件会被触发
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @left_guild_id		为已经离开的公会编号
+	// @left_guild_name$	为已经离开的公会名称
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCGuildLeaveEvent | 您离开了编号为 " + @left_guild_id + " 的公会，会名为: " + @left_guild_name$;
+end;
+}
+
+-	script	PET_EVENT	-1,{
+end;
+OnPetLootItemEvent:
+	// OnPetLootItemEvent 是与玩家关联的(关联到宠物的主人)
+	// 当玩家的宠物拾取到物品之后，此事件会被触发
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @petloot_item_id			为拾取到的物品编号
+	// @petloot_item_amount		为拾取到的物品数量
+	// @petloot_game_id			为此物品的游戏单位编号
+	//
+	// 为了兼容SEA和CSEA服务端
+	// @petloot_id 也被赋予了和 @petloot_item_id 一样的值
+	// @petloot_gid 也被赋予了和 @petloot_game_id 一样的值
+	// @petloot_amount 也被赋予了和 @petloot_item_amount 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPetLootItemEvent | 您的宠物捡取了 " + @petloot_item_amount + " 个 " + getitemname(@petloot_item_id) + " ！";
+end;
+OnPCFeedPet:
+	// OnPCFeedPet 是与玩家关联的(关联到宠物的主人)
+	// 当玩家给自己的宠物喂食后，此事件会被触发
+	//
+	// 为了兼容SEA和CSEA服务端
+	// OnPCFoodPet 事件也会被同时执行，等效于 OnPCFeedPet 事件
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCFeedPet | 您喂养了宠物！";
+end;
+}
+
+-	script	VIEW_EQUIP_EVENT	-1,{
+end;
+OnPCViewEquipEvent:
+	// OnPCViewEquipEvent 是与玩家关联的(关联到主动发起查看请求的玩家)
+	// 当玩家点击查看某个玩家的装备之后，此事件会被触发
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @view_equip_target_name$	被查看者的角色名
+	// @view_equip_target_cid	被查看者的角色编号
+	// @view_equip_target_aid	被查看者的账号编号
+	//
+	// 为了兼容CSEA服务端
+	// @vieweq_name$ 也被赋予了和 @view_equip_target_name$ 一样的值
+	// @vieweq_cid 也被赋予了和 @view_equip_target_cid 一样的值
+	// @vieweq_aid 也被赋予了和 @view_equip_target_aid 一样的值
+	// 
+	// 为了兼容SEA服务端
+	// @eqview_cid 也被赋予了和 @view_equip_target_cid 一样的值
+	// -------------------------------------------------------
+
+	dispbottom "[事件演示] OnPCViewEquipEvent | 您查看了“" + @view_equip_target_name$ + "”的装备，他的AID为 " + @view_equip_target_aid + " | CID为 " + @view_equip_target_cid + "！";
+end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

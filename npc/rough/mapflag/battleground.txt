@@ -1,0 +1,30 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: Battleground map setting.
+//===== By: ==================================================
+//= Epoque
+//===== Current Version: =====================================
+//= 1.0a
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: ========================================= 
+//= Defines a Battleground map.
+//= Additional parameter '2' shows scoreboard.
+//===== Additional Comments: ================================= 
+//= 1.0 Initial script.
+//============================================================
+
+bat_c01	mapflag	battleground	2
+bat_c02	mapflag	battleground	2
+bat_c03	mapflag	battleground	2
+bat_b01	mapflag	battleground	2
+bat_b02	mapflag	battleground
+bat_a01	mapflag	battleground
+bat_a02	mapflag	battleground

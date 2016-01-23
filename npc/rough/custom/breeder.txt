@@ -1,0 +1,47 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Universal Rental NPC
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.0a
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= One-click automatic mount rentals.
+//============================================================
+
+prontera,124,201,1	script	Universal Rental NPC	726,{
+	if (ismounting()) {
+		message strcharinfo(0),"You must first remove your mount.";
+		end;
+	} else if ((eaclass()&EAJ_THIRDMASK==EAJ_RANGER) && !countitem(6124)) {
+		if (!checkfalcon() && getskilllv("HT_FALCON") && !checkwug()) {
+			if(select(" ~ Falcon: ~ Warg")==1) setfalcon;
+			else getitem 6124,1; //Wolf's_Flute
+		} else getitem 6124,1; //Wolf's_Flute
+	} else if ((eaclass()&EAJ_THIRDMASK==EAJ_MECHANIC) && !checkcart() && getskilllv("MC_PUSHCART")) {
+		if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) {
+			if(select(" ~ Cart: ~ Mado")==1) setcart;
+			else setmadogear;
+		} else setcart;
+	} else if (!checkcart() && getskilllv("MC_PUSHCART")) setcart;
+	else if (!checkfalcon() && getskilllv("HT_FALCON") && !checkwug()) setfalcon;
+	else if (!checkriding() && !checkdragon() && getskilllv("KN_RIDING")) {
+		if (eaclass()&EAJ_THIRDMASK==EAJ_RUNE_KNIGHT) setdragon;
+		else setriding;
+	} else if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) setmadogear;
+	else {
+		message strcharinfo(0),"You do not meet requirements to rent.";
+		end;
+	}
+	specialeffect2 EF_TEIHIT3;
+	end;
+}

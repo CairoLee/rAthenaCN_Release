@@ -1,0 +1,46 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: Disable Ice Wall.
+//===== By: ==================================================
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: ========================================= 
+//= Blocks usage of WZ_ICEWALL.
+//===== Additional Comments: ================================= 
+//= 1.0 Renewal split. [Euphy]
+//============================================================
+
+// Misty Forest Labyrinth ===========
+1@mist	mapflag	noicewall
+
+// Octopus Cave ===========
+1@cash	mapflag	noicewall
+
+// Drain ===========
+1@pump	mapflag	noicewall
+2@pump	mapflag	noicewall
+
+// Somatology Laboratory ===========
+1@lhz	mapflag	noicewall
+
+// Bangungot Hospital F2 ===========
+1@ma_h	mapflag	noicewall
+
+// Buwaya Cave ===========
+1@ma_c	mapflag	noicewall
+
+// Bakonawa Hideout ===========
+1@ma_b	mapflag	noicewall
+
+// Inside Eclage ===========
+1@ecl	mapflag	noicewall
