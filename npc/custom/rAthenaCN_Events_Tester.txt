@@ -348,7 +348,7 @@ OnPCUseSkillEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCUseSkillEvent | 开始使用技能";
-	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面X坐标: " + @useskill_x + " | 地面Y坐标: " + @useskill_y;
+	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面坐标: " + @useskill_x + "," + @useskill_y;
 end;
 OnPCUseSkillFinishEvent:
 	// OnPCUseSkillFinishEvent 是与技能施放者关联的
@@ -365,7 +365,7 @@ OnPCUseSkillFinishEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCUseSkillFinishEvent | 技能使用完毕";
-	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面X坐标: " + @useskill_x + " | 地面Y坐标: " + @useskill_y;
+	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面坐标: " + @useskill_x + "," + @useskill_y;
 end;
 }
 

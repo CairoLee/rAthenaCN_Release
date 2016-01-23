@@ -2,6 +2,13 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.1.9(2015-12-20)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/9aa832570e997423937b1be9bd42ce90bc7039ae
+[修正] 修正编码自动判定系统在检测到 default_codepage 不是 auto 的时候，不会将用户指定具体编码应用到连接的问题
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.1.8(2015-12-18)
 ------------------
 [同步] rAthena官方Github库
