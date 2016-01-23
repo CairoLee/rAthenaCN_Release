@@ -2,6 +2,20 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.0.3(2015-08-28)
+------------------
+[新增] 默认启用封包混淆机制，配套客户端补丁使用可防WPE
+       混淆密钥为: 0x00dd7a90,0x37ea4427,0x28b79a45
+[新增] 支持使用 @reloadmsgconf 重新读取 conf/msg_conf/translation.conf 中的汉化结果
+[修正] rAthena官方BUG: 有时VIP用户使用技能还需要消耗蓝色魔力矿石的问题 感谢 alone 汇报
+[汉化] 完全汉化“rAthena功能配置文件” conf/battle/feature.conf 感谢 alone 协助汉化
+[汉化] 完全汉化“龙仙儒/龙先生”
+[汉化] 部分汉化“指令帮助文件” conf/help.txt
+[汉化] 部分汉化“地图列表文件”中的注释 conf/maps_athena.conf
+[汉化] 部分汉化“登录、角色、地图服务器的信息配置文件” conf/msg_conf/login_msg.conf、char_msg.conf、map_msg.conf
+[配置] 默认启用VIP机制和技能伤害修正机制
+[配置] 默认将 conf/battle/exp.conf 的 multi_level_up 选项设置为 yes
+
 v1.0.2(2015-08-22)
 ------------------
 [同步] rAthena官方Github库
