@@ -1,0 +1,32 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Bifrost Tower Warp Script
+//===== By: ==================================================
+//= Chilly
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Warp Points for Bifrost Tower
+//===== Additional Comments: =================================
+//= 1.0 First Version.
+//============================================================
+
+ecl_fild01,182,82,0	warp	eclage_dun0001	1,1,ecl_tdun01,60,13
+ecl_tdun01,61,11,0	warp	eclage_dun0002	1,1,ecl_fild01,182,85
+ecl_tdun01,67,106,0	warp	eclage_dun0003	1,1,ecl_tdun02,60,88
+ecl_tdun02,60,90,0	warp	eclage_dun0004	1,1,ecl_tdun01,70,105
+ecl_tdun02,52,9,0	warp	eclage_dun0005	1,1,ecl_tdun03,47,13
+ecl_tdun03,49,11,0	warp	eclage_dun0006	1,1,ecl_tdun02,50,11
+ecl_tdun03,50,46,0	warp	eclage_dun0007	1,1,ecl_tdun04,26,23
+ecl_tdun04,26,26,0	warp	eclage_dun0008	1,1,ecl_tdun03,50,43
+ecl_tdun04,34,17,0	warp	eclage_dun0009	1,1,ecl_fild01,183,73
+ecl_fild01,183,70,0	warp	eclage_dun0010	1,1,ecl_tdun04,32,19

@@ -1,0 +1,52 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: Jail.
+//===== By: ==================================================
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: ========================================= 
+//= pvp: Turns on PvP mode
+//= pvp_noparty: Can't attack player in same party
+//= nobranch: No Dead Branching allowed.
+//= nomemo: No Warp Portal Memory Point allowed.
+//= nopenalty: No Exp. penalty when player dies.
+//= nosave: No saving respawn point allowed. Use SavePoint to use the
+//=                players previous savepoint, or choose one manually.
+//= noteleport: No Teleporting allowed.  No fly wings or butterfly wings.
+//===== Additional Comments: ================================= 
+//= 1.0 Initial script.
+//============================================================
+
+// No Memory =============================
+sec_pri	mapflag	nomemo
+
+// No Save ===============================
+sec_pri	mapflag	nosave	SavePoint
+
+// No Teleport ===========================
+sec_pri	mapflag	noteleport
+
+// No Warp ===============================
+sec_pri	mapflag	nowarp
+
+// No Return, Stop people from being pulled out of jail (warpparty/guild)
+sec_pri	mapflag	noreturn
+
+// PvP ===================================
+sec_pri	mapflag	pvp
+
+// No Party ==============================
+sec_pri	mapflag	pvp_noparty
+
+//Nightmare Equipment Drops PVP ==========
+sec_pri	mapflag	pvp_nightmaredrop	random,equip,300

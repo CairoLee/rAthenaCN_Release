@@ -1,0 +1,43 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Other Warp Script
+//===== By: ==================================================
+//= Athena (1.0)
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Warp Points for Other Maps
+//===== Additional Comments: =================================
+//= Split off npc_warp.txt
+//============================================================
+
+//guild_room,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs1,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs1,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs1,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs1,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs2,50,88,0	warp	warp4	0,0,hoge,0,0
+//guild_vs2,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs2,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs2,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs3,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs3,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs3,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs3,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs4,7,50,0	warp	warp4	0,0,hoge,0,0
+//guild_vs4,50,7,0	warp	warp4	0,0,hoge,0,0
+//guild_vs4,92,50,0	warp	warp4	0,0,hoge,0,0
+//guild_vs4,50,92,0	warp	warp4	0,0,hoge,0,0
+//guild_vs5,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs5,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs5,0,0,0	warp	warp4	0,0,hoge,0,0
+//guild_vs5,0,0,0	warp	warp4	0,0,hoge,0,0

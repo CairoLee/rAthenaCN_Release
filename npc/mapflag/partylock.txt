@@ -1,0 +1,44 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: Party lock.
+//===== By: ==================================================
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.2
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: ========================================= 
+//= Blocks all party modifications on a map:
+//=   /organize, /leave, /invite, @changeleader
+//===== Additional Comments: ================================= 
+//= 1.0 Initial script.
+//= 1.1 Updated. [L0ne_W0lf]
+//= 1.2 Renewal split. [Euphy]
+//============================================================
+
+// Sealed Shrine ==================
+1@cata	mapflag	partylock
+2@cata	mapflag	partylock
+
+// Endless Tower ==================
+1@tower	mapflag	partylock
+2@tower	mapflag	partylock
+3@tower	mapflag	partylock
+4@tower	mapflag	partylock
+5@tower	mapflag	partylock
+6@tower	mapflag	partylock
+
+// Orc's Memory ===================
+1@orcs	mapflag	partylock
+2@orcs	mapflag	partylock
+
+// Nidhoggr's Instance ============
+1@nyd	mapflag	partylock
+2@nyd	mapflag	partylock

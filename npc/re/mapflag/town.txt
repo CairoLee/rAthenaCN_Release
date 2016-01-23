@@ -1,0 +1,34 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: Town.
+//===== By: ==================================================
+//= Epoque
+//===== Current Version: =====================================
+//= 1.1
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: ========================================= 
+//= Designates a map as a town, granting mailbox access.
+//===== Additional Comments: ================================= 
+//= 1.0 Renewal split. [Euphy]
+//= 1.1 Added Izlude duplicates. [Euphy]
+//============================================================
+
+brasilis	mapflag	town
+dewata	mapflag	town
+dicastes01	mapflag	town
+eclage	mapflag	town
+izlude_a	mapflag	town
+izlude_b	mapflag	town
+izlude_c	mapflag	town
+izlude_d	mapflag	town
+malangdo	mapflag	town
+malaya	mapflag	town
+mora	mapflag	town
