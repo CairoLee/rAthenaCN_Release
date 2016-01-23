@@ -24,7 +24,7 @@
 -	script	EVENT_TEST_INIT	-1,{
 end;
 OnPCLoginEvent:
-	dispbottom "[事件演示] 已加载演示脚本，若想关闭请编辑 npc/scripts_custom.conf 配置文件";
+	dispbottom "[事件演示] 已加载演示脚本，若想关闭演示脚本，请编辑 npc/scripts_custom.conf 配置文件";
 end;
 }
 
@@ -92,7 +92,7 @@ OnPCHomLvUpEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCHomLvUpEvent | " + strcharinfo(0) + " 的人工生命体升级了！";
-	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 OnHomCallEvent:
 	// OnHomCallEvent 是与玩家关联的(关联到生命体的主人)
@@ -100,7 +100,7 @@ OnHomCallEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnHomCallEvent | " + strcharinfo(0) + " 召唤了人工生命体！";
-	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 OnHomRestEvent:
 	// OnHomRestEvent 是与玩家关联的(关联到生命体的主人)
@@ -108,7 +108,7 @@ OnHomRestEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnHomRestEvent | " + strcharinfo(0) + " 的人工生命体安息了！";
-	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 OnHomDeadEvent:
 	// OnHomDeadEvent 是与玩家关联的(关联到生命体的主人)
@@ -116,7 +116,7 @@ OnHomDeadEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnHomDeadEvent | " + strcharinfo(0) + " 的人工生命体死亡了！";
-	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 OnHomWakeEvent:
 	// OnHomWakeEvent 是与玩家关联的(关联到生命体的主人)
@@ -124,7 +124,7 @@ OnHomWakeEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnHomWakeEvent | " + strcharinfo(0) + " 的人工生命体复活了！";
-	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 }
 
@@ -196,7 +196,7 @@ OnPCSCStartEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCSCStartEvent | " + strcharinfo(0) + " 获得了编号为 " + @started_sc_id + " 的状态！";
-	dispbottom "[状态详情] 概率: " + @started_sc_rate + " | 时长: " + @started_sc_tick + " | 参数1: " + @started_sc_val1 + " | 参数2: " + @started_sc_val2 + " | 参数3: " + @started_sc_val3 + " | 参数4: " + @started_sc_val4;
+	dispbottom "           - 概率: " + @started_sc_rate + " | 时长: " + @started_sc_tick + " | 参数1: " + @started_sc_val1 + " | 参数2: " + @started_sc_val2 + " | 参数3: " + @started_sc_val3 + " | 参数4: " + @started_sc_val4;
 end;
 OnPCSCEndEvent:
 	// OnPCSCEndEvent 是与玩家关联的

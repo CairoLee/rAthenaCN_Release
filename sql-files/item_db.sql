@@ -1145,6 +1145,7 @@ REPLACE INTO `item_db` VALUES (2135,'Shadow_Guard','阴影守护',4,20,NULL,800,
 REPLACE INTO `item_db` VALUES (2136,'Cracked_Buckler','Cracked Buckler',4,0,NULL,0,NULL,5,NULL,0,0xFFFFFFFF,7,2,32,NULL,0,0,2,'bonus bAgi,2; bonus2 bAddEle,Ele_Neutral,-10; bonus3 bAutoSpellWhenHit,"PR_KYRIE",1,50; bonus bMdef,1;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2137,'Valkyrja\'s_Shield_C','Neo Valkyrja\'s Shield',4,0,NULL,0,NULL,5,NULL,0,0xFFFFFFFE,2,2,32,NULL,95,0,4,'bonus2 bSubEle,Ele_Water,20; bonus2 bSubEle,Ele_Fire,20; bonus2 bSubEle,Ele_Dark,20; bonus2 bSubEle,Ele_Undead,20; bonus bMdef,5;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2138,'Bradium_Shield','魔力之石盾牌',4,20,NULL,1800,NULL,5,NULL,1,0x00CFFF80,2,2,32,NULL,65,1,3,'bonus2 bSkillAtk,"CR_SHIELDBOOMERANG",60; bonus bAgi,-1; bonus bMaxHP,500;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2139,'Flame_Thrower','火焰喷射器',4,20000,NULL,2000,NULL,60,NULL,0,0x00000400,63,2,32,NULL,99,0,1,NULL,NULL,NULL);
 # GM Shield
 REPLACE INTO `item_db` VALUES (2199,'Ahura_Mazda','圆盾',4,1,NULL,10,NULL,100,NULL,0,0xFFFFFFFF,7,2,32,NULL,1,1,0,'bonus bAllStats,50; bonus bMdef,99; bonus bShortWeaponDamageReturn,100; bonus2 bSubRace,RC_DemiHuman,95; bonus2 bSubRace,RC_Player,95; skill "CR_FULLPROTECTION",5; Skill "WZ_ESTIMATION",1; Skill "ST_FULLSTRIP",5; Skill "HW_MAGICPOWER",10; bonus bMaxHPRate,200; bonus bNoGemStone,0; bonus bSpeedRate,25;','sc_start4 SC_ENDURE,60000,10,0,0,1;','sc_end SC_ENDURE;');
 # Headgears
@@ -1657,6 +1658,14 @@ REPLACE INTO `item_db` VALUES (2796,'Magical_Stone','含有魔力的石头',4,0,
 REPLACE INTO `item_db` VALUES (2797,'Magical_Stone_','含有魔力的石头',4,0,NULL,200,NULL,0,NULL,0,0x00810204,7,2,136,NULL,99,0,0,'bonus2 bAddDamageClass,2049,10; bonus2 bAddDefMonster,2050,-10; bonus3 bAddMonsterIdDropItem,6151,2049,70;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2798,'Will_Of_Exhausted_Angel','疲倦战士的意志',4,0,NULL,200,NULL,0,NULL,0,0x00008100,7,2,136,NULL,99,0,0,'if(strcharinfo(3)=="job3_arch02") { bonus2 bAddDefMonster,1761,50; bonus2 bAddDefMonster,1762,50; }',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2799,'Kuirpenring','Kuirpenring',4,0,NULL,100,NULL,0,NULL,1,0xFFFFFFFF,7,2,136,NULL,0,0,0,'bonus bMdef,1;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2800,'Accelerator','涡轮增压装置',4,100000,NULL,100,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bAgi,2;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2802,'Suicidal_Device','自爆装置',4,500000,NULL,1000,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (2803,'Shape_Shifter','装甲变更装置',4,100000,NULL,500,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bInt,3;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2804,'Cooling_Device','冷却装置',4,100000,NULL,2500,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bDex,1;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2805,'Mag_Field_Generator','磁场生成器',4,100000,NULL,6000,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bDex,1;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2806,'Barrier_Builder','屏障生成器',4,150000,NULL,8000,NULL,3,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bDex,1;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (2807,'Repair_Kit','维修工具箱',4,200000,NULL,400,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (2808,'Camouflage_Generator','光学迷彩发生器',4,250000,NULL,1000,NULL,0,NULL,1,0x00000400,56,2,136,NULL,99,0,0,'bonus bAgi,3;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2819,'Swordman_Manual','剑士入门书',4,0,NULL,100,NULL,0,NULL,0,0x00000001,7,2,136,NULL,1,0,0,'bonus bMaxSP,100; skill "SM_BASH",1; skill "SM_PROVOKE",1; skill "SM_MAGNUM",1;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2820,'Thief_Manual','盗贼入门书',4,0,NULL,100,NULL,0,NULL,0,0x00000001,7,2,136,NULL,1,0,0,'bonus bMaxSP,100; skill "TF_DOUBLE",3; bonus bDoubleRate,15; skill "TF_STEAL",1; skill "TF_HIDING",1; skill "TF_POISON",1;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (2821,'Acolyte_Manual','服事入门书',4,0,NULL,100,NULL,0,NULL,0,0x00000001,7,2,136,NULL,1,0,0,'bonus bMaxSP,100; skill "AL_HEAL",1; skill "AL_INCAGI",1; skill "AL_BLESSING",1;',NULL,NULL);
@@ -3457,6 +3466,12 @@ REPLACE INTO `item_db` VALUES (6396,'Auger_Of_Spirit','灵魂之锥',3,0,NULL,10
 #
 REPLACE INTO `item_db` VALUES (6456,'Guarantee_Weapon_5Up','+5 Weapon Refine Ticket',3,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db` VALUES (6457,'Guarantee_Armor_5Up','+5 Armor Refine Ticket',3,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6493,'Makibishi','Makibishi',3,30,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6499,'Ancient_Grudge','Ancient Grudge',3,500,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6512,'Charm_Fire','Fire Amulet',3,100,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6513,'Charm_Ice','Ice Amulet',3,100,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6514,'Charm_Wind','Wind Amulet',3,100,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db` VALUES (6515,'Charm_Earth','Earth Amulet',3,100,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 #
 REPLACE INTO `item_db` VALUES (7001,'Mould_Powder','霉菌粉末',3,466,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db` VALUES (7002,'Ogre_Tooth','兽人之牙',3,658,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
@@ -5487,15 +5502,16 @@ REPLACE INTO `item_db` VALUES (13278,'SP_Inc_PotS_To_Throw','投掷型SP增加�
 REPLACE INTO `item_db` VALUES (13279,'SP_Inc_PotM_To_Throw','投掷型SP增加药水(中)',10,100,NULL,40,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_INCMSP,500000,((BaseLevel/10)); percentheal 0,4;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13280,'SP_Inc_PotL_To_Throw','投掷型SP增加药水(大)',10,100,NULL,80,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_INCMSP,500000,((BaseLevel/10)+5); percentheal 0,8;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13281,'En_White_PotZ_To_Throw','投掷型浓缩白色药水Z',10,100,NULL,70,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_EXTRACT_WHITE_POTION_Z,500000,20; itemheal 1000,0;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13282,'Vitata500_To_Throw','投掷型黑蚁500',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start2 SC_VITATA_500,500000,20,5; itemheal 0,200;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13283,'En_Cel_Juice_To_Throw','投掷型浓缩速度泉水',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_EXTRACT_SALAMINE_JUICE,500000,10;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13284,'Savage_BBQ_To_Throw','投掷型烤野猪',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_SAVAGE_STEAK,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13285,'Wug_Cocktail_To_Throw','投掷型狼血鸡尾酒',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_COCKTAIL_WARG_BLOOD,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13286,'M_Brisket_To_Throw','投掷型小牛排',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_MINOR_BBQ,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13287,'Siroma_Icetea_To_Throw','投掷型城间冰茶',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_SIROMA_ICE_TEA,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13288,'Drocera_Stew_To_Throw','投掷型药草蒸茅膏菜',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_DROCERA_HERB_STEAMED,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13289,'Petti_Noodle_To_Throw','投掷型毕帝特龙尾面',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_PUTTI_TAILS_NOODLES,300000,20;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13290,'Black_Thing_To_Throw','投掷型黑色物体',10,100,NULL,50,'0',NULL,NULL,NULL,0x00040000,8,2,32768,NULL,'99',NULL,9,'sc_start SC_STOMACHACHE,60000,rand(5,10);',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13282,'Vitata500_To_Throw','投掷型黑蚁500',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start2 SC_VITATA_500,500000,20,5; itemheal 0,200;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13283,'En_Cel_Juice_To_Throw','投掷型浓缩速度泉水',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_EXTRACT_SALAMINE_JUICE,500000,10;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13284,'Savage_BBQ_To_Throw','投掷型烤野猪',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_SAVAGE_STEAK,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13285,'Wug_Cocktail_To_Throw','投掷型狼血鸡尾酒',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_COCKTAIL_WARG_BLOOD,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13286,'M_Brisket_To_Throw','投掷型小牛排',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_MINOR_BBQ,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13287,'Siroma_Icetea_To_Throw','投掷型城间冰茶',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_SIROMA_ICE_TEA,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13288,'Drocera_Stew_To_Throw','投掷型药草蒸茅膏菜',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_DROCERA_HERB_STEAMED,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13289,'Petti_Noodle_To_Throw','投掷型毕帝特龙尾面',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_PUTTI_TAILS_NOODLES,300000,20;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13290,'Black_Thing_To_Throw','投掷型黑色物体',10,100,NULL,50,0,NULL,NULL,NULL,0x00040000,8,2,32768,NULL,99,NULL,9,'sc_start SC_STOMACHACHE,60000,rand(5,10);',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13294,'Explosive_Kunai','Explosive Kunai',10,100,NULL,30,50,NULL,NULL,NULL,0x02000000,63,2,32768,NULL,100,NULL,7,'bonus bAtkEle,Ele_Neutral;',NULL,NULL);
 # Ninja Fuuma Shurikens
 REPLACE INTO `item_db` VALUES (13300,'Huuma_Bird_Wing','风魔飞镖偏翼',5,90000,NULL,3000,150,NULL,1,0,0x02000000,7,2,34,4,65,1,22,'bonus bUnbreakableWeapon,0; bonus bAtkEle,Ele_Wind; bonus bDex,-2; bonus bAgi,-1;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13301,'Huuma_Giant_Wheel','风魔飞镖大车轮',5,40000,NULL,2500,50,NULL,1,3,0x02000000,7,2,34,4,42,1,22,'bonus bUnbreakableWeapon,0; bonus2 bAddEff,Eff_Bleeding,100;',NULL,NULL);
