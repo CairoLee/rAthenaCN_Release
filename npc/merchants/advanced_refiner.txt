@@ -117,11 +117,13 @@ payon,157,146,6	script	龙仙儒#cash	85,{
 	close;
 
 S_RefineValidate:
+	.@weapon_lvl = getarg(0);
+	.@item_req = getarg(1);
 	set .@price, getarg(2);
 
 	// If the VIP system is enabled, the prices for non-VIP players are considerably higher.
 	if (VIP_SCRIPT && !vip_status(1)) {
-		switch(getarg(0)){
+		switch(.@weapon_lvl){
 			case 0: set .@price, .@price * 10; break;
 			case 1: set .@price, .@price * 40; break;
 			case 2: set .@price, .@price * 50; break;
@@ -131,16 +133,16 @@ S_RefineValidate:
 	}
 
 	mes "[龙仙儒]";
-	if (getarg(0))
-		mes "这把武器的等级为 ^ff0000" + getarg(0) + " ^000000级!";
+	if (.@weapon_lvl)
+		mes "这把武器的等级为 ^ff0000" + .@weapon_lvl + " ^000000级!";
 	mes "精练这个物品我需要:";
-	mes "- ^0000ff"+getitemname(getarg(1))+"^000000 x 1";
+	mes "- ^0000ff"+getitemname(.@item_req)+"^000000 x 1";
 	mes "- 精炼服务费 ^ff0000"+ .@price + "^000000 Zeny";
 	mes "你真的希望我继续吗?";
 	next;
 	if( select("是的:不要") == 1 ) {
 		if (getequippercentrefinery(getarg(3)) < 100) {
-			if (getarg(0)) {
+			if (.@weapon_lvl) {
 				mes "[龙仙儒]";
 				mes "呜哇!!";
 				mes "看来这武器已经精炼很多次了的样子...";
@@ -178,8 +180,8 @@ S_RefineValidate:
 				}
 			}
 		}
-		if (countitem(getarg(1)) > 0 && Zeny > .@price) {
-			delitem getarg(1),1;
+		if (countitem(.@item_req) > 0 && Zeny > .@price) {
+			delitem .@item_req,1;
 			set Zeny, Zeny - .@price;
 			return;
 		}

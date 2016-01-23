@@ -201,19 +201,21 @@ ve_in,157,219,5	script	旅馆 老板#Receptionist	709,{
 
 //======================= Inn Function ==============================
 function	script	F_InnMaid	{
-	mes getarg(0);
+	.@npc_name$ = getarg(0);
+
+	mes .@npc_name$;
 	mes "欢迎光临" + getarg(1) + "！";
 	mes "请问有什么需要我帮忙的嘛？";
 	next;
 	switch(select("储存服务:休息 -> 5000 金币:结束对话")) {
 	case 1:
-		mes getarg(0);
+		mes .@npc_name$;
 		mes "您的复活点已经存储完毕。";
 		mes "欢迎您下次光临。";
 		savepoint getarg(2),getarg(3),getarg(4);
 		close;
 	case 2:
-		mes getarg(0);
+		mes .@npc_name$;
 		if(Zeny < 5000){
 			mes "很抱歉，服务费需要5,000金币。";
 			mes "请确认你有足够的金币后再来找我，好吗？";

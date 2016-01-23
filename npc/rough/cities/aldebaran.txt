@@ -1632,13 +1632,16 @@ alde_dun03,264,16,4	script	看门人#ct1	4W_F_01,{
 }
 
 function	script	F_ClockTowerGate	{
+	.@floor = getarg(0);
+	.@item_req = getarg(1);
+
 	mes "[看门人]";
 	mes "您从哪来?冒险家, 这里是艾尔帕兰钟塔, ";
 	mes "我是艾尔帕兰最好的看门人, ";
-	mes "看守这个钟楼的"+getarg(0)+", ";
+	mes "看守这个钟楼的"+.@floor+", ";
 	mes "我不会让您进去, 请回到您来的地方. ";
 	next;
-	switch(select("关于钟楼:关于"+getarg(0)+":我要到"+getarg(0)+":结束")) {
+	switch(select("关于钟楼:关于"+.@floor+":我要到"+.@floor+":结束")) {
 	case 1:
 		mes "[看门人]";
 		mes "艾尔帕兰是练金术士的出生地, 很久以前, 他们是3个传说的炼金术士布鲁克·萨莫尔, 菲利浦·沃尔滋和..";
@@ -1670,11 +1673,11 @@ function	script	F_ClockTowerGate	{
 		mes ". . . . .";
 		close;
 	case 3:
-		if (countitem(getarg(1)) > 0) {
+		if (countitem(.@item_req) > 0) {
 			mes "[看门人]";
 			mes "唔……我已经感觉到您是一个不平常的人, 您似乎已经通过了考验. 那么现在, 请您进来吧, 诸神会保佑勇敢的战士的...";
 			close2;
-			delitem getarg(1),1; 
+			delitem .@item_req,1; 
 			warp getarg(2),getarg(3),getarg(4);
 			end;
 		}

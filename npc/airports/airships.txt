@@ -1111,45 +1111,45 @@ airplane_01,33,68,4	script	克拉莉斯	74,{
 }
 
 function	script	applegamble	{
-
+	.@npc_name$ = getarg(0);
 	switch (select("玩骰子游戏:学习骰子游戏的规则:取消")) {
 	case 3:
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "不管您怎么看待这件事, ";
 		mes "我依旧准备举行一次骰子游戏.";
 		mes "如果您突然手痒痒, 想赌一把的话, ";
 		mes "就和我说一声, 明白了吗?";
 		close;
 	case 2:
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "骰子游戏的规则十分简单.";
 		mes "首先, 您要将苹果当作为赌注.";
 		mes "每次最多可以赌50个苹果.";
 		mes "为了确保我们不犯法, 我们只赌苹果.";
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "不过, 嘿嘿... 这依然很烧钱的.";
 		mes "你可以去霍慈那里买到任意数量的苹果,";
 		mes "然后带到这里来玩~";
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "好, 现在从我开始丢2个骰子.";
 		mes "轮到你的时候, 您也要丢2个骰子.";
 		mes "然后, 我们就可以选择是否丢第三次.";
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "要注意, 如果您的总数超过12点,";
 		mes "那么您就爆了, 也就是说, 您就输了.";
 		mes "否则, 点数最大的那个人获胜.";
 		mes "听明白了吗?";
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "然后, 从您开始决定是否丢第三次.";
 		mes "在您丢完第三次骰子以后,";
 		mes "我会根据您的结果,";
 		mes "再来决定是否要丢我的第三次.";
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "如果您获胜了的话,";
 		mes "您可以得到作为赌注的两倍数量的苹果.";
 		mes "不过如果我们点数一样大, ";
@@ -1159,7 +1159,7 @@ function	script	applegamble	{
 	case 1:
 		break;
 	}
-	mes "["+getarg(0)+"]";
+	mes "["+ .@npc_name$ +"]";
 	mes "喔~ 所以您要和我玩?";
 	mes "太棒了! 您要赌多少个苹果呢?";
 	mes "记住每次您最多可以赌50个苹果.";
@@ -1168,24 +1168,24 @@ function	script	applegamble	{
 	while(1) {
 		input .@amount;
 		if (.@amount == 0) {
-			mes "["+getarg(0)+"]";
+			mes "["+ .@npc_name$ +"]";
 			mes "改变主意了?";
 			mes "好吧, 希望以后还能一起玩.";
 			close;
 		}
 		else if (.@amount < 1 || .@amount > 50) {
-			mes "["+getarg(0)+"]";
+			mes "["+ .@npc_name$ +"]";
 			mes "您一次不能赌超过50个苹果.";
 			mes "记住, 我们必须保证赌注比较合理.";
 			mes "请输入一个不大于50的数值.";
 			next;
 			continue;
 		}
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "您想拿 ^FF0000"+.@amount+"^000000 个苹果作为赌注. 确定吗?";
 		next;
 		if (select("是的:不对") == 2) {
-			mes "["+getarg(0)+"]";
+			mes "["+ .@npc_name$ +"]";
 			mes "嗯, 搞错了?";
 			mes "好吧, 那么请输入您想赌的苹果数量.";
 			next;
@@ -1199,7 +1199,7 @@ function	script	applegamble	{
 			continue;
 		}
 		delitem 512,.@amount;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		mes "很好!";
 		mes "现在我们可以开始了! 我先投!";
 		break;
@@ -1211,7 +1211,7 @@ function	script	applegamble	{
 	set .@table2, rand(1,6);
 	set .@tablesub, .@table1 + .@table2;
 	set .@tabletotal, .@tablesub;
-	mes "["+getarg(0)+"]";
+	mes "["+ .@npc_name$ +"]";
 	mes "我投到 ^0000FF" + .@table1 + "^000000 和 ^0000FF" + .@table2 + "^000000, 总点数为 ^0000FF" + .@tablesub + "^000000 点.";
 	mes "^FF0000" + strcharinfo(0) + "^000000, 现在轮到你了.";
 	next;
@@ -1227,11 +1227,11 @@ function	script	applegamble	{
 	}
 	set .@playertotal, .@playersub;
 	next;
-	mes "["+getarg(0)+"]";
+	mes "["+ .@npc_name$ +"]";
 	mes "^FF0000" + strcharinfo(0) + "^000000, 您投到了 ^FF0000" + .@player1 + "^000000 和 ^FF0000" + .@player2 + "^000000.";
 	mes "总点数为 ^FF0000" + .@playersub + "^000000 点.";
 	next;
-	mes "["+getarg(0)+"]";
+	mes "["+ .@npc_name$ +"]";
 	if(.@playersub == .@tablesub) {
 		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000.";
 		mes "^FF0000" + strcharinfo(0) + "^000000, 您的总点数为 ^FF0000" + .@playersub + "^000000.";
@@ -1252,7 +1252,7 @@ function	script	applegamble	{
 		set .@player3, rand(1,6);
 		set .@playertotal, .@playertotal + .@player3;
 		next;
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		if (.@playertotal > 12) {
 			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";
 			mes "很抱歉您输了, 不过希望您能再来.";
@@ -1278,7 +1278,7 @@ function	script	applegamble	{
 		}
 		break;
 	case 2:
-		mes "["+getarg(0)+"]";
+		mes "["+ .@npc_name$ +"]";
 		if (.@playersub > .@tablesub) {
 			mes "我明白了, 您不想冒险输掉比赛. 那好吧, 我来投.";
 		}
@@ -1305,7 +1305,7 @@ function	script	applegamble	{
 	set .@table3, rand(1,6);
 	set .@tabletotal, .@tabletotal + .@table3;
 	next;
-	mes "["+getarg(0)+"]";
+	mes "["+ .@npc_name$ +"]";
 	if (.@tabletotal > 12) {
 		mes "我获得了 ^0000FF" + .@table3 + "^000000 点, 总点数变为 ^0000FF" + .@tabletotal + "^000000.";
 		mes "我的点数超过了 12 所以我输了. 给您我的苹果, 恭喜啊! 玩的很开心.";

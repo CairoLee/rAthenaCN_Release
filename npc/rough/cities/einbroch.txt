@@ -94,13 +94,15 @@ einbroch,176,172,5	script	肯科#ein	4_M_EINMAN,{
 }
 
 function	script	EinTower	{
-	mes "[" + getarg(0) + "]";
+	.@npc_name$ = getarg(0);
+
+	mes "["+ .@npc_name$ +"]";
 	mes "美好的一天~";
-	mes "我是了望台服务人员 " + getarg(0) + ",";
+	mes "我是了望台服务人员 " + .@npc_name$ + ",";
 	mes "我的工作是在了望台协助顾客";
 	mes "将美景一览无遗的提供给顾客之服务.";
 	next;
-	mes "[" + getarg(0) + "]";
+	mes "[" + .@npc_name$ + "]";
 	mes "艾音布罗克塔提供了";
 	mes "最佳观赏的地方";
 	mes "可以将四周的美景";
@@ -108,7 +110,7 @@ function	script	EinTower	{
 	mes "和情侣们的热门约会地点.";
 	mes "使用了望台的费用是 10 Zeny.";
 	next;
-	mes "[" + getarg(0) + "]";
+	mes "[" + .@npc_name$ + "]";
 	mes "现在, 我们正在举办";
 	mes "一个特别的促销活动";
 	mes "苹果套餐";
@@ -119,7 +121,7 @@ function	script	EinTower	{
 	switch(select("我要了望台门票:我要苹果套餐:取消")) {
 	case 1:
 		if (Zeny < 10) {
-			mes "[" + getarg(0) + "]";
+			mes "[" + .@npc_name$ + "]";
 			mes "抱歉,";
 			mes "你没有带够 Zeny.";
 			mes "艾音布罗克";
@@ -128,7 +130,7 @@ function	script	EinTower	{
 			close;
 		}
 		else {
-			mes "[" + getarg(0) + "]";
+			mes "[" + .@npc_name$ + "]";
 			mes "谢谢您";
 			mes "使用服务.";
 			mes "那么我就直接";
@@ -140,14 +142,14 @@ function	script	EinTower	{
 		}
 	case 2:
 		if (Zeny < 20) {
-			mes "[" + getarg(0) + "]";
+			mes "[" + .@npc_name$ + "]";
 			mes "抱歉,";
 			mes "你没有带够 zeny.";
 			mes "苹果套餐是 20 zeny.";
 			close;
 		}
 		else {
-			mes "[" + getarg(0) + "]";
+			mes "[" + .@npc_name$ + "]";
 			mes "在引导你进了望台之前";
 			mes "为了旅客的安全,";
 			mes "先进行安全检查";
@@ -155,7 +157,7 @@ function	script	EinTower	{
 			mes "才会给你苹果套餐.";
 			next;
 			if (checkweight(512,1)) {
-				mes "[" + getarg(0) + "]";
+				mes "[" + .@npc_name$ + "]";
 				mes "谢谢您";
 				mes "使用服务.";
 				mes "那么我就直接";
@@ -167,7 +169,7 @@ function	script	EinTower	{
 				end;
 			}
 			else {
-				mes "[" + getarg(0) + "]";
+				mes "[" + .@npc_name$ + "]";
 				mes "很抱歉, 你携带了太多物品.";
 				mes "在购买苹果套餐前,";
 				mes "请利用卡普拉仓库服务存放过多的物品.";
@@ -175,7 +177,7 @@ function	script	EinTower	{
 			}
 		}
 	case 3:
-		mes "[" + getarg(0) + "]";
+		mes "[" + .@npc_name$ + "]";
 		mes "我知道了.";
 		mes "欢迎您";
 		mes "随时过来";

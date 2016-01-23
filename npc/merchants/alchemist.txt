@@ -136,19 +136,22 @@ alde_alche,24,188,3	script	公会销售员	740,{
 	}
 
 S_SellManual:
-	if (Zeny < getarg(1)) {
+	.@item_id = getarg(0);
+	.@zeny_req = getarg(1);
+
+	if (Zeny < .@zeny_req) {
 		mes "[葛伯 纱普]";
 		mes "金额不足噢";
 		mes "请确认一下所携带的金额";
 		close;
 	}
 	mes "[葛伯 纱普]";
-	mes ""+getitemname(getarg(0))+"?";
-	mes "购买这本说明书需要 "+getarg(1)+" zeny.";
+	mes ""+getitemname(.@item_id)+"?";
+	mes "购买这本说明书需要 "+.@zeny_req+" zeny.";
 	next;
 	if (select("确定购买:不买了") == 1) {
-		set Zeny, Zeny-getarg(1);
-		getitem getarg(0),1;
+		set Zeny, Zeny-.@zeny_req;
+		getitem .@item_id,1;
 		mes "[葛伯 纱普]";
 		mes "谢谢惠顾~";
 		mes "愿你做出实用的药";

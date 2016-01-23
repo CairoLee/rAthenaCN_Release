@@ -254,16 +254,20 @@
 }
 
 function	script	Func_Socket	{
+	.@item_id = getarg(0);
+	.@zeny_req = getarg(4);
+	setarray .@item_req[0], getarg(5), getarg(7,0);
+	setarray .@req_amount[0], getarg(6), getarg(8,0);
 
 	disable_items;
 	mes "[世雅布莲]";
-	mes "您想要尝试为 "+ getitemname(getarg(0))+ " 打孔对么?";
+	mes "您想要尝试为 "+ getitemname(.@item_id)+ " 打孔对么?";
 	mes "好吧, 那么请带给我";
-	mes "^FF0000" + getarg(6) + " 个 " + getitemname(getarg(5)) + (getarg(6) > 1 && getarg(5) != 999 ? "":"") + "^000000, " + (getarg(7,0) != 0 && getarg(8,0) != 0 ? ("^FF0000" + getarg(8,0) + " " + getitemname(getarg(7,0)) + (getarg(8,0) > 1 && getarg(7,0) != 999 ? "":"") + "^000000 ") : "") + "和 ^FF0000" + (getarg(4) >= 1000 ? (getarg(4)/1000 + ",000") : getarg(4)) + ",000 手续费^000000. ";
-	mes "对了, 别忘记带上要打孔的 " + getitemname(getarg(0)) + "!";
+	mes "^FF0000"+ .@req_amount[0] +" "+ getitemname(.@item_req[0]) + (.@req_amount[0] > 1 && .@item_req[0] != 999 ? "":"") +"^000000, "+ (.@item_req[1] != 0 && .@req_amount[1] != 0 ? ("^FF0000"+ .@req_amount[1] +" "+ getitemname(.@item_req[1]) + (.@req_amount[1] > 1 && .@item_req[1] != 999 ? "":"") + "^000000 ") : "") + "和我 ^FF0000" + (.@zeny_req >= 1000 ? (.@zeny_req /1000 +",000") : .@zeny_req) +",000 zeny^000000 服务费.";
+	mes "对了, 别忘记带上要打孔的 " + getitemname(.@item_id) + "!";
 	next;
 	mes "[世雅布莲]";
-	if (getiteminfo(getarg(0),5)&2) // EQP_HAND_R = 2, it's a weapon
+	if (getiteminfo(.@item_id,5)&2) // EQP_HAND_R = 2, it's a weapon
 	{
 		mes "如果您准备了我需要的物品和费用, 我会尝试在您的武器上打孔.";
 		mes "在那之前, 我必须告诉您相关的风险.";
@@ -284,7 +288,7 @@ function	script	Func_Socket	{
 	switch(select("继续尝试打孔:取消"))
 	{
 		case 1:
-			if ((Zeny >= getarg(4)*1000) && (countitem(getarg(5)) >= getarg(6)) && (countitem(getarg(7,512)) >= getarg(8,0)) && (countitem(getarg(0)) > 0)) // if there's no getarg(7) and getarg(8) provided, check itemcount against 0 (we still need a valid item ID though)
+			if ((Zeny >= .@zeny_req*1000) && countitem(.@item_req[0]) >= .@req_amount[0] && countitem(getarg(7,512)) >= .@req_amount[1] && countitem(.@item_id) > 0)// if there's no getarg(7) and getarg(8) provided, check itemcount against 0 (we still need a valid item ID though)
 			{
 				mes "[世雅布莲]";
 				mes "好吧, 我开始工作了!";
@@ -297,11 +301,11 @@ function	script	Func_Socket	{
 					mes "[世雅布莲]";
 					mes "太好了, 成功了.";
 					mes "它看起来非常完美. 恭喜您!";
-					delitem getarg(0),1;
-					delitem getarg(5),getarg(6);
-					if (getarg(7,0) != 0 && getarg(8,0) != 0)
-						delitem getarg(7),getarg(8);
-					set Zeny, Zeny - getarg(4)*1000;
+					delitem .@item_id,1;
+					delitem .@item_req[0],.@req_amount[0];
+					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
+						delitem .@item_req[1],.@req_amount[1];
+					Zeny = Zeny - .@zeny_req *1000;
 					getitem getarg(1),1;
 					next;
 					mes "[世雅布莲]";
@@ -316,11 +320,11 @@ function	script	Func_Socket	{
 					mes "不过, 我是完全无辜的.";
 					mes "这是您的运气, 以及上帝的安排, 明白吗?";
 					mes "别那么失望, 下次再来试试吧.";
-					delitem getarg(0),1;
-					delitem getarg(5),getarg(6);
-					if (getarg(7,0) != 0 && getarg(8,0) != 0)
-						delitem getarg(7),getarg(8);
-					set Zeny, Zeny - getarg(4)*1000;
+					delitem .@item_id,1;
+					delitem .@item_req[0],.@req_amount[0];
+					if (.@item_req[1] != 0 && .@req_amount[1] != 0)
+						delitem .@item_req[1],.@req_amount[1];
+					Zeny = Zeny - .@zeny_req *1000;
 					next;
 					mes "[世雅布莲]";
 					mes "我祝您下次能有好运气!";

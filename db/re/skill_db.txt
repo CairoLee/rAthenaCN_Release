@@ -890,7 +890,7 @@
 // RK Rune Knight
 2001,0,6,4,0,0x1,0,5,1,yes,0,0,0,none,0,0x0,	RK_ENCHANTBLADE,Enchant Blade
 2002,7:8:9:10:11,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0x0,	RK_SONICWAVE,Sonic Wave
-2003,0,6,4,0,0x1,0,10,1,no,0,0,0,weapon,0,0x0,	RK_DEATHBOUND,Death Bound
+2003,0,6,4,0,0x1,0,10,1,no,0,0,0,weapon,3,0x0,	RK_DEATHBOUND,Death Bound
 2004,5,8,1,-1,0,0,10,-5,no,0,0,0,weapon,0,0x20000,	RK_HUNDREDSPEAR,Hundred Spear
 2005,1,6,2,4,0x2,2,5,1,no,0,0,0,weapon,3,0x0,	RK_WINDCUTTER,Wind Cutter
 2006,0,6,4,-1,0x2,5,5,1,no,0,0,0,weapon,0,0x0,	RK_IGNITIONBREAK,Ignition Break
@@ -1069,7 +1069,7 @@
 2301,7,6,2,0,0x1,0,3,1,yes,0,0x20000,0,magic,0,0x0,	SC_CHAOSPANIC,Chaos Panic
 2302,7,6,2,0,0x1,0,3,1,yes,0,0x20000,1,magic,0,0x0,	SC_MAELSTROM,Maelstrom
 2303,7,6,2,0,0x1,0,3,1,yes,0,0,0,none,0,0x0,	SC_BLOODYLUST,Bloody Lust
-2304,0,6,4,-1,0,0,3,1,no,0,0,0,weapon,0,0x0,	SC_FEINTBOMB,Feint Bomb
+2304,0,6,4,-1,0,0,3,1,no,0,0,0,weapon,3:6:9,0x0,	SC_FEINTBOMB,Feint Bomb
 
 //****
 // LG Royal Guard
@@ -1197,7 +1197,7 @@
 2474,0,0,0,0,0,0,5,0,no,0,0,0,none,0,0x0,		GN_TRAINING_SWORD,Sword Training
 2475,0,0,0,0,0,0,5,0,no,0,0,0,none,0,0x0,		GN_REMODELING_CART,Cart Remodeling
 2476,0,6,4,-1,0x2,2,5,1,no,0,0,0,weapon,2,0x0,	GN_CART_TORNADO,Cart Tornado
-2477,7:8:9:10:11,6,1,-1,0x2,1:1:2:2:3,5,1,yes,0,0,0,weapon,0,0x0,	GN_CARTCANNON,Cart Cannon
+2477,7:8:9:10:11,6,1,-1,0x42,1:1:2:2:3,5,1,yes,0,0,0,weapon,0,0x0,	GN_CARTCANNON,Cart Cannon
 2478,0,6,4,0,0x1,0,5,1,yes,0,0,0,none,0,0x0,	GN_CARTBOOST,Cart Boost
 2479,9,6,2,0,0,0,5,1,yes,0,0x80,3,misc,0,0x0,	GN_THORNS_TRAP,Thorn Trap
 2480,11,6,1,0,0x1,0,5,1,yes,0,0,3,misc,0,0x0,		GN_BLOOD_SUCKER,Blood Sucker //CHECK Data says its a magic attack. Hmmmm....
@@ -1320,7 +1320,7 @@
 5007,0,6,4,0,0x3,5:6:7:8:9,5,1,no,0,0,0,none,0,0x0, WM_FRIGG_SONG,Frigg's Song
 5008,0,6,4,0,0x3,11,5,1,no,0,0,0,none,0,0x0, SO_ELEMENTAL_SHIELD,Elemental Shield
 5009,1,6,1,0,0x1,0,5,1,no,0,0,0,none,0,0x0, SR_FLASHCOMBO,Flash Combo
-5010,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x0, SC_ESCAPE,Emergency Escape
+5010,0,6,4,0,0x1,0,5,1,no,0,0,0,none,4:5:6:7:8:9,0x0, SC_ESCAPE,Emergency Escape
 5011,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x0, AB_OFFERTORIUM,Offertorium
 5012,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x0, WL_TELEKINESIS_INTENSE,Intense Telekinesis
 5013,0,6,4,0,0x3,0,5,1,no,0,0,0,none,0,0x0, LG_KINGS_GRACE,King's Grace

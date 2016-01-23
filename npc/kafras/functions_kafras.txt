@@ -82,8 +82,11 @@
 //==========================================================================
 function	script	F_Kafra	{
 	callfunc "F_ClearGarbage"; // Clear outdated, unused variables
+	.@welcome = getarg(0);
+	.@menu_num = getarg(1);
+
 	// Display Kafra Welcome Message
-	switch(getarg(0)){
+	switch(.@welcome){
 		default:
 		case 0:
 			// Default message (obsolete)
@@ -127,11 +130,11 @@ function	script	F_Kafra	{
 	while (1) {
 		next;
 		deletearray @K_Menu0$[0],getarraysize(@K_Menu0$);
-		if (getarg(0) == 2) {
+		if (.@welcome == 2) {
 			// Guild Kafra Menu override (free Teleport, free Storage, Free Cart)
 			setarray @K_Menu0$[0],"使用仓库","公会仓库","租用手推车","传送服务","结束对话";
 		} else {
-			switch(getarg(1)){
+			switch(.@menu_num){
 				// Save and Storage only
 				case 1:	setarray @K_Menu0$[0],"储存服务","使用仓库","公会仓库","结束对话"; break;
 				// Storage only
@@ -163,13 +166,13 @@ function	script	F_Kafra	{
 			return;
 		} else if (@K_Menu0$[.@j] == "使用仓库") {
 			// Do not charge for Guild Storage
-			if(getarg(0) == 2) 
+			if(.@welcome == 2) 
 				callfunc "F_KafStor",2,0,0;
 			else 
-				callfunc "F_KafStor",0,getarg(3),getarg(0);
+				callfunc "F_KafStor",0,getarg(3),.@welcome;
 		} else if (@K_Menu0$[.@j] == "传送服务") {
 			// Display Einbroch "No Teleport Service" notice.
-			if(getarg(1) != 4) callfunc "F_KafTele",getarg(0);
+			if(.@menu_num != 4) callfunc "F_KafTele",.@welcome;
 			else {
 				mes "[卡普拉 职员]";
 				mes "由于卡普拉公司与秀发兹发德共和国";
@@ -181,11 +184,11 @@ function	script	F_Kafra	{
 				mes "感谢您的理解与支持。";
 			}
 		} else if (@K_Menu0$[.@j] == "租用手推车") {
-			callfunc "F_KafCart",getarg(0),getarg(4);
+			callfunc "F_KafCart",.@welcome,getarg(4);
 		} else if (@K_Menu0$[.@j] == "查询其他信息") {
 			callfunc "F_KafInfo",getarg(2);
 		} else if (@K_Menu0$[.@j] == "结束对话"){
-			callfunc "F_KafEnd",getarg(0),0;
+			callfunc "F_KafEnd",.@welcome,0;
 			end;
 		} else if (@K_Menu0$[.@j] == "公会仓库") {
 			callfunc "F_KafStor",1,0;
@@ -197,8 +200,11 @@ function	script	F_Kafra	{
 // Storage Function
 //===================================================
 function	script	F_KafStor	{
+	.@type = getarg(0);
+	.@fee = getarg(1);
+
 	// Unable to access Guild Storage (Busy)
-	if(getarg(0) == 1){
+	if(.@type == 1){
 		switch(guildopenstorage()){
 			case 0:
 				mes "[卡普拉 职员]";
@@ -236,11 +242,11 @@ function	script	F_KafStor	{
 		return;
 	}
 	// Accessing Normal Storage (Skipped if accessing Storage from Guild castle)
-	if(getarg(0) != 2){
+	if(.@type != 2){
 		// Consume "Free Ticket for Kafra Storage" if available.
 		if(countitem(7059)) delitem 7059,1;
 		else {
-			if(Zeny<getarg(1)){
+			if(Zeny<.@fee){
 				mes "[卡普拉 职员]";
 				// Niflheim Specific Message
 				if (getarg(2) == 1) {
@@ -253,16 +259,16 @@ function	script	F_KafStor	{
 				}
 				// Standard Message
 				mes "很抱歉，您没有足够的金币来使用仓库服务，";
-				mes "访问仓库至少需要 "+getarg(1)+" Zeny.";
+				mes "访问仓库至少需要 "+.@fee+" Zeny.";
 				return;
 			}
-			set Zeny, Zeny-getarg(1);
-			set RESRVPTS, RESRVPTS + (getarg(1)/5);
+			set Zeny, Zeny-.@fee;
+			set RESRVPTS, RESRVPTS + (.@fee/5);
 		}
 	}
 
 	// Surpress the "End" message if in guild castle.
-	if (getarg(0) != 2) {
+	if (.@type != 2) {
 		// Niflheim specific Message
 		if (getarg(2) == 1) {
 			percentheal 0,-10;
@@ -521,14 +527,17 @@ function	script	F_CheckKafCode	{
 // getarg(1): Company Name
 //=======================================================
 function	script	F_SetKafCode	{
-	mes getarg(0);
+	.@npc_name$ = getarg(0);
+	.@comp_name$ = getarg(1);
+
+	mes .@npc_name$;
 	if(#kafra_code) {
 		mes "您曾经申请过使用密码保护仓库的服务。";
 		mes "请问现在想要做什么事情呢？";
 		next;
 		switch (select("修改仓库密码 -> 5000z:取消仓库密码 -> 1000z:结束对话")) {
 			case 1:
-				mes getarg(0);
+				mes .@npc_name$;
 				mes "首先，请输入您的 ^0000FF旧密码(现有密码)^000000.";
 				set @code,callfunc("F_EntKafCode");
 				if(!@code || @code != #kafra_code) {
@@ -537,10 +546,10 @@ function	script	F_SetKafCode	{
 					break;
 				}
 				next;
-				callsub S_SET,getarg(0),getarg(1);
+				callsub S_SET,.@npc_name$,.@comp_name$;
 				break;
 			case 2:
-				mes getarg(0);
+				mes .@npc_name$;
 				mes "在取消仓库密码之前，";
 				mes "请输入之前设定的密码来确认您的身份。";
 				mes "==============================";
@@ -551,7 +560,7 @@ function	script	F_SetKafCode	{
 					break;
 				}
 				next;
-				mes getarg(0);
+				mes .@npc_name$;
 				if(Zeny < 1000) {
 					mes "您没有足够的钱用来取消仓库密码！";
 					emotion e_cash;
@@ -561,7 +570,7 @@ function	script	F_SetKafCode	{
 				if(@code == #kafra_code) {
 					set #kafra_code,0;
 					mes "您的仓库密码已经移除";
-					mes "感谢您的使用。";
+					mes "感谢您使用"+.@comp_name$+"的服务。";
 					emotion e_thx;
 				} else {
 					mes "密码错误！";
@@ -574,20 +583,20 @@ function	script	F_SetKafCode	{
 				break;
 		}
 	} else {
-		mes getarg(1)+"现已经推出全新服务：";
+		mes .@comp_name$+"现已经推出全新服务：";
 		mes "^0000FF使用密码来加强仓库的安全性^000000";
 		next;
 		switch (select("设置一个新密码 -> 5000z:结束对话")) {
-			case 1: callsub S_SET,getarg(0),getarg(1); break;
+			case 1: callsub S_SET,.@npc_name$,.@comp_name$; break;
 			case 2: 
-				mes getarg(0);
-				mes "呀嘞，你不想用吗？";
-				mes "设定好密码后，就算游戏密码被坏蛋";
-				mes "知道，坏蛋也拿不走仓库的东西哟！";
+				mes .@npc_name$;
+				mes "您真的不想用吗？";
+				mes "设定好仓库密码后就算游戏账号被盗，";
+				mes "坏蛋也拿不走仓库的东西哟！";
 				close2;
 				cutin "", 255;
 				end;
-			break;		
+			break;
 		}
 	}
 	close2;
@@ -595,7 +604,7 @@ function	script	F_SetKafCode	{
 	end;
 
 S_SET:
-	mes getarg(0);
+	mes .@npc_name$;
 	mes "现在，我们来设定^FF0000新密码^000000以便保护仓库！";
 	set @code,callfunc("F_EntKafNewCode");
 	if(!@code) {
@@ -604,7 +613,7 @@ S_SET:
 		return;
 	}
 	next;
-	mes getarg(0);
+	mes .@npc_name$;
 	if(Zeny < 5000) {
 		mes "您没有足够的金钱！";
 		emotion e_cash;
@@ -612,8 +621,8 @@ S_SET:
 	}
 	set Zeny,Zeny-5000;
 	set #kafra_code,@code;
-	mes "您的仓库已经启用了密码保护功能！";
-	mes "感谢您的使用。";
+	mes "您的仓库密码已启用！";
+	mes "感谢您使用"+.@comp_name$+"的服务。";
 	emotion e_thx;
 	return;
 }

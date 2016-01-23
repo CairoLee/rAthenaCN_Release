@@ -77,18 +77,22 @@ payon_in01,5,134,5	script	发明家 钦斯	89,{
 	//close;
 
 S_BuyQuiver:
-	if (countitem(getarg(0)) >= getarg(1)) {
+	.@item_id = getarg(0);
+	.@amount = getarg(1);
+	.@zeny_req = getarg(2);
+
+	if (countitem(.@item_id) >= .@amount) {
 		mes "[发明家 钦斯]";
 		mes "好极了!";
-		mes "你携带了什么箭矢? 我会给你一个箭矢筒，可以携带 "+getarg(1)+" 个 "+getitemname(getarg(0))+"！";
-		mes "不过需要手续费 ^FF3131"+getarg(2)+" Zeny^000000.";
+		mes "你携带了什么箭矢? 我会给你一个箭矢筒，可以携带 "+.@amount+" 个 "+getitemname(.@item_id)+"！";
+		mes "不过需要手续费 ^FF3131"+.@zeny_req+" Zeny^000000.";
 		next;
 		switch(select("我想尽可能多的换成箭矢筒:只换一个箭矢筒:取消")) {
 		case 1:
-			set .@arrows,countitem(getarg(0));
-			set .@quiver,.@arrows / getarg(1);
-			set .@arrows_used,.@quiver * getarg(1);
-			set .@arrow_zeny01,.@quiver * getarg(2);
+			.@arrows = countitem(.@item_id);
+			set .@quiver,.@arrows / .@amount;
+			set .@arrows_used,.@quiver * .@amount;
+			.@arrow_zeny01 = .@quiver * .@zeny_req;
 			mes "你一共拥有 ^3131FF"+.@arrows+"^000000 个箭矢";
 			mes "最多可以换 ^3131FF"+.@quiver+"^000000 个箭矢筒";
 			mes "总共需要手续费: ^3131FF"+.@arrow_zeny01+" Zeny^000000";
@@ -102,7 +106,7 @@ S_BuyQuiver:
 					mes "这是你的箭矢筒，请收好！";
 					mes "另外请记住  ^FF0000你身上的负重量超过最大负重限额达到90%的话，就不能使用箭矢筒^000000.";
 					set Zeny, Zeny-.@arrow_zeny01;
-					delitem getarg(0),.@arrows_used; //Arrow
+					delitem .@item_id,.@arrows_used;// Arrow
 					getitem getarg(3),.@quiver; //Quiver
 					next;
 					mes "[发明家 钦斯]";
@@ -122,12 +126,12 @@ S_BuyQuiver:
 			mes "就差一步，你就能享受这世上最犀利的发明给你带来的便利...";
 			close;
 		case 2:
-			if (Zeny > getarg(2)) {
+			if (Zeny > .@zeny_req) {
 				mes "[发明家 钦斯]";
 				mes "这是你的箭矢筒，请收好！";
 				mes "另外请记住 ^FF0000你身上的负重量超过最大负重限额达到90%的话，就不能使用箭矢筒^000000.";
-				set Zeny, Zeny-getarg(2);
-				delitem getarg(0),getarg(1); //Arrow
+				Zeny = Zeny -.@zeny_req;
+				delitem .@item_id,.@amount;// Arrow
 				getitem getarg(3),1; //Quiver
 				next;
 				mes "[发明家 钦斯]";
@@ -137,7 +141,7 @@ S_BuyQuiver:
 			}
 			else {
 				mes "[发明家 钦斯]";
-				mes "你甚至没有" + getarg(2)+" Zeny?";
+				mes "你甚至连" + .@zeny_req +" Zeny 都没有?";
 				mes "很抱歉，我没有想到你会那么...";
 				mes "^333333贫困^000000.";
 				close;
@@ -151,11 +155,11 @@ S_BuyQuiver:
 	}
 	else {
 		mes "[发明家 钦斯]";
-		mes "你可以可以最多放"+getarg(1)+"支箭在箭筒里. 这是我用特殊秘方制作的,";
+		mes "你可以可以最多放"+.@amount+"支箭在箭筒里. 这是我用特殊秘方制作的,";
 		mes "所以使用箭矢筒的重量要比直接拿箭矢轻的多.";
 		next;
 		mes "[发明家 钦斯]";
-		mes "这是一个科学的奇迹! 你可以带"+getarg(1)+"支箭和"+getarg(2)+"Zeny 来和我交换一个箭矢筒，来体验一下吧";
+		mes "这是一个科学的奇迹! 你可以带"+.@amount+"支箭和"+.@zeny_req+"Zeny 来和我交换一个箭矢筒，来体验一下吧";
 		close;
 	}
 }
