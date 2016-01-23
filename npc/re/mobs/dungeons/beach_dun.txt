@@ -24,25 +24,25 @@
 //==================================================
 // beach_dun - Karu, the West cave 
 //==================================================
-beach_dun,0,0,0,0	monster	Medusa	1148,60,5000,0,0
-beach_dun,0,0,0,0	monster	Nereid	1255,20,5000,0,0
-beach_dun,0,0,0,0	monster	Pest	1256,20,5000,0,0
-beach_dun,0,0,0,0	monster	Merman	1264,3,5000,0,0
-beach_dun,0,0,0,0	boss_monster	Tao Gunka	1583,1,18000000,600000,0
+beach_dun,0,0,0,0	monster	Ã×¶ÅÉ³	1148,60,5000,0,0
+beach_dun,0,0,0,0	monster	ÄÎÀû³æ	1255,20,5000,0,0
+beach_dun,0,0,0,0	monster	µ¥ÑÛ³æ	1256,20,5000,0,0
+beach_dun,0,0,0,0	monster	ÈËÓãÊ¿±ø	1264,3,5000,0,0
+beach_dun,0,0,0,0	boss_monster	Ëş°ÂÈº¿¨	1583,1,18000000,600000,0
 
 //==================================================
 // beach_dun2 - Ruande the northern cave 
 //==================================================
-beach_dun2,0,0,0,0	monster	Stalactic Golem	1278,65,5000,0,0
-beach_dun2,0,0,0,0	monster	Tri Joint	1279,20,5000,0,0
-beach_dun2,0,0,0,0	monster	Megalith	1274,15,5000,0,0
-beach_dun2,0,0,0,0	monster	Hydra	1068,10,5000,0,0
-beach_dun2,0,0,0,0	monster	Nereid	1255,3,5000,0,0
+beach_dun2,0,0,0,0	monster	ÖÓÈé¾ŞÊ¯¹Ö	1278,65,5000,0,0
+beach_dun2,0,0,0,0	monster	ÈıÒ¶³æ	1279,20,5000,0,0
+beach_dun2,0,0,0,0	monster	Ğ°¶ñÄ¦°¬	1274,15,5000,0,0
+beach_dun2,0,0,0,0	monster	º£¿û	1068,10,5000,0,0
+beach_dun2,0,0,0,0	monster	ÄÎÀû³æ	1255,3,5000,0,0
 
 //==================================================
 // beach_dun3 - Mao, the East Cave 
 //==================================================
-beach_dun3,0,0,0,0	monster	Thara Frog	1034,50,5000,0,0
-beach_dun3,0,0,0,0	monster	Megalodon	1064,30,5000,0,0
-beach_dun3,0,0,0,0	monster	Hydra	1068,30,5000,0,0
-beach_dun3,0,0,0,0	monster	Nereid	1255,1,5000,0,0
+beach_dun3,0,0,0,0	monster	´ïÀ­ÍÜ	1034,50,5000,0,0
+beach_dun3,0,0,0,0	monster	Ğ°º¡Ê³ÈËÓã	1064,30,5000,0,0
+beach_dun3,0,0,0,0	monster	º£¿û	1068,30,5000,0,0
+beach_dun3,0,0,0,0	monster	ÄÎÀû³æ	1255,1,5000,0,0

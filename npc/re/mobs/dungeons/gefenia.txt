@@ -25,55 +25,55 @@
 //==================================================
 // gefenia01 - Geffenia
 //==================================================
-gefenia01,0,0,0,0	monster	False Angel	1371,60,5000,0,0
-gefenia01,0,0,0,0	monster	Violy	1390,30,5000,0,0
-gefenia01,0,0,0,0	monster	Mini Demon	1292,20,5000,0,0
-gefenia01,0,0,0,0	monster	Abysmal Knight	1219,10,5000,0,0
-gefenia01,0,0,0,0	monster	Incubus	1374,10,5000,0,0
-gefenia01,0,0,0,0	monster	Succubus	1370,10,5000,0,0
-gefenia01,0,0,0,0	monster	Bloody Knight	1268,1,3600000,3000000,0
-gefenia01,0,0,0,0	monster	Mysteltainn	1203,1,10800000,7200000,0
-gefenia01,0,0,0,0	monster	Executioner	1205,1,18000000,14400000,0
-gefenia01,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
+gefenia01,0,0,0,0	monster	Î±ÌìÊ¹	1371,60,5000,0,0
+gefenia01,0,0,0,0	monster	Ş±Å·Àò	1390,30,5000,0,0
+gefenia01,0,0,0,0	monster	¿ñ±©Ğ¡¶ñÄ§	1292,20,5000,0,0
+gefenia01,0,0,0,0	monster	ÉîÔ¨ÆïÊ¿	1219,10,5000,0,0
+gefenia01,0,0,0,0	monster	¶ñÄ§ÊÌÕß	1374,10,5000,0,0
+gefenia01,0,0,0,0	monster	¶ñÄ§Å®ÆÍ	1370,10,5000,0,0
+gefenia01,0,0,0,0	monster	ÑªĞÈÆïÊ¿	1268,1,3600000,3000000,0
+gefenia01,0,0,0,0	monster	ß±ÉñÕß	1203,1,10800000,7200000,0
+gefenia01,0,0,0,0	monster	ĞĞĞÌÕß	1205,1,18000000,14400000,0
+gefenia01,0,0,0,0	monster	ÊŞÑÀ¹Ö	1204,1,18000000,14400000,0
 
 //==================================================
 // gefenia02 - Geffenia
 //==================================================
-gefenia02,0,0,0,0	monster	Violy	1390,40,5000,0,0
-gefenia02,0,0,0,0	monster	Mini Demon	1292,30,5000,0,0
-gefenia02,0,0,0,0	monster	False Angel	1371,30,5000,0,0
-gefenia02,0,0,0,0	monster	Succubus	1370,20,5000,0,0
-gefenia02,0,0,0,0	monster	Abysmal Knight	1219,10,5000,0,0
-gefenia02,0,0,0,0	monster	Incubus	1374,10,5000,0,0
-gefenia02,0,0,0,0	monster	Bloody Knight	1268,1,3600000,3000000,0
-gefenia02,0,0,0,0	monster	Ogretooth	1204,1,10800000,7200000,0
-gefenia02,0,0,0,0	monster	Mysteltainn	1203,1,18000000,14400000,0
-gefenia02,0,0,0,0	monster	Executioner	1205,1,18000000,14400000,0
+gefenia02,0,0,0,0	monster	Ş±Å·Àò	1390,40,5000,0,0
+gefenia02,0,0,0,0	monster	¿ñ±©Ğ¡¶ñÄ§	1292,30,5000,0,0
+gefenia02,0,0,0,0	monster	Î±ÌìÊ¹	1371,30,5000,0,0
+gefenia02,0,0,0,0	monster	¶ñÄ§Å®ÆÍ	1370,20,5000,0,0
+gefenia02,0,0,0,0	monster	ÉîÔ¨ÆïÊ¿	1219,10,5000,0,0
+gefenia02,0,0,0,0	monster	¶ñÄ§ÊÌÕß	1374,10,5000,0,0
+gefenia02,0,0,0,0	monster	ÑªĞÈÆïÊ¿	1268,1,3600000,3000000,0
+gefenia02,0,0,0,0	monster	ÊŞÑÀ¹Ö	1204,1,10800000,7200000,0
+gefenia02,0,0,0,0	monster	ß±ÉñÕß	1203,1,18000000,14400000,0
+gefenia02,0,0,0,0	monster	ĞĞĞÌÕß	1205,1,18000000,14400000,0
 
 //==================================================
 // gefenia03 - Geffenia
 //==================================================
-gefenia03,0,0,0,0	monster	False Angel	1371,40,5000,0,0
-gefenia03,0,0,0,0	monster	Violy	1390,40,5000,0,0
-gefenia03,0,0,0,0	monster	Mini Demon	1292,30,5000,0,0
-gefenia03,0,0,0,0	monster	Incubus	1374,20,5000,0,0
-gefenia03,0,0,0,0	monster	Abysmal Knight	1219,10,5000,0,0
-gefenia03,0,0,0,0	monster	Succubus	1370,10,5000,0,0
-gefenia03,0,0,0,0	monster	Bloody Knight	1268,1,3600000,3000000,0
-gefenia03,0,0,0,0	monster	Executioner	1205,1,10800000,7200000,0
-gefenia03,0,0,0,0	monster	Mysteltainn	1203,1,18000000,14400000,0
-gefenia03,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
+gefenia03,0,0,0,0	monster	Î±ÌìÊ¹	1371,40,5000,0,0
+gefenia03,0,0,0,0	monster	Ş±Å·Àò	1390,40,5000,0,0
+gefenia03,0,0,0,0	monster	¿ñ±©Ğ¡¶ñÄ§	1292,30,5000,0,0
+gefenia03,0,0,0,0	monster	¶ñÄ§ÊÌÕß	1374,20,5000,0,0
+gefenia03,0,0,0,0	monster	ÉîÔ¨ÆïÊ¿	1219,10,5000,0,0
+gefenia03,0,0,0,0	monster	¶ñÄ§Å®ÆÍ	1370,10,5000,0,0
+gefenia03,0,0,0,0	monster	ÑªĞÈÆïÊ¿	1268,1,3600000,3000000,0
+gefenia03,0,0,0,0	monster	ĞĞĞÌÕß	1205,1,10800000,7200000,0
+gefenia03,0,0,0,0	monster	ß±ÉñÕß	1203,1,18000000,14400000,0
+gefenia03,0,0,0,0	monster	ÊŞÑÀ¹Ö	1204,1,18000000,14400000,0
 
 //==================================================
 // gefenia04 - Geffenia
 //==================================================
-gefenia04,0,0,0,0	monster	False Angel	1371,30,5000,0,0
-gefenia04,0,0,0,0	monster	Violy	1390,30,5000,0,0
-gefenia04,0,0,0,0	monster	Mini Demon	1292,20,5000,0,0
-gefenia04,0,0,0,0	monster	Abysmal Knight	1219,10,5000,0,0
-gefenia04,0,0,0,0	monster	Incubus	1374,10,5000,0,0
-gefenia04,0,0,0,0	monster	Succubus	1370,10,5000,0,0
-gefenia04,0,0,0,0	monster	Bloody Knight	1268,1,3600000,3000000,0
-gefenia04,0,0,0,0	monster	Mysteltainn	1203,1,18000000,14400000,0
-gefenia04,0,0,0,0	monster	Executioner	1205,1,18000000,14400000,0
-gefenia04,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
+gefenia04,0,0,0,0	monster	Î±ÌìÊ¹	1371,30,5000,0,0
+gefenia04,0,0,0,0	monster	Ş±Å·Àò	1390,30,5000,0,0
+gefenia04,0,0,0,0	monster	¿ñ±©Ğ¡¶ñÄ§	1292,20,5000,0,0
+gefenia04,0,0,0,0	monster	ÉîÔ¨ÆïÊ¿	1219,10,5000,0,0
+gefenia04,0,0,0,0	monster	¶ñÄ§ÊÌÕß	1374,10,5000,0,0
+gefenia04,0,0,0,0	monster	¶ñÄ§Å®ÆÍ	1370,10,5000,0,0
+gefenia04,0,0,0,0	monster	ÑªĞÈÆïÊ¿	1268,1,3600000,3000000,0
+gefenia04,0,0,0,0	monster	ß±ÉñÕß	1203,1,18000000,14400000,0
+gefenia04,0,0,0,0	monster	ĞĞĞÌÕß	1205,1,18000000,14400000,0
+gefenia04,0,0,0,0	monster	ÊŞÑÀ¹Ö	1204,1,18000000,14400000,0

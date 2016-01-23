@@ -68,10 +68,47 @@ OnMvpKillEvent:
 end;
 }
 
--	script	PC_HOM_LVUP_EVENT	-1,{
+-	script	HOMUNCULUS_EVENT	-1,{
 end;
 OnPCHomLvUpEvent:
+	// OnPCHomLvUpEvent 是与玩家关联的(关联到生命体的主人)
+	// 当玩家的人工生命体升级之后，此事件会被触发
+	// -------------------------------------------------------
+	
 	dispbottom "[事件演示] OnPCHomLvUpEvent | " + strcharinfo(0) + " 的人工生命体升级了！";
+	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+end;
+OnHomCallEvent:
+	// OnHomCallEvent 是与玩家关联的(关联到生命体的主人)
+	// 当玩家召唤出人工生命体之后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnHomCallEvent | " + strcharinfo(0) + " 召唤了人工生命体！";
+	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+end;
+OnHomRestEvent:
+	// OnHomRestEvent 是与玩家关联的(关联到生命体的主人)
+	// 当玩家将人工生命体安息之后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnHomRestEvent | " + strcharinfo(0) + " 的人工生命体安息了！";
+	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+end;
+OnHomDeadEvent:
+	// OnHomDeadEvent 是与玩家关联的(关联到生命体的主人)
+	// 当玩家的人工生命体死亡之后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnHomDeadEvent | " + strcharinfo(0) + " 的人工生命体死亡了！";
+	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
+end;
+OnHomWakeEvent:
+	// OnHomWakeEvent 是与玩家关联的(关联到生命体的主人)
+	// 当玩家复活人工生命体之后，此事件会被触发
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnHomWakeEvent | " + strcharinfo(0) + " 的人工生命体复活了！";
+	dispbottom "[详细信息] 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 }
 

@@ -2,31 +2,43 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.1.2(2015-10-30)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/ea497b2938e51a526438f78aa6fc4de43af5cc23
+[新增] 添加4个和人工生命体相关的事件，包括召唤、安息、死亡、复活
+[调整] 关闭NPC超时检测机制，避免玩猜数字等游戏等太久NPC自动关闭的问题
+[调整] 调整“角色服务器配置文件”的一些注释结果
+[汉化] 自动汉化所有野外魔物召唤文件(npc/mobs | npc/re/mobs | npc/pre-re/mobs)
+[汉化] 完全汉化“兽人的记忆”副本
+[汉化] 完全汉化拍卖行的向导人员和拍卖师
+[汉化] 完全汉化打孔工程师“世雅布莲”
+[汉化] 汉化地图服务器黑框中，关于创建和销毁副本的黑框提示信息
+
 v1.1.1(2015-10-23)
 ------------------
-[同步] rAthena官方Github库，Git Hash: e0b24fc670a3f2a056117746f79b7f90a999dd40
-[新增] 添加“人工生命体升级”事件 OnPCHomLvUpEvent，用法见“事件演示脚本”
-[新增] 添加“穿戴装备”事件 OnPCEquipEvent，用法见“事件演示脚本”
-[新增] 添加“脱下装备”事件 OnPCUnequipEvent，用法见“事件演示脚本”
-[新增] 添加“获得状态”事件 OnPCSCStartEvent，用法见“事件演示脚本”
-[新增] 添加“解除状态”事件 OnPCSCEndEvent，用法见“事件演示脚本”
-[新增] 添加“创建队伍”事件 OnPCPartyCreateEvent，用法见“事件演示脚本”
-[新增] 添加“加入队伍”事件 OnPCPartyJoinEvent，用法见“事件演示脚本”
-[新增] 添加“离开队伍”事件 OnPCPartyLeaveEvent，用法见“事件演示脚本”
-[新增] 添加“创建公会”事件 OnPCGuildCreateEvent，用法见“事件演示脚本”
-[新增] 添加“加入公会”事件 OnPCGuildJoinEvent，用法见“事件演示脚本”
-[新增] 添加“离开公会”事件 OnPCGuildLeaveEvent，用法见“事件演示脚本”
-[新增] 添加“宠物拾取道具”事件 OnPetLootItemEvent，用法见“事件演示脚本”
-[新增] 添加“给宠物喂食”事件 OnPCFeedPet & OnPCFoodPet，用法见“事件演示脚本”
-[新增] 添加“查看其它玩家装备”事件 OnPCViewEquipEvent，用法见“事件演示脚本”
+[同步] rAthena官方Github库，Git Hash：e0b24fc670a3f2a056117746f79b7f90a999dd40
+[新增] 添加“人工生命体升级”事件 OnPCHomLvUpEvent，具体用法请见“事件演示脚本”
+[新增] 添加“穿戴装备”事件 OnPCEquipEvent，具体用法请见“事件演示脚本”
+[新增] 添加“脱下装备”事件 OnPCUnequipEvent，具体用法请见“事件演示脚本”
+[新增] 添加“获得状态”事件 OnPCSCStartEvent，具体用法请见“事件演示脚本”
+[新增] 添加“解除状态”事件 OnPCSCEndEvent，具体用法请见“事件演示脚本”
+[新增] 添加“创建队伍”事件 OnPCPartyCreateEvent，具体用法请见“事件演示脚本”
+[新增] 添加“加入队伍”事件 OnPCPartyJoinEvent，具体用法请见“事件演示脚本”
+[新增] 添加“离开队伍”事件 OnPCPartyLeaveEvent，具体用法请见“事件演示脚本”
+[新增] 添加“创建公会”事件 OnPCGuildCreateEvent，具体用法请见“事件演示脚本”
+[新增] 添加“加入公会”事件 OnPCGuildJoinEvent，具体用法请见“事件演示脚本”
+[新增] 添加“离开公会”事件 OnPCGuildLeaveEvent，具体用法请见“事件演示脚本”
+[新增] 添加“宠物拾取道具”事件 OnPetLootItemEvent，具体用法请见“事件演示脚本”
+[新增] 添加“给宠物喂食”事件 OnPCFeedPet & OnPCFoodPet，具体用法请见“事件演示脚本”
+[新增] 添加“查看其它玩家装备”事件 OnPCViewEquipEvent，具体用法请见“事件演示脚本”
 [新增] 将创建公会时的职位名称提取成配置文件，可在 conf/msg_conf/char_msg_racn.conf 中修改
-[调整] 更新启动管理器 LeeStarter 到 1.0.0.3 版本
 [调整] 将未完全汉化的脚本复制一份到rough目录，为粗糙汉化做准备
 [调整] 默认加载事件演示脚本，若想关闭请编辑 npc/scripts_custom.conf 配置文件
 [汉化] 汉化复兴后版本中，依斯鲁德岛4张镜像地图的“邮件筒”NPC名称
 [汉化] 更新 conf/char_athena.conf 中 char_new_display 选项的说明
-[汉化] 汉化 conf/battle/exp.conf 中关于死亡经验惩罚相关选项的说明
 [汉化] 汉化宠物战斗信息配置文件中的部分选项 conf/battle/pet.conf
+[汉化] 汉化 conf/battle/exp.conf 中关于死亡经验惩罚相关选项的说明
 [汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
 
 v1.1.0(2015-10-16)
@@ -47,7 +59,8 @@ v1.1.0(2015-10-16)
 
 v1.0.9(2015-10-09)
 ------------------
-[同步] rAthena官方Github库，Git Hash: fd7d6c31fdae22ab951b2d8acb86117fc0869b8c
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/fd7d6c31fdae22ab951b2d8acb86117fc0869b8c
 [新增] 可以设置强制触发 OnPCLoadMapEvent 事件 (conf/battle/extend.conf 的 force_loadevent 选项)
 [汉化] 完全汉化位于“hu_in01,381,304”的“猎鹰饲养员”
 [汉化] 完全汉化来往绵绵岛的传送NPC“猫绵绵”、“猫奥克”和“猫豆豆”
@@ -58,7 +71,8 @@ v1.0.9(2015-10-09)
 
 v1.0.8(2015-10-07)
 ------------------
-[同步] rAthena官方Github库，Git Hash: 81662aaceec44b653b1aaaa143ca2e75d51ad54d
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/81662aaceec44b653b1aaaa143ca2e75d51ad54d
 [新增] 可以设置“使用阿修罗霸凰拳时不消耗玩家的SP” (conf/battle/extend.conf 的 extremityfist_no_require_sp 选项)
 [新增] 可以设置“无视使用阿修罗霸凰拳后的SP恢复限制” (conf/battle/extend.conf 的 ignore_extremityfist_sp_limit 选项)
 [新增] 允许单独限制玩家在PVP地图时的攻速 (conf/battle/extend.conf 的 max_aspd_for_pvp 选项)
@@ -74,7 +88,8 @@ v1.0.8(2015-10-07)
 
 v1.0.7(2015-09-25)
 ------------------
-[同步] rAthena官方Github库，Git Hash: 5e18376dc8a84f1f33398aa5db36aacc8b4d9207
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/5e18376dc8a84f1f33398aa5db36aacc8b4d9207
 [升级] 若您不是全新安装的话，请删除以下文件
        - db/quest_db.txt
 [调整] 暂时关闭对官方VIP机制的支持
@@ -87,7 +102,8 @@ v1.0.7(2015-09-25)
 	   
 v1.0.6(2015-09-20)
 ------------------
-[同步] rAthena官方Github库，Git Hash: e46574a12d5a137c9d5423223d392969381c870d
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/e46574a12d5a137c9d5423223d392969381c870d
 [升级] 若您不是全新安装的话，请在您的【日志数据库】上按顺序导入以下sql文件
        - sql-files\upgrades\upgrade_20150917_log.sql
 [汉化] 完全汉化“无尽之塔”副本
@@ -108,7 +124,8 @@ v1.0.5(2015-09-12)
 
 v1.0.4(2015-09-04)
 ------------------
-[同步] rAthena官方Github库，Git Hash: 6295c77d393555fe5a366f092a75f4cf0d2de933
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/6295c77d393555fe5a366f092a75f4cf0d2de933
 [升级] 若您不是全新安装的话，请在您的主数据库上按顺序导入以下两个sql文件
        - sql-files\upgrades\upgrade_20150828.sql
 	   - sql-files\upgrades\upgrade_20150831.sql
@@ -141,7 +158,8 @@ v1.0.3(2015-08-28)
 
 v1.0.2(2015-08-22)
 ------------------
-[同步] rAthena官方Github库，Git Hash: a2e9a8a88c9e2ef93611e64c2cb1f21d4619cd43
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/a2e9a8a88c9e2ef93611e64c2cb1f21d4619cd43
 [新增] 扩展魔物名称能展现的信息，加入体型、种族、属性等
 [修正] 部分汉字无法被用作角色名的问题
 [修正] npc目录中的conf文件里，配置了某个不存在的脚本时，终端不报错的问题
@@ -159,7 +177,8 @@ v1.0.1(2015-08-19)
 
 v1.0.0(2015-08-17)
 ------------------
-[同步] rAthena官方Github库，Git Hash: c4dab3cf92060398a2e31ee3684f05ce59f0bcf7
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/c4dab3cf92060398a2e31ee3684f05ce59f0bcf7
 [新增] 分享rAthenaCN的第一个版本
 [汉化] 卡普拉、邮件筒、飞空艇公告、NPC商店
 [汉化] 部分基础配置文件

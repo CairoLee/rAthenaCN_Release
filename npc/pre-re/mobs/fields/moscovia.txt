@@ -20,9 +20,9 @@
 //==================================================
 // mosk_fild02 - Moscovia Field
 //==================================================
-mosk_fild02,0,0,0,0	monster	Bigfoot	1060,40,0,0,0
-mosk_fild02,0,0,0,0	monster	Caramel	1103,20,0,0,0
-mosk_fild02,0,0,0,0	monster	Mantis	1139,30,0,0,0
-mosk_fild02,0,0,0,0	monster	Poring	1002,10,0,0,0
-mosk_fild02,0,0,0,0	monster	Yellow Plant	1081,5,0,0,0
-mosk_fild02,0,0,0,0	monster	White Plant	1082,5,10000,0,0
+mosk_fild02,0,0,0,0	monster	´ó½ÅÐÜ	1060,40,0,0,0
+mosk_fild02,0,0,0,0	monster	´Ìâ¬³æ	1103,20,0,0,0
+mosk_fild02,0,0,0,0	monster	ó«òë	1139,30,0,0,0
+mosk_fild02,0,0,0,0	monster	²¨Àû	1002,10,0,0,0
+mosk_fild02,0,0,0,0	monster	»Æ²Ý	1081,5,0,0,0
+mosk_fild02,0,0,0,0	monster	°×²Ý	1082,5,10000,0,0

@@ -26,37 +26,33 @@
 
 // Auction House warpers
 //============================================================
-moc_ruins,78,173,6	script	Auction Hall Guide#moc	98,{
+moc_ruins,78,173,6	script	拍卖行向导#moc	98,{
 	callfunc "F_AuctionWarper",1;
 }
 
-prontera,218,120,4	script	Auction Hall Guide#prt	117,{
+prontera,218,120,4	script	拍卖行向导#prt	117,{
 	callfunc "F_AuctionWarper",2;
 }
 
-yuno,129,116,0	script	Auction Hall Guide#yuno	90,{
+yuno,129,116,0	script	拍卖行向导#yuno	90,{
 	callfunc "F_AuctionWarper",3;
 }
 
-lighthalzen,205,169,6	script	Auction Hall Guide#lhz	833,{
+lighthalzen,205,169,6	script	拍卖行向导#lhz	833,{
 	callfunc "F_AuctionWarper",4;
 }
 
 function	script	F_AuctionWarper	{
-	mes "[Auction Hall Guide]";
-	mes "Hello, would you";
-	mes "like to enter the";
-	mes "Auction Hall?";
+	mes "[拍卖行向导]";
+	mes "你好, 请问是否想要前往拍卖大厅?";
 	next;
-	if (select("Yes:No") == 1) {
+	if (select("是的:不要") == 1) {
 		if (getarg(0) == 1 || getarg(0) == 4) {
-			mes "[Auction Hall Guide]";
-			mes "Great! Well then,";
-			mes "I hope you have fun";
-			mes "and enjoy the auction~";
+			mes "[拍卖行向导]";
+			mes "好的! 希望你能找到想买的东西~";
 		} else {
-			mes "[Auction Hall Guide]";
-			mes "Enjoy your auction.";
+			mes "[拍卖行向导]";
+			mes "请享受这让人怦然心动的拍卖会.";
 		}
 		close2;
 		switch(getarg(0)) {
@@ -70,27 +66,27 @@ function	script	F_AuctionWarper	{
 			warp "auction_02",43,24; end;
 		}
 	}
-	mes "[Auction Hall Guide]";
-	mes "Alright then,";
-	mes "see you later.";
-	mes "If you change your";
-	mes "mind, please come";
-	mes "and enjoy the auctions~";
+	mes "[拍卖行向导]";
+	mes "好吧, 下次见.";
+	mes "如果您改变了主意, 欢迎再来.";
 	close;
 }
 
 // Sign posts
 //============================================================
 -	script	Information Post#dum::AuctionSign	-1,{
-	mes "[Information]";
-	mes "Auction Warp Guide";
+	mes "[告示板]";
+	mes "和附近的“拍卖行向导”对话,";
+	mes "可以传送值拍卖大厅.";
+	mes "在那里你可以拍卖自己的物品,";
+	mes "或者竞拍其他人正在拍卖中的物品.";
 	close;
 }
 
-moc_ruins,76,176,6	duplicate(AuctionSign)	Information Post#moc	837
-prontera,216,120,4	duplicate(AuctionSign)	Information Post#prt	837
-yuno,131,116,0	duplicate(AuctionSign)	Information Post#yuno	837
-lighthalzen,207,169,6	duplicate(AuctionSign)	Information Post#lhz	837
+moc_ruins,76,176,6	duplicate(AuctionSign)	告示板#moc	837
+prontera,216,120,4	duplicate(AuctionSign)	告示板#prt	837
+yuno,131,116,0	duplicate(AuctionSign)	告示板#yuno	837
+lighthalzen,207,169,6	duplicate(AuctionSign)	告示板#lhz	837
 
 // Warps
 //============================================================
@@ -102,39 +98,32 @@ auction_02,43,17,0	warp	auction_enterance_lhz	1,1,lighthalzen,209,169
 // Auction House NPCs
 //============================================================
 -	script	Auction Broker#dum::AuctionBroker	-1,{
-	mes "[Auction Broker]";
-	mes "Welcome to the Auction Hall.";
-	mes "Would you like to view the goods?";
+	mes "[拍卖师]";
+	mes "欢迎来到拍卖大厅.";
+	mes "请问是否想了解正在拍卖的好东西呢?";
 	next;
-	if (select("Yes:No") == 1) {
-		mes "[Auction Broker]";
-		mes "Very well.";
-		mes "Please take";
-		mes "a look, and see";
-		mes "What's being offered~";
+	if (select("是的:不要") == 1) {
+		mes "[拍卖师]";
+		mes "好的, 在开价之前, 请仔细了解它们.";
 		OpenAuction;
 		close;
 	}
-	mes "[Auction Broker]";
-	mes "Very well, then.";
-	mes "If you change your";
-	mes "mind, then please";
-	mes "come and check";
-	mes "out the auctions~";
+	mes "[拍卖师]";
+	mes "好吧, 如果您改变了主意, 欢迎再来.";
 	close;
 }
 
-auction_01,182,68,6	duplicate(AuctionBroker)	Auction Broker#moc1	98
-auction_01,182,75,0	duplicate(AuctionBroker)	Auction Broker#moc2	99
-auction_01,177,75,2	duplicate(AuctionBroker)	Auction Broker#moc3	98
-auction_01,177,68,4	duplicate(AuctionBroker)	Auction Broker#moc4	99
-auction_01,21,74,4	duplicate(AuctionBroker)	Auction Broker#prt1	117
-auction_01,27,78,4	duplicate(AuctionBroker)	Auction Broker#prt2	116
-auction_01,16,78,4	duplicate(AuctionBroker)	Auction Broker#prt3	115
-auction_02,158,47,6	duplicate(AuctionBroker)	Auction Broker#yuno1	90
-auction_02,145,47,2	duplicate(AuctionBroker)	Auction Broker#yuno2	90
-auction_02,151,54,0	duplicate(AuctionBroker)	Auction Broker#yuno3	90
-auction_02,152,41,4	duplicate(AuctionBroker)	Auction Broker#yuno4	90
-auction_02,57,46,2	duplicate(AuctionBroker)	Auction Broker#lhz1	874
-auction_02,31,46,6	duplicate(AuctionBroker)	Auction Broker#lhz2	874
-auction_02,43,65,4	duplicate(AuctionBroker)	Auction Broker#lhz3	833
+auction_01,182,68,6	duplicate(AuctionBroker)	拍卖师#moc1	98
+auction_01,182,75,0	duplicate(AuctionBroker)	拍卖师#moc2	99
+auction_01,177,75,2	duplicate(AuctionBroker)	拍卖师#moc3	98
+auction_01,177,68,4	duplicate(AuctionBroker)	拍卖师#moc4	99
+auction_01,21,74,4	duplicate(AuctionBroker)	拍卖师#prt1	117
+auction_01,27,78,4	duplicate(AuctionBroker)	拍卖师#prt2	116
+auction_01,16,78,4	duplicate(AuctionBroker)	拍卖师#prt3	115
+auction_02,158,47,6	duplicate(AuctionBroker)	拍卖师#yuno1	90
+auction_02,145,47,2	duplicate(AuctionBroker)	拍卖师#yuno2	90
+auction_02,151,54,0	duplicate(AuctionBroker)	拍卖师#yuno3	90
+auction_02,152,41,4	duplicate(AuctionBroker)	拍卖师#yuno4	90
+auction_02,57,46,2	duplicate(AuctionBroker)	拍卖师#lhz1	874
+auction_02,31,46,6	duplicate(AuctionBroker)	拍卖师#lhz2	874
+auction_02,43,65,4	duplicate(AuctionBroker)	拍卖师#lhz3	833
