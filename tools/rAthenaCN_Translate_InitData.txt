@@ -1,0 +1,42 @@
+data: (
+	{
+		src: "No connection could be made because the target machine actively refused it.\r\n"
+		target: "目标机器主动拒绝了连接"
+	},
+	{
+		src: "error %d: %s"
+		target: "错误码为 %d: %s"
+	},
+	{
+		src: "^CL_RED^[Fatal Error]^CL_RESET^:"
+		target: "^CL_RED^[严重错误]^CL_RESET^:"
+	},
+	{
+		src: "^CL_RED^[Error]^CL_RESET^:"
+		target: "^CL_RED^[错误]^CL_RESET^:"
+	},
+	{
+		src: "^CL_CYAN^[Debug]^CL_RESET^:"
+		target: "^CL_CYAN^[调试]^CL_RESET^:"
+	},
+	{
+		src: "^CL_YELLOW^[Warning]^CL_RESET^:"
+		target: "^CL_YELLOW^[警告]^CL_RESET^:"
+	},
+	{
+		src: "^CL_WHITE^[Notice]^CL_RESET^:"
+		target: "^CL_WHITE^[提示]^CL_RESET^:"
+	},
+	{
+		src: "^CL_WHITE^[Info]^CL_RESET^:"
+		target: "^CL_WHITE^[信息]^CL_RESET^:"
+	},
+	{
+		src: "^CL_MAGENTA^[SQL]^CL_RESET^:"
+		target: "^CL_MAGENTA^[数据库]^CL_RESET^:"
+	},
+	{
+		src: "^CL_GREEN^[Status]^CL_RESET^:"
+		target: "^CL_GREEN^[状态]^CL_RESET^:"
+	}
+)
