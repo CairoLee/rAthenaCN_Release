@@ -26,30 +26,27 @@
 
 // Guild Flags (Outside Castle)
 //============================================================
--	script	Kriemhild#1::OutsideFlagsPR1	722,{
+-	script	克林希特#1::OutsideFlagsPR1	722,{
 
 	set .@GID, GetCastleData("prtg_cas01",1);
 
 	if (.@GID == 0) {
-		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes "[ 神圣卢恩米德加兹王国条例 ]";
 		mes " ";
-		mes "1. Follow the ordinance of The Divine Rune-Midgarts Kingdom, ";
-		mes "We declare that";
-		mes "there is no formal master of this castle.";
+		mes "1. 按照神圣卢恩米德加兹王国的条例, ";
+		mes "我们正式声明此城堡没有正式拥有者.";
 		mes " ";
-		mes "2. To the one who can ";
-		mes "overcome all trials";
-		mes "and destroy the Emperium,";
-		mes "the king will endow the one with";
-		mes "ownership of this castle.";
+		mes "2. 经过所有试炼, ";
+		mes "并且破坏了华丽金属的勇士.";
+		mes "将会得到国王授予的城堡拥有权";
 		close;
 	}
 	if (getcharid(2) == .@GID) {
-		mes "[ Echoing Voice ]";
-		mes "Brave ones...";
-		mes "Do you wish to return to your honorable place?";
+		mes "[ 回声 ]";
+		mes "勇士们...";
+		mes "想要回到你们的勇气所在之地吗?";
 		next;
-		if(select("Return to the guild castle.:Quit.") == 1) {
+		if(select("返回公会城堡.:取消.") == 1) {
 			close2;
 			if (getcharid(2) == GetCastleData("prtg_cas01",1)) {
 				warp "prtg_cas01",96,173;
@@ -59,16 +56,14 @@
 		}
 		close;
 	}
-	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes "[ 神圣卢恩米德加兹王国条例 ]";
 	mes " ";
-	mes "1. Follow the ordinance of The Divine Rune-Midgarts Kingdom, ";
-	mes "we approve that this place is in";
-	mes "the private prossession of ^ff0000"+GetGuildName(.@GID)+"^000000 Guild.";
+	mes "1. 按照神圣卢恩米德加兹王国的条例,";
+	mes "我们批准该地区作为公会 ^ff0000"+GetGuildName(.@GID)+"^000000 的私有领地.";
 	mes " ";
-	mes "2. The guild Master of ^ff0000"+GetGuildName(.@GID)+"^000000 Guild is";
+	mes "2. ^ff0000"+GetGuildName(.@GID)+"^000000 公会的领袖为:";
 	mes "^ff0000"+GetGuildMaster(.@GID)+"^000000";
-	mes "If there is anyone who objects to this,";
-	mes "prove your strength and honor with a steel blade in your hand.";
+	mes "对此结果有意见的人，请用你手中的武器说话，证明你的勇气，捍卫你的光荣！";
 	close;
 
 OnRecvCastlePt01:
@@ -76,14 +71,14 @@ OnRecvCastlePt01:
 	end;
 }
 
-prt_gld,131,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#1-2	722
-prt_gld,138,68,6	duplicate(OutsideFlagsPR1)	Kriemhild#2	722
-prt_gld,138,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#3	722
-prt_gld,135,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#4	722
+prt_gld,131,60,6	duplicate(OutsideFlagsPR1)	克林希特#1-2	722
+prt_gld,138,68,6	duplicate(OutsideFlagsPR1)	克林希特#2	722
+prt_gld,138,60,6	duplicate(OutsideFlagsPR1)	克林希特#3	722
+prt_gld,135,60,6	duplicate(OutsideFlagsPR1)	克林希特#4	722
 
 // Guild Flags (Inside Castle)
 //============================================================
--	script	Kriemhild#5::InsideFlagsPR1	722,{
+-	script	克林希特#5::InsideFlagsPR1	722,{
 	end;
 
 OnRecvCastlePt01:
@@ -91,24 +86,24 @@ OnRecvCastlePt01:
 	end;
 }
 
-prtg_cas01,58,56,4	duplicate(InsideFlagsPR1)	Kriemhild#5-2	722
-prtg_cas01,64,56,4	duplicate(InsideFlagsPR1)	Kriemhild#6	722
-prtg_cas01,76,32,4	duplicate(InsideFlagsPR1)	Kriemhild#7	722
-prtg_cas01,84,32,4	duplicate(InsideFlagsPR1)	Kriemhild#8	722
-prtg_cas01,94,39,4	duplicate(InsideFlagsPR1)	Kriemhild#9	722
-prtg_cas01,94,24,4	duplicate(InsideFlagsPR1)	Kriemhild#10	722
-prtg_cas01,73,14,4	duplicate(InsideFlagsPR1)	Kriemhild#11	722
-prtg_cas01,73,6,4	duplicate(InsideFlagsPR1)	Kriemhild#12	722
-prtg_cas01,55,46,4	duplicate(InsideFlagsPR1)	Kriemhild#13	722
-prtg_cas01,45,46,4	duplicate(InsideFlagsPR1)	Kriemhild#14	722
+prtg_cas01,58,56,4	duplicate(InsideFlagsPR1)	克林希特#5-2	722
+prtg_cas01,64,56,4	duplicate(InsideFlagsPR1)	克林希特#6	722
+prtg_cas01,76,32,4	duplicate(InsideFlagsPR1)	克林希特#7	722
+prtg_cas01,84,32,4	duplicate(InsideFlagsPR1)	克林希特#8	722
+prtg_cas01,94,39,4	duplicate(InsideFlagsPR1)	克林希特#9	722
+prtg_cas01,94,24,4	duplicate(InsideFlagsPR1)	克林希特#10	722
+prtg_cas01,73,14,4	duplicate(InsideFlagsPR1)	克林希特#11	722
+prtg_cas01,73,6,4	duplicate(InsideFlagsPR1)	克林希特#12	722
+prtg_cas01,55,46,4	duplicate(InsideFlagsPR1)	克林希特#13	722
+prtg_cas01,45,46,4	duplicate(InsideFlagsPR1)	克林希特#14	722
 
 // Guild Flag (Town)
 //============================================================
-prontera,155,190,4	duplicate(InsideFlagsPR1)	Kriemhild#15	722
+prontera,155,190,4	duplicate(InsideFlagsPR1)	克林希特#15	722
 
 // Kafra Employee
 //============================================================
-prtg_cas01,96,173,0	duplicate(guildkafra)	Kafra Staff#prtg_cas01	117
+prtg_cas01,96,173,0	duplicate(guildkafra)	卡普拉 职员#prtg_cas01	117
 
 // Steward
 //============================================================
@@ -118,9 +113,9 @@ prtg_cas01,112,181,0	duplicate(cm)	Ahvray#prtg_cas01	55
 //============================================================
 prtg_cas01,15,208,0	script	#Lever_PR01	111,{
 	mes " ";
-	mes "There's a small lever. Will you pull it?";
+	mes "这里有一个小小的控制杆, 去拉一下吗?";
 	next;
-	if(select("Pull.:Do not.") == 1) {
+	if(select("上前拉杆.:算了.") == 1) {
 		close2;
 		warp "prtg_cas01",112,183;
 		end;
@@ -134,7 +129,7 @@ prtg_cas01,94,200,0	duplicate(gdlever)	#prtg_cas01	111
 
 // Guild Treasure Spawns
 //============================================================
-prtg_cas01,11,208,0	duplicate(Gld_Trea_Spawn)	Treasure#prtg_cas01	-1
+prtg_cas01,11,208,0	duplicate(Gld_Trea_Spawn)	公会宝箱#prtg_cas01	-1
 
 // AGIT Manager
 //============================================================
@@ -142,4 +137,4 @@ prtg_cas01,197,197,0	duplicate(Gld_Agit_Manager)	Agit#prtg_cas01	-1
 
 // Guardians
 //============================================================
-prtg_cas01,112,181,0	duplicate(Gld_Guard_Template)	Guardian#prtg_cas01	-1
+prtg_cas01,112,181,0	duplicate(Gld_Guard_Template)	城堡监护人#prtg_cas01	-1

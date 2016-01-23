@@ -1,0 +1,43 @@
+│  atcommand_athena.conf		完全汉化
+│  battle_athena.conf			完全汉化
+│  channels.conf				完全汉化
+│  charhelp.txt					完全汉化
+│  char_athena.conf				完全汉化
+│  grf-files.txt				完全汉化
+│  groups.conf					完全汉化
+│  help.txt					部分汉化
+│  inter_athena.conf			完全汉化
+│  login_athena.conf			完全汉化
+│  log_athena.conf			部分汉化
+│  maps_athena.conf			部分汉化
+│  map_athena.conf				完全汉化
+│  motd.txt						完全汉化
+│  packet_athena.conf			完全汉化
+│  readme.txt				部分汉化
+│  script_athena.conf		部分汉化
+│  subnet_athena.conf		尚未汉化
+│  
+├─battle
+│      battle.conf			部分汉化
+│      battleground.conf		完全汉化
+│      client.conf			部分汉化
+│      drops.conf				完全汉化
+│      exp.conf				部分汉化
+│      feature.conf				完全汉化
+│      gm.conf				尚未汉化
+│      guild.conf				完全汉化
+│      homunc.conf			部分汉化
+│      items.conf			部分汉化
+│      misc.conf			尚未汉化
+│      monster.conf			部分汉化
+│      party.conf			尚未汉化
+│      pet.conf				尚未汉化
+│      player.conf			尚未汉化
+│      skill.conf			尚未汉化
+│      status.conf			部分汉化
+│      
+└─msg_conf
+    │  char_msg.conf		部分汉化
+    │  login_msg.conf		部分汉化
+    │  map_msg.conf			部分汉化
+            

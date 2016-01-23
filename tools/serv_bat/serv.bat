@@ -39,7 +39,7 @@ ECHO %2 已经成功关闭.
 GOTO RESTART_NT
 
 :EXIT1
-ECHO %2 被异常停止.
+ECHO %2 被异常终止.
 GOTO RESTART_NT
 
 :CRASHED
