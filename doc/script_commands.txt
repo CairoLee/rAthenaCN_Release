@@ -446,13 +446,14 @@ temporary - They cease to exist when the server resets.
 
 Prefix: scope and extent
 nothing  - A permanent variable attached to the character, the default variable
-           type. They are stored in the `global_reg_value` table using type 3.
+           type. They are stored by char-server in the `global_acc_reg_num` and
+           `global_acc_reg_str`.
 "@"      - A temporary variable attached to the character.
            SVN versions before 2094 revision and RC5 version will also treat
            'l' as a temporary variable prefix, so beware of having variable
            names starting with 'l' if you want full backward compatibility.
 "$"      - A global permanent variable.
-           They are stored in database table `mapreg`.
+           They are stored by map-server in database table `mapreg`.
 "$@"     - A global temporary variable.
            This is important for scripts which are called with no RID
            attached, that is, not triggered by a specific character object.
@@ -468,13 +469,14 @@ nothing  - A permanent variable attached to the character, the default variable
            callsub/callfunc starts a new scope, returning from the function 
            ends it. When a scope ends, its variables are converted to values 
            ('return .@var;' returns a value, not a reference).
-"'"      - An instance variable
+"'"      - An instance variable.
            These are used with the instancing system, and are unique to each 
            party's instance.
 "#"      - A permanent local account variable.
-           They are stored in the `global_reg_value` table using type 2.
+           They are stored by char-server in the `char_reg_num` table and
+           `char_reg_str`.
 "##"     - A permanent global account variable stored by the login server.
-           They are stored in the `global_reg_value` table using type 1.
+           They are stored in the `acc_reg_num` table and `acc_reg_str`.
            The only difference you will note from normal # variables is when
            you have multiple char-servers connected to the same login server.
            The # variables are unique to each char-server, while the ## variables
@@ -3952,7 +3954,7 @@ no teleportation is otherwise possible.
 
 ---------------------------------------
 
-*heal <hp>,<sp>;
+*heal <hp>,<sp>{,<char_id>};
 
 This command will heal a set amount of HP and/or SP on the invoking character.
 
@@ -3965,7 +3967,7 @@ character and produces no other output whatsoever.
 
 ---------------------------------------
 
-*itemheal <hp>,<sp>;
+*itemheal <hp>,<sp>{,<char_id>};
 
 This command heals relative amounts of HP and/or SP on the invoking character.
 Unlike heal, this command is intended for use in item scripts. It applies
@@ -3982,7 +3984,7 @@ Example:
 
 ---------------------------------------
 
-*percentheal <hp>,<sp>;
+*percentheal <hp>,<sp>{,<char_id>};
 
 This command will heal the invoking character. It heals the character, but not 
 by a set value - it adds percent of their maximum HP/SP.
@@ -4034,7 +4036,7 @@ Examples:
 
 ---------------------------------------
 
-*jobchange <job number>{,<upper flag>};
+*jobchange <job number>{,<upper flag>,<char_id>};
 
 This command will change the job class of the invoking character.
 
@@ -4074,7 +4076,7 @@ This command retrieves the name of the given job using the map_msg entries 550->
 
 ---------------------------------------
 
-*eaclass({<job number>})
+*eaclass({<job number>,<char_id>})
 
 This commands returns the "eA job-number" corresponding to the given class, and
 uses the invoking player's class if none is given. The eA job-number is also a
@@ -4202,8 +4204,8 @@ adjusts the gained value. If you want to bypass this, use the 'set' method.
 
 ---------------------------------------
 
-*setlook <look type>,<look value>;
-*changelook <look type>,<look value>;
+*setlook <look type>,<look value>{,<char_id>};
+*changelook <look type>,<look value>{,<char_id>};
 
 'setlook' will alter the look data for the invoking character. It is used 
 mainly for changing the palette used on hair and clothes: you specify which look 
@@ -4686,7 +4688,7 @@ More info, see doc/item_group.txt.
 
 ---------------------------------------
 
-*getgroupitem <group_id>;
+*getgroupitem <group_id>{,<char_id>};
 
 Gives item(s) to the attached player based on item group contents.
 This is not working like 'getrandgroupitem' which only give 1 item for specified
@@ -4899,7 +4901,7 @@ This command will return 1 if an item was broken and 0 otherwise.
 
 ---------------------------------------
 
-*clearitem {,<char_id>};
+*clearitem {<char_id>};
 
 This command will destroy all items the invoking character has in their 
 inventory (including equipped items). It will not affect anything else, like 
@@ -6532,7 +6534,7 @@ The optional parameter 'type' is used in the 'skill_damage' mapflag:
 *getbattleflag("<battle flag>")
 
 Sets or gets the value of the given battle flag.
-Battle flags are the flags found in the battle/*.conf files and is also used in Lupus' variable rates script.
+Battle flags are the flags found in the battle / *.conf files and is also used in Lupus' variable rates script.
 
 Examples:
 
@@ -8148,7 +8150,7 @@ OnTimer1000:
 
 ---------------------------------------
 
-*bg_leave;
+*bg_leave {<char_id>};
 
 Removes attached player from their Battle Group.
 

@@ -217,7 +217,6 @@ alberta,214,77,6	script	船长 杨森	709,{
 e_tower,81,105,0	script	塔之守护石	406,{
 
 	set .@party_id,getcharid(1);
-	set .@p_name$,getpartyname(.@party_id);
 	set .@md_name$,"无尽之塔";
 
 	set .@etower_timer,checkquest(60200,PLAYTIME); // 1 week
@@ -235,7 +234,7 @@ e_tower,81,105,0	script	塔之守护石	406,{
 			switch(select("预约创建 "+.@md_name$+":进入副本:返回艾尔贝塔:结束对话")) {
 			case 1:
 				if (instance_create(.@md_name$) < 0) {
-					mes "队伍名称: "+.@p_name$;
+					mes "队伍名称: "+getpartyname(.@party_id);
 					mes "队长名称: "+strcharinfo(0);
 					mes "^0000ff"+.@md_name$+" ^000000- 预约失败!";
 					close;

@@ -2,6 +2,23 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.0.8(2015-10-07)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/81662aaceec44b653b1aaaa143ca2e75d51ad54d
+[新增] 可以设置“使用阿修罗霸凰拳时不消耗玩家的SP” (conf/battle/extend.conf 的 extremityfist_no_require_sp 选项)
+[新增] 可以设置“无视使用阿修罗霸凰拳后的SP恢复限制” (conf/battle/extend.conf 的 ignore_extremityfist_sp_limit 选项)
+[新增] 允许单独限制玩家在PVP地图时的攻速 (conf/battle/extend.conf 的 max_aspd_for_pvp 选项)
+[新增] 允许单独限制玩家在GVG地图时的攻速 (conf/battle/extend.conf 的 max_aspd_for_gvg 选项)
+[修正] rAthena官方BUG: 使用 bonus4 bAddEffWhenHit,eff,n,y,t; 时，若 n 设定的值大于 624 时会报错的问题
+[修正] rAthena官方BUG: 使用 bonus4 bAddEffWhenHit,eff,n,y,t; 时，设置 y 为 ATF_SELF 时无效的问题
+[修正] 修正袭击飞空艇任务被触发时，提示Airship Staff#airplane01不存在的问题
+[汉化] 完全汉化普隆德拉骑士和十字军的大嘴鸟饲养员
+[汉化] 汉化sql-files目录中4个与item_db相关的sql文件
+[汉化] 校对并优化艾音布罗克、朱诺飞空艇的机场职员对话
+[汉化] 校对和优化毁葛、拉赫、里希塔乐镇、依斯鲁德岛的机场职员对话
+[汉化] 优化并校对位于“airplane_01,32,61”的飞空艇小游戏“RO打字大挑战”主控NPC“倪思”的对话
+
 v1.0.7(2015-09-25)
 ------------------
 [同步] rAthena官方Github库
