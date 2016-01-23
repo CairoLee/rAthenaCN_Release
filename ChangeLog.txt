@@ -2,6 +2,18 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.0.9(2015-10-09)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/fd7d6c31fdae22ab951b2d8acb86117fc0869b8c
+[新增] 可以设置强制触发 OnPCLoadMapEvent 事件 (conf/battle/extend.conf 的 force_loadevent 选项)
+[汉化] 完全汉化位于“hu_in01,381,304”的“猎鹰饲养员”
+[汉化] 完全汉化来往绵绵岛的传送NPC“猫绵绵”、“猫奥克”和“猫豆豆”
+[汉化] 完全汉化“召唤生命体”所召唤出来的生命体默认名称
+[汉化] 完全汉化“元素精灵”的默认名称
+[汉化] 完全汉化战斗配置文件 conf/battle/battle.conf 中 arrow_decrement 选项的描述
+[汉化] 汉化sql-files目录中4个与mob_db相关的sql文件
+
 v1.0.8(2015-10-07)
 ------------------
 [同步] rAthena官方Github库

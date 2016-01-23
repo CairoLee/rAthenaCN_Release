@@ -147,78 +147,74 @@ prontera,232,318,3	script	大嘴鸟饲养员(十字军)#cru	105,{
 
 // Falcon Master :: breeder
 //============================================================
-hu_in01,381,304,5	script	Falcon Breeder#hnt	105,{
+hu_in01,381,304,5	script	猎鹰饲养员#hnt	105,{
 	if(Upper==0) set .@price,2500; //Normal Falcon - default price
 	if(Upper==1) set .@price,2500; //Scarf Falcon
 	if(Upper==2) set .@price,2500; //Baby Falcon
 
-	mes "[Falcon Breeder]";
+	mes "[猎鹰饲养员]";
 	if (BaseJob == Job_Hunter) {
 		if (checkwug()) {
-			mes "Um...";
-			mes "You can't rent a Falcon";
-			mes "until you dismiss your warg first!";
+				mes "呃.. (⊙o⊙)...";
+				mes "在解散你召唤的野狼之前,";
+				mes "你不能租赁猎鹰!";
+				mes "因为她们说不定会打起来.";
 			close;
 		}
-		mes "Do you need a Falcon?";
-		mes "You can rent your own";
-		mes "trusty bird of prey for a";
-		mes "fee of just "+.@price+" zeny~";
+		mes "你好, 冒险家, 想租赁猎鹰吗?";
+		mes "只需 "+.@price+" 金币,";
+		mes "就可以租到值得信赖的猛禽哟~";
 		next;
-		switch(select("Rent Falcon:Cancel")) {
+		switch(select("太棒了, 我刚好想租一只:取消")) {
 		case 1:
 			if (checkwug()) {
-				mes "[Falcon Breeder]";
-				mes "Um...";
-				mes "You can't rent a Falcon";
-				mes "until you dismiss your warg first!";
+				mes "[猎鹰饲养员]";
+				mes "呃.. (⊙o⊙)...";
+				mes "在解散你召唤的野狼之前,";
+				mes "你不能租赁猎鹰!";
+				mes "因为她们说不定会打起来.";
 				close;
 			}
 			if (Zeny < .@price) {
-				mes "[Falcon Breeder]";
-				mes "What is this?";
-				mes "You don't have";
-				mes "enough zeny?!";
-				mes "You better start";
-				mes "hunting money";
-				mes "instead of monsters~";
+				mes "[猎鹰饲养员]";
+				mes "这是什么情况?";
+				mes "你没有足够的钱哇?!";
+				mes "赶快开始狩猎魔物赚钱吧~";
 				close;
 			}
 			else if(getskilllv("HT_FALCON") == 0) {
-				mes "[Falcon Breeder]";
-				mes "Gosh~";
-				mes "Go learn how to";
-				mes "manage a Falcon";
-				mes "first! I can't rent one";
-				mes "to you if you can't";
-				mes "handle it, you know.";
+				mes "[猎鹰饲养员]";
+				mes "我的天哪~";
+				mes "你必须先学会^0000ff驯鹰术^000000才行!";
+				mes "如果你控制不了猎鹰,";
+				mes "我是不放心把她们租给你的,";
+				mes "明白我的意思了吧?";
 				close;
 			}
 			else if(checkfalcon()) {
-				mes "[Falcon Breeder]";
-				mes "Um...";
-				mes "You already have";
-				mes "a Falcon. It's right";
-				mes "there, can't you see it?";
+				mes "[猎鹰饲养员]";
+				mes "呃.. (⊙o⊙)...";
+				mes "你已经有一只猎鹰了.";
+				mes "往你的头上看,";
+				mes "她在你的头上盘旋飞翔哟...";
 				close;
 			}
 			set Zeny, Zeny-.@price;
 			setfalcon;
+			mes "[猎鹰饲养员]";
+			mes "好的, 这是你的猎鹰, 请善待它哟.";
 			close;
 		case 2:
-			mes "[Falcon Breeder]";
-			mes "W-wait, where're";
-			mes "you goin'? These";
-			mes "Falcons are top notch,";
-			mes "I guarantee it! C'mon, yo~";
+			mes "[猎鹰饲养员]";
+			mes "等、等一下, 你想去哪?";
+			mes "我用人格担保, 这些都是一流的猎鹰!";
+			mes "来吧, 哟~";
 			close;
 		}
 	} else {
-		mes "Young fool!";
-		mes "Falcons can only";
-		mes "be used by Hunters";
-		mes "and Snipers, capish?";
-		mes "...Heh heh, jealous?";
+		mes "年轻的傻瓜!";
+		mes "猎鹰只有猎人、游侠系列职业能使用,";
+		mes "明白了吗? ...嘿嘿, 很羡慕吧?";
 		close;
 	}
 }

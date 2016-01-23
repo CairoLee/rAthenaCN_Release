@@ -117,7 +117,7 @@ REPLACE INTO `item_db_re` VALUES (572,'Lucky_Cookie','幸运的姜饼',0,1000,NU
 REPLACE INTO `item_db_re` VALUES (573,'Chocolate_Drink','巧克力饮料',0,7000,NULL,150,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(330,410),rand(45,65); sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION; sc_end SC_CURSE; sc_end SC_Hallucination;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (574,'Egg','蛋',0,20,NULL,30,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(33,42),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (575,'Piece_Of_Cake_','2周年纪念蛋糕',0,10,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(270,330),0;',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (576,'Prickly_Fruit','榴��',0,540,NULL,60,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(150,300),rand(20,30);',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (576,'Prickly_Fruit','榴梿',0,540,NULL,60,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(150,300),rand(20,30);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (577,'Grain','谷物',0,200,NULL,20,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(60,70),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (578,'Strawberry','草莓',0,200,NULL,20,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal 0,rand(16,28);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (579,'Delicious_Fish','美味的鱼',0,250,NULL,20,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(100,150),0;',NULL,NULL);
@@ -1749,7 +1749,7 @@ REPLACE INTO `item_db_re` VALUES (2571,'Para_Team_Manteau2','Eden Team Manteau I
 REPLACE INTO `item_db_re` VALUES (2572,'Katabart_Sholder','Katabart Sholder',4,20,NULL,3000,NULL,4,NULL,1,0xFFFFFFFF,63,2,4,NULL,'70',1,0,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (2573,'Archangel_Wing','永恒之翼',4,0,NULL,200,NULL,18,NULL,1,0xFFFFFFFF,63,2,4,NULL,'0',1,1,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (2574,'Ur_Manteau','黄金小天使之翼',4,20,NULL,600,NULL,20,NULL,0,0x00000080,56,2,4,NULL,'100',1,0,'bonus bMaxHPrate,2; bonus2 bSubEle,Ele_Neutral,10;',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (2575,'Peuz_Manteau','红�h之翼',4,20,NULL,600,NULL,16,NULL,0,0x00000080,56,2,4,NULL,'100',1,0,'bonus bFlee,10; bonus bCritical,10;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (2575,'Peuz_Manteau','红玥之翼',4,20,NULL,600,NULL,16,NULL,0,0x00000080,56,2,4,NULL,'100',1,0,'bonus bFlee,10; bonus bCritical,10;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (2576,'Bravery_Bag','冒险家背包',4,0,NULL,200,NULL,20,NULL,1,0xFFFFFFFF,63,2,4,NULL,'0',1,2,'skill "BS_GREED",1; .@r = getrefine(); if(.@r>6) { if(readparam(bStr)>=90){ bonus bBaseAtk,20; } if(readparam(bInt)>=90){ bonus bMatk,30; } if(readparam(bVit)>=90){ bonus2 bSubEle,Ele_Neutral,10; } if(readparam(bAgi)>=90){ bonus bAspdRate,8; } if(readparam(bDex)>=90){ bonus bLongAtkRate,5; } if(readparam(bLuk)>=90){ bonus bCritAtkRate,10; } } if(.@r>8) { if(readparam(bStr)>=90){ bonus bBaseAtk,10; } if(readparam(bInt)>=90){ bonus bMatk,20; } if(readparam(bVit)>=90){ bonus2 bSubEle,Ele_Neutral,5; } if(readparam(bAgi)>=90){ bonus bAspd,1; } if(readparam(bDex)>=90){ bonus bLongAtkRate,5; } if(readparam(bLuk)>=90){ bonus bCritAtkRate,5; } }',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (2577,'Sabah_Hood','月祭之翼',4,20,NULL,100,NULL,13,NULL,0,0x00001000,63,2,4,NULL,'100',1,0,'bonus bFlee,12; bonus bCritical,getrefine();',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (2578,'Nab_Hood','Q版天使¤翼',4,20,NULL,100,NULL,13,NULL,0,0x00001000,63,2,4,NULL,'100',1,0,'.@r = getrefine(); bonus bFlee,.@r*2; bonus bBaseAtk,.@r*2;',NULL,NULL);
@@ -2380,8 +2380,8 @@ REPLACE INTO `item_db_re` VALUES (4233,'Baby_Leopard_Card','小花豹卡片',6,2
 REPLACE INTO `item_db_re` VALUES (4234,'Anolian_Card','虎蜥人卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,16,NULL,NULL,NULL,NULL,'bonus3 bAutoSpellWhenHit,"AC_CONCENTRATION",1+9*(getskilllv("AC_CONCENTRATION")==10),30;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (4235,'Cookie_XMAS_Card','XMAS甜饼人卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,64,NULL,NULL,NULL,NULL,'bonus2 bSubRace,RC_Angel,-20; bonus2 bExpAddRace,RC_Angel,10;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (4236,'Amon_Ra_Card','古埃及王卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,64,NULL,NULL,NULL,NULL,'bonus bAllStats,1; bonus3 bAutoSpellWhenHit,"PR_KYRIE",10,(30+70*(readparam(bInt)>=99));',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (4237,'Owl_Duke_Card','�^袅首领卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,136,NULL,NULL,NULL,NULL,'bonus3 bAutoSpell,"PR_IMPOSITIO",3,3;',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (4238,'Owl_Baron_Card','�^袅男爵卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,136,NULL,NULL,NULL,NULL,'bonus3 bAutoSpell,"PR_LEXAETERNA",1,30;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (4237,'Owl_Duke_Card','鸮袅首领卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,136,NULL,NULL,NULL,NULL,'bonus3 bAutoSpell,"PR_IMPOSITIO",3,3;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (4238,'Owl_Baron_Card','鸮袅男爵卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,136,NULL,NULL,NULL,NULL,'bonus3 bAutoSpell,"PR_LEXAETERNA",1,30;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (4239,'Iron_Fist_Card','铁蝎卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,64,NULL,NULL,NULL,NULL,'bonus2 bSubRace,RC_Formless,-20; bonus2 bExpAddRace,RC_Formless,10;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (4240,'Arclouse_Card','卷甲虫卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,32,NULL,NULL,NULL,NULL,'if(getrefine()<6) { bonus bDef,2; bonus bMdef,3; }',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (4241,'Archangeling_Card','圣天使波利卡片',6,20,NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,769,NULL,NULL,NULL,NULL,'bonus bMaxHP,300; if(readparam(bLuk)>=77) { bonus bHPrecovRate,100; bonus bSPrecovRate,100; }',NULL,NULL);
@@ -6290,7 +6290,7 @@ REPLACE INTO `item_db_re` VALUES (12298,'SP_Potion','SP Consumption Reduction Po
 REPLACE INTO `item_db_re` VALUES (12299,'Mega_Resist_Potion','Mega Resist Potion',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'sc_start SC_COMMONSC_RESIST,3600000,10;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12300,'Wild_Rose_Scroll','狂暴野猫召唤书',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'mercenary_create 1965,1800000;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12301,'Doppelganger_Scroll','死灵召唤书',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'mercenary_create 1966,1800000;',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (12302,'Ygnizem_Scroll','��●剑士召唤书',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'mercenary_create 1967,1800000;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (12302,'Ygnizem_Scroll','闇●剑士召唤书',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'mercenary_create 1967,1800000;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12303,'Water_Of_Blessing','Blessing Of Water',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12304,'Picture_Diary','Diary Magic Powder',2,0,NULL,0,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'setfont 4;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12305,'Mini_Heart','Mini Heart Magic Powder',2,0,NULL,0,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'setfont 5;',NULL,NULL);
@@ -6693,7 +6693,7 @@ REPLACE INTO `item_db_re` VALUES (12706,'Lucky_Cookie01','幸运饼干',11,0,NUL
 REPLACE INTO `item_db_re` VALUES (12707,'Lucky_Cookie02','幸运饼干',11,0,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemskill "PR_MAGNIFICAT",1;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12708,'Lucky_Cookie03','幸运饼干',11,0,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemskill "PR_IMPOSITIO",3;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12709,'Guyak_Candy','Guyak Candy',0,0,NULL,150,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'percentheal 30,30;',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (12710,'Guyak_Pudding','�X�m布丁',2,0,NULL,200,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'sc_start SC_SPEEDUP1,300000,50;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (12710,'Guyak_Pudding','蒟蒻布丁',2,0,NULL,200,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'sc_start SC_SPEEDUP1,300000,50;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12711,'Pretzel','Pretzel',0,2,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(50,90),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12712,'Green_Beer','Green Beer',2,2,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'percentheal 0,50;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (12713,'Monster_Extract','Monster Extract',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
@@ -7499,7 +7499,7 @@ REPLACE INTO `item_db_re` VALUES (13700,'J_Adrenaline10_Box','Adrenaline Rush Sc
 REPLACE INTO `item_db_re` VALUES (13701,'Pet_Egg_Scroll12','Pet Egg Scroll 12',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Pet_Egg_Scroll12);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (13702,'Pet_Egg_Scroll13','Pet Egg Scroll 13',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Pet_Egg_Scroll13);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (13703,'Pet_Egg_Scroll14','Pet Egg Scroll 14',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Pet_Egg_Scroll14);',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (13704,'Super_Pet_Egg5','��之转蛋',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Super_Pet_Egg5);',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (13704,'Super_Pet_Egg5','闇之转蛋',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Super_Pet_Egg5);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (13705,'Super_Pet_Egg6','猫眼转蛋',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Super_Pet_Egg6);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (13706,'Super_Pet_Egg7','血色转蛋',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Super_Pet_Egg7);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (13707,'Super_Pet_Egg8','金玉满堂转蛋',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'getgroupitem(IG_Super_Pet_Egg8);',NULL,NULL);
