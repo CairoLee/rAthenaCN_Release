@@ -2,6 +2,25 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.0.4(2015-09-04)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/6295c77d393555fe5a366f092a75f4cf0d2de933
+[升级] 若您不是全新安装的话，请在您的主数据库上按顺序导入以下两个sql文件
+       - sql-files\upgrades\upgrade_20150828.sql
+	   - sql-files\upgrades\upgrade_20150831.sql
+[汉化] 部分汉化使用GM指令之后系统返回的信息 conf/msg_conf/map_msg.conf
+[汉化] 部分汉化和状态相关的战斗配置文件 conf/battle/status.conf
+[汉化] 完全汉化炼金术师公会贩卖药水制作书的“公会销售员”
+[汉化] 完全汉化“微笑小姐”
+[汉化] 完全汉化“果汁制作任务”相关的NPC
+[汉化] 完全汉化“箭矢筒制作”相关的NPC
+[汉化] 完全汉化位于“prontera,73,140”的“牛奶供应商”
+[汉化] 完全汉化吉芬铁匠公会贩卖铁砧的“克理斯多福”
+[汉化] 完全汉化装备修理工
+[汉化] 完全汉化忽克连等经典的装备精炼人员
+[汉化] 完全汉化兑换神之金属和铝的“帝特立西”等人员
+
 v1.0.3(2015-08-28)
 ------------------
 [新增] 默认启用封包混淆机制，配套客户端补丁使用可防WPE
@@ -10,6 +29,7 @@ v1.0.3(2015-08-28)
 [修正] rAthena官方BUG: 有时VIP用户使用技能还需要消耗蓝色魔力矿石的问题 感谢 alone 汇报
 [汉化] 完全汉化“rAthena功能配置文件” conf/battle/feature.conf 感谢 alone 协助汉化
 [汉化] 完全汉化“龙仙儒/龙先生”
+[汉化] 完全汉化“物品掉落战斗配置文件” conf/battle/drops.conf
 [汉化] 部分汉化“指令帮助文件” conf/help.txt
 [汉化] 部分汉化“地图列表文件”中的注释 conf/maps_athena.conf
 [汉化] 部分汉化“登录、角色、地图服务器的信息配置文件” conf/msg_conf/login_msg.conf、char_msg.conf、map_msg.conf

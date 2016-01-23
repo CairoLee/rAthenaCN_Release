@@ -21,4 +21,4 @@
 //= 1.0 First version.
 //============================================================ 
 
-izlude,129,118,4	duplicate(SmileHelper)	Smile Assistance#iz	92
+izlude,129,118,4	duplicate(SmileHelper)	Î¢Ð¦Ð¡½ã#iz	92
