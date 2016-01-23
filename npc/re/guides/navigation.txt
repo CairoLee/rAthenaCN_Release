@@ -36,7 +36,7 @@ function	script	F_Navi	{
 		if (!.@disabled) {
 			next;
 			mes getarg(0);
-			mes "When you click on the ^B9062F[location name]^000000, you'll receive the most advanced ^B9062FNavigation^000000 services!";
+			mes "当你点击.. ^B9062F[位置名称]^000000... 你将会得到最先进的 ^B9062F导航^000000 服务...!";
 		}
 		return;
 	default: // Display navigation link, if enabled; else set text color, if available.

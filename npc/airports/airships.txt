@@ -1103,10 +1103,8 @@ airplane_01,32,61,4	script	倪思#ein	49,1,1,{
 //============================================================ 
 airplane_01,33,68,4	script	克拉莉斯	74,{
 	mes "[克拉莉斯]";
-	mes "Hi~我是克拉莉斯~";
-	mes "你想用一些苹果";
-	mes "作为赌注来参与";
-	mes "一把好玩的骰子游戏吗?";
+	mes "Hi, 我是克拉莉斯~";
+	mes "你想用一些苹果作为赌注来参加好玩的骰子游戏吗?";
 	next;
 	callfunc "applegamble","克拉莉斯";
 	end;
@@ -1114,59 +1112,47 @@ airplane_01,33,68,4	script	克拉莉斯	74,{
 
 function	script	applegamble	{
 
-	switch (select("玩骰子游戏:听听游戏规则:取消")) {
+	switch (select("玩骰子游戏:学习骰子游戏的规则:取消")) {
 	case 3:
 		mes "["+getarg(0)+"]";
-		mes "不管您愿不愿意, ";
-		mes "我准备举行一次骰子游戏.";
-		mes "如果您突然想加入的话, ";
-		mes "就和我说一声, ";
-		mes "明白了吗?";
+		mes "不管您怎么看待这件事, ";
+		mes "我依旧准备举行一次骰子游戏.";
+		mes "如果您突然手痒痒, 想赌一把的话, ";
+		mes "就和我说一声, 明白了吗?";
 		close;
 	case 2:
 		mes "["+getarg(0)+"]";
-		mes "骰子游戏的规则";
-		mes "十分简单.首先, 您";
-		mes "要设定苹果作为赌注.";
-		mes "您最多一次可以赌";
-		mes "50个苹果.为了确定";
-		mes "我们不犯法, 我们只赌苹果.";
+		mes "骰子游戏的规则十分简单.";
+		mes "首先, 您要将苹果当作为赌注.";
+		mes "每次最多可以赌50个苹果.";
+		mes "为了确保我们不犯法, 我们只赌苹果.";
 		next;
 		mes "["+getarg(0)+"]";
-		mes "不过嘿!这依然很";
-		mes "烧Zeny的.";
-		mes "你可以去霍慈那里买";
-		mes "到任意数量的苹果, ";
+		mes "不过, 嘿嘿... 这依然很烧钱的.";
+		mes "你可以去霍慈那里买到任意数量的苹果,";
 		mes "然后带到这里来玩~";
 		next;
 		mes "["+getarg(0)+"]";
-		mes "好, 现在从我开始";
-		mes "投2个六面骰子.";
-		mes "当轮到您的时候, ";
-		mes "您也要投两个六面骰子.";
-		mes "结束之后, 我们就可以选择";
-		mes "是否投第三次.";
+		mes "好, 现在从我开始丢2个骰子.";
+		mes "轮到你的时候, 您也要丢2个骰子.";
+		mes "然后, 我们就可以选择是否丢第三次.";
 		next;
 		mes "["+getarg(0)+"]";
-		mes "值得注意的是, ";
-		mes "如果您的总数超过12点, ";
-		mes "您就爆了, 换言之, ";
-		mes "您就输了.如果不是这样, ";
-		mes "那么点数最高的那个人获胜.";
-		mes "明白了吗?";
+		mes "要注意, 如果您的总数超过12点,";
+		mes "那么您就爆了, 也就是说, 您就输了.";
+		mes "否则, 点数最大的那个人获胜.";
+		mes "听明白了吗?";
 		next;
 		mes "["+getarg(0)+"]";
-		mes "现在, 从您开始决定";
-		mes "是否投第三次.";
-		mes "在您投完第三次以后, ";
-		mes "我会根据您的结果, 决定";
-		mes "是否要投我的第三次.";
+		mes "然后, 从您开始决定是否丢第三次.";
+		mes "在您丢完第三次骰子以后,";
+		mes "我会根据您的结果,";
+		mes "再来决定是否要丢我的第三次.";
 		next;
 		mes "["+getarg(0)+"]";
-		mes "当您获胜了, 您就可以";
-		mes "得到您作为赌注的苹果";
-		mes "数量两倍的苹果.";
-		mes "不过如果我们同点, ";
+		mes "如果您获胜了的话,";
+		mes "您可以得到作为赌注的两倍数量的苹果.";
+		mes "不过如果我们点数一样大, ";
 		mes "那么您将拿回您作为赌注的苹果.";
 		mes "很公平吧, 不是么?";
 		close;
@@ -1174,63 +1160,51 @@ function	script	applegamble	{
 		break;
 	}
 	mes "["+getarg(0)+"]";
-	mes "喔~所以您要和我玩?";
-	mes "太棒了, 您要赌多少";
-	mes "个苹果呢?";
-	mes "记住您最多可以赌";
-	mes "50个苹果.如果您想放弃, ";
-	mes "就请输入 '0'.";
+	mes "喔~ 所以您要和我玩?";
+	mes "太棒了! 您要赌多少个苹果呢?";
+	mes "记住每次您最多可以赌50个苹果.";
+	mes "如果您想放弃, 就请输入 '0'.";
 	next;
 	while(1) {
 		input .@amount;
 		if (.@amount == 0) {
 			mes "["+getarg(0)+"]";
 			mes "改变主意了?";
-			mes "好吧.那么, ";
-			mes "希望以后能一起玩.";
+			mes "好吧, 希望以后还能一起玩.";
 			close;
 		}
 		else if (.@amount < 1 || .@amount > 50) {
 			mes "["+getarg(0)+"]";
-			mes "您不能赌超过";
-			mes "50个苹果.记住, 我们";
-			mes "必须保证我们的赌注";
-			mes "比较合理.请输入一个";
-			mes "不大于50的数值.";
+			mes "您一次不能赌超过50个苹果.";
+			mes "记住, 我们必须保证赌注比较合理.";
+			mes "请输入一个不大于50的数值.";
 			next;
 			continue;
 		}
 		mes "["+getarg(0)+"]";
-		mes "所以您要赌";
-		mes "^FF0000"+.@amount+"^000000个苹果.";
-		mes "是吗?";
+		mes "您想拿 ^FF0000"+.@amount+"^000000 个苹果作为赌注. 确定吗?";
 		next;
 		if (select("是的:不对") == 2) {
 			mes "["+getarg(0)+"]";
-			mes "嗯, 搞错了吗?";
-			mes "好吧, 那么请输入";
-			mes "您这次想赌的苹果";
-			mes "数量.";
+			mes "嗯, 搞错了?";
+			mes "好吧, 那么请输入您想赌的苹果数量.";
 			next;
 			continue;
 		}
 		if (countitem(512) <.@amount) {
-			mes "对不起, 但是您";
-			mes "好像没有足够的";
-			mes "苹果来赌.";
-			mes "您如果苹果不够, ";
-			mes "就没法赌了, 您懂的.";
+			mes "["+getarg(0)+"]";
+			mes "对不起, 但您没有足够的苹果来赌.";
+			mes "玩不起的话就别玩啦, 您懂的.";
 			next;
 			continue;
 		}
 		delitem 512,.@amount;
 		mes "["+getarg(0)+"]";
 		mes "很好!";
-		mes "现在我们可以开始了!";
-		mes "我先投!";
+		mes "现在我们可以开始了! 我先投!";
 		break;
 	}
-	mes "^3355FF*咕噜噜噜噜噜……*^000000";
+	mes "^3355FF*咕噜噜噜噜噜...*^000000";
 	next;
 	set .@giveapple, .@amount*2;
 	set .@table1, rand(1,6);
@@ -1238,12 +1212,11 @@ function	script	applegamble	{
 	set .@tablesub, .@table1 + .@table2;
 	set .@tabletotal, .@tablesub;
 	mes "["+getarg(0)+"]";
-	mes "我投到了一个 ^0000FF" + .@table1 + "^000000 和一个 ^0000FF" + .@table2 + "^000000.";
-	mes "That's a total of ^0000FF" + .@tablesub + "^000000.";
+	mes "我投到 ^0000FF" + .@table1 + "^000000 和 ^0000FF" + .@table2 + "^000000, 总点数为 ^0000FF" + .@tablesub + "^000000 点.";
 	mes "^FF0000" + strcharinfo(0) + "^000000, 现在轮到你了.";
 	next;
-	select("丢骰子.");
-	mes "^3355FF*咕噜噜噜噜噜……*^000000";
+	select("丢骰子");
+	mes "^3355FF*咕噜噜噜噜噜...*^000000";
 	set .@player1, rand(1,6);
 	set .@player2, rand(1,6);
 	set .@playersub, .@player1 + .@player2;
@@ -1255,94 +1228,111 @@ function	script	applegamble	{
 	set .@playertotal, .@playersub;
 	next;
 	mes "["+getarg(0)+"]";
-	mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player1 + "^000000 和 ^FF0000" + .@player2 + "^000000. 总数为 ^FF0000" + .@playersub + "^000000 .";
+	mes "^FF0000" + strcharinfo(0) + "^000000, 您投到了 ^FF0000" + .@player1 + "^000000 和 ^FF0000" + .@player2 + "^000000.";
+	mes "总点数为 ^FF0000" + .@playersub + "^000000 点.";
 	next;
 	mes "["+getarg(0)+"]";
 	if(.@playersub == .@tablesub) {
-		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000 和 ^FF0000" + strcharinfo(0) + "^000000, 您的总点数为 ^FF0000" + .@playersub + "^000000. 我们打平了.您要最后一投么?";
+		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 您的总点数为 ^FF0000" + .@playersub + "^000000.";
+		mes "我们打平了. 您要最后一投么?";
 	} else if (.@playersub > .@tablesub) {
-		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000 和 ^FF0000" + strcharinfo(0) + "^000000, 您的总数为 ^FF0000" + .@playersub + "^000000. ^FF0000" + strcharinfo(0) + "^000000, 你现在是优势, 您要最后一投吗?";
+		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 您的总点数为 ^FF0000" + .@playersub + "^000000.";
+		mes "您现在占优势, 您要最后一投吗?";
 	} else if(.@tablesub > .@playersub) {
-		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000 和 ^FF0000" + strcharinfo(0) + "^000000, 您的总数为 ^FF0000" + .@playersub + "^000000. 我现在是优势, 您要最后一投吗?";
+		mes "现在我的总点数是 ^0000FF" + .@tablesub + "^000000.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 您的总点数为 ^FF0000" + .@playersub + "^000000.";
+		mes "我现在占优势, 您要最后一投吗?";
 	}
 	next;
-	switch (select("丢骰子.:取消.")) {
+	switch (select("丢骰子:不丢了")) {
 	case 1:
-		mes "^3355FF*咕噜噜噜噜噜……*^000000";
+		mes "^3355FF*咕噜噜噜噜噜...*^000000";
 		set .@player3, rand(1,6);
 		set .@playertotal, .@playertotal + .@player3;
 		next;
 		mes "["+getarg(0)+"]";
 		if (.@playertotal > 12) {
-			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000 并且总点数变为 ^FF0000" + .@playertotal + "^000000. 很抱歉您输了, 不过希望您能再来.";
+			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";
+			mes "很抱歉您输了, 不过希望您能再来.";
 			close;
 		}
 		else if (.@playertotal < .@tablesub) {
-			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000 并且总点数变为 ^FF0000" + .@playertotal + "^000000. 虽然您又投了一次, 但是还是没我的大.很抱歉您输了, 不过希望您能再来.";
+			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";
+			mes "虽然您又投了一次, 但是还是没我的大. 很抱歉, 您输了, 不过希望您能再来.";
 			close;
 		}
 		else if (.@playertotal == .@tablesub) {
 			if (.@tablesub > 8) {
-				mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000 并且总点数变为 ^FF0000" + .@playertotal + "^000000. 我不想冒险, 我们平局吧.我们下次再玩~";
+				mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";
+				mes "我不想冒险, 我们平局吧. 我们下次再玩~";
 				close2;
 				getitem 512,.@amount; //Apple
 				end;
 			}
 		}
 		else {
-			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000 并且总点数变为 ^FF0000" + .@playertotal + "^000000. 现在轮到我了.";
+			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";
+			mes "现在轮到我了.";
 		}
 		break;
 	case 2:
 		mes "["+getarg(0)+"]";
 		if (.@playersub > .@tablesub) {
-			mes "我明白了, 您不想冒险输掉比赛.那好吧, 我来投.";
+			mes "我明白了, 您不想冒险输掉比赛. 那好吧, 我来投.";
 		}
 		else if (.@playersub == .@tablesub) {
 			if (.@tablesub > 8) {
-				mes "我明白了, 您不想冒险输掉比赛.我也不想, 让我们和局吧.希望您下次再来玩~";
+				mes "我明白了, 您不想冒险输掉比赛. 我也不想, 让我们和局吧. 希望您下次再来玩~";
 				close2;
 				getitem 512,.@amount; //Apple
 				end;
 			}
 			mes "好吧.";
-			mes "我再来投一次.";
+			mes "我再来丢一次试试运气.";
 		}
 		else {
-			mes "再试试又不会怀孕.";
+			mes "再丢一次又不会怀孕.";
 			mes "好吧, 我赢了.";
-			mes "很抱歉, 我们下次";
-			mes "再玩~";
+			mes "抱歉啊, 我们下次再玩~";
 			close;
 		}
 		break;
 	}
 	next;
-	mes "^3355FF*咕噜噜噜噜噜……*^000000";
+	mes "^3355FF*咕噜噜噜噜噜...*^000000";
 	set .@table3, rand(1,6);
 	set .@tabletotal, .@tabletotal + .@table3;
 	next;
 	mes "["+getarg(0)+"]";
 	if (.@tabletotal > 12) {
-		mes "我获得了 ^0000FF" + .@table3 + "^000000 并且总点数变为 ^0000FF" + .@tabletotal + "^000000. 我的点数超过了12所以我输了.给您我的苹果.恭喜啊!玩的很开心.";
+		mes "我获得了 ^0000FF" + .@table3 + "^000000 点, 总点数变为 ^0000FF" + .@tabletotal + "^000000.";
+		mes "我的点数超过了 12 所以我输了. 给您我的苹果, 恭喜啊! 玩的很开心.";
 		close2;
 		getitem 512,.@giveapple; //Apple
 		end;
 	}
 	else if (.@playertotal > .@tabletotal) {
-		mes "我获得了 ^0000FF" + .@table3 + "^000000 并且总点数变为 ^0000FF" + .@tabletotal + "^000000. 总计 ^FF0000" + .@playertotal + "^000000 您获胜了,  ^FF0000" + strcharinfo(0) + "^000000.给您我的苹果.玩的很开心, 我们下次继续!";
+		mes "我获得了 ^0000FF" + .@table3 + "^000000 点, 总点数变为 ^0000FF" + .@tabletotal + "^000000.";
+		mes "您的总数为 ^FF0000" + .@playertotal + "^000000, 您获胜了.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 给您我的苹果. 玩的很开心, 我们下次继续!";
 		close2;
 		getitem 512,.@giveapple; //Apple
 		end;
 	}
 	else if (.@playertotal == .@tabletotal) {
-		mes "我获得了 ^0000FF" + .@table3 + "^000000 并且总点数变为 ^0000FF" + .@tabletotal + "^000000. 总计 ^FF0000" + .@playertotal + "^000000 这场比赛打平了, ^FF0000" + strcharinfo(0) + "^000000.还给您苹果.玩得很开心, 我们下次继续.";
+		mes "我获得了 ^0000FF" + .@table3 + "^000000 点, 总点数变为 ^0000FF" + .@tabletotal + "^000000.";
+		mes "您的总数为 ^FF0000" + .@playertotal + "^000000. 这场比赛打平了.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 还给您苹果. 玩得很开心, 我们下次继续.";
 		close2;
 		getitem 512,.@amount; //Apple
 		end;
 	}
 	else if (.@playertotal < .@tabletotal) {
-		mes "我获得了 ^0000FF" + .@table3 + "^000000 并且总点数变为 ^0000FF" + .@tabletotal + "^000000. 总计 ^FF0000" + .@playertotal + "^000000 您输了, ^FF0000" + strcharinfo(0) + "^000000.很抱歉, 不过再接再厉哟!";
+		mes "我获得了 ^0000FF" + .@table3 + "^000000 点, 总点数变为 ^0000FF" + .@tabletotal + "^000000.";
+		mes "您的总数为 ^FF0000" + .@playertotal + "^000000. 您输了.";
+		mes "^FF0000" + strcharinfo(0) + "^000000, 很抱歉, 不过再接再厉哟!";
 		close;
 	}
 }

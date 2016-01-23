@@ -2,6 +2,22 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.1.0(2015-10-16)
+------------------
+[新增] 服务器黑框中能显示出 rAthenaCN 的版本号
+[新增] 携带 rAthenaCN 专用的 LeeStarter 启动管理器(需安装微软的.Net Framework 4.0框架才能运行)
+[新增] 杀死MVP魔物时，会触发与玩家无关联的 OnMvpKillEvent 事件
+[新增] 使用 @reloadscript 刷新NPC之前，会触发与玩家相关联的 OnBeforeReloadScript 事件
+[新增] 使用 @reloadscript 刷新完NPC后，会触发与玩家相关联的 OnAfterReloadScript 事件
+[新增] 添加 rAthenaCN 拓展事件的演示脚本，位于 npc/custom/rAthenaCN_Events_Tester.txt
+[调整] 您可以通过编辑 npc/scripts_custom.conf 文件来启用“拓展事件演示脚本”
+[调整] 将 rAthenaCN 自定义的信息配置文件独立出来放到 conf/msg_conf/map_msg_racn.conf
+[修正] rAthena官方BUG: 修正复兴前(pre-re)的依斯鲁德岛地图缓存(map_cache.dat)不正确的问题 (需配合新的登录补丁)
+[汉化] 汉化宠物数据库 db/(pre-)re/pet_db.txt 中的宠物名称
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+[汉化] 完全汉化复兴前\复兴后的普隆德拉导游人员
+[汉化] 校验并优化位于“airplane_01,33”的“克拉莉斯”(飞空艇骰子游戏人员)
+
 v1.0.9(2015-10-09)
 ------------------
 [同步] rAthena官方Github库
