@@ -147,7 +147,17 @@
 2449,0xdf,    ,  0, 3:3:4:4:5,500,enemy,  0x018	//SO_PSYCHIC_WAVE
 2450,0xe0,    ,  0, 3, 500,enemy, 0x8010	//SO_CLOUD_KILL
 2452,0xe4,    ,  0, 3,3000,all,   0x8010	//SO_WARMER
-2453,0xeb,    ,  0, 1:1:2:2:3,500,enemy,0x8010	//SO_VACUUM_EXTREME
+// ======================================================================
+// SO_VACUUM_EXTREME 是“元素使”的“极限空虚|黑洞陷阱”技能
+// 按照CRO的实验记录，应该是可以被“基因学者”的“疯狂野草”取消的，然而
+// rAthena 官方却认为是不行的。
+// 
+// 在 rAthenaCN 中，我们将 SO_VACUUM_EXTREME 的 flag 字段加上 0x04000
+// 表示“极限空虚|黑洞陷阱”是可以被“疯狂野草”取消的 [Sola丶小克]
+// ======================================================================
+//2453,0xeb,    ,  0, 1:1:2:2:3,500,enemy,0x8010	//SO_VACUUM_EXTREME
+// 上面这一行为 rAthena 官方数据，下面这一行为 rAthenaCN 修正后的数据
+2453,0xeb,    ,  0, 1:1:2:2:3,500,enemy,0xC010	//SO_VACUUM_EXTREME
 2465,0xf1,    ,  0, 1,1000,all,   0x010	//SO_FIRE_INSIGNIA
 2466,0xf2,    ,  0, 1,1000,all,   0x010	//SO_WATER_INSIGNIA
 2467,0xf3,    ,  0, 1,1000,all,   0x010	//SO_WIND_INSIGNIA

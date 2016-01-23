@@ -28,6 +28,22 @@ OnPCLoginEvent:
 end;
 }
 
+-	script	EVENT_OFFICIAL_CABIN	-1,{
+end;
+OnPCStatCalcEvent:
+	// OnPCStatCalcEvent 是与玩家关联的
+	// 这个时间是 rAthena 官方支持的事件，而并非 rAthenaCN 拓展添加的事件
+	// 当玩家身上的状态有变化，而导致需要重算玩家的相关信息时，该事件将被触发
+	// 
+	// 触发时机包括但不限：
+	// - 穿戴/脱下装备而导致玩家能力变化时
+	// - 获得/解除一个状态导致玩家能力变化时(比如吃料理，用加速术等)
+	// - 刚进入游戏时/过地图时
+	// -------------------------------------------------------
+	dispbottom "[事件演示] OnPCStatCalcEvent | " + strcharinfo(0) + " 的角色能力值被系统重新计算了！";
+end;
+}
+
 -	script	RELOAD_WARNING	-1,{
 end;
 OnBeforeReloadScript:
