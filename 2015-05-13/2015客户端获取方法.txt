@@ -1,7 +1,0 @@
-
-LeeClient
-------------------------
-这是 rAthenaCN 主导的一个完整客户端开源项目，会使用Git的同学可以自行克隆（强烈推荐）。
-不会使用 Git 的同学，请打开下面网址，点右上角的“Download ZIP”按钮。
-
-https://github.com/CairoLee/LeeClient
