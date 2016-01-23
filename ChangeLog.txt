@@ -2,6 +2,23 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.1.8(2015-12-18)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/b53eacd7b24eb20cdf8c7b32630f1135b8485f63
+[新增] 支持自动探测编码，并修改字符集来进行自动适应，减少新手解决中文乱码问题的难度
+[新增] 解决连接阿里云RDS数据库时，由于RDS域名过长带来的连接错误问题
+[新增] 实现 OnPCUseSkillEvent 和 OnPCUseSkillFinishEvent 事件，当玩家使用技能之前/之后触发
+[新增] 实现 OnPCUseItemEvent 和 OnPCUseItemFinishEvent 事件，当玩家使用物品之前/之后触发
+[新增] 支持定制“玩家随身携带的金币上限”以及“背包中的物品种类上限”
+[新增] 添加“extremityfist_spiritball_strict”选项，用来在阿修罗霸凰拳咏唱完毕后，是否再次判定气弹数量是否达标，若不达标则技能使用失败
+[新增] 添加“extremityfist_explosion_strict”选项，用来在阿修罗霸凰拳咏唱完毕后，是否再次判定爆气状态是否存在，若不存在则技能使用失败
+[修正] rAthena官方BUG: 彻底解决20130807和20150513全版本在使用callshop直接打开购买/出售页面时玩家可以移动的问题
+[修正] rAthena官方BUG: 针对MVP魔物显示大血条后，MVP魔物受到攻击时，血条不更新的问题
+[修正] 解决有玩家在副本的时候，关闭地图服务器会导致奔溃的问题 [感谢晓晓修正]
+[修正] 解决复兴前版本会提示找不到 novice_skills.txt 脚本文件的问题
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.1.7(2015-12-11)
 ------------------
 [同步] rAthena官方Github库

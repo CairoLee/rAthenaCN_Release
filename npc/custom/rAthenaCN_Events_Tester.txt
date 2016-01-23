@@ -143,7 +143,7 @@ OnPCEquipEvent:
 	//     一个内在的序号用来标记此物品的位置。
 	//
 	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
-	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
 	// 
 	// 为了兼容SEA和CSEA服务端
 	// @equip_pos 也被赋予了和 @equip_idx 一样的值
@@ -164,7 +164,7 @@ OnPCUnequipEvent:
 	//     一个内在的序号用来标记此物品的位置。
 	//
 	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
-	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
 	// 
 	// 为了兼容SEA和CSEA服务端
 	// @unequip_pos 也被赋予了和 @unequip_idx 一样的值
@@ -331,9 +331,95 @@ OnPCViewEquipEvent:
 end;
 }
 
+-	script	USE_SKILL_EVENT	-1,{
+end;
+OnPCUseSkillEvent:
+	// OnPCUseSkillEvent 是与技能施放者关联的
+	// 当玩家施放技能时，咏唱之前此事件会被触发
+	// 无论技能的所需道具是否足够，最终技能会不会使用失败，只要玩家使用了技能，就必定触发此事件
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @useskill_id		施放的技能ID
+	// @useskill_lv		被施放的技能等级
+	// @useskill_target	被施法目标的GameID或者AccountID，若为 0 则表示这是个对地面施放的技能
+	// @useskill_x		被施法的地面X坐标
+	// @useskill_y		被施法的地面Y坐标
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUseSkillEvent | 开始使用技能";
+	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面X坐标: " + @useskill_x + " | 地面Y坐标: " + @useskill_y;
+end;
+OnPCUseSkillFinishEvent:
+	// OnPCUseSkillFinishEvent 是与技能施放者关联的
+	// 当玩家技能成功施放完毕时，此事件会被触发
+	// 只有技能成功被施放出来了，才会触发此事件
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @useskill_id		施放的技能ID
+	// @useskill_lv		被施放的技能等级
+	// @useskill_target	被施法目标的GameID或者AccountID，若为 0 则表示这是个对地面施放的技能
+	// @useskill_x		被施法的地面X坐标
+	// @useskill_y		被施法的地面Y坐标
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUseSkillFinishEvent | 技能使用完毕";
+	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面X坐标: " + @useskill_x + " | 地面Y坐标: " + @useskill_y;
+end;
+}
 
-
-
+-	script	USE_ITEM_EVENT	-1,{
+end;
+OnPCUseItemEvent:
+	// OnPCUseItemEvent 是与物品使用者关联的
+	// 当玩家双击使用“非装备”类型道具时，此事件会被触发
+	// 无论物品最终是否会使用失败，只要玩家双击了物品，就必定触发此事件
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @useitem_nameid	玩家所使用的物品编号
+	// @useitem_idx		玩家所使用物品的背包序号
+	//
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @useitem_pos 也被赋予了和 @useitem_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUseItemEvent | 开始使用物品";
+	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
+end;
+OnPCUseItemFinishEvent:
+	// OnPCUseItemFinishEvent 是与物品使用者关联的
+	// 当玩家成功使用“非装备”类型道具时，此事件会被触发
+	// 只有当物品被成功使用时，才会触发此事件
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @useitem_nameid	玩家所使用的物品编号
+	// @useitem_idx		玩家所使用物品的背包序号
+	//
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @useitem_pos 也被赋予了和 @useitem_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUseItemFinishEvent | 物品使用完毕";
+	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
+end;
+}
 
 
 
