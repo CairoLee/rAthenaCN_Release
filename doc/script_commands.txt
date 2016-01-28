@@ -4237,6 +4237,7 @@ Here are the possible look types:
  LOOK_CLOTHES_COLOR - Clothes color
  LOOK_SHIELD - Shield
  LOOK_SHOES - Shoes
+ LOOK_BODY2 - bodystyle
 
 Whatever 'shoes' means is anyone's guess, ask Gravity - the client does nothing 
 with this value. It still wants it from the server though, so it is kept, but 
@@ -8998,27 +8999,20 @@ The command returns 1 upon success, and these values upon failure:
 
 ---------------------------------------
 
-*opendressroom({<char_id>});
+*opendressroom(<flag>{,<char_id>});
 
 This will open the Dress Room window on the client connected to the invoking character.
 
     mes "Close this window to open the Dress Room window.";
     close2;
-    opendressroom;
+    opendressroom(1);
     end;
+
+Valid flag are:
+ 1 - Open the Dress Room window
 
 ---------------------------------------
 
-*closedressroom({<char_id>});
-
-This will close an open Dress Room window on the client connected to the invoking character.
-
-    mes "Close this window to close the Dress Room window.";
-    close2;
-    closedressroom;
-    end;
-
----------------------------------------
 
 Whew.
 That's about all of them.

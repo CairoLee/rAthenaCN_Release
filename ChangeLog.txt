@@ -2,6 +2,14 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.2.5(2016-01-15)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/3a8aac4fb0d4ce56b6057facd35ba3579b78ed7a
+[修正] 修正定制“自动拾取的物品清单上限”超过256之后，打死魔物掉落物品时地图服务器会假死的问题(感谢可乐鸡翅)
+[调整] 调整一下 conf/packet_athena.conf 中的说明
+[汉化] 修改 conf/battle/client.conf 与“服装风格”有关的选项描述
+
 v1.2.4(2016-01-13)
 ------------------
 [同步] rAthena官方Github库
