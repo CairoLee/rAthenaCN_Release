@@ -93,8 +93,8 @@
 1837,IMP,÷À—Êƒß,12374,9056,10038,6114,80,60,10,100,250,20,200,150,0,0,300,300,800,{},{ bonus2 bSubEle,Ele_Fire,2; bonus2 bAddEle,Ele_Fire,2; }
 
 // Brasilis Quest - Suspicious Beach [UNHATCHABLE]
-2057,E_CRAMP,±‰“Ï¿œ Û,12408,6221,0,0,0,0,0,0,0,0,50,0,0,0,350,400,800,{},{}
-2081,E_HYDRA,±‰“Ï∫£ø˚,12408,6221,0,0,0,0,0,0,0,0,50,0,0,0,350,400,800,{},{}
+2057,E_CRAMP,Strange Cramp,12408,6221,0,0,0,0,0,0,0,0,50,0,0,0,350,400,800,{},{} // kRO version
+2081,E_HYDRA,Strange Hydra,12408,6221,0,0,0,0,0,0,0,0,50,0,0,0,350,400,800,{},{} // iRO/cRO version
 
 // New pets (FIX ME: pet bonuses for 2210 and 2313 do not require loyalty)
 2200,J_TAINI,Tiny,0,9057,0,512,80,60,10,100,250,20,0,150,1,0,300,300,800,{},{}

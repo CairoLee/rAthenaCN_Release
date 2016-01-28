@@ -421,9 +421,69 @@ OnPCUseItemFinishEvent:
 end;
 }
 
+-	script	PC_MOVE	-1,{
+end;
+OnWhisperGlobal:
+	// 私聊一个名为 npc:PC_MOVE 的人，随便发一句话过去，
+	// 即可触发这里的代码
+	
+	if (getbattleflag("pc_move_event_trigger_type") == 0){
+		dispbottom "[事件演示] 您在 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0, 无法触发 OnPCMoveEvent 事件";
+		end;
+	}
+	else {
+		when_pcmove_doevent;
+		dispbottom "[事件演示] 已经触发 when_pcmove_doevent; 玩家的下次移动会触发 OnPCMoveEvent 事件";
+	}
+end;
+OnPCMoveEvent:
+	// OnPCMoveEvent 是与想要移动的玩家关联的
+	// 当玩家点击地面的某个格子想要移动时，此事件会在玩家开始走路之前触发
+	// 
+	// 若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0
+	// 那么永远不会触发此事件
+	// 
+	// 若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 1
+	// 那么必须先调用 when_pcmove_doevent; 脚本指令后，玩家的下一次移动才会触发本事件
+	//
+	// 若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 2
+	// 那么玩家的所有移动都会触发本事件(人多的话可能会影响性能)
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @moveto_x	玩家想要移动到的目标位置的x坐标
+	// @moveto_y	玩家想要移动到的目标位置的y坐标
+	// -------------------------------------------------------
+	dispbottom "[事件演示] OnPCMoveEvent | 玩家开始移动, 目的地坐标是: " + @moveto_x + "," + @moveto_y;
+end;
+}
 
-
-
+-	script	BEFORE_LOADMAP	-1,{
+end;
+OnPCBeforeLoadMapEvent:
+	// OnPCBeforeLoadMapEvent 将关联到想要过图的玩家
+	// 当玩家登录后准备进入地图、或者准备切换地图时，都会触发此事件
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @loadmap_oldmap_id		玩家准备过图时，老地图的地图编号，若为0则表示玩家刚登录，没有老地图
+	// @loadmap_oldmap_name$	玩家准备过图时，老地图的地图名称
+	// @loadmap_oldmap_x		玩家准备过图时，在老地图中所处的x坐标
+	// @loadmap_oldmap_y		玩家准备过图时，在老地图中所处的y坐标
+	// 
+	// @loadmap_oldmap_id		玩家准备过图时，目的地地图的地图编号
+	// @loadmap_oldmap_name$	玩家准备过图时，目的地地图的地图名称
+	// @loadmap_oldmap_x		玩家准备过图时，会在目的地地图的哪个x坐标出现
+	// @loadmap_oldmap_y		玩家准备过图时，会在目的地地图的哪个y坐标出现
+	// -------------------------------------------------------
+	if (@loadmap_oldmap_id == 0){
+		dispbottom "[事件演示] OnPCBeforeLoadMapEvent | 准备进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
+	}
+	else {
+		dispbottom "[事件演示] OnPCBeforeLoadMapEvent | 准备从 " + @loadmap_oldmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y +" 进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
+	}
+end;
+}
 
 
 

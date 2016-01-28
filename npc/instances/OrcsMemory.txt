@@ -386,7 +386,7 @@ OnTimer49210:
 	end;
 
 OnTimer56310:
-	mapannounce instance_mapname("1@orcs"), "任务: 请悄悄地靠近后将'魔力封印的兽人'消灭掉吧! 尽量避免大规摸的冲突, 这样才能顺利抵达2楼.",bc_map,"0x44ffff";
+	mapannounce instance_mapname("1@orcs"), "任务: 请悄悄地靠近后, 将'魔力封印的兽人'消灭掉吧! 尽量避免大规摸的冲突, 这样才能顺利抵达2楼.",bc_map,"0x44ffff";
 	donpcevent instance_npcname("#Resurrect Monsters1")+"::OnEnable";
 	donpcevent instance_npcname("#Resurrect Monsters2")+"::OnEnable";
 	donpcevent instance_npcname("#Resurrect Monsters3")+"::OnEnable";
@@ -420,11 +420,11 @@ OnContinue:
 	end;
 
 OnTimer10300:
-	mapannounce instance_mapname("1@orcs"), "库鲁格的密语: 这里的兽人都曾经是我的同伴. 只是从那时开始, 他们受到兽人女巫的魔法控制, 失却了自己本来的心性.",bc_map,"0xff4499";
+	mapannounce instance_mapname("1@orcs"), "库鲁格的耳语: 这里的兽人都曾经是我的同伴. 只是从那时开始, 他们受到兽人女巫的魔法控制, 失却了自己本来的心性.",bc_map,"0xff4499";
 	end;
 
 OnTimer18700:
-	mapannounce instance_mapname("1@orcs"), "库鲁格的密语: 唯有杀死女巫, 我们才能拯救余下的部落成员, 重建美好和谐的幸福家园.",bc_map,"0xff4499";
+	mapannounce instance_mapname("1@orcs"), "库鲁格的耳语: 唯有杀死女巫, 我们才能拯救余下的部落成员, 重建美好和谐的幸福家园.",bc_map,"0xff4499";
 	stopnpctimer;
 	end;
 }

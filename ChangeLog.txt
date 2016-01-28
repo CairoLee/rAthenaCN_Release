@@ -2,6 +2,21 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.2.2(2016-01-01)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/118fa28ae9ac832e89968ce214c27b17d780027d
+[新增] 实现玩家开始移动事件“OnPCMoveEvent”（支持配置玩家移动事件(OnPCMoveEvent)的触发方式）
+[新增] 新增“OnPCBeforeLoadMapEvent”，当玩家准备过图时触发
+[修正] 内码表自动判定机制升级，对字符集为gbk或big5的MySQL数据库更加友好
+[修正] 修正rAthena官方在 db/pre-re/skill_require_db.txt 的第 886 行少了一个字段的问题
+[汉化] 优化一下 conf/battle/guild.conf 中 guild_notice_changemap 选项的注释说明
+[汉化] 修改 db/item_announce.txt 的说明
+[汉化] 优化“兽人的记忆”副本的几行对话
+[汉化] 能够自动翻译 db 目录下除了 skill_cast_db 之外以 skill_ 开头的12个db文件中的技能名
+[汉化] 汉化 conf/battle/client.conf 中 hide_woe_damage 选项的说明
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.2.1(2015-12-25)
 ------------------
 [新增] 支持定制“自动拾取的物品清单上限”
