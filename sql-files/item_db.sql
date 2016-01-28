@@ -34,7 +34,8 @@ CREATE TABLE `item_db` (
   `script` text,
   `equip_script` text,
   `unequip_script` text,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `UniqueAegisName` (`name_english`)
 ) ENGINE=MyISAM;
 
 # Items Database
@@ -160,7 +161,7 @@ REPLACE INTO `item_db` VALUES (614,'Golden_Hammer','黄金锤子',2,3000,NULL,30
 REPLACE INTO `item_db` VALUES (615,'Oridecon_Hammer','神之金属锤子',2,5000,NULL,400,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'produce 3;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (616,'Old_Card_Album','老旧收集册',2,10000,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getrandgroupitem(IG_CardAlbum),1;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (617,'Old_Violet_Box','神秘紫箱',2,10000,NULL,200,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getrandgroupitem(IG_VioletBox),1;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (618,'Worn_Out_Scroll','老旧卷轴',2,50,NULL,20,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getrandgroupitem(IG_ScrollBox),1;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (618,'Worn_Out_Scroll','老旧卷轴',2,50,NULL,20,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db` VALUES (619,'Unripe_Apple','青苹果',2,1000,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'pet 1002;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (620,'Orange_Juice','浓缩柳橙汁',2,1500,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'pet 1113;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (621,'Bitter_Herb','苦味草',2,20,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'pet 1031;',NULL,NULL);
@@ -966,7 +967,7 @@ REPLACE INTO `item_db` VALUES (1730,'Burning_Bow','灼热之弓',5,20,NULL,1400,
 REPLACE INTO `item_db` VALUES (1731,'Frozen_Bow','冰霜之弓',5,20,NULL,1400,100,NULL,5,1,0x000A0808,7,2,34,3,55,1,11,'bonus2 bAddEff,Eff_Freeze,1000;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (1732,'Earth_Bow','大地之弓',5,20,NULL,1400,105,NULL,5,1,0x000A0808,7,2,34,3,55,1,11,NULL,NULL,NULL);
 REPLACE INTO `item_db` VALUES (1733,'Gust_Bow','飓风之弓',5,20,NULL,1400,95,NULL,5,1,0x000A0808,7,2,34,3,55,1,11,NULL,NULL,NULL);
-REPLACE INTO `item_db` VALUES (1734,'Orc_Archer_Bow','兽人射手之弓',5,20,NULL,1600,120,NULL,5,0,0x000A0808,7,2,34,4,65,1,11,'bonus2 bAddMonsterDropItem,1753,200;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (1734,'Orc_Archer_Bow','兽人射手之弓',5,20,NULL,1600,120,NULL,5,0,0x000A0808,7,2,34,3,65,1,11,'bonus2 bAddMonsterDropItem,1753,200;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (1735,'Kkakkung','Kkakkung',5,20,NULL,0,120,NULL,5,0,0x000A0848,7,2,34,1,1,0,11,'bonus2 bAddClass,Class_All,50;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (1736,'Double_Bound','连发弓',5,20,NULL,900,70,NULL,5,3,0x00000800,2,2,34,3,70,1,11,'bonus3 bAutoSpell,"AC_DOUBLE",GetSkillLv("AC_DOUBLE"),10;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (1737,'Ixion_Wing','伊克西翁之翼',5,20,NULL,300,135,NULL,5,1,0x00000800,2,2,34,4,70,1,11,'autobonus "{ bonus bAspdRate,7; }",10+(getrefine()*2),7000,BF_WEAPON,"{ specialeffect2 EF_HASTEUP; }"; bonus2 bAddSkillBlow,"AC_CHARGEARROW",3;',NULL,NULL);
@@ -4590,7 +4591,7 @@ REPLACE INTO `item_db` VALUES (11528,'Kanafeh','Kanafeh',0,1500,NULL,200,NULL,NU
 REPLACE INTO `item_db` VALUES (11529,'MAAMOUL_','Maamoul',0,500,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal 120,60;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (11530,'Jujube','Jujube',0,10,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal 30,0;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (11531,'Coffee','Coffee',0,10,NULL,100,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal 0,10;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (11701,'Girl_Bunch_Of_Flower','Girl\'s Bouquet',0,20,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(105,145),0;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (11701,'Girl_Bunch_Of_Flower_','Girl\'s Bouquet',0,20,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(105,145),0;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (11702,'Moon_Cookie','月亮饼干',0,0,NULL,300,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL);
 REPLACE INTO `item_db` VALUES (11703,'Mysterious_Blood','Mystery Blood',0,0,NULL,30,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal 0,rand(25,35);',NULL,NULL);
 REPLACE INTO `item_db` VALUES (11704,'KETUPAT_F','Ketupat',0,2,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(70,90),0;',NULL,NULL);
@@ -5538,7 +5539,7 @@ REPLACE INTO `item_db` VALUES (13410,'BF_Sword1','角斗士的佩剑',5,20,NULL,
 REPLACE INTO `item_db` VALUES (13411,'BF_Sword2','角斗士的长剑',5,20,NULL,0,115,NULL,1,0,0x000654E3,7,2,2,3,80,1,2,'bonus bStr,1; bonus bDex,1; bonus2 bAddRace,RC_DemiHuman,75; bonus2 bAddRace,RC_Player,75; bonus bMatkRate,10; bonus bUnbreakableWeapon,0;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13412,'Twin_Edge_B','纳户特基格的寒冰剑',5,20,NULL,1500,150,NULL,1,3,0x000654E2,2,2,2,4,75,1,2,'bonus bAtkEle,Ele_Water; skill "MG_FROSTDIVER",5; autobonus "{ bonus bIgnoreDefClass,Class_Normal; }",50,5000;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13413,'Twin_Edge_R','纳户特基格的火焰剑',5,20,NULL,1500,160,NULL,1,3,0x000654E2,2,2,2,4,75,1,2,'bonus bAtkEle,Ele_Fire; skill "WZ_METEOR",3; autobonus "{ bonus bIgnoreDefClass,Class_Normal; }",50,5000;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (13414,'Elemental_Sword','元素之剑',5,20,NULL,1200,105,NULL,1,3,0x000654E2,2,2,2,3,70,1,2,'bonus bStr,2; bonus bInt,4; bonus bDex,1; bonus bMatkRate,5; bonus2 bAddEle,Ele_Neutral,10; bonus3 bAutoSpell,"MG_COLDBOLT",3,50; bonus4 bAutoSpellOnSkill,"MG_COLDBOLT","MG_FIREBOLT",3,1000; bonus4 bAutoSpellOnSkill,"MG_FIREBOLT","MG_LIGHTNINGBOLT",3,10000; bonus4 bAutoSpellOnSkill,"MG_LIGHTNINGBOLT","WZ_EARTHSPIKE",3,10000;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (13414,'Elemental_Sword','元素之剑',5,20,NULL,1200,105,NULL,1,3,0x000654E2,2,2,2,3,70,1,2,'bonus bStr,2; bonus bInt,4; bonus bDex,1; bonus bMatkRate,5; bonus2 bAddEle,Ele_Neutral,10; bonus3 bAutoSpell,"MG_COLDBOLT",3,50; bonus4 bAutoSpellOnSkill,"MG_COLDBOLT","MG_FIREBOLT",3,1000; bonus4 bAutoSpellOnSkill,"MG_FIREBOLT","MG_LIGHTNINGBOLT",3,1000; bonus4 bAutoSpellOnSkill,"MG_LIGHTNINGBOLT","WZ_EARTHSPIKE",3,1000;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13415,'N_Falchion','新手弯刀',5,0,NULL,0,59,NULL,1,3,0x000654E3,7,2,2,1,2,0,2,NULL,NULL,NULL);
 REPLACE INTO `item_db` VALUES (13416,'Krieger_Onehand_Sword1','荣光之刃',5,20,NULL,0,130,NULL,1,0,0x000654E3,7,2,2,4,80,1,2,'bonus2 bAddRace,RC_DemiHuman,75; bonus2 bAddRace,RC_Player,75; bonus2 bIgnoreDefRaceRate,RC_DemiHuman,20; bonus2 bIgnoreDefRaceRate,RC_Player,20; bonus bUnbreakableWeapon,0; if(getrefine()>5) { bonus2 bAddRace,RC_DemiHuman,(getrefine()-4)*(getrefine()-4); bonus2 bAddRace,RC_Player,(getrefine()-4)*(getrefine()-4); bonus2 bIgnoreDefRaceRate,RC_DemiHuman,5; bonus2 bIgnoreDefRaceRate,RC_Player,5; } if(getrefine()>6) bonus bAspdRate,5; if(getrefine()>8) { bonus bAspdRate,5; bonus4 bAutoSpellOnSkill,"SM_BASH","NPC_CRITICALWOUND",2,200; }',NULL,NULL);
 REPLACE INTO `item_db` VALUES (13417,'Krieger_Onehand_Sword2','荣光细剑',5,20,NULL,0,130,NULL,1,0,0x000654E3,7,2,2,4,80,1,2,'bonus bInt,getrefine()-5; bonus bMatkRate,10; bonus bUnbreakableWeapon,0; if(getrefine()>5) bonus bUseSPrate,-10; if(getrefine()>8) bonus bInt,5;',NULL,NULL);
@@ -6570,10 +6571,10 @@ REPLACE INTO `item_db` VALUES (16555,'Pr_Reset_Stone_Box','轮回之石碎片箱
 #16590,Thoughtful_Hat_Box
 REPLACE INTO `item_db` VALUES (16677,'Universal_Catalog_Gold_Box10','Universal Catalog Gold 10 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,10;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (16678,'Universal_Catalog_Gold_Box50','Universal Catalog Gold 50 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,50;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (16679,'Universal_Catalog_Gold_Box10','Universal Catalog Gold 10 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,10;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (16680,'Universal_Catalog_Gold_Box50','Universal Catalog Gold 50 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,50;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (16776,'Universal_Catalog_Gold_Box10','Universal Catalog Gold 10 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,10;',NULL,NULL);
-REPLACE INTO `item_db` VALUES (16777,'Universal_Catalog_Gold_Box50','Universal Catalog Gold 50 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,50;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (16679,'Universal_Catalog_Gold_Box10_','Universal Catalog Gold 10 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,10;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (16680,'Universal_Catalog_Gold_Box50_','Universal Catalog Gold 50 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,50;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (16776,'Universal_Catalog_Gold_Box10__','Universal Catalog Gold 10 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,10;',NULL,NULL);
+REPLACE INTO `item_db` VALUES (16777,'Universal_Catalog_Gold_Box50__','Universal Catalog Gold 50 Box',2,0,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 12581,50;',NULL,NULL);
 #
 REPLACE INTO `item_db` VALUES (17104,'HD_Oridecon_50Box','HD Oridecon 50 Box',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 6240,50;',NULL,NULL);
 REPLACE INTO `item_db` VALUES (17105,'HD_Elunium_50Box','HD Elunium 50 Box',2,20,NULL,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,7,2,NULL,NULL,NULL,NULL,NULL,'getitem 6241,50;',NULL,NULL);

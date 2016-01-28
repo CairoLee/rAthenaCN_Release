@@ -2,6 +2,23 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.2.3(2016-01-08)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/315056b02ef9e132443efe16e7a7e7ba01255ba4
+[升级] 若您不是全新安装，且使用了SQL版本的物品和魔物数据库的话，请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20160106.sql
+	   - 本周 rAthena 官方修改的物品、魔物以及魔物技能数据库内容较多，建议重新导入
+[升级] 若您不是全新安装的话，请在您的【日志数据库】上按顺序导入以下sql文件
+       - sql-files\logs.sql
+[新增] 新增服务端级别的“聊天内容敏感词过滤机制”，详见 conf/battle/extend.conf 中的配置
+[新增] 新增一个 @reloadmannerdb 指令，用来重新加载敏感词库
+[修正] rAthena官方BUG: 使用 @ban 指令封禁账号时，登录服务器显示的提示内容错误的问题
+[修正] rAthena官方BUG: 解决当玩家被GM禁言之后，角色过图、重新进入游戏会导致身上的红色禁言图标丢失的问题
+[修正] rAthena官方BUG: 修正一处关闭登录服务器时，程序会崩溃的问题
+[调整] 调整技能数据库的汉化方式，保留技能英文名，方便对照(感谢★╮喵玲兒〃☆的建议)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+	   
 v1.2.2(2016-01-01)
 ------------------
 [同步] rAthena官方Github库
@@ -9,7 +26,7 @@ v1.2.2(2016-01-01)
 [新增] 实现玩家开始移动事件“OnPCMoveEvent”（支持配置玩家移动事件(OnPCMoveEvent)的触发方式）
 [新增] 新增“OnPCBeforeLoadMapEvent”，当玩家准备过图时触发
 [修正] 内码表自动判定机制升级，对字符集为gbk或big5的MySQL数据库更加友好
-[修正] 修正rAthena官方在 db/pre-re/skill_require_db.txt 的第 886 行少了一个字段的问题
+[修正] rAthena官方BUG: 在 db/pre-re/skill_require_db.txt 的第 886 行少了一个字段的问题
 [汉化] 优化一下 conf/battle/guild.conf 中 guild_notice_changemap 选项的注释说明
 [汉化] 修改 db/item_announce.txt 的说明
 [汉化] 优化“兽人的记忆”副本的几行对话
@@ -243,7 +260,7 @@ v1.0.4(2015-09-04)
 ------------------
 [同步] rAthena官方Github库
        https://github.com/rathena/rathena/commit/6295c77d393555fe5a366f092a75f4cf0d2de933
-[升级] 若您不是全新安装的话，请在您的主数据库上按顺序导入以下两个sql文件
+[升级] 若您不是全新安装的话，请在您的【主数据库】上按顺序导入以下两个sql文件
        - sql-files\upgrades\upgrade_20150828.sql
 	   - sql-files\upgrades\upgrade_20150831.sql
 [汉化] 部分汉化使用GM指令之后系统返回的信息 conf/msg_conf/map_msg.conf
