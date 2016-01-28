@@ -2,13 +2,26 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.2.4(2016-01-13)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/88d2cd7cfd2fe0516b926cd568a39b9bf0d3cfbe
+[说明] v1.2.3版本中外国人搞坏了一个基础功能，推荐都升级到v1.2.4上来
+[说明] 从v1.2.4开始，支持dressroom机制，不过客户端版本号需要大于等于20150513，且数据文件要支持才可以使用(感谢 Napster 在 rAthena 上实现此机制)
+[升级] 若您不是全新安装的话，请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20160112.sql
+[新增] 新增能关联到玩家的 OnSomeOneEnterChatRoom 事件，具体用法请见“事件演示脚本”
+[调整] 补充一些敏感词条 db/manner.txt
+[汉化] 汉化 conf/battle/client.conf 中的几个选项说明
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.2.3(2016-01-08)
 ------------------
 [同步] rAthena官方Github库
        https://github.com/rathena/rathena/commit/315056b02ef9e132443efe16e7a7e7ba01255ba4
 [升级] 若您不是全新安装，且使用了SQL版本的物品和魔物数据库的话，请在您的【主数据库】上按顺序导入以下sql文件
        - sql-files\upgrades\upgrade_20160106.sql
-	   - 本周 rAthena 官方修改的物品、魔物以及魔物技能数据库内容较多，建议重新导入
+       - 本周 rAthena 官方修改的物品、魔物以及魔物技能数据库内容较多，建议重新导入
 [升级] 若您不是全新安装的话，请在您的【日志数据库】上按顺序导入以下sql文件
        - sql-files\logs.sql
 [新增] 新增服务端级别的“聊天内容敏感词过滤机制”，详见 conf/battle/extend.conf 中的配置

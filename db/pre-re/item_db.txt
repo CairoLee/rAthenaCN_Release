@@ -4880,7 +4880,7 @@
 12316,Angel_Bless,Angel Of Blessing,2,0,,10,,,,,0xFFFFFFFF,7,2,,,,,,{},{},{}
 12317,Powder_Snow,雪花,2,0,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ end; },{},{}
 12318,Little_Heart,Small Hearts,2,0,,10,,,,,0xFFFFFFFF,7,2,,,,,,{},{},{}
-12319,Strawberry_Cake,卢恩米德加尔特草莓蛋糕,2,0,,300,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_INCATKRATE,600000,5; sc_start SC_INCMATKRATE,600000,5; },{},{}
+12319,Strawberry_Cake,卢恩米德加尔特草莓蛋糕,2,0,,300,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_ATKPOTION,600000,5; sc_start SC_MATKPOTION,600000,5; },{},{}
 12320,Pineapple_Juice,修法兹发德菠萝冰沙,2,0,,300,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_INCHIT,600000,10; sc_start SC_INCFLEE2,600000,20; },{},{}
 12321,Spicy_Sandwich,阿鲁纳佩茨沙漠三明治,2,0,,300,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_INCCRI,600000,7; },{},{}
 12322,Chocolate_Pie,巧克力派,0,0,,50,,,,,0xFFFFFFFF,7,2,,,,,,{ percentheal 5,5; },{},{}
