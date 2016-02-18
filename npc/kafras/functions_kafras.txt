@@ -91,9 +91,9 @@ function	script	F_Kafra	{
 		case 0:
 			// Default message (obsolete)
 			mes "[卡普拉 职员]";
-			mes "欢迎光临！";
-			mes "卡普拉公司永远为您提供最优质的服务！";
-			mes "您需要什么服务呢？";
+			mes "欢迎光临!";
+			mes "卡普拉公司永远为您提供最优质的服务!";
+			mes "您需要什么服务呢?";
 			break;
 		case 1:
 			// Niflheim specific message
@@ -106,22 +106,21 @@ function	script	F_Kafra	{
 			// Guild Castle Kafra message
 			set @GID,getcharid(2);
 			mes "[卡普拉 职员]";
-	 		mes "欢迎光临。^ff0000" + GetGuildName(@GID) + "^000000 成员们。";
-			mes "卡普拉公司永远在各位身边为您服务！";
+	 		mes "欢迎光临. ^ff0000" + GetGuildName(@GID) + "^000000 成员们.";
+			mes "卡普拉公司永远在各位身边为您服务!";
 			break;
 		case 3:
 			// Amatsu specific message (obsolete)
 			mes "[卡普拉 职员]";
-			mes "您看起来好像来自一个遥远的地方，是";
-			mes "来研究我们的文化，还是来观光呢？";
-			mes "如若两者皆是，为什么不稍稍停留片刻呢？";
-			mes "在这野花香味扑鼻的国度，相聚是缘。";
+			mes "您看起来好像来自一个遥远的地方, 是来研究我们的文化, 还是来观光呢?";
+			mes "若两者皆是, 为何不稍稍停留片刻?";
+			mes "在这野花香味扑鼻的国度, 相聚是缘.";
 			break;		
 		case 4:
 			// Louyang and Ayothaya specific message (obsolete)
 			mes "[卡普拉 职员]";
-			mes "与许多的卡普拉服务点一样，";
-			mes "我们会让你感觉从未离开家乡。";
+			mes "与许多的卡普拉服务点一样,";
+			mes "我们会让你感觉从未离开家乡.";
 			break;		
 		case 5:
 			// NPC has it's own welcome message. (Display nothing)
@@ -177,11 +176,11 @@ function	script	F_Kafra	{
 				mes "[卡普拉 职员]";
 				mes "由于卡普拉公司与秀发兹发德共和国";
 				mes "签订了 ^FF0000《限制传送服务协议》^000000";
-				mes "所以目前无法为您提供传送服务！";
+				mes "所以目前无法为您提供传送服务!";
 				next;
 				mes "[卡普拉 职员]";
-				mes "如果您想移动到其他区域，我们推荐您使用飞空艇服务！";
-				mes "感谢您的理解与支持。";
+				mes "如果您想移动到其他区域, 我们推荐您使用飞空艇服务!";
+				mes "感谢您的理解与支持.";
 			}
 		} else if (@K_Menu0$[.@j] == "租用手推车") {
 			callfunc "F_KafCart",.@welcome,getarg(4);
@@ -212,7 +211,7 @@ function	script	F_KafStor	{
 				break;
 			case 1:
 				mes "[卡普拉 职员]";
-				mes "真的十分抱歉, ";
+				mes "真的十分抱歉,";
 				mes "目前有其他公会成员正在使用仓库!";
 				mes "请过一段时间再尝试打开!";
 				break;
@@ -237,8 +236,8 @@ function	script	F_KafStor	{
 			return;
 		}
 		mes "非常抱歉";
-		mes "您的基本技能需要达到6级以上，";
-		mes "才能使用仓库服务！";
+		mes "您的基本技能需要达到6级以上,";
+		mes "才能使用仓库服务!";
 		return;
 	}
 	// Accessing Normal Storage (Skipped if accessing Storage from Guild castle)
@@ -258,7 +257,7 @@ function	script	F_KafStor	{
 					return;
 				}
 				// Standard Message
-				mes "很抱歉，您没有足够的金币来使用仓库服务，";
+				mes "很抱歉, 您没有足够的金币,";
 				mes "访问仓库至少需要 "+.@fee+" Zeny.";
 				return;
 			}
@@ -279,8 +278,8 @@ function	script	F_KafStor	{
 		// Normal message
 		else {
 			mes "[卡普拉 职员]";
-			mes "现在为您打开仓库！";
-			mes "感谢您使用卡普拉服务。";
+			mes "现在为您打开仓库!";
+			mes "感谢您使用卡普拉服务.";
 		}
 	}
 	callfunc("F_CheckKafCode", "[卡普拉 职员]");	//check your storage password, if set
@@ -304,7 +303,7 @@ function	script	F_KafTele	{
 	if (@wrpC$[.@j] == "结束对话") 
 	{
 		mes "[卡普拉 职员]";
-		mes "如果想用传送服务，欢迎您随时来找我！";
+		mes "如果想用传送服务, 欢迎您随时来找我!";
 		close2;
 		cutin "", 255;
 		end;
@@ -315,7 +314,7 @@ function	script	F_KafTele	{
 	else {
 		if (Zeny<@wrpP[.@j]){
 			mes "[卡普拉 职员]";
-			mes "您没有足够的金币来使用传送服务";
+			mes "您没有足够的金币来使用传送服务,";
 			mes "传送到 "+@wrpD$[.@j]+" 需要 "+@wrpP[.@j]+" Zeny.";
 			close2;
 			cutin "", 255;
@@ -349,13 +348,13 @@ function	script	F_KafCart	{
 	// Ensure that the class wanting to rent a pushcart is a merchant
 	if(BaseClass != Job_Merchant){
 		mes "[卡普拉 职员]";
-		mes "很抱歉，手推车租用服务仅提供给";
+		mes "很抱歉, 手推车租用服务仅提供给";
 
 		if (checkre(0))
-			mes "商人系职业！";
+			mes "商人系职业!";
 		else {
 			mes "商人、铁匠、炼金术师、创造者";
-			mes "等商人系职业！";
+			mes "等商人系职业!";
 		}
 		close2;
 		cutin "", 255;
@@ -364,8 +363,8 @@ function	script	F_KafCart	{
 	// Make sure the invoking character does not have a cart already
 	else if(checkcart() == 1){
 		mes "[卡普拉 职员]";
-		mes "你已经租用过手推车啦。";
-		mes "我们暂时不允许同时租用两辆手推车！";
+		mes "你已经租用过手推车啦.";
+		mes "我们不允许同时租用两辆手推车!";
 		close2;
 		cutin "", 255;
 		end;
@@ -373,8 +372,8 @@ function	script	F_KafCart	{
 	// Check if the player has the Pushcart skill
 	else if(getskilllv("MC_PUSHCART") == 0) {
 		mes "[卡普拉 职员]";
-		mes "您必须先学习“手推车使用”技能";
-		mes "后才可以租用手推车！";
+		mes "您必须先学习“手推车使用”技能,";
+		mes "才可以租用手推车!";
 		close2;
 		cutin "", 255;
 		end;
@@ -385,22 +384,22 @@ function	script	F_KafCart	{
 	else {
 		mes "[卡普拉 职员]";
 		mes "租用手推车需要 "+getarg(1)+" Zeny.";
-		mes "您想继续租用手推车吗？";
+		mes "您想继续租用手推车吗?";
 		next;
 		if (select("租用手推车:取消") == 2) 
 		{
 			mes "[卡普拉 职员]";
 			mes "手推车可以让随身携带的物品数增加~";
-			mes "也可以用作武器，摆露天商店的话";
-			mes "手推车也是必不可少的物品呢";
+			mes "也可以用来作为武器,";
+			mes "如果想摆露天商店的话, 手推车也是必不可少的物品呢.";
 			close2;
 			cutin "", 255;
 			end;
 		}
 		if(Zeny<getarg(1)){
 			mes "[卡普拉 职员]";
-			mes "很抱歉，您并没有足够的金钱来租用";
-			mes "手推车，租用手推车需要 "+getarg(1)+" Zeny.";
+			mes "很抱歉, 您并没有足够的金钱,";
+			mes "租用手推车需要 "+getarg(1)+" Zeny.";
 			close2;
 			cutin "", 255;
 			end;
@@ -410,7 +409,7 @@ function	script	F_KafCart	{
 	}
 	mes "[卡普拉 职员]";
 	mes "手推车租用手续已经登记完毕~";
-	mes "要好好爱惜它哟。";
+	mes "要好好爱惜它哟.";
 	setcart;
 	close2;
 	cutin "", 255;
@@ -432,12 +431,12 @@ function	script	F_KafInfo	{
 			mes "[卡普拉 职员]";
 			mes "让我看一下...";
 			mes "您的名字是..." + strcharinfo(0) + "...";
-			mes "储蓄点数一共是 ^FF0000" + RESRVPTS + " ^000000点！";
+			mes "储蓄点数一共是 ^FF0000" + RESRVPTS + " ^000000点!";
 			next;
 			mes "[卡普拉 职员]";
-			mes "在艾尔帕兰的卡普拉公司总部，您可以把";
-			mes "储蓄点数换成赠品，请多使用无比方便的";
-			mes "卡普拉服务，换取更多的储蓄点数哟！";
+			mes "在艾尔帕兰的卡普拉公司总部,";
+			mes "您可以把储蓄点数换成赠品,";
+			mes "请多使用无比方便的卡普拉服务, 换取更多的储蓄点数哟!";
 			close2;
 			cutin "", 255;
 			end;
@@ -447,14 +446,14 @@ function	script	F_KafInfo	{
 				viewpoint 1,@viewpX[.@i],@viewpY[.@i],(.@i+1),0xFF00FF;
 			mes "[卡普拉 职员]";
 			mes "已经在您的小地图上标出了本城镇";
-			mes "所有卡普拉职员的位置。";
+			mes "所有卡普拉职员的位置.";
 			next;
 			for (set .@i, 0; .@i <= 3; set .@i, .@i + 1)
 				viewpoint 2,@viewpX[.@i],@viewpY[.@i],(.@i+1),0xFF00FF;
 			mes "[卡普拉 职员]";
-			mes "看完啦，记住了吗？";
-			mes "那我就将小地图上的标记擦掉啦，";
-			mes "如果记不住的话，可以再来找我哟！";
+			mes "看完啦, 记住了吗?";
+			mes "那我就将小地图上的标记擦掉啦,";
+			mes "如果记不住的话, 可以再来找我哟!";
 			close2;
 			cutin "", 255;
 			end;
@@ -462,8 +461,8 @@ function	script	F_KafInfo	{
 			callfunc("F_SetKafCode","[卡普拉 职员]","我们卡普拉公司");
 		} else if (.@m$[.@j] == "结束对话") {
 			mes "[卡普拉 职员]";
-			mes "如果您还有不清楚的地方，";
-			mes "欢迎询问离你最近的卡普拉职员。";
+			mes "如果您还有不清楚的地方,";
+			mes "欢迎询问离你最近的卡普拉职员.";
 			close2;
 			cutin "", 255;
 			end;
@@ -482,13 +481,13 @@ function	script	F_KafEnd	{
 	mes "[卡普拉 职员]";
 	if(getarg(1)==1) {	
 		// Save
-		mes "您的复活点已经存储到了：";
+		mes "您的复活点已经存储到了:";
 		mes  "^0000FF"+getarg(2)+"^000000";
-		mes "感谢您的使用！";
+		mes "谢谢您使用我们卡普拉公司的服务!";
 	} else if(getarg(0)==0 || getarg(0)==5) {	
 		// Generic End
-		mes "我们卡普拉公司的服务是为了让顾客们放心和方便的使用. 我们会尽我们最大的努力做到更好的服务与严格的营业管理.";
-		mes "谢谢您们使用我们卡普拉公司的服务.";
+		mes "为了让您舒心的使用卡普拉公司的服务, 我们会尽最大努力提升我们的服务质量.";
+		mes "感谢您对我们一如既往的支持.";
 	} else if(getarg(0)==1) {
 		// Niflheim End
 		percentheal 0,- 25;
@@ -505,14 +504,14 @@ function	script	F_KafEnd	{
 //===================================================
 function	script	F_CheckKafCode	{
 	if(!#kafra_code) return;
-	mes "请输入您的仓库密码：";
+	mes "请输入您的仓库密码:";
 	set @code_,0;
 	input @code_;
 	if(@code_ != #kafra_code) {
 		next;
 		mes getarg(0);
-		mes "很抱歉，仓库密码输入错误！";
-		mes "无法为您打开仓库。";
+		mes "很抱歉, 仓库密码输入错误!";
+		mes "无法为您打开仓库.";
 		close2;
 		cutin "",255;
 		end;
@@ -532,16 +531,16 @@ function	script	F_SetKafCode	{
 
 	mes .@npc_name$;
 	if(#kafra_code) {
-		mes "您曾经申请过使用密码保护仓库的服务。";
-		mes "请问现在想要做什么事情呢？";
+		mes "您曾经申请过使用密码保护仓库的服务.";
+		mes "请问现在想要做什么事情呢?";
 		next;
 		switch (select("修改仓库密码 -> 5000z:取消仓库密码 -> 1000z:结束对话")) {
 			case 1:
 				mes .@npc_name$;
-				mes "首先，请输入您的 ^0000FF旧密码(现有密码)^000000.";
+				mes "首先, 请输入您的 ^0000FF旧密码(现有密码)^000000.";
 				set @code,callfunc("F_EntKafCode");
 				if(!@code || @code != #kafra_code) {
-					mes "呃..密码错误。您不能修改仓库密码！";
+					mes "呃..密码错误. 您不能修改仓库密码!";
 					emotion e_hmm;
 					break;
 				}
@@ -550,19 +549,19 @@ function	script	F_SetKafCode	{
 				break;
 			case 2:
 				mes .@npc_name$;
-				mes "在取消仓库密码之前，";
-				mes "请输入之前设定的密码来确认您的身份。";
+				mes "在取消仓库密码之前,";
+				mes "请输入之前设定的密码来确认您的身份.";
 				mes "==============================";
 				set @code,callfunc("F_EntKafCode");
 				if(!@code) {
-					mes "您的仓库密码尚未被移除！";
+					mes "您的仓库密码尚未被移除!";
 					emotion e_hmm;
 					break;
 				}
 				next;
 				mes .@npc_name$;
 				if(Zeny < 1000) {
-					mes "您没有足够的钱用来取消仓库密码！";
+					mes "您没有足够的钱用来取消仓库密码!";
 					emotion e_cash;
 					break;
 				}
@@ -570,12 +569,12 @@ function	script	F_SetKafCode	{
 				if(@code == #kafra_code) {
 					set #kafra_code,0;
 					mes "您的仓库密码已经移除";
-					mes "感谢您使用"+.@comp_name$+"的服务。";
+					mes "感谢您使用"+.@comp_name$+"的服务.";
 					emotion e_thx;
 				} else {
-					mes "密码错误！";
-					mes "您上交的 1000z 我们将不予退回！";
-					mes "请想好正确的密码后，再来找我吧。";
+					mes "密码错误!";
+					mes "您上交的 1000z 我们将不予退回!";
+					mes "请想好正确的密码后, 再来找我吧.";
 					emotion e_sry;
 				}
 				break;
@@ -583,16 +582,16 @@ function	script	F_SetKafCode	{
 				break;
 		}
 	} else {
-		mes .@comp_name$+"现已经推出全新服务：";
+		mes .@comp_name$+"现已经推出全新服务:";
 		mes "^0000FF使用密码来加强仓库的安全性^000000";
 		next;
 		switch (select("设置一个新密码 -> 5000z:结束对话")) {
 			case 1: callsub S_SET,.@npc_name$,.@comp_name$; break;
 			case 2: 
 				mes .@npc_name$;
-				mes "您真的不想用吗？";
-				mes "设定好仓库密码后就算游戏账号被盗，";
-				mes "坏蛋也拿不走仓库的东西哟！";
+				mes "您真的不想用吗?";
+				mes "设定好仓库密码后就算游戏账号被盗,";
+				mes "坏蛋也拿不走仓库的东西哟!";
 				close2;
 				cutin "", 255;
 				end;
@@ -605,24 +604,24 @@ function	script	F_SetKafCode	{
 
 S_SET:
 	mes .@npc_name$;
-	mes "现在，我们来设定^FF0000新密码^000000以便保护仓库！";
+	mes "现在, 我们来设定^FF0000新密码^000000以便保护仓库!";
 	set @code,callfunc("F_EntKafNewCode");
 	if(!@code) {
-		mes "密码已经设定完毕！";
+		mes "密码已经设定完毕!";
 		emotion e_hmm;
 		return;
 	}
 	next;
 	mes .@npc_name$;
 	if(Zeny < 5000) {
-		mes "您没有足够的金钱！";
+		mes "您没有足够的金钱!";
 		emotion e_cash;
 		return;
 	}
 	set Zeny,Zeny-5000;
 	set #kafra_code,@code;
-	mes "您的仓库密码已启用！";
-	mes "感谢您使用"+.@comp_name$+"的服务。";
+	mes "您的仓库密码已启用!";
+	mes "感谢您使用"+.@comp_name$+"的服务.";
 	emotion e_thx;
 	return;
 }
@@ -631,7 +630,7 @@ S_SET:
 // Basic Password Validation Function
 //===================================================
 function	script	F_EntKafCode	{
-	mes "请输入仓库密码：";
+	mes "请输入仓库密码:";
 	set @code_,0;
 	input @code_;
 	set @kafcode_try,@kafcode_try+1;
@@ -644,7 +643,7 @@ function	script	F_EntKafCode	{
 
 function	script	F_EntKafNewCode	{
 	mes "请输入一个4-8位数字之间的数字";
-	mes "来作为您的仓库密码：";
+	mes "来作为您的仓库密码:";
 	set @code_,0;
 	set @kafcode_try,@kafcode_try+1;
 	if(@kafcode_try>3) {
@@ -654,8 +653,8 @@ function	script	F_EntKafNewCode	{
 	if(input(@code_) == 1) {
 		next;
 		mes "[卡普拉 职员]";
-		mes "汗，您的密码好短啊，不安全呀！";
-		mes "请至少输入一个4位数的密码。";
+		mes "汗, 您的密码好短啊, 不安全呀!";
+		mes "请至少输入一个4位数的密码.";
 		close2;
 		cutin "", 255;
 		end;
@@ -663,8 +662,8 @@ function	script	F_EntKafNewCode	{
 	if(@code_<1000) {
 		next;
 		mes "[卡普拉 职员]";
-		mes "您输入的密码太短了，不安全呀！";
-		mes "请至少输入一个4位数的密码。";
+		mes "您输入的密码太短了, 不安全呀!";
+		mes "请至少输入一个4位数的密码.";
 		close2;
 		cutin "", 255;
 		end;

@@ -38,23 +38,23 @@
 //= 2.0 Moved VIP_Third_Class function into other/re/CashShop_Functions. [Capuche]
 //============================================================ 
 
-// Kafra Card
+// Kafra Card - 卡普拉移动仓库
 //============================================================ 
 // - Open player's storage.
 // - No arguments.
 function	script	F_CashStore	{
 	cutin "kafra_01",2;
 	mes "[卡普拉 职员]";
-	mes "您好，欢迎呼叫卡普拉公司！";
-	mes "现在将按照您的请求开启仓库。";
-	callfunc("F_CheckKafCode", "[Kafra Employee]");	//check your storage password, if set
+	mes "您好, 欢迎呼叫卡普拉公司!";
+	mes "现在将按照请求开启您的个人仓库.";
+	callfunc("F_CheckKafCode", "[卡普拉 职员]");	//check your storage password, if set
 	close2;
 	openstorage;
 	cutin "",255;
 	return;
 }
 
-// Giant Fly Wing
+// Giant Fly Wing - 巨大的苍蝇翅膀
 //============================================================ 
 // - Warp party leader to random spot on the map.
 // - Summon Party members on party leader map to that location.
@@ -62,13 +62,13 @@ function	script	F_CashStore	{
 function	script	F_CashPartyCall	{
 	warp "Random",0,0;
 	if(getpartyleader(getcharid(1),2) == getcharid(0)) {
-		getmapxy .@mapl$, .@xl, .@yl, 0;
+		getmapxy .@mapl$, .@xl, .@yl, UNITTYPE_PC;
 		warpparty .@mapl$, .@xl, .@yl, getcharid(1), .@mapl$;
 	}
 	return;
 }
 
-// Neuralizer
+// Neuralizer - 技能重置棒
 //============================================================ 
 // - Reset players skills. Weight must be 0, options must be off.
 // - No arguments.
@@ -81,14 +81,14 @@ function	script	F_CashReset	{
 	return;
 }
 
-// Dungeon Teleport Scroll
+// Dungeon Teleport Scroll - 洞穴移动
 //============================================================ 
 // - Warp player to the selected dungeon.
 // - Arg(0) = type of scroll.
 function	script	F_CashDungeon	{
 	switch(getarg(0)) {
 	case 1:
-		switch(select("Nogg Road:Mjolnir Dead Pit:"+((checkre(0))?"":"Umbala Dungeon")+":Einbroch Mine Dungeon:Payon Dungeon:Toy Dungeon:Glast Heim Underprison:Louyang Dungeon:Hermit's Checkers:Izlude Dungeon:Turtle Island Dungeon:Clock Tower B3f:Clock Tower 3f:Glast Heim Culvert 2f:Sphinx Dungeon 4f:Inside Pyramid 4f:Prontera Culvert 3f:Amatsu Dungeon 1f (Tatami Maze):Somatology Laboratory 1st floor:Ayothya Ancient Shrine 2nd floor")) {
+		switch(select("朱诺 诺可罗德 1层(火洞1层):妙勒尼 废矿 2层:"+((checkre(0))?"":"汶巴拉树木里的异界通道")+":艾音贝赫 矿山 1层:斐扬洞穴 4层(废村):姜饼城 玩具工厂仓库:克雷斯特汉姆 地下监狱 1层: 龙之城 审良宫:昆仑 神仙的围棋台:依斯鲁得岛 海底洞窟 3层:乌龟岛 密穴:艾尔帕兰 钟塔 地下3层:艾尔帕兰 钟塔 地上3层:克雷斯特汉姆 地下水道 2层:梦罗克 史芬克斯 地下4层:梦罗克 金字塔 4层:普隆德拉 地下水道 3层:天津町 榻榻米迷宫:生体试验 研究所 地下1层:哎哟泰雅 古代神殿 内部")) {
 		case 1: warp "mag_dun01",125,71; end;	// Nogg Road
 		case 2: warp "mjo_dun02",80,297; end;	// Mjolnir Dead Pit
 		case 3: warp "um_dun02",125,122; end;	// Umbala Dungeon (Pre-Renewal only)
@@ -111,7 +111,7 @@ function	script	F_CashDungeon	{
 		case 20: warp "ayo_dun02",70,240; end;	// Ayotaya Dungeon 2F
 		}
 	case 2: // Menu names are not official.
-		switch(select("Thor Volcano 2f:Ice Dungeon Entrance:Nameless Island Entrance:Niflheim:Labyrinth Forest 2f:Ruins of Juperos Entrance:Ant Hell 2f:Kiel Hyre's Academy Entrance:Thanatos Tower Entrance:Abyss Lake Entrance:Rachel Sanctuary Entrance:Odin Temple 2f")) {
+		switch(select("托尔火山 洞穴 2层:拉赫 阿巫敦拉草原(冰洞外):菲音斯 原野(往无名岛):亡者国都 尼芙菲姆:普隆德拉迷宫森林 2层:优配擂斯 洞穴入口:梦罗克 蚂蚁地狱密穴 2层:朱诺 启 海伊洛学院:达纳托斯之塔 前:深渊湖水:菲依雅 大神殿(瑟斯隆尼勒):毁葛 奥丁神殿 南区")) {
 		case 1: warp "thor_v02",77,208; end;	// Thor Volcano 2F
 		case 2: warp "ra_fild01",237,333; end;	// Ice Dungeon
 		case 3: warp "ve_fild07",127,131; end;	// Nameless Island
@@ -126,7 +126,7 @@ function	script	F_CashDungeon	{
 		case 12: warp "odin_tem02",257,374; end;	// Odin Temple F2
 		}
 	case 3:
-		switch(select("Bio Lab (2nd Floor):Ice Dungeon (3rd Floor):Odin Temple (3rd Floor):Thor Volcano (3rd Floor):Abyss Lake (3rd Floor):Juperos Ruins (2nd Floor)")) {
+		switch(select("生体试验 研究所 地下2层:拉赫 冰洞 3层:毁葛 奥丁神殿 北区:托尔火山 洞穴 3层:深渊湖水 地下洞穴 3层:优配擂斯 废墟内部")) {
 		case 1: warp "lhz_dun02",145,149; end;	// Somatology Laboratory 2F
 		case 2: warp "ice_dun03",150,176; end;	// Ice Dungeon 3F
 		case 3: warp "odin_tem03",278,235; end;	// Odin Temple 3F
@@ -138,14 +138,14 @@ function	script	F_CashDungeon	{
 	return;
 }
 
-// Coloured Butterly Wings
+// Coloured Butterly Wings - 城市移动
 //============================================================ 
 // - Warp player to different cities acording to the scroll.
 // - Arg(0) = type of scroll.
 function	script	F_CashCity	{
 	switch(getarg(0)) {
 	case 1: // Yellow - Rune-Midgart
-		switch(select("Prontera:Izlude:Geffen:Payon:Morroc:Alberta:Al de Baran")) {
+		switch(select("卢恩米德加兹王国首都 普隆德拉:卫星都市 依斯鲁得岛:魔法之都 吉芬:山岳之都 斐扬:沙漠之都 梦罗克:港口之都 艾尔贝塔:运河之都 艾尔帕兰")) {
 			case 1: warp "prontera",122,87; end;
 			case 2: if (checkre(0)) warp "izlude",130,90; else warp "izlude",91,105; end;
 			case 3: warp "geffen",128,48; end;
@@ -155,7 +155,7 @@ function	script	F_CashCity	{
 			case 7: warp "aldebaran",140,110; end;
 		}
 	case 2: // Green - Schwartzvalt
-		switch(select("Juno:Lighthalzen:Einbroch:Einbech:Hugel")) {
+		switch(select("秀发兹发德共和国首都 朱诺:企业之都 里希塔乐镇:钢铁之都 艾音布罗克:采矿村落 艾音贝赫:田园都市 毁葛")) {
 			case 1: warp "yuno",160,170; end;
 			case 2: warp "lighthalzen",190,310; end;
 			case 3: warp "einbroch",230,190; end;
@@ -163,19 +163,19 @@ function	script	F_CashCity	{
 			case 5: warp "hugel",92,165; end;
 		}
 	case 3: // Red - Arunafeltz
-		switch(select("Rachel:Veins")) {
+		switch(select("阿卢纳贝兹 教国首都 拉赫:峡谷村落 菲音斯")) {
 			case 1: warp "rachel",120,125; end;
 			case 2: warp "veins",215,105; end;
 		}
 	case 4: // Blue - Islands
-		switch(select("Amatsu:Kunlun:Ayotaya:Louyang")) {
+		switch(select("天水之国 天津町:神仙之岛 昆仑:哎哟泰雅:古都 龙之城")) {
 			case 1: warp "amatsu",110,140; end;
 			case 2: warp "gonryun",160,115; end;
 			case 3: warp "ayothaya",220,170; end;
 			case 4: warp "louyang",217,95; end;
 		}
 	case 5: // Blue - Islands (Renewal)
-		switch(select("Amatsu:Kunlun:Ayotaya:Louyang:Moscovia:Dewata:Brasilis")) {
+		switch(select("天水之国 天津:神仙之岛 昆仑:哎哟泰雅:古都 龙之城:莫斯科比亚:德瓦他:巴西")) {
 			case 1: warp "amatsu",110,140; end;
 			case 2: warp "gonryun",160,115; end;
 			case 3: warp "ayothaya",220,170; end;
@@ -188,14 +188,14 @@ function	script	F_CashCity	{
 	return;
 }
 
-// Teleport Scrolls
+// Teleport Scrolls - 城市移动
 //============================================================ 
 // - Warp player to save point or city acording to the scroll.
 // - Arg(0) = type of scroll.
 function	script	F_CashTele	{
 	switch(getarg(0)) {
 	case 1:
-		switch(select("Prontera:Geffen:Al de Baran:Izlude:Savepoint")) {
+		switch(select("卢恩米德加兹王国首都 普隆德拉:魔法之都 吉芬:运河之都 艾尔帕兰:卫星都市 依斯鲁得岛:复活点")) {
 		case 1: warp "prontera",119,77; end;
 		case 2: warp "geffen",119,39; end;
 		case 3: warp "aldebaran",165,107; end;
@@ -203,7 +203,7 @@ function	script	F_CashTele	{
 		case 5: warp "SavePoint",0,0; end;
 		}
 	case 2:
-		switch(select("Payon:Alberta:Morroc:Comodo:Savepoint")) {
+		switch(select("山岳之都 斐扬:港口之都 艾尔贝塔:沙漠之都 梦罗克:海边之都 克魔岛:复活点")) {
 		case 1: warp "payon",158,55; end;
 		case 2: warp "alberta",115,57; end;
 		case 3: warp "morocc",158,48; end;
@@ -211,7 +211,7 @@ function	script	F_CashTele	{
 		case 5: warp "SavePoint",0,0; end;
 		}
 	case 3:
-		switch(select("Louyang:Amatsu:Kunlun Field:Ayothaya:Savepoint")) {
+		switch(select("古都 龙之城:天水之国 天津:神仙之岛 昆仑:哎哟泰雅:复活点")) {
 		case 1: warp "louyang",214,101; end;
 		case 2: warp "amatsu",112,145; end;
 		case 3: warp "gonryun",160,118; end;
@@ -219,14 +219,14 @@ function	script	F_CashTele	{
 		case 5: warp "SavePoint",0,0; end;
 		}
 	case 4:
-		switch(select("Lutie Field:Umbala:Niflheim:Savepoint")) {
+		switch(select("白雪村落 姜饼城:雨檀族村落 汶巴拉:死者国家 尼芙菲姆:复活点")) {
 		case 1: warp "xmas",148,131; end;
 		case 2: warp "umbala",93,154; end;
 		case 3: warp "niflheim",187,189; end;
 		case 4: warp "SavePoint",0,0; end;
 		}
 	case 5:
-		switch(select("Juno:Einbroch:Lighthalzen:Hugel:Savepoint")) {
+		switch(select("秀发兹发德共和国首都 朱诺:钢铁之都 艾音布罗克:企业之都 里希塔乐镇:田园都市 毁葛:复活点")) {
 		case 1: warp "yuno",157,124; end;
 		case 2: warp "einbroch",230,192; end;
 		case 3: warp "lighthalzen",158,94; end;
@@ -234,7 +234,7 @@ function	script	F_CashTele	{
 		case 5: warp "SavePoint",0,0; end;
 		}
 	case 6:
-		switch(select("Rachel:Veins:Savepoint")) {
+		switch(select("阿卢纳贝兹 教国首都 拉赫:峡谷村落 菲音斯:复活点")) {
 		case 1: warp "rachel",118,132; end;
 		case 2: warp "veins",214,125; end;
 		case 3: warp "SavePoint",0,0; end;
@@ -243,12 +243,12 @@ function	script	F_CashTele	{
 	return;
 }
 
-// Siege Teleport Scroll
+// Siege Teleport Scroll - GVG城堡传送
 //============================================================ 
 // - Warp player to selected guild castle.
 // - No arguments.
 function	script	F_CashSiegeTele	{
-	switch(select("Neuschwanstein (aldeg_cas01):Hohenschwangau (aldeg_cas02):Nuernberg (aldeg_cas03):Wuerzburg (aldeg_cas04):Rothenburg (aldeg_cas05):Repherion (gefg_cas01):Eeyorbriggar (gefg_cas02):Yesnelph (gefg_cas03):Bergel (gefg_cas04):Mersetzdeitz (gefg_cas05):Bright Arbor (payg_cas01):Sacred Altar (payg_cas02):Holy Shadow (payg_cas03):Scarlet Palace (payg_cas04):Bamboo Grove Hill (payg_cas05):Kriemhild (prtg_cas01):Swanhild (prtg_cas02):Fadhgridh (prtg_cas03):Skoegul (prtg_cas04):Gondul (prtg_cas05)")) {
+	switch(select("娜易修番斯塔引 (aldeg_cas01):乎汗修番佳乌 (aldeg_cas02):纽蓝贝勒克 (aldeg_cas03):布勒刺布勒克 (aldeg_cas04):罗探布勒克 (aldeg_cas05):雷普立温 (gefg_cas01):耀布力格 (gefg_cas02):易司那普 (gefg_cas03):培勒格 (gefg_cas04):眉撒丝达刺 (gefg_cas05):明亭 (payg_cas01):天坛 (payg_cas02):佛影 (payg_cas03):红楼 (payg_cas04):竹林岘 (payg_cas05):克林希特 (prtg_cas01):斯般希特 (prtg_cas02):拉兹立克斯 (prtg_cas03):司葵古 (prtg_cas04):关德 (prtg_cas05)")) {
 	case 1: warp "alde_gld",48,91; end;
 	case 2: warp "alde_gld",103,245; end;
 	case 3: warp "alde_gld",142,87; end;

@@ -676,7 +676,7 @@ yuno,162,191,4	script	卡普拉投票 宣传人员#yuno	861,{
 prontera,164,125,4	script	卡普拉投票 宣传人员#prt	116,{
 	callfunc "F_VoteKafra",2;
 }
-moc_ruins,97,133,4	script	卡普拉投票 宣传人员#moc	116,{
+moc_ruins,97,133,4	script	卡普拉投票 宣传人员#moc	4_M_ZONDAMAN,{
 	callfunc "F_VoteKafra",2;
 }
 geffen,122,37,4	script	卡普拉投票 宣传人员#gef	116,{

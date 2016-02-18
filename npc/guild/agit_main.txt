@@ -361,15 +361,15 @@ OnRecvCastle:
 			if (getskilllv("NV_BASIC") < 6) {
 				mes "[卡普拉 职员]";
 				mes "非常抱歉";
-				mes "您的基本技能需要达到6级以上，";
-				mes "才能使用仓库服务！";
+				mes "您的基本技能需要达到6级以上,";
+				mes "才能使用仓库服务!";
 				close2;
 				cutin "",255;
 				end;
 			}
 			mes "[卡普拉 职员]";
-			mes "现在为您打开仓库！";
-			mes "感谢您使用卡普拉服务。";
+			mes "现在为您打开仓库!";
+			mes "感谢您使用卡普拉服务.";
 			callfunc("F_CheckKafCode", "[卡普拉 职员]");	//check your storage password, if set
 			close2;
 			cutin "",255;
@@ -383,14 +383,14 @@ OnRecvCastle:
 			case 1:
 				if (Zeny < 200) {
 					mes "[卡普拉 职员]";
-					mes "您没有足够的金币来使用传送服务";
+					mes "您没有足够的金币来使用传送服务,";
 					mes "传送到 "+.@destination$+" 需要 200 zeny.";
 					close2;
 					cutin "",255;
 					end;
 				}
 				set Zeny, Zeny - 200;
-				set RESRVPTS,RESRVPTS+2;
+				set RESRVPTS,RESRVPTS+20;
 				close2;
 				warp .@destination$[1],.@coordinates[0],.@coordinates[1];
 				end;
@@ -402,13 +402,13 @@ OnRecvCastle:
 		case 3:
 			if (BaseClass != Job_Merchant) {
 				mes "[卡普拉 职员]";
-				mes "很抱歉，手推车租用服务仅提供给";
+				mes "很抱歉, 手推车租用服务仅提供给";
 
 				if (checkre(0))
-					mes "商人系职业！";
+					mes "商人系职业!";
 				else {
 					mes "商人、铁匠、炼金术师、创造者";
-					mes "等商人系职业！";
+					mes "等商人系职业!";
 				}
 				close2;
 				cutin "",255;
@@ -416,27 +416,27 @@ OnRecvCastle:
 			}
 			if (checkcart()) {
 				mes "[卡普拉 职员]";
-				mes "你已经租用过手推车啦。";
-				mes "我们暂时不允许同时租用两辆手推车！";
+				mes "你已经租用过手推车啦.";
+				mes "我们不允许同时租用两辆手推车!";
 				close2;
 				cutin "",255;
 				end;
 			}
 			mes "[卡普拉 职员]";
 			mes "租用手推车需要 800 Zeny.";
-			mes "您想继续租用手推车吗？";
+			mes "您想继续租用手推车吗?";
 			next;
 			switch (select("租用手推车:取消")) {
 			case 1:
 				if (Zeny < 800) {
 					mes "[卡普拉 职员]";
-					mes "很抱歉，您并没有足够的金钱来租用";
-					mes "手推车，租用手推车需要 800 Zeny.";
+					mes "很抱歉, 您并没有足够的金钱,";
+					mes "租用手推车需要 800 Zeny.";
 					close2;
 					cutin "",255;
 					end;
 				}
-				set RESRVPTS,RESRVPTS+8;
+				set RESRVPTS,RESRVPTS+80;
 				set Zeny, Zeny - 800;
 				setcart;
 				close2;
@@ -449,8 +449,8 @@ OnRecvCastle:
 			}
 		case 4:
 			mes "[卡普拉 职员]";
-			mes "我们卡普拉公司的服务是为了让顾客们放心和方便的使用. 我们会尽我们最大的努力做到更好的服务与严格的营业管理.";
-			mes "谢谢您们使用我们卡普拉公司的服务.";
+			mes "为了让您舒心的使用卡普拉公司的服务, 我们会尽最大努力提升我们的服务质量.";
+			mes "感谢您对我们一如既往的支持.";
 			close2;
 			cutin "",255;
 			end;
@@ -672,7 +672,7 @@ OnRecvCastle:
 		}
 		if (GetCastleData(strnpcinfo(2),4) >= 2) {
 			mes " ";
-			mes "^ff0000可是你已经在今天之内投资了两次, 再不能投资了.^000000 让发展度赶快上升, 期待着富贵的日子啰.";
+			mes "^ff0000可是你已经在今天之内投资了两次, 不能再投资了.^000000 让发展度赶快上升, 期待着富贵的日子啰.";
 			close;
 		}
 		if (GetCastleData(strnpcinfo(2),4) == 0) {

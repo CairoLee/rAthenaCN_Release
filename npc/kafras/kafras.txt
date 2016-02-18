@@ -38,65 +38,62 @@ aldeba_in,96,181,4	script	卡普拉服务	113,{
 	cutin "kafra_05",2;
 	mes "[卡普拉 克拉丽斯]";
 	mes "嗯...?";
-	mes "喔, 欢迎来到卡普拉公司总部。";
-	mes "您需要什么服务呢？";
+	mes "噢, 欢迎来到卡普拉公司总部.";
+	mes "您需要什么服务呢?";
 	next;
 	switch(select("储存服务:仓库服务:租用手推车:结束对话")) {
 	case 1:
 		mes "[卡普拉 克拉丽斯]";
-		mes "您的复活点已经存储到了：";
-		mes  "^0000FF卡普拉公司总部^000000";
-		mes "感谢您的使用！";
+		mes "您的复活点已经存储到了:";
+		mes "^0000FF卡普拉公司总部^000000";
+		mes "谢谢您使用我们卡普拉公司的服务!";
 		next;
 		savepoint "aldeba_in",96,179;
 		mes "[卡普拉 克拉丽斯]";
-		mes "您可以在卢恩·米德加尔特王国中";
-		mes "随意使用卡普拉服务！";
-		mes "感谢您光临卡普拉总部。";
+		mes "您可以在卢恩·米德加尔特王国中随意";
+		mes "使用我们卡普拉服务!";
+		mes "感谢您光临我们卡普拉总部.";
 		close2;
 		break;
 	case 2:
 		if (Zeny < 20) {
 			mes "[卡普拉 克拉丽斯]";
-			mes "很抱歉！";
+			mes "很抱歉!";
 			mes "您看起来好像没有 20 Zeny 可用来";
 			mes "可以支付仓库的开启费用...";
 			close;
 		}
 		mes "[卡普拉 克拉丽斯]";
-		mes "虽然这个设施是卡普拉的管理培训机构，";
-		mes "但是我们依然会帮您开启仓库。";
+		mes "虽然这个设施是卡普拉的管理培训机构,";
+		mes "但是我们依然会帮您开启仓库.";
 		next;
 		set Zeny, Zeny-20;
 		set RESRVPTS, RESRVPTS + (20/5);
 		mes "[卡普拉 克拉丽斯]";
-		mes "以后如果想使用卡普拉服务，请随时";
-		mes "寻找您身边的卡普拉职员，她们会竭";
-		mes "诚为您服务。";
-		mes "感谢您的惠顾！";
+		mes "以后如果想使用卡普拉服务,";
+		mes "请随时寻找您身边的卡普拉职员,";
+		mes "她们会竭诚为您服务. 感谢您的惠顾!";
 		callfunc("F_CheckKafCode","[卡普拉 克拉丽斯]");    //check your storage password, if set
 		close2;
 		openstorage;
 		break;
 	case 3:
 		mes "[卡普拉 克拉丽斯]";
-		mes "很抱歉，目前我没有在值班，所以";
-		mes "没有支取手推车的权限，无法为您";
-		mes "提供租用服务~建议您去询问一下";
-		mes "其他值班中的卡普拉职员~";
+		mes "很抱歉, 目前我没有在值班,";
+		mes "没有支取手推车的权限,";
+		mes "无法为您提供手推车租用服务~";
+		mes "建议您去问问其他值班中的卡普拉职员~";
 		next;
 		mes "[卡普拉 克拉丽斯]";
-		mes "卡普拉职员几乎覆盖了整个";
-		mes "卢恩·米德加尔特王国。";
-		mes "您可以在各个城镇甚至野外找到";
-		mes "尽心为您服务的卡普拉职员。";
+		mes "卡普拉职员几乎覆盖了整个卢恩·米德加尔特王国.";
+		mes "您可以在各个城镇甚至野外找到尽心为您服务的卡普拉职员.";
 		close2;
 		break;
 	case 4:
 		mes "[卡普拉 克拉丽斯]";
 		mes "^666666*呼...*^000000";
-		mes "太好了，实际上我正在休息~";
-		mes "结束对话是一个不错的选择，嘻嘻...";
+		mes "太好了, 实际上我正在休息~";
+		mes "结束对话是一个不错的选择, 嘻嘻...";
 		close2;
 		break;
 	}
@@ -109,8 +106,8 @@ aldebaran,143,119,4	script	卡普拉 职员::kaf_aldebaran	113,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,20,600;
 	savepoint "aldebaran",143,109;
 	callfunc "F_KafEnd",0,1,"艾尔帕兰城内";
@@ -123,8 +120,8 @@ geffen,120,62,0	script	卡普拉 职员::kaf_geffen	115,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,30,750;
 	savepoint "geffen",119,40;
 	callfunc "F_KafEnd",0,1,"吉芬城内";
@@ -135,8 +132,8 @@ geffen,203,123,2	script	卡普拉 职员::geffen2	114,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,30,750;
 	savepoint "geffen",200,124;
 	callfunc "F_KafEnd",0,1,"吉芬城内";
@@ -149,8 +146,8 @@ morocc,156,97,4	script	卡普拉 职员::kaf_morocc	113,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,60,930;
 	savepoint "morocc",156,46;
 	callfunc "F_KafEnd",0,1,"梦罗克城内";
@@ -161,8 +158,8 @@ morocc,160,258,4	script	Kafra::kaf_morocc2	114,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,60,930;
 	savepoint "morocc",157,272;
 	callfunc "F_KafEnd",0,1,"梦罗克城内";
@@ -175,8 +172,8 @@ payon,181,104,4	script	卡普拉 职员::kaf_payon	113,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,60,930;
 	savepoint "payon",160,58;
 	callfunc "F_KafEnd",0,1,"斐杨城内";
@@ -187,20 +184,20 @@ payon,175,226,4	script	卡普拉 职员::kaf_payon2	116,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,60,930;
 	savepoint "payon",257,242;
 	callfunc "F_KafEnd",0,1,"斐杨城内";
 }
 
-pay_arche,55,123,0	script	卡普拉 职员::kaf_payon3	115,{
+pay_arche,55,123,0	script	卡普拉 职员::kaf_payon3	4_F_KAFRA1,{
 	cutin "kafra_03",2;
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,5,1,90,1200;
 	savepoint "pay_arche",49,144;
 	callfunc "F_KafEnd",0,1,"斐杨洞穴";
@@ -213,8 +210,8 @@ prontera,152,326,3	script	卡普拉 职员::kaf_prontera	112,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "prontera",157,327;
 	callfunc "F_KafEnd",0,1,"普隆德拉城内";
@@ -225,8 +222,8 @@ prontera,151,29,0	script	卡普拉 职员::kaf_prontera2	115,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "prontera",150,33;
 	callfunc "F_KafEnd",0,1,"普隆德拉城内";
@@ -237,8 +234,8 @@ prontera,29,207,6	script	卡普拉 职员::kaf_prontera3	113,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "prontera",33,208;
 	callfunc "F_KafEnd",0,1,"普隆德拉城内";
@@ -249,8 +246,8 @@ prontera,282,200,2	script	卡普拉 职员::kaf_prontera4	114,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "prontera",281,203;
 	callfunc "F_KafEnd",0,1,"普隆德拉城内";
@@ -261,8 +258,8 @@ prontera,146,89,6	script	卡普拉 职员::kaf_prontera5	117,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "prontera",116,73;
 	callfunc "F_KafEnd",0,1,"普隆德拉城内";
@@ -275,8 +272,8 @@ yuno,152,187,4	script	卡普拉 职员::kaf_yuno	860,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "yuno",158,125;
 	callfunc "F_KafEnd",0,1,"朱诺城内";
@@ -287,8 +284,8 @@ yuno,327,108,4	script	卡普拉 职员::kaf_yuno2	860,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "yuno",328,101;
 	callfunc "F_KafEnd",0,1,"朱诺城内";
@@ -299,8 +296,8 @@ yuno,277,221,4	script	卡普拉 职员::kaf_yuno3	861,{
 	callfunc "F_KafSetYun";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,40,800;
 	savepoint "yuno",274,229;
 	callfunc "F_KafEnd",0,1,"朱诺城内";
@@ -313,8 +310,8 @@ alberta,28,229,0	script	卡普拉 职员::kaf_alberta	116,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,50,850;
 	savepoint "alberta",31,231;
 	callfunc "F_KafEnd",0,1,"艾尔贝塔城内";
@@ -325,8 +322,8 @@ alberta,113,60,6	script	卡普拉 职员::kaf_alberta2	112,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,0,50,850;
 	savepoint "alberta",117,57;
 	callfunc "F_KafEnd",0,1,"艾尔贝塔城内";
@@ -338,8 +335,8 @@ comodo,195,150,4	script	卡普拉 职员::kaf_comodo	721,{
 	cutin "kafra_07",2;
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
-	mes "欢迎来到卡普拉服务点！";
-	mes "卡普拉服务一直就在您的身边。";
+	mes "欢迎来到卡普拉服务点!";
+	mes "卡普拉服务一直就在您的身边.";
 	callfunc "F_Kafra",5,0,1,80,1000;
 	savepoint "comodo",204,143;
 	callfunc "F_KafEnd",0,1,"克魔岛城内";
@@ -350,8 +347,8 @@ cmd_fild07,136,134,4	script	卡普拉 职员::kaf_cmd_fild07	721,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,80,1000;
 	savepoint "cmd_fild07",127,134;
 	callfunc "F_KafEnd",0,1,"发乐斯灯塔";
@@ -364,8 +361,8 @@ cmd_fild07,136,134,4	script	卡普拉 职员::kaf_cmd_fild07	721,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,40,820;
 	if (checkre(0))
 		savepoint strnpcinfo(4),129,97;
@@ -390,10 +387,10 @@ amatsu,102,149,4	script	卡普拉 职员::kaf_amatsu	116,{
 	mes "[卡普拉 职员]";
 	mes "欢迎来到卡普拉服务站.";
 	mes "卡普拉职员随时准备为您服务.";
-	mes "您需要什么服务呢？";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,3,1,50,700;
 	savepoint "amatsu",116,94;
-	callfunc "F_KafEnd",0,1,"in the city of Amatsu";
+	callfunc "F_KafEnd",0,1,"天津城内";
 }
 
 // Ayothaya
@@ -402,11 +399,11 @@ ayothaya,212,169,5	script	卡普拉 职员::kaf_ayothaya	116,{
 	cutin "kafra_02",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,3,1,50,700;
 	savepoint "ayothaya",149,69;
-	callfunc "F_KafEnd",0,1,"in the city of Ayotaya";
+	callfunc "F_KafEnd",0,1,"哎哟泰雅城内";
 }
 
 // Einbech
@@ -415,11 +412,11 @@ einbech,181,132,5	script	卡普拉 职员#ein3::kaf_einbech	860,{
 	cutin "kafra_08",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,40,850;
 	savepoint "einbech",182,124;
-	callfunc "F_KafEnd",0,1,"in the town of Einbech";
+	callfunc "F_KafEnd",0,1,"艾音贝赫城内";
 }
 
 // Einbroch
@@ -428,11 +425,11 @@ einbroch,242,205,5	script	卡普拉 职员#ein2::kaf_einbroch	860,{
 	cutin "kafra_08",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,50,800;
 	savepoint "einbroch",238,198;
-	callfunc "F_KafEnd",0,1,"in the city of Einbroch";
+	callfunc "F_KafEnd",0,1,"艾音布罗克城内";
 }
 
 einbroch,59,203,6	script	卡普拉 职员#ein1::kaf_einbroch2	861,{
@@ -440,10 +437,10 @@ einbroch,59,203,6	script	卡普拉 职员#ein1::kaf_einbroch2	861,{
 	mes "[卡普拉 职员]";
 	mes "欢迎来到卡普拉服务站.";
 	mes "卡普拉职员随时准备为您服务.";
-	mes "您需要什么服务呢？";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,50,800;
 	savepoint "einbroch",240,197;
-	callfunc "F_KafEnd",0,1,"in the city of Einbroch";
+	callfunc "F_KafEnd",0,1,"艾音布罗克城内";
 }
 
 // Gonryun
@@ -452,11 +449,11 @@ gonryun,159,122,4	script	卡普拉 职员::kaf_gonryun	116,{
 	cutin "kafra_02",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,3,1,50,700;
 	savepoint "gonryun",160,62;
-	callfunc "F_KafEnd",0,1,"in the city of Kunlun";
+	callfunc "F_KafEnd",0,1,"昆仑城内";
 }
 
 // Lighthalzen
@@ -465,46 +462,46 @@ lighthalzen,164,100,4	script	卡普拉 职员::kaf_lighthalzen	860,{
 	cutin "kafra_08",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,40,800;
 	savepoint "lighthalzen",158,94;
-	callfunc "F_KafEnd",0,1,"in the city of Lighthalzen";
+	callfunc "F_KafEnd",0,1,"里希塔乐镇城内";
 }
 
 lighthalzen,191,320,4	script	卡普拉 职员::kaf_lighthalzen2	861,{
 	cutin "kafra_09",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,40,800;
 	savepoint "lighthalzen",194,313;
-	callfunc "F_KafEnd",0,1,"in the city of Lighthalzen";
+	callfunc "F_KafEnd",0,1,"里希塔乐镇城内";
 }
 
 lhz_in02,237,284,4	script	卡普拉 职员::kaf_lhz_in02	861,{
 	cutin "kafra_09",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,4,1,40,800;
 	savepoint "lhz_in02",278,215;
-	callfunc "F_KafEnd",0,1,"in the city of Lighthalzen";
+	callfunc "F_KafEnd",0,1,"里希塔乐镇城内";
 }
 
 // Louyang
 //============================================================
-louyang,210,104,5	script	卡普拉 职员::kaf_louyang	117,{
+louyang,210,104,5	script	卡普拉 职员::kaf_louyang	4_F_KAFRA2,{
 	cutin "kafra_01",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎来到卡普拉服务站.";
 	mes "卡普拉职员随时准备为您服务.";
-	mes "您需要什么服务呢？";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,3,1,50,700;
 	savepoint "louyang",217,92;
-	callfunc "F_KafEnd",0,1,"in the city of Louyang";
+	callfunc "F_KafEnd",0,1,"洛阳城内";
 }
 
 // Umbala
@@ -514,11 +511,11 @@ umbala,87,160,4	script	卡普拉 职员::kaf_umbala	721,{
 	callfunc "F_KafSet";
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,0,1,80,0;
 	savepoint "umbala",126,131;
-	callfunc "F_KafEnd",0,1,"in the city of Umbala";
+	callfunc "F_KafEnd",0,1,"汶巴拉城内";
 }
 
 // Niflheim
@@ -526,13 +523,13 @@ umbala,87,160,4	script	卡普拉 职员::kaf_umbala	721,{
 niflheim,202,180,3	script	卡普拉 职员::kaf_niflheim	791,{
 	callfunc "F_Kafra",1,2,1,150,0;
 	savepoint "niflheim",192,182;
-	callfunc "F_KafEnd",1,1,"in the city of Niflheim";
+	callfunc "F_KafEnd",1,1,"尼芙菲姆城内";
 }
 
 // Dungeons and Fields
 //============================================================
 // - Byalan Island
-izlu2dun,106,58,8	script	卡普拉 职员::kaf_izlu2dun	115,{
+izlu2dun,106,58,8	script	卡普拉 职员::kaf_izlu2dun	4_F_KAFRA2,{
 	cutin "kafra_03",2;
 	if (!checkre(0) && BaseJob == Job_Novice && job_merchant_q2 > 0) {
 		// Merchant Job Change Quest
@@ -540,12 +537,12 @@ izlu2dun,106,58,8	script	卡普拉 职员::kaf_izlu2dun	115,{
 		callfunc "F_MercKafra";
 	}
 	mes "[卡普拉 职员]";
-	mes "欢迎使用卡普拉服务！";
-	mes "我们将随时为您提供最优质的服务。";
-	mes "您需要什么服务呢？";
+	mes "欢迎使用卡普拉服务!";
+	mes "我们将随时为您提供最优质的服务.";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,2,1,120,1200;
 	savepoint "izlu2dun",87,170;
-	callfunc "F_KafEnd",0,1,"at Byalan Island";
+	callfunc "F_KafEnd",0,1,"柏伊亚岚岛";
 }
 
 // - Culvert Sewers
@@ -553,20 +550,20 @@ prt_fild05,290,224,3	script	卡普拉 职员::prt_fild05	114,{
 	cutin "kafra_04",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,1,1,40,0;
 	savepoint "prt_fild05",274,243;
-	callfunc "F_KafEnd",0,1, "at the Prontera Culverts";
+	callfunc "F_KafEnd",0,1, "普隆德拉原野";
 }
 
 // - Coal Mine (Dead Pitt)
 mjolnir_02,83,362,4	script	卡普拉 职员::kaf_mjolnir_02	116,{
 	cutin "kafra_02",2;
 	mes "[卡普拉 职员]";
-	mes "欢迎使用卡普拉服务！";
-	mes "我们将随时为您提供最优质的服务。";
-	mes "您需要什么服务呢？";
+	mes "欢迎使用卡普拉服务!";
+	mes "我们将随时为您提供最优质的服务.";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,6,1,100,0;
 	savepoint "mjolnir_02",98,352;
 	callfunc "F_KafEnd",0,1,"妙勒尼废弃矿场门口";
@@ -577,20 +574,20 @@ moc_ruins,59,157,5	script	卡普拉 职员::moc_ruins	114,{
 	cutin "kafra_04",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "我们将永远为您提供最优质的服务！";
-	mes "请问您需要什么服务呢？";
+	mes "我们将永远为您提供最优质的服务!";
+	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,2,1,90,1200;
 	savepoint "moc_ruins",41,141;
-	callfunc "F_KafEnd",0,1," at the Pyramids";
+	callfunc "F_KafEnd",0,1,"金字塔外";
 }
 
 // - Orc Dungeon
 gef_fild10,73,340,5	script	卡普拉 职员::kaf_gef_fild10	116,{
 	cutin "kafra_02",2;
 	mes "[卡普拉 职员]";
-	mes "欢迎使用卡普拉服务！";
-	mes "我们将随时为您提供最优质的服务！";
-	mes "您需要什么服务呢？";
+	mes "欢迎使用卡普拉服务!";
+	mes "我们将随时为您提供最优质的服务!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,6,1,130,0;
 	savepoint "gef_fild10",54,326;
 	callfunc "F_KafEnd",0,1,"兽人洞穴门口";
@@ -601,9 +598,9 @@ alb2trea,59,69,5	script	卡普拉 职员::kaf_alb2trea	117,{
 	cutin "kafra_01",2;
 	mes "[卡普拉 职员]";
 	mes "欢迎光临, 热情的冒险家~!";
-	mes "卡普拉服务永远在您身边！";
-	mes "您需要什么服务呢？";
+	mes "卡普拉服务永远在您身边!";
+	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,2,1,50,0;
 	savepoint "alb2trea",92,64;
-	callfunc "F_KafEnd",0,1,0,"at Sunken Ship";
+	callfunc "F_KafEnd",0,1,0,"沉船附近的岛屿";
 }
