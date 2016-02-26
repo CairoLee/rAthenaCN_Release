@@ -2,6 +2,23 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.3.0(2016-02-26)
+------------------
+[新增] 实现2015客户端的称号机制(部分实装, 但已够用), 详见 npc/racn/demo/racn_title.txt
+[新增] 新增称号变更事件“OnPCChangeTitleEvent”, 详见 npc/racn/demo/racn_events.txt
+[新增] 新增“@recallmap”指令，用来召唤当前地图的玩家
+[新增] 新增“notoken”地图标记，用来禁止在某地图上使用“不死之证”进行原地复活
+[新增] 触发OnNPCKillEvent事件时，能通过@mob_dead_x和@mob_dead_y获取魔物死亡时的坐标
+[新增] 支持使用 @bodystyle 设置“皇家卫士”的服装风格(请配合具有相关图档的客户端使用)
+[修正] rAthena官方BUG: 解决由于 instance_db 导致的一个内存泄露问题 (感谢“CK”反馈)
+[修正] 扩大地面技能计时器的容量, 降低“tickset is full”的报错概率 (感谢“★╮喵玲兒〃☆”指出)
+[汉化] 优化“hide_woe_damage”选项的描述
+[汉化] 优化 conf/login_athena.conf 中几个选项的描述
+[汉化] 完全汉化“副本数据库”的说明 db/[pre-]re/instance_db.txt
+[汉化] 完全汉化“物品堆叠限制数据库”的说明 db/item_stack.txt
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+[调整] 调整 rAthenaCN 开发团队撰写的示例脚本存放位置到 npc/racn 目录中
+
 v1.2.9(2016-02-21)
 ------------------
 [调整] 解决开启VIP机制的情况下, 定制仓库容量错误的问题(感谢“好刀一把”反馈)

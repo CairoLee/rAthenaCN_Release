@@ -1,23 +1,26 @@
-// Item Stacking Restriction File
-// Prevents an item to be stacked more than x times in given
-// inventory types. Generally used by 3rd class related skill items.
+// 物品堆叠限制数据库
 //
-// Structure of Database:
-// ItemID,MaxStackAmount,Type
+// 通过此数据库, 您可以限制物品的重复堆叠数量.
+// 常用于对三转技能的消耗品进行限制.
+// 比如“大主教”使用“圣灵降临”技能需要消耗1个“辅助者”,
+// 而这个名为“辅助者”的物品在背包中, 最多只能同时携带3个(官服如此).
 //
-// MaxStackAmount:
-//	Stack limit for the item. Use 0 to disable a restriction.
+// 数据库格式说明:
+// 物品编号,最大堆叠数量,限制类型
 //
-// Type mask values:
-//	&1: Character inventory restriction
-//	&2: Character cart restriction
-//	&4: Account storage restriction
-//	&8: Guild storage restriction
+// 最大堆叠数量:
+//	物品的最大堆叠数量. 设置为 0 则表示无限制.
 //
-// Example:
-// 512,4,12  // Will not allow more than 4 Apples in storages.
+// 以下为'限制类型'字段的可选值 (掩码选项):
+//	&1: 针对角色背包
+//	&2: 针对角色手推车
+//	&4: 针对个人仓库
+//	&8: 针对公会仓库
+//
+// 例如:
+// 512,4,12  // 禁止在个人仓库(4)和公会仓库(8)中存放超过4个“苹果”. 4 + 8 = 12
 
-// Rune Knight
+// Rune Knight - 卢恩骑士
 12725,20,1  // Nauthiz Rune
 12726,20,1  // Raido Rune
 12727,20,1  // Berkana Rune
@@ -28,5 +31,5 @@
 12732,20,1  // Wyrd Rune
 12733,20,1  // Hagalaz Rune
 
-// Arch Bishop
+// Arch Bishop - 大主教
 12333,3,1  // Ancilla

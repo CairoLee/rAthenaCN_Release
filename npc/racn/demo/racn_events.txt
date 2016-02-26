@@ -24,7 +24,7 @@
 -	script	EVENT_TEST_INIT	-1,{
 end;
 OnPCLoginEvent:
-	dispbottom "[事件演示] 已加载演示脚本，若想关闭演示脚本，请编辑 npc/scripts_custom.conf 配置文件";
+	dispbottom "[事件演示] 已加载演示脚本，若想关闭演示脚本，请查看 npc/scripts_racn.conf 配置文件";
 end;
 }
 
@@ -66,7 +66,7 @@ OnAfterReloadScript:
 end;
 }
 
--	script	MVP_KILL_EVENT	-1,{
+-	script	MOB_KILL_EVENT	-1,{
 end;
 OnMvpKillEvent:
 	// OnMvpKillEvent 与是玩家无关的
@@ -81,6 +81,9 @@ OnMvpKillEvent:
 	// -------------------------------------------------------
 	
 	announce "[全服公告] 玩家 “" + strcharinfo(0, killerrid) + "” 杀死了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的MVP魔物 “" + strmobinfo(2, killedrid) + "”", bc_all|bc_yellow;
+end;
+OnNPCKillEvent:
+	dispbottom "[事件演示] OnNPCKillEvent | 杀死了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的普通魔物，魔物编号为 " + killedrid + " ！";
 end;
 }
 
@@ -531,12 +534,43 @@ OnSomeOneEnterChatRoom:
 	end;
 }
 
-
-
-
-
-
-
+-	script	PC_CHANGE_TITLE	-1,{
+end;
+OnPCChangeTitleEvent:
+	// OnPCChangeTitleEvent 是与触发改变称号请求的玩家关联的
+	// 
+	// 当符合以下时机时, 就会触发此事件:
+	// - 当玩家在装备窗口的“称号”界面中双击了某个称号时
+	// - 使用setchartitle脚本指令去设置称号时
+	// - 使用GM指令@title去设置称号时
+	//
+	// 若下面的 @now_title_id 为 0 则表示玩家双击了 “Title Release”
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @trigger_mode	为0表示通过装备面板触发、为1表示通过setchartitle脚本指令触发、为2表示通过GM指令@title触发
+	// @now_title_id	玩家双击的称号的ID是多少
+	// @pre_title_id	之前的称号ID是多少
+	// -------------------------------------------------------
+	
+	switch(@trigger_mode){
+		case 0:
+			.@mode_str$ = "装备面板中的称号页面";
+			break;
+		case 1:
+			.@mode_str$ = "setchartitle脚本指令";
+			break;
+		case 2:
+			.@mode_str$ = "GM指令@title";
+			break;
+		default:
+			.@mode_str$ = "奇怪的未知方法";
+			break;
+	}
+	
+	dispbottom "[事件演示] OnPCChangeTitleEvent | 通过“" + .@mode_str$ + "”更换称号, ID从 " + @pre_title_id + " 变为 " + @now_title_id;
+end;
+}
 
 
 
