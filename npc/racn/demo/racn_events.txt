@@ -549,7 +549,7 @@ OnPCChangeTitleEvent:
 	// 参数说明
 	// -------------------------------------------------------
 	// @trigger_mode	为0表示通过装备面板触发、为1表示通过setchartitle脚本指令触发、为2表示通过GM指令@title触发
-	// @now_title_id	玩家双击的称号的ID是多少
+	// @now_title_id	即将变更成的目标称号ID(该值可在事件中被修改)
 	// @pre_title_id	之前的称号ID是多少
 	// -------------------------------------------------------
 	
@@ -566,6 +566,43 @@ OnPCChangeTitleEvent:
 		default:
 			.@mode_str$ = "奇怪的未知方法";
 			break;
+	}
+	
+	// 鉴于 @now_title_id 是可被修改的
+	// 所以你可以用很粗暴的方法，直接修改 @now_title_id 的方式来篡改最终的称号ID
+	// 但是要注意, 采用这种方法的话, 后面别跟 halt;
+	// -------------------------------------------------------
+	// 例如:
+	// @now_title_id = 1020;
+	// end;
+	// -------------------------------------------------------
+	
+	if (@trigger_mode == 0 && @now_title_id == 0){
+		// 若玩家双击了装备面板中的称号, 那么弹出菜单让玩家选择称号.
+		// @now_title_id 为 0 表示玩家双击的是“Title Release”
+		
+		// 必须要在使用 mes 和 menu 之前调用 halt; 否则 halt; 会失效哒
+		halt;
+		
+		mes "[称号事件演示]";
+		mes "您可以在下面选择一个称号.";
+		mes "在 ^ff0000data\\msgstringtable.txt^000000 中可以将 ^0000ffTitle Release^000000 改成 ^0000ff双击选择称号^000000,";
+		mes "这样看起来更合理一些.";
+		switch(select("Junction of life - ID = 1000:Expert - ID = 1001:Dabster - ID = 1002:隐藏我的称号 - ID = 0")){
+			case 1:
+				setchartitle(1000);
+				end;	// 这里就直接end终止，不然继续执行会有 dispbottom 提示
+			case 2:
+				setchartitle(1001);
+				end;	// 这里就直接end终止，不然继续执行会有 dispbottom 提示
+			case 3:
+				setchartitle(1002);
+				end;	// 这里就直接end终止，不然继续执行会有 dispbottom 提示
+			case 4:
+			default:
+				setchartitle(0);
+				end;
+		}
 	}
 	
 	dispbottom "[事件演示] OnPCChangeTitleEvent | 通过“" + .@mode_str$ + "”更换称号, ID从 " + @pre_title_id + " 变为 " + @now_title_id;
