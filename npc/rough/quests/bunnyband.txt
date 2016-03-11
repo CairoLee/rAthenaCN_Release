@@ -1,0 +1,135 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script ======================================= 
+//= Bunny Band Quest
+//===== By: ================================================== 
+//= rAthena Dev Team
+//===== Current Version: ===================================== 
+//= 1.6
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Quest to obtain a Bunny Band headgear.
+//===== Additional Comments: ================================= 
+//= 1.5 Rescripted to Aegis 10.3 standards. [L0ne_W0lf]
+//	Changed @BUNYBAN back to BUNYBND, it should be this way.
+//	Removed duplicates. NPC is ALberta-only.
+//= 1.6 Cleaning. [Euphy]
+//===== rAthenaCN Dev: =======================================
+//= 2016.03.03 英文直译汉化文字部分 [杨梅]
+//=            修复102行活动信息没有显示的错误 [杨梅]
+//============================================================ 
+
+alberta,26,229,0	script	卡普拉服务人员#bunny	83,{
+	if (BUNYBND == 1) {
+		mes "[卡普拉服务人员]";
+		mes "Hello 你好啊~!";
+		mes "看来你已经参加了";
+		mes "^529DFF帮助顾客将拿来的物品加工制作^FF0000'兔耳发圈'^529DFF的特别活动^000000 了呢";
+		next;
+		switch(select("没错，我已经拿来了需要的材料:活动信息:取消")) {
+		case 1:
+			mes "[卡普拉服务人员]";
+			mes "现在开始检查客人拿来的物品";
+			next;
+			setarray .@Items[0],949,100,706,1,722,1,2213,1;
+			for(set .@i,0; .@i<8; set .@i,.@i+2)
+				if (countitem(.@Items[.@i]) < .@Items[.@i+1]) {
+					mes "[卡普拉服务人员]";
+		            mes "至少也要从:";
+					mes "^FF0000"+callfunc("F_InsertPlural",.@Items[.@i+1],getitemname(.@Items[.@i]))+"^000000";
+		            mes "开始收集吧";
+					close;
+				}
+			mes "[卡普拉服务人员]";
+			mes "哇!!太好了，太好了你把需要的材料都带来了!!";
+			mes "卡普拉服务人员将为你制作兔耳发圈";
+			mes "请稍等一下";
+			next;
+			for(set .@i,0; .@i<8; set .@i,.@i+2)
+				if (countitem(.@Items[.@i]) < .@Items[.@i+1]) {
+					mes "[卡普拉服务人员]";
+					mes "很抱歉,";
+		            		mes "至少也要从:";
+					mes "^FF0000"+callfunc("F_InsertPlural",.@Items[.@i+1],getitemname(.@Items[.@i]))+"^000000";
+		            		mes "开始收集，";
+					mes "这样我才能帮你制作...";
+					close;
+				}
+			delitem 949,100; //Feather柔毛
+			delitem 706,1; //Four_Leaf_Clover幸运四叶草
+			delitem 722,1; //Scarlet_Jewel珍珠
+			delitem 2213,1; //Cat_Hairband猫耳发圈
+			mes "[卡普拉服务人员]";
+			mes "^FF0000兔耳发圈^000000制作完成...!";
+			getitem 2214,1; //Bunny_Band
+			set BUNYBND,0;
+			next;
+			mes "[卡普拉服务人员]";
+			mes "我们非常感谢您参加本活动，";
+			mes "卡普拉将永远为您服务";
+			close;
+		case 2:
+			goto L_Info;
+		case 3:
+			close;
+		}
+	}
+	mes "[卡普拉服务人员]";
+	mes "你希望参加卡普拉与商人公会一同举办的";
+	mes "^529DFF帮助顾客将拿来的物品加工制作^FF0000'兔耳发圈'^529DFF的特别活动^000000 吗？";
+	next;
+	switch(select("参加活动:活动信息:没兴趣")) {
+	case 1:
+		set BUNYBND,1;
+		mes "[卡普拉服务人员]";
+		mes "感谢您们参加这次的特别活动!";
+		mes "请将所需要的物品搜集齐全后在过来这里就可以了";
+		next;
+		mes "[卡普拉服务人员]";
+		mes "制作兔耳发圈所需要的物品如下:";
+		mes "柔毛 100 根";
+		mes "四叶幸运草 1 个";
+		mes "珍珠 1 颗";
+		mes "猫耳发圈 1 个";
+		close;
+	case 2:
+		goto L_Info;
+	case 3:
+		close;
+	}
+L_Info:
+	mes "[卡普拉服务人员]";
+	mes "感谢您们参加这次的特别活动!";
+	mes "请将所需要的物品搜集齐全后在过来这里就可以了";
+	next;
+	mes "[卡普拉服务人员]";
+	mes "制作兔耳发圈所需要的物品如下:";
+	mes "柔毛 100 根";
+	mes "四叶幸运草 1 个";
+	mes "珍珠 1 颗";
+	mes "猫耳发圈 1 个";
+	next;
+	mes "[卡普拉服务人员]";
+	mes "以上这些物品全部收集好了在过来这里就可以了";
+	mes "我会帮你制作兔耳发圈.";
+	mes "特别感谢本次活动的赞助方:";
+	mes "(艾尔贝塔商人协会)";
+	close;
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.1 using duplicate command
+//= 1.2 Fixed NPC location, removed NPC dupes [Lupus]
+//= 1.3 RE-Fixed exploit V_V, also cleared used VAR [Lupus]
+//= 1.4 replaced BUNYBND with @BUNYBND [Lupus]
+//============================================================ 
