@@ -1087,6 +1087,8 @@ to alberta (98,154) when clicked.
 
     mes "Have you checked out the <NAVI>[Tool Shop]<INFO>alberta,98,154,0,000,0</INFO></NAVI>?";
 
+See also 'navigateto', which can be used for certain NPC events.
+
 URLs
 ----
 Similarly, you can create links to websites that launch in a new window:
@@ -3781,6 +3783,8 @@ invoking RID. It returns 1 if successful and 0 upon failure.
     [ Parameters: <guild id> ]
  4: All players in a specified area of the map of the invoking player (or NPC).
     [ Parameters: <x0>,<y0>,<x1>,<y1> ]
+ 5: All players in the map.
+    [ Parameters: "<map name>" ]
  Account ID: If type is Account ID, attach the specified account ID.
 
 <flag> can prevent certain players from being attached:
@@ -4475,6 +4479,10 @@ Creates a rental item in the attached character's inventory. The item will expir
 in <time> seconds and be automatically deleted. When receiving a rental item, 
 the character will receive a message in their chat window. The character will 
 also receive warning messages in their chat window before the item disappears.
+
+When rentals expire it will call the OnUnequip Script of the item. This can be used
+for special cases such as removing a status change or resetting a variable or state
+of the player.
 
 This command can not be used to rent stackable items. Rental items cannot be 
 dropped, traded, sold to NPCs, or placed in guild storage. (i.e. trade mask 75)
@@ -5531,6 +5539,26 @@ current SVN, which prevents the cases of multi-spouse problems). It will return
 
 This function will also destroy both wedding rings and send a message to both 
 players, telling them they are now divorced.
+
+---------------------------------------
+
+*adopt("<parent_name>","<baby_name>");
+*adopt(<parent_id>,<baby_id>);
+
+This function will send the client adoption request to the specified baby 
+character. The parent value can be either parent. Both parents and the baby
+need to be online in order for adoption to work.
+
+Return values:
+ ADOPT_ALLOWED - Sent message to Baby to accept or deny.
+ ADOPT_ALREADY_ADOPTED - Character is already adopted.
+ ADOPT_MARRIED_AND_PARTY - Parents need to be married and in a party with the baby.
+ ADOPT_EQUIP_RINGS - Parents need wedding rings equipped.
+ ADOPT_NOT_NOVICE - Baby is not a Novice.
+ ADOPT_CHARACTER_NOT_FOUND - A parent or Baby was not found.
+ ADOPT_MORE_CHILDREN - You cannot adopt more than 1 child. (client message)
+ ADOPT_LEVEL_70 - Parents need to be at least level 70 in order to adopt someone. (client message)
+ ADOPT_MARRIED - You cannot adopt a married person. (client message)
 
 ---------------------------------------
 //
@@ -9014,6 +9042,38 @@ Valid flag are:
 
 ---------------------------------------
 
+*navigateto("<map>"{,<x>,<y>,<flag>,<hide_window>,<monster_id>,<char_id>});
+
+Generates a navigation for attached or specified character. Requires client
+2011-10-10aRagEXE or newer.
+
+The flag specifies how the client will calculate the specific route.
+
+Valid flags are:
+ NAV_NONE - No services
+ NAV_AIRSHIP_ONLY - Airship only
+ NAV_SCROLL_ONLY - Scroll only
+ NAV_AIRSHIP_AND_SCROLL - Airship and Scroll
+ NAV_KAFRA_ONLY - Kafra only
+ NAV_KAFRA_AND_AIRSHIP - Kafra and Airship
+ NAV_KAFRA_AND_SCROLL - Kafra and Scroll
+ NAV_ALL - All services
+
+When flag is not specified, the default value is NAV_KAFRA_AND_AIRSHIP.
+
+The hide_window specifies whether to display (0) or hide (1) the navigation window.
+By default the window is hidden.
+
+You can specify the monster_id in combination with a mapname to make the
+navigation system tell you, that you have reached the desired mob.
+
+Note:
+The client requires custom monster spawns be in the navigation file
+for using the embedded client Navigation feature to work properly. In this
+instance sending the player to the map where the monster spawns is a simpler
+solution rather than sending the map and the monster_id.
+
+---------------------------------------
 
 Whew.
 That's about all of them.

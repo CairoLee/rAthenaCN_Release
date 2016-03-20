@@ -48,7 +48,7 @@
 // 14 attack type (none, weapon, magic, misc)
 // 15 Blowcount (amount of tiles skill knockbacks)
 // 16 inf3 (skill information 3):
-//    0x00001 - skill ignores land protector (e.g. arrow shower)
+//    0x00001 - skill ignores land protector
 //    0x00002 - skill that doesn't end camouflage
 //    0x00004 - usable skills while hiding
 //    0x00008 - skill that can be use while in dancing state
@@ -164,7 +164,7 @@
 67,9,6,16,0,0x1,0,3,1,yes,0,0x200,0,magic,0,0x0,	PR_SUFFRAGIUM,Suffragium(牺牲祈福)
 68,9,6,16,6,0x31,0,5,1,yes,0,0,0,magic,0,0x0,	PR_ASPERSIO,Aspersio(撒水祈福)
 69,9,6,2,0,0x23,1,5,1,yes,0,0x40,0,magic,0,0x0,	PR_BENEDICTIO,B.S. Sacramenti(圣之祈福)
-70,9,6,2,6,0x21,0,10,1,yes,0,0,0,magic,1,0x0,	PR_SANCTUARY,Sanctuary(光耀之堂)
+70,9,6,2,6,0x21,0,10,1,yes,0,0,0,magic,2,0x0,	PR_SANCTUARY,Sanctuary(光耀之堂)
 71,9,6,16,0,0x1,0,4,1,yes,0,0,0,magic,0,0x0,		PR_SLOWPOISON,Slow Poison(缓毒术)
 72,9,6,16,0,0x1,0,1,1,yes,0,0,0,magic,0,0x20,		PR_STRECOVERY,Status Recovery(痊愈术)
 73,9,6,16,0,0x1,0,10,1,yes,0,0,0,magic,0,0x0,	PR_KYRIE,Kyrie Eleison(霸邪之阵)
@@ -177,7 +177,7 @@
 
 //****
 // Wizard
-80,9,8,2,3,0x20,1:1:1:1:1:2:2:2:2:2:2,10,-3:-4:-5:-6:-7:-8:-9:-10:-11:-12:-12,yes,0,0x2080,5,magic,0,0x0,	WZ_FIREPILLAR,Fire Pillar(火柱攻击)
+80,9,8,2,3,0x20,1:1:1:1:1:2:2:2:2:2:2,10,3:4:5:6:7:8:9:10:11:12,yes,0,0x2080,5,magic,0,0x0,	WZ_FIREPILLAR,Fire Pillar(火柱攻击)
 81,0,6,4,3,0x2,7,10,1,yes,0,0x42000,0,magic,5,0x0,		WZ_SIGHTRASHER,Sightrasher(火之猎杀)
 83,9,8,2,3,0,3:3:3:3:3:3:3:3:3:3:14,10,1:1:2:2:3:3:4:4:5:5:15,yes,0,0x2000,0,magic,0,0x0,	WZ_METEOR,Meteor Storm(陨石术)
 84,9,8,1,4,0,0,10,3:4:5:6:7:8:9:10:11:12,yes,0,0x2000,0,magic,2:3:3:4:4:5:5:6:6:7,0x0,	WZ_JUPITEL,Jupitel Thunder(雷鸣术)
@@ -638,7 +638,7 @@
 431,0,0,4,0,0x1,0,4,1,yes,0,0,0,magic,0,0x0,		SG_SUN_COMFORT,Comfort of the Sun(太阳的平安感)
 432,0,0,4,0,0x1,0,4,1,yes,0,0,0,magic,0,0x0,		SG_MOON_COMFORT,Comfort of the Moon(月亮的平安感)
 433,0,0,4,0,0x1,0,4,1,yes,0,0,0,magic,0,0x0,		SG_STAR_COMFORT,Comfort of the Stars(星星的平安感)
-434,10,6,1,0,0x1,0,3,1,yes,0,0,0,magic,0,0x0,	SG_HATE,Hatred of the Sun Moon and Stars(太阳和月亮和星星的憎恶)
+434,9,6,1,0,0x1,0,3,1,yes,0,0,0,magic,0,0x0,	SG_HATE,Hatred of the Sun Moon and Stars(太阳和月亮和星星的憎恶)
 435,0,0,0,0,0,0,3,0,no,0,0,0,none,0,0x0,		SG_SUN_ANGER,Anger of the Sun(太阳的愤怒)
 436,0,0,0,0,0,0,3,0,no,0,0,0,none,0,0x0,		SG_MOON_ANGER,Anger of the Moon(月亮的愤怒)
 437,0,0,0,0,0,0,3,0,no,0,0,0,none,0,0x0,		SG_STAR_ANGER,Anger of the Stars(星星的愤怒)
@@ -702,8 +702,8 @@
 480,5,8,1,0,0,0,5,5,no,0,0,0,weapon,0,0x20000,		PA_SHIELDCHAIN,Shield Chain(连续盾击)
 481,0,0,0,0,0,0,5,0,no,0,0,0,none,0,0x0,		HP_MANARECHARGE,Mana Recharge(魔力减免)
 482,0,6,4,0,0x1,0,5,1,no,0,0,0,magic,0,0x0,		PF_DOUBLECASTING,Double Casting(双倍投掷)
-483,14,6,2,0,0x1,1:2:3:4:5,1,1,no,0,0,0,none,0,0x0,	HW_GANBANTEIN,Ganbantein(咖般塔音)
-484,14,6,2,2,0xD1,0,5,1,yes,0,0x18000,0,misc,0,0x11010,		HW_GRAVITATION,Gravitation Field(重力原野)
+483,18,6,2,0,0x1,1:2:3:4:5,1,1,no,0,0,0,none,0,0x0,	HW_GANBANTEIN,Ganbantein(咖般塔音)
+484,18,6,2,2,0xD1,0,5,1,yes,0,0x18000,0,misc,0,0x11010,		HW_GRAVITATION,Gravitation Field(重力原野)
 485,-2,6,1,-1,0x8,0,10,1,no,0,0,0,weapon,0,0x4000,	WS_CARTTERMINATION,Cart Termination(手推车终结技)
 486,0,6,4,0,0x1,0,5,1,no,0,0,0,weapon,0,0x4000,		WS_OVERTHRUSTMAX,Maximum Power Thrust(凶砍最大值)
 487,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x8,		CG_LONGINGFREEDOM,Longing for Freedom(不要拘束我)
@@ -743,7 +743,7 @@
 518,2,6,1,-1,0,0,10,1,no,0,0,0,weapon,5,0x0,		GS_DUST,Dust(尘埃)
 519,-9,6,1,-1,0,0,10,1,yes,0,0,0,weapon,0,0x100,	GS_FULLBUSTER,Full Buster(庞然大物)
 520,-9,6,1,-1,0x2,1:1:1:2:2:2:3:3:3:4,10,1,no,0,0,0,weapon,0,0x100,	GS_SPREADATTACK,Spread Attack(扩散进攻)
-521,-9,6,2,-1,0x40,1,10,1,no,0,0,0,misc,3,0x100,	GS_GROUNDDRIFT,Ground Drift(地面铺开)
+521,-9,6,2,-1,0x42,1,10,1,no,0,0,0,weapon,3,0x100,	GS_GROUNDDRIFT,Ground Drift(地面铺开)
 
 //****
 // Ninja
@@ -761,12 +761,12 @@
 533,0,0,0,0,0,0,10,0,no,0,0,0,none,0,0x0,		NJ_NINPOU,Spirit of the Blade(忍法修炼)
 534,9,8,1,3,0,0,10,1:2:3:4:5:6:7:8:9:10,yes,0,0,0,magic,0,0x0,	NJ_KOUENKA,Crimson Fire Petal(红炎华)
 535,0,8,4,3,0,0,10,1,yes,0,0,0,magic,0,0x0,		NJ_KAENSIN,Crimson Fire Formation(火炎阵)
-536,9,8,1,3,0x2,2,5,3,yes,0,0,0,magic,0,0x0,		NJ_BAKUENRYU,Raging Fire Dragon(爆炎龙)
+536,9,8,1,3,0,0,5,-3,yes,0,0,0,magic,0,0x0,		NJ_BAKUENRYU,Raging Fire Dragon(爆炎龙)
 537,9,8,1,1,0,0,10,3:4:5:6:7:8:9:10:11:12,yes,0,0,0,magic,0,0x0,	NJ_HYOUSENSOU,Spear of Ice(冰闪枪)
 538,9,6,2,1,0x1,0,10,1,yes,0,0,0,magic,0,0x1000,	NJ_SUITON,Hidden Water(水遁)
-539,0,6,4,1,0x2,3,5,1,yes,0,0,0,magic,0,0x0,		NJ_HYOUSYOURAKU,Ice Meteor(冰晶落)
+539,0,6,4,1,0,0,5,1,yes,0,0,0,magic,0,0x0,		NJ_HYOUSYOURAKU,Ice Meteor(冰晶落)
 540,9,8,1,4,0,0,10,1:2:2:3:3:4:4:5:5:6,yes,0,0,0,magic,0,0x0,	NJ_HUUJIN,Wind Blade(风刃)
-541,9,6,4,4,0x2,2:2:3:3:4,5,1,yes,0,0,0,magic,0,0x0,	NJ_RAIGEKISAI,Lightning Strike of Destruction(雷击碎)
+541,9,6,4,4,0,0,5,1,yes,0,0,0,magic,0,0x0,	NJ_RAIGEKISAI,Lightning Strike of Destruction(雷击碎)
 542,5:6:7:8:9,8,1,4,0,1,5,1,yes,0,0,5:6:7:8:9,magic,0,0x0,	NJ_KAMAITACHI,Kamaitachi(朔风劈开)
 543,0,6,4,0,0x1,0,5,1,yes,0,0,0,none,0,0x0,		NJ_NEN,Soul(念)
 544,-5,6,1,0,0x40,0,10,1,no,0,0,0,weapon,0,0x0,	NJ_ISSEN,Final Strike(一闪)

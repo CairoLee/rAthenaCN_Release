@@ -17,8 +17,6 @@
 //===== Description: =========================================
 //= 用来对 rAthenaCN 拓展事件进行测试的脚本，从这里也可以学习
 //= 到这些拓展事件的使用方法。
-//===== Additional Comments: =================================
-//= 1.0 新增OnBeforeReloadScript和OnAfterReloadScript的测试脚本
 //============================================================
 
 -	script	EVENT_TEST_INIT	-1,{
@@ -474,10 +472,10 @@ OnPCBeforeLoadMapEvent:
 	// @loadmap_oldmap_x		玩家准备过图时，在老地图中所处的x坐标
 	// @loadmap_oldmap_y		玩家准备过图时，在老地图中所处的y坐标
 	// 
-	// @loadmap_oldmap_id		玩家准备过图时，目的地地图的地图编号
-	// @loadmap_oldmap_name$	玩家准备过图时，目的地地图的地图名称
-	// @loadmap_oldmap_x		玩家准备过图时，会在目的地地图的哪个x坐标出现
-	// @loadmap_oldmap_y		玩家准备过图时，会在目的地地图的哪个y坐标出现
+	// @loadmap_newmap_id		玩家准备过图时，目的地地图的地图编号
+	// @loadmap_newmap_name$	玩家准备过图时，目的地地图的地图名称
+	// @loadmap_newmap_x		玩家准备过图时，会在目的地地图的哪个x坐标出现
+	// @loadmap_newmap_y		玩家准备过图时，会在目的地地图的哪个y坐标出现
 	// -------------------------------------------------------
 	if (@loadmap_oldmap_id == 0){
 		dispbottom "[事件演示] OnPCBeforeLoadMapEvent | 准备进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
@@ -494,8 +492,8 @@ prontera,142,125,3	script	进入聊天室事件	123,{
 	mes "直接点击我可以正常对话. ^0000ff双击进入我头上的牌子能够在不打开聊天室的情况下, 直接打开仓库.^000000";
 	next;
 	mes "[rAthenaCN 演示]";
-	mes "此演示NPC的脚本位于服务端的: ^ff0000npc\\custom\\rAthenaCN_Events_Tester.txt^000000";
-	mes "您可以在下面的配置文件中移除它: ^0000ffnpc\\scripts_custom.conf^000000";
+	mes "此演示NPC的脚本位于服务端的: ^ff0000npc\\racn\\racn_events.txt^000000";
+	mes "您可以在下面的配置文件中移除它: ^0000ffnpc\\scripts_racn.conf^000000";
 	close;
 OnInit:
 	// 这里的人数限制必须大于等于 2

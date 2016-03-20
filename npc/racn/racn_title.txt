@@ -6,6 +6,24 @@
 //= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
 //============================================================
 
+//===== rAthenaCN Script =======================================
+//= 2015客户端称号机制演示脚本
+//===== By: ==================================================
+//= Sola丶小克
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthenaCN 开发团队
+//===== Description: =========================================
+//= 演示如何通过 rAthenaCN 拓展的 getchartitle 和 setchartitle
+//= 这两个脚本函数来设置和获取玩家的称号。
+//============================================================
+//= 此脚本演示的指令为:
+//=   [脚本] getchartitle {<char_id>};
+//=   [脚本] setchartitle <称号ID>{,<char_id>};
+//= [GM指令] @title <称号ID>
+//============================================================
+
 prontera,136,125,4	script	称号演示	123,{
 	if (PACKETVER < 20150513){
 		mes "[称号演示]";
@@ -15,10 +33,11 @@ prontera,136,125,4	script	称号演示	123,{
 	}
 	mes "[称号演示]";
 	mes "我负责演示2015客户端的称号机制..";
-	mes "相关的两个脚本指令如下:";
+	mes "两个相关的脚本指令如下:";
 	mes "^ff0000getchartitle {<char_id>};^000000";
 	mes "^ff0000setchartitle <称号ID>{,<char_id>};^000000";
-	mes "下面我们就来详细介绍一下...";
+	mes "与称号机制配套的GM指令如下:";
+	mes "^ff0000@title <称号ID>^000000";
 	next;
 	mes "[称号演示]";
 	mes "称号在服务端是以一个ID存在的, 服务端并不知道这个称号ID对应的文本,";
@@ -33,7 +52,7 @@ prontera,136,125,4	script	称号演示	123,{
 	mes "[称号演示]";
 	mes "请选择你要测试或了解的功能.";
 	next;
-	switch(select("setchartitle - 设置我的称号ID:getchartitle - 获取我的称号ID:新增称号更换事件")){
+	switch(select("setchartitle - 设置我的称号ID:getchartitle - 获取我的称号ID:OnPCChangeTitleEvent - 称号更换事件")){
 		case 1:
 			mes "[称号演示]";
 			mes "有效的称号ID范围在:^ff00001000~1034^000000之间,";
@@ -64,8 +83,9 @@ prontera,136,125,4	script	称号演示	123,{
 			break;
 		case 3:
 			mes "[称号演示]";
-			mes "新增 ^ff0000OnPCChangeTitleEvent^000000 事件,";
-			mes "具体使用方法请查看位于 ^ff0000npc/racn/demo/racn_events.txt^000000 的事件演示脚本.";
+			mes "使用 ^ff0000OnPCChangeTitleEvent^000000 事件";
+			mes "可以在玩家更换称号时获得通知.";
+			mes "具体使用方法请查看事件演示脚本: ^ff0000npc/racn/racn_events.txt^000000.";
 			break;
 	}
 	close;
