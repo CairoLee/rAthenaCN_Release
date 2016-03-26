@@ -1,12 +1,42 @@
-// Flagged Items
-// <ItemID>,<Flag>
+// 物品的特殊标记数据库
+// 这里可以为物品设定一些特殊的效果, 以便服务端针对这些物品做特殊处理
 //
-// <Flag>:
-//  1 - As Dead Branch item (will be logged at `branchlog` table and cannot be used at 'nobranch' mapflag)
-//  2 - As item group container, check player's inventory and weight before consumed
-//  4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
-//  8 - Item will be bound item when equipped
-// 16 - Special Broadcast: When item dropped by monster and player loot it, will be broadcasted!
+// 数据库格式说明:
+// 物品编号,标记
+//
+// 以下为'标记'字段的可选值 (掩码选项):
+//   1 - As Dead Branch item (will be logged at `branchlog` table and cannot be used at 'nobranch' mapflag)
+//   2 - As item group container, check player's inventory and weight before consumed
+//   4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
+//   8 - Item will be bound item when equipped
+//  16 - Special Broadcast: When item dropped by monster and player loot it, will be broadcasted!
+// 
+// 以下为 rAthenaCN 拓展的标记选项:
+// 256 - 物品不会由于被玩家主动使用而消耗
+// 512 - 物品不会由于被发动技能所需要而消耗
+//
+// 例如:
+// 717,768	// 蓝色魔力矿石不会被由于被玩家使用(256)和技能需要(512)而被消耗(256 + 512 = 768)
+//
+// ===========
+// 严重注意:
+// ===========
+// 为物品赋予 256 的标记需要特别注意, 否则很容易造成【玩家刷道具】的问题.
+// 
+// 所谓的“玩家主动使用”, 实际上包括下面几种操作: 
+// - 创建公会消耗华丽金属
+// - 插卡消耗卡片 (物品类型为 6 的物品)
+// - 宠物生命体喂食消耗物品
+// - 孵化宠物后移除宠物蛋 (宠物孵出来了宠物蛋自然也是需要被移除的)
+// - 给宠物穿装备 (物品类型为 8 的物品)
+// - 使用武器修理技能消耗材料(物品编号: 1002/998/999/756)
+// - 给武器荼毒时消耗特定类型的道具(物品编号: 12717/12722/12720/12718/12724/12721/12723/12719)
+// - 机匠制造魔法傀儡时消耗特定类型道具(物品编号: 6360~6363)
+// 
+// 如果给一张卡片,设定了 256 的标记, 会导致给装备插上这张卡后, 背包中的卡片不会被消耗
+// 如果给一个宠物蛋设定了 256 的标记, 会导致宠物孵化成功后, 背包中的宠物蛋不被消耗
+// 如果给一件宠物装备设定了 256 的标记, 会导致宠物穿戴完成装备后, 背包中的宠物装备不被消耗
+// 
 // NOTE: For removing flag by import file, use "-" to remove the flag. Example, 604,-1 will removes flag 1 from Branch_Of_Dead_Tree
 
 // Logged as Dead Branch item
