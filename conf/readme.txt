@@ -1,21 +1,25 @@
-import文件夹的作用是什么? 
--------------------------------------------------------------------------------
+--------------------------------------------------------------
+import机制的说明
+--------------------------------------------------------------
 
-这个文件夹提供了一种管理配置文件新方式, 让您可以省去每次更新或升级服务端后, 
+这个机制提供了一种管理配置文件新方式, 让您可以省去每次更新或升级服务端后,
 都必须重新配置服务端conf文件的麻烦. 
 
-How does this work?
--------------------------------------------------------------------------------
+我要怎样才能使用此机制?
+--------------------------------------------------------------
 
-Place only the settings you have changed in the import files.
-For example, if you want to change a value in /battle/exp.conf:
+将你想要修改的设置项, 放到对应的import文件中即可.
+举个例子, 如果你想修改 /battle/exp.conf 中的一个设置项的值:
 
-	// Rate at which exp. is given. (Note 2)
+	// 基础经验值倍率 (百分比选项)
 	base_exp_rate: 700
 
-You could instead copy the setting into /import/battle_conf.txt,
-and you'll eliminate any problems updating in the future.
+只需要将这个选项, 完整的复制到 /import/battle_conf.txt 中,
+这样就可以避免未来更新服务端带来的配置问题.
 
-Neat, isn't it?
+很灵活, 不是么?
+
+--------------------------------------------------------------
 
 - Semi-guide by Ajarn / Euphy
+- Sola丶小克 于 2016年4月20日11:47:38 译

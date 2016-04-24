@@ -151,6 +151,8 @@ OnPCEquipEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCEquipEvent | " + strcharinfo(0) + " 穿戴了一件装备，它的背包序号为: " + @equip_idx;
+	dispbottom "           - 编号: " + getinventoryinfo(@equip_idx, 0) + " | 数量: " + getinventoryinfo(@equip_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@equip_idx, 2) + " | 精炼值: " + getinventoryinfo(@equip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@equip_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@equip_idx, 5) + " | 卡片1: " + getinventoryinfo(@equip_idx, 6) + " | 卡片2: " + getinventoryinfo(@equip_idx, 7) + " | 卡片3: " + getinventoryinfo(@equip_idx, 8) + " | 卡片4: " + getinventoryinfo(@equip_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@equip_idx, 10);
 end;
 OnPCUnequipEvent:
 	// OnPCUnequipEvent 是与玩家关联的
@@ -172,6 +174,8 @@ OnPCUnequipEvent:
 	// -------------------------------------------------------
 	
 	dispbottom "[事件演示] OnPCUnequipEvent | " + strcharinfo(0) + " 脱下了一件装备，它的背包序号为: " + @unequip_idx;
+	dispbottom "           - 编号: " + getinventoryinfo(@unequip_idx, 0) + " | 数量: " + getinventoryinfo(@unequip_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@unequip_idx, 2) + " | 精炼值: " + getinventoryinfo(@unequip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@unequip_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@unequip_idx, 5) + " | 卡片1: " + getinventoryinfo(@unequip_idx, 6) + " | 卡片2: " + getinventoryinfo(@unequip_idx, 7) + " | 卡片3: " + getinventoryinfo(@unequip_idx, 8) + " | 卡片4: " + getinventoryinfo(@unequip_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@unequip_idx, 10);
 end;
 }
 
@@ -395,6 +399,8 @@ OnPCUseItemEvent:
 	
 	dispbottom "[事件演示] OnPCUseItemEvent | 开始使用物品";
 	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
+	dispbottom "           - 编号: " + getinventoryinfo(@useitem_idx, 0) + " | 数量: " + getinventoryinfo(@useitem_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@useitem_idx, 2) + " | 精炼值: " + getinventoryinfo(@useitem_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@useitem_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@useitem_idx, 5) + " | 卡片1: " + getinventoryinfo(@useitem_idx, 6) + " | 卡片2: " + getinventoryinfo(@useitem_idx, 7) + " | 卡片3: " + getinventoryinfo(@useitem_idx, 8) + " | 卡片4: " + getinventoryinfo(@useitem_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@useitem_idx, 10);
 end;
 OnPCUseItemFinishEvent:
 	// OnPCUseItemFinishEvent 是与物品使用者关联的
@@ -419,6 +425,8 @@ OnPCUseItemFinishEvent:
 	
 	dispbottom "[事件演示] OnPCUseItemFinishEvent | 物品使用完毕";
 	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
+	dispbottom "           - 编号: " + getinventoryinfo(@useitem_idx, 0) + " | 数量: " + getinventoryinfo(@useitem_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@useitem_idx, 2) + " | 精炼值: " + getinventoryinfo(@useitem_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@useitem_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@useitem_idx, 5) + " | 卡片1: " + getinventoryinfo(@useitem_idx, 6) + " | 卡片2: " + getinventoryinfo(@useitem_idx, 7) + " | 卡片3: " + getinventoryinfo(@useitem_idx, 8) + " | 卡片4: " + getinventoryinfo(@useitem_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@useitem_idx, 10);
 end;
 }
 

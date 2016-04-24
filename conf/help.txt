@@ -1,18 +1,22 @@
-// This is help file that contains help messages for atcommands/charcommands.
-// 格式为:
+//--------------------------------------------------------------
+// 此帮助文件包含了所有GM指令的帮助信息.
+//--------------------------------------------------------------
+// 数据库格式说明:
 // <指令名称>: "<这个指令的帮助信息>"
-// 这个文件使用 libconfig 语法.
+// 
+// 此文件使用 libconfig 语法.
+//--------------------------------------------------------------
 
 help: "参数: <想寻求帮助的指令名称>\n" "可以帮您查某个指令的使用方法"
 noask: "自动拒绝交易和所有邀请（邀请包括: 添加好友邀请、组队邀请和公会邀请）"
 gmotd: "Broadcasts the Message of The Day to all players."
-me: "参数: <message>\n" "Displays normal text as a message in this format: *name message* (like /me in mIRC)."
+me: "参数: <消息>\n" "Displays normal text as a message in this format: *name message* (like /me in mIRC)."
 fakename: "参数: <name>\n" "Changes your name to your choice temporarily."
 npctalk: "参数: <NPC name> <message>\n" "Forces a NPC to display a message in normal chat."
-broadcast: "参数: <message>\n" "Broadcasts a message with your name (in yellow)."
-kami: "参数: <message>\n" "Broadcasts a message without your name (in yellow)."
-kamib: "参数: <message>\n" "Broadcasts a message without your name (in blue)."
-localbroadcast: "参数: <message>\n" "Broadcasts a message with your name (in yellow) only on your map."
+broadcast: "参数: <消息>\n" "Broadcasts a message with your name (in yellow)."
+kami: "参数: <消息>\n" "Broadcasts a message without your name (in yellow)."
+kamib: "参数: <消息>\n" "Broadcasts a message without your name (in blue)."
+localbroadcast: "参数: <消息>\n" "Broadcasts a message with your name (in yellow) only on your map."
 commands: "显示出所有目前您可以使用的指令"
 rates: "显示服务器目前的倍率设置信息, 包括: 经验倍率、物品掉落倍率等等"
 uptime: "显示服务器距离上一次维护之后, 已经持续运行多长时间"
@@ -196,15 +200,15 @@ jlvl: "参数: <number of levels>\n" "Raises your job level the desired number of 
 allskill: "Give you all skills."
 stpoint: "参数: <number of points> - Gives you the desired number of stat points."
 skpoint: "参数: <number of points> - Gives you the desired number of skill points."
-zeny: "参数: <amount> - Gives you desired amount of Zeny."
-cash: "参数: <amount> - Gives you the specified amount of cash points."
-points: "参数: <amount> - Gives you the specified amount of Kafra Points."
-str: "参数: <amount>\n" "Raises STR by given amount."
-agi: "参数: <amount>\n" "Raises AGI by given amount."
-dex: "参数: <amount>\n" "Raises DEX by given amount."
-vit: "参数: <amount>\n" "Raises VIT by given amount."
-int: "参数: <amount>\n" "Raises INT by given amount."
-luk: "参数: <amount>\n" "Raises LUK by given amount."
+zeny: "参数: <数量> - Gives you desired amount of Zeny."
+cash: "参数: <数量> - Gives you the specified amount of cash points."
+points: "参数: <数量> - Gives you the specified amount of Kafra Points."
+str: "参数: <数量>\n" "增加或减少玩家指定数量的STR."
+agi: "参数: <数量>\n" "增加或减少玩家指定数量的AGI."
+dex: "参数: <数量>\n" "增加或减少玩家指定数量的DEX."
+vit: "参数: <数量>\n" "增加或减少玩家指定数量的VIT."
+int: "参数: <数量>\n" "增加或减少玩家指定数量的INT."
+luk: "参数: <数量>\n" "增加或减少玩家指定数量的LUK."
 allstats: "参数: <value>\n" "Adds value in all stats (maximum if no value)."
 addwarp: "参数: <map name> <x coord> <y coord> <NPC name>\n"
 killmonster2: "Kills all monsters of your map (without drops)."
@@ -232,9 +236,9 @@ accept: "Accepts an invitation to a duel."
 reject: "Rejects an invitation to a duel."
 leave: "Leaves a duel."
 mail: "Open mail box."
-storage: "Opens storage."
+storage: "打开个人仓库."
 itemreset: "Remove all your items."
-guildstorage: "Opens guild storage."
+guildstorage: "打开公会仓库."
 idsearch: "参数: <part_of_item_name>\n" "Search all items that name have part_of_item_name"
 refine: "参数: <equip position> <+/- amount>"
 produce: "参数: <equip name or equip ID> <element> <# of very's>\n"
