@@ -518,7 +518,7 @@ OnSomeOneEnterChatRoom:
 	//
 	// 中断说明
 	// -------------------------------------------------------
-	// 您可以使用 halt 或 processhalt 指令来中断后续动作
+	// 您可以使用 processhalt 指令来中断后续动作
 	// 
 	// 若使用中断
 	// - 那么客户端将不会打开聊天室窗口
@@ -532,11 +532,11 @@ OnSomeOneEnterChatRoom:
 	// 我们知道 waitingroom 本身自带一个事件，当聊天室中的成员
 	// 数量足够时，就会被触发。
 	// 
-	// 在这里你需要知道的是，若您使用 halt 中断了本事件，那么
+	// 在这里你需要知道的是，若您使用 processhalt 中断了本事件，那么
 	// 这个 rAthena 自带的 waitingroom 事件将不会被触发。
 	// -------------------------------------------------------
 	openstorage;
-	halt;	// 等价于 processhalt
+	processhalt;
 	end;
 }
 
@@ -576,7 +576,7 @@ OnPCChangeTitleEvent:
 	
 	// 鉴于 @now_title_id 是可被修改的
 	// 所以你可以用很粗暴的方法，直接修改 @now_title_id 的方式来篡改最终的称号ID
-	// 但是要注意, 采用这种方法的话, 后面别跟 halt;
+	// 但是要注意, 采用这种方法的话, 后面别跟 processhalt;
 	// -------------------------------------------------------
 	// 例如:
 	// @now_title_id = 1020;
@@ -587,8 +587,8 @@ OnPCChangeTitleEvent:
 		// 若玩家双击了装备面板中的称号, 那么弹出菜单让玩家选择称号.
 		// @now_title_id 为 0 表示玩家双击的是“Title Release”
 		
-		// 必须要在使用 mes 和 menu 之前调用 halt; 否则 halt; 会失效哒
-		halt;
+		// 必须要在使用 mes 和 menu 之前调用 processhalt; 否则 processhalt; 会失效哒
+		processhalt;
 		
 		mes "[称号事件演示]";
 		mes "您可以在下面选择一个称号.";
