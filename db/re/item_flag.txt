@@ -5,15 +5,17 @@
 // 物品编号,标记
 //
 // 以下为'标记'字段的可选值 (掩码选项):
-//   1 - As Dead Branch item (will be logged at `branchlog` table and cannot be used at 'nobranch' mapflag)
-//   2 - As item group container, check player's inventory and weight before consumed
+//   1 - 这是一个魔物召唤道具 (使用后将会被记录到 `branchlog` 表中, 并且禁止在拥有 'nobranch' 地图标记的地图上使用)
+//   2 - 这是一个盒子类的物品, 消耗之前, 会先检查玩家的背包空间和负重量
 //   4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
 //   8 - Item will be bound item when equipped
-//  16 - Special Broadcast: When item dropped by monster and player loot it, will be broadcasted!
+//  16 - 特殊公告: 当物品由魔物掉落, 且被玩家拾起的时候, 发送全服公告!
 // 
 // 以下为 rAthenaCN 拓展的标记选项:
-// 256 - 物品不会由于被玩家主动使用而消耗
-// 512 - 物品不会由于被发动技能所需要而消耗
+// --------------------------------------------------------------
+//  256 - 物品不会由于被玩家主动使用而消耗
+//  512 - 物品不会由于被发动技能所需要而消耗
+// --------------------------------------------------------------
 //
 // 例如:
 // 717,768	// 蓝色魔力矿石不会被由于被玩家使用(256)和技能需要(512)而被消耗(256 + 512 = 768)
@@ -37,7 +39,8 @@
 // 如果给一个宠物蛋设定了 256 的标记, 会导致宠物孵化成功后, 背包中的宠物蛋不被消耗
 // 如果给一件宠物装备设定了 256 的标记, 会导致宠物穿戴完成装备后, 背包中的宠物装备不被消耗
 // 
-// NOTE: For removing flag by import file, use "-" to remove the flag. Example, 604,-1 will removes flag 1 from Branch_Of_Dead_Tree
+// 注意: 想要在 import 文件中移除某标记的话, 可以使用 "-" 减号来实现.
+// 例如 604,-1 将会移除“枯树枝”的 1 号标记
 
 // Logged as Dead Branch item
 604,1 //Branch_Of_Dead_Tree
