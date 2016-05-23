@@ -11,7 +11,7 @@
 //===== By: ================================================== 
 //= Lupus, kobra_k88
 //===== Current Version: ===================================== 
-//= 2.24
+//= 2.25
 //===== Compatible With: ===================================== 
 //= rAthena Project
 //===== Description: ========================================= 
@@ -55,6 +55,8 @@
 //= 2.22 Further improvements to "F_GetPlural". [Euphy]
 //= 2.23 Completed article function and added "F_GetArticle". [Euphy]
 //= 2.24 Added functions to check for equipment swap hacks. [Euphy]
+//= 2.25 Added "F_CanOpenStorage" and "F_CanChangeJob". [secretdataz]
+//= 2.26 Added "F_getpositionname". [Capuche]
 //============================================================ 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -599,4 +601,50 @@ function	script	F_GetNumSuffix	{
 	else if (.@mod == 2 && .@n != 12) return .@n+"nd";
 	else if (.@mod == 3 && .@n != 13) return .@n+"rd";
 	else return .@n+"th";
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// Indicate if attached player can open storage
+//////////////////////////////////////////////////////////////////////////////////
+function	script	F_CanOpenStorage	{
+	return (!basicskillcheck() || !(getskilllv("NV_BASIC") < 6 && getskilllv("SU_BASIC_SKILL") < 1));
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// Indicate if attached player can advance to class 1 by checking
+// basic skill level 9.
+//////////////////////////////////////////////////////////////////////////////////
+function	script	F_CanChangeJob	{
+	return (!basicskillcheck() || getskilllv("NV_BASIC") > 8);
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// Return the position name of the EQI_* equipment slot.
+//////////////////////////////////////////////////////////////////////////////////
+function	script	F_getpositionname	{
+	switch( getarg(0,999) ) {
+		case EQI_ACC_L:		return "饰品(左)";
+		case EQI_ACC_R:		return "饰品(右)";
+		case EQI_SHOES:		return "鞋子";
+		case EQI_GARMENT:	return "披肩";
+		case EQI_HEAD_LOW:	return "头饰(下)";
+		case EQI_HEAD_MID:	return "头饰(中)";
+		case EQI_HEAD_TOP:	return "头饰(上)";
+		case EQI_ARMOR:		return "身体";
+		case EQI_HAND_L:	return "左手";
+		case EQI_HAND_R:	return "右手";
+		case EQI_COSTUME_HEAD_TOP:	return "时装头饰(上)";
+		case EQI_COSTUME_HEAD_MID:	return "时装头饰(中)";
+		case EQI_COSTUME_HEAD_LOW:	return "时装头饰(下)";
+		case EQI_COSTUME_GARMENT:	return "时装披肩";
+		case EQI_AMMO:			return "箭矢/弹药";
+		case EQI_SHADOW_ARMOR:	return "影子箭矢";
+		case EQI_SHADOW_WEAPON:	return "影子武器";
+		case EQI_SHADOW_SHIELD:	return "影子盾牌";
+		case EQI_SHADOW_SHOES:	return "影子鞋子";
+		case EQI_SHADOW_ACC_R:	return "影子饰品(右)";
+		case EQI_SHADOW_ACC_L:	return "影子饰品(左)";
+		default:
+			return "Unknown";
+	}
 }

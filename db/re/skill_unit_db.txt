@@ -56,7 +56,7 @@
 121,0x97,    ,  0, 1,1000,enemy, 0x28006	//HT_FREEZINGTRAP(Ëª¶³ÏÝÚå)
 122,0x8f,    ,  0, 1,1000,enemy, 0x8006	//HT_BLASTMINE(¶¨Ê±±¬Õ¨ÏÝÚå)
 123,0x98,    ,  0, 1,1000,enemy, 0x8006	//HT_CLAYMORETRAP(±¬É¢ÏÝÚå)
-125,0x99,    ,  0, 1,1000,all,   0x28000	//HT_TALKIEBOX(ÏÝÚåÌ½²é)
+125,0x99,    ,  0, 1,1000,all,   0x28040	//HT_TALKIEBOX(ÏÝÚåÌ½²é)
 140,0x92,    , -1, 1,1000,enemy, 0x8000	//AS_VENOMDUST(²¡¶¾É¢²¦)
 220,0xb0,    ,  0, 0,  -1,all,   0x8002	//RG_GRAFFITI(Í¿Ñ»)
 229,0xb1,    ,  0, 1, 500,enemy, 0x006	//AM_DEMONSTRATION(»ðÑÌÆ¿Í¶ÖÀ)
@@ -106,6 +106,7 @@
 538,0xbb,    ,  1:1:1:2:2:2:3:3:3:4,0,-1,all,0x8010	//NJ_SUITON(Ë®¶Ý)
 539,0x86,    ,  3, 0,1000,enemy, 0x010	//NJ_HYOUSYOURAKU(±ù¾§Âä)
 541,0x86,    ,  1:1:2:2:3, 0,1000,enemy, 0x010	//NJ_RAIGEKISAI(À×»÷Ëé)
+653,0xc6,    ,  0, 5:7:9:11:13:5:7:9:11:13, 300,enemy, 0x010	//NPC_EARTHQUAKE(µØÕð)
 670,0xc7,    ,  1, 5:5:5:5:5:5:5:5:5:13,1000,all,0x008	//NPC_EVILLAND(×çÖäÖ®µØ)
 
 //706,0xfd,    ,  0, 0,1000,all, 0x000	//NPC_VENOMFOG
@@ -170,8 +171,8 @@
 2482,0xe6,0x7f, -1, 1, 300,enemy, 0xC000	//GN_WALLOFTHORN(¾£¼¬Ö®Ç½)
 2484,0x86,    ,  0, 1, 100,enemy, 0x080	//GN_CRAZYWEED_ATK
 2485,0xe7,    ,  0, 2,2000,enemy, 0x8098	//GN_DEMONIC_FIRE(·è¿ñ»ðÑæ)
-2487,0xe8,    ,  2, 0,  -1,enemy, 0x2000	//GN_FIRE_EXPANSION_SMOKE_POWDER
-2488,0xe9,    ,  2, 0,  -1,enemy, 0x2000	//GN_FIRE_EXPANSION_TEAR_GAS
+2487,0xe8,    ,  2, 0,  -1,all,   0x2000	//GN_FIRE_EXPANSION_SMOKE_POWDER
+2488,0xe9,    ,  2, 0,  -1,all,   0x2000	//GN_FIRE_EXPANSION_TEAR_GAS
 2490,0xea,    ,  0, 1,1000,enemy, 0xC002	//GN_HELLS_PLANT(µØÓüÖ²Îï)
 
 2555,0x104,   ,  0, 1:2:2:3:3,500,enemy,0x6	//RL_B_TRAP(°µºÚµØÓü)
@@ -186,6 +187,10 @@
 5006,0x101,   ,  0, 3, 500,enemy, 0x018	//NC_MAGMA_ERUPTION(ÈÛÑÒÅç·¢)
 5010,0x91,    ,  0, 1,1000,all,   0x002	//SC_ESCAPE(½ô¼±ÌÓÍÑ)
 5013,0x102,   ,  3, 0,  -1,all,   0x2002	//LG_KINGS_GRACE(ÍõÖ®ÊØ»¤)
+
+5027,0x106,   ,  1:1:2:2:3, 0,  -1,enemy, 0x2010 // SU_CN_POWDERING
+5028,0x86,    ,  0, 3, 500,enemy, 0x10 // SU_CN_METEOR
+5029,0x107,   ,  0, 0,1000,enemy, 0x10 // SU_SV_ROOTTWIST
 
 8020,0xf5,    ,  3, 0,2300:2100:1900:1700:1500,enemy,   0x018	//MH_POISON_MIST(¶¾Îí)
 8033,0x7e,    ,  0, 0,  -1,all,   0x003	//MH_STEINWAND(Ë¹Ì¹ÅÌÐý:ÑÒÊ¯±Ú)

@@ -2489,27 +2489,27 @@ This function returns the item ID of the item equipped in the equipment slot
 specified on the invoking character. If nothing is equipped there, it returns -1. 
 Valid equipment slots are:
 
-EQI_HEAD_TOP (1)          - Upper Headgear
-EQI_ARMOR (2)             - Armor (jackets, robes)
-EQI_HAND_L (3)            - Left hand (weapons, shields)
-EQI_HAND_R (4)            - Right hand (weapons)
-EQI_GARMENT (5)           - Garment (mufflers, hoods, manteaus)
-EQI_SHOES (6)             - Footgear (shoes, boots)
-EQI_ACC_L (7)             - Accessory 1
-EQI_ACC_R (8)             - Accessory 2
-EQI_HEAD_MID (9)          - Middle Headgear (masks, glasses)
-EQI_HEAD_LOW (10)         - Lower Headgear (beards, some masks)
-EQI_COSTUME_HEAD_LOW (11) - Lower Costume Headgear
-EQI_COSTUME_HEAD_MID (12) - Middle Costume Headgear
-EQI_COSTUME_HEAD_TOP (13) - Upper Costume Headgear
-EQI_COSTUME_GARMENT (14)  - Costume Garment
-EQI_AMMO (15)    		  - Arrow/Ammunition
-EQI_SHADOW_ARMOR (16)     - Shadow Armor
-EQI_SHADOW_WEAPON (17)    - Shadow Weapon
-EQI_SHADOW_SHIELD (18)    - Shadow Shield
-EQI_SHADOW_SHOES (19)     - Shadow Shoes
-EQI_SHADOW_ACC_R (20)     - Shadow Accessory 2
-EQI_SHADOW_ACC_L (21)     - Shadow Accessory 1
+EQI_ACC_L (0)             - Accessory 1
+EQI_ACC_R (1)             - Accessory 2
+EQI_SHOES (2)             - Footgear (shoes, boots)
+EQI_GARMENT (3)           - Garment (mufflers, hoods, manteaux)
+EQI_HEAD_LOW (4)          - Lower Headgear (beards, some masks)
+EQI_HEAD_MID (5)          - Middle Headgear (masks, glasses)
+EQI_HEAD_TOP (6)          - Upper Headgear
+EQI_ARMOR (7)             - Armor (jackets, robes)
+EQI_HAND_L (8)            - Left hand (weapons, shields)
+EQI_HAND_R (9)            - Right hand (weapons)
+EQI_COSTUME_HEAD_TOP (10) - Upper Costume Headgear
+EQI_COSTUME_HEAD_MID (11) - Middle Costume Headgear
+EQI_COSTUME_HEAD_LOW (12) - Lower Costume Headgear
+EQI_COSTUME_GARMENT (13)  - Costume Garment
+EQI_AMMO (14)    		  - Arrow/Ammunition
+EQI_SHADOW_ARMOR (15)     - Shadow Armor
+EQI_SHADOW_WEAPON (16)    - Shadow Weapon
+EQI_SHADOW_SHIELD (17)    - Shadow Shield
+EQI_SHADOW_SHOES (18)     - Shadow Shoes
+EQI_SHADOW_ACC_R (19)     - Shadow Accessory 2
+EQI_SHADOW_ACC_L (20)     - Shadow Accessory 1
 
 Notice that a few items occupy several equipment slots, and if the character is 
 wearing such an item, 'getequipid' will return its ID number for either slot.
@@ -2647,6 +2647,9 @@ this is +10:
 This function returns the weapon level for the weapon equipped in the specified 
 equipment slot on the invoking character. For a list of equipment slots see 
 'getequipid'.
+
+If -1 is passed as the equipment slot argument then the weapon level for the item calling this function, 
+assuming it is called by an item script, will be returned. Otherwise, 0 will be returned.
 
 Only EQI_HAND_L and EQI_HAND_R normally make sense, since only weapons have
 a weapon level. You can, however, probably, use this field for other equippable
@@ -4187,25 +4190,26 @@ the character will also have their skills reset upon 'changecharsex'.
 
 ---------------------------------------
 
-*getexp <base xp>,<job xp>{,<char_id>};
+*getexp <base_exp>,<job_exp>{,<char_id>};
 
 This command will give the invoking character a specified number of base and job 
-experience points. Can be used as a quest reward. Negative values won't work.
+experience points. Used for a quest reward. Negative values won't work.
+
+The EXP values are adjustted by 'quest_exp_rate' config value, VIP bonus, Guild 
+Tax and EXP boost items such Battle Manual, Bubble Gum, or items that have 
+SC_EXPBOOST or SC_ITEMBOOST.
 
     getexp 10000,5000;
 
-You can also use the "set" command with the constants defined in 'db/const.txt':
+---------------------------------------
 
-    // These 2 combined has the same effect as the above command
-    set BaseExp,BaseExp+10000;
-    set JobExp,JobExp+5000;
+*getexp2 <base_exp>,<job_exp>{,<char_id>};
 
-You can also reduce the amount of experience points:
+This command is safety version of 'set' command for BaseExp and JobExp. If using 
+'set' while the BaseExp or JobExp value is more than 2,147,483,647 (INT_MAX) will 
+causing overflow error.
 
-    set BaseExp,BaseExp-10000;
-
-Note that 'getexp' is now subject to the 'quest_exp_rate' config option, which
-adjusts the gained value. If you want to bypass this, use the 'set' method.
+Unlike 'getexp', this command ignores the adjustment factors!
 
 ---------------------------------------
 
@@ -5395,7 +5399,7 @@ Flags (bitmask):
 	8   : Remove when player logs out.
 	16  : Removeable by Banishing Buster.
 	32  : Removable by Refresh.
-	64  : Removable by Luxanima.
+	64  : Removable by Lux Anima.
 	128 : Remove when Madogear is activated or deactivated.
 	256 : Remove when receive damage.
 	512 : Script is permanent, cannot be cleared by bonus_script_clear.
@@ -5495,13 +5499,18 @@ undisguise; // Return to normal character sprite.
 
 ---------------------------------------
 
-*transform <monster ID>,<duration>,<sc type>{,<val1>,<val2>,<val3>,<val4>};
-*transform "<monster name>",<duration>,<sc type>{,<val1>,<val2>,<val3>,<val4>};
+*transform <monster ID>,<duration>{,<sc type>,<val1>,<val2>,<val3>,<val4>};
+*transform "<monster name>",<duration>{,<sc type>,<val1>,<val2>,<val3>,<val4>};
+*active_transform <monster ID>,<duration>{,<sc type>,<val1>,<val2>,<val3>,<val4>};
+*active_transform "<monster name>",<duration>{,<sc type>,<val1>,<val2>,<val3>,<val4>};
 
-This command will turn a player into a monster for a given duration and grants an
-SC attribute effect while transformed. Note that players cannot be transformed
+This command will turn a player into a monster for a given duration and can grant
+a SC attribute effect while transformed. Note that players cannot be transformed
 during War of Emperium or if already disguised.
 Can only be removed when you die or the duration ends.
+
+'transform' and 'active_transform' can stack on each other but using 'transform' or
+'active_transform' twice will not stack (it will cancel the previous bonus for the new).
 
 ---------------------------------------
 \\
@@ -5624,7 +5633,8 @@ The only very special thing about this command is an event label, which is an
 optional parameter. This label is written like '<NPC object name>::<label name>' 
 and upon the monster being killed, it will execute the script inside of the 
 specified NPC object starting from the label given. The RID of the player 
-attached at this execution will be the RID of the killing character.
+attached at this execution will be the RID of the killing character. The variable
+'killedrid' is set to the Class (mob ID) of the monster killed.
 
 <size> can be:
 	0 = medium (default)
@@ -5958,8 +5968,7 @@ It is an approximation of official server script language's 'cmdothernpc'.
 
 This command will display a message to the surrounding area as if the NPC object 
 running it was a player talking - that is, above their head and in the chat 
-window. The display name of the NPC will get appended in front of the message to 
-complete the effect.
+window. The display name of the NPC won't get appended in front of the message.
 
     // This will make everyone in the area see the NPC greet the character
     // who just invoked it.
@@ -7116,7 +7125,7 @@ Suggest to use 'unitblockmove' to forcefully stop the unit with OnTouch.
 
 *unittalk <GID>,"<text>";
 
-This command will make a <GID> say a message.
+This command will make a <GID> say a message. The display name of the <GID> won't get appended in front of the message.
 
 ---------------------------------------
 
@@ -7142,9 +7151,16 @@ For the position, the x and y are given in the UnitSkillUsePos.
 
 ---------------------------------------
 
+*unitexists <GID>;
+
+Checks if the given Game ID exists. Returns false if the object doesn't exist, or true if
+it does.
+
+---------------------------------------
+
 *getunittype <GID>;
 
-Returns the type of object from the given Game ID. Returns -1 if the given <GID> does not
+Returns the type of object from the given Game ID. Returns -1 if the given GID does not
 exist.
 
 	UNITTYPE_PC     0
@@ -7174,6 +7190,8 @@ Elemental don't support custom names.
 
 Changing a homunculus or pet name will be permanent.
 
+Returns "Unknown" if unit is not found.
+
 ---------------------------------------
 
 *getunitdata <GID>,<arrayname>;
@@ -7182,6 +7200,8 @@ Changing a homunculus or pet name will be permanent.
 This is used to get and set special data related to the unit.
 With getunitdata, the array given will be filled with the current data. In setunitdata
 the indexes in the array would be used to set that data on the unit.
+
+Both getunitdata and setunitdata will return -1 if the given GID does not exist.
 
 Note: When adjusting a unit's stat (STR, AGI, etc) the unit's respective statuses are
       recalculated (HIT, FLEE, etc) automatically. Keep in mind that some stats don't
@@ -7613,6 +7633,29 @@ Example:
 
 ---------------------------------------
 
+*min(<number or array>{,<number or array>,...})
+*minimum(<number or array>{,<number or array>,...})
+*max(<number or array>{,<number or array>,...})
+*maximum(<number or array>{,<number or array>,...})
+
+Returns the smallest (or biggest) from the set of given parameters.
+These parameters have to be either numbers or number arrays.
+
+Example:
+	.@minimum = min( 1, -6, -2, 8, 2 ); // .@minimum will be equal to -6
+	.@maximum = max( 0, 5, 10, 4 ); // .@maximum will be equal to 10
+	.@level = min( BaseLevel, 70 ); // .@level will be the character's base level, capped to 70
+	
+	setarray .@testarray, 4, 5, 12, 6, 7, 3, 8, 9, 10;
+	
+	.@minimum = min( .@testarray ); // .@minimum will be equal to 3
+	.@maximum = max( .@testarray ); // .@maximum will be equal to 12
+	
+	.@minimum = min( -6, 1, 2, 3, .@testarray ); // .@minimum will be equal to -6
+	.@maximum = max( -6, 1, 2, 3, .@testarray ); // .@maximum will be equal to 12
+
+---------------------------------------
+
 *md5("<string>")
 
 Returns the md5 checksum of a number or string.
@@ -7627,8 +7670,8 @@ Example:
 *query_sql("your MySQL query"{, <array variable>{, <array variable>{, ...}}});
 *query_logsql("your MySQL query"{, <array variable>{, <array variable>{, ...}}});
 
-Executes an SQL query. A 'select' query can fill array variables with up to 128 rows of values,
-and will return the number of rows (i.e. array size) or -1 on failure/empty array.
+Executes an SQL query. A 'select' query can fill array variables with up to 2 billion rows of
+values, and will return the number of rows (i.e. array size) or -1 on failure.
 
 Note that 'query_sql' runs on the main database while 'query_logsql' runs on the log database.
 

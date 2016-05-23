@@ -590,15 +590,14 @@ function	script	refinemain	{
 	mes "你想精炼哪一项物品呢?";
 	next;
 
-	setarray .@position$[1], "头部","身体","左手","右手","披肩","鞋子","装饰品1","装饰品2","头中","头下";
-	set .@menu$,"";
-	for(set .@i,1; .@i<=10; set .@i,.@i+1) {
-		if(getequipisequiped(.@i)) {
-			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+	setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
+	for(set .@i,1; .@i<getarraysize(.@indices); set .@i,.@i+1) {
+		if(getequipisequiped(.@indices[.@i])) {
+			set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[" + getequipname(.@indices[.@i]) + "]";
 			set .@equipped,1;
 		}
 		else
-			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[没有装备]";
+			set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[没有装备]";
 		set .@menu$, .@menu$ + ":";
 	}
 	if (.@equipped == 0) {
@@ -606,7 +605,7 @@ function	script	refinemain	{
 		mes "你好歹倒是把装备穿上先...";
 		close;
 	}
-	set .@part, select(.@menu$);
+	set .@part, .@indices[select(.@menu$)];
 
 	if(!getequipisequiped(.@part)) { //custom check
 		mes "[" + .@npc_name$ + "]";

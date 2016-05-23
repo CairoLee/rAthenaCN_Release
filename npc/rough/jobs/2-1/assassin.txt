@@ -2064,8 +2064,6 @@ OnTouch:
 			next;
 		}
 		if (ASSIN_Q3 == 1 && BaseJob == Job_Thief && ASSIN_Q > 6 && ASSIN_Q < 17) {
-			set ASSIN_Q,17;
-			set ASSIN_Q3,2;
 			mes "[工会会长]";
 			mes "好了, 我说的够多了, 选一项做为礼物吧.";
 			next;
@@ -2099,10 +2097,11 @@ OnTouch:
 				mes "给你, 拿好啦. 祝你成功!";
 				getitem 1220,1; //Gladius_
 			}
+			set ASSIN_Q,17;
+			set ASSIN_Q3,2;
 			next;
 		}
 		else {
-			set ASSIN_Q,17;
 			mes "[工会会长]";
 			mes "好了, 我说的够多了.";
 			mes "这个先拿着吧.";
@@ -2123,6 +2122,7 @@ OnTouch:
 			case 5:
 				getitem 1252,1; //Katar
 			}
+			set ASSIN_Q,17;
 		}
 		mes "[工会会长]";
 		mes "好吧, 我会给你一个标记. 去找入口处那位看起来很凶的人.";

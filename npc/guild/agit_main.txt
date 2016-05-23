@@ -358,11 +358,11 @@ OnRecvCastle:
 		next;
 		switch (select("仓库服务:传送服务:租用手推车:结束对话")) {
 		case 1:
-			if (getskilllv("NV_BASIC") < 6) {
+			if(!callfunc("F_CanOpenStorage")){
 				mes "[卡普拉 职员]";
 				mes "非常抱歉";
 				mes "您的基本技能需要达到6级以上,";
-				mes "才能使用仓库服务!";
+				mes "才能使用仓库服务.";
 				close2;
 				cutin "",255;
 				end;
