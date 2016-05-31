@@ -2253,7 +2253,7 @@ packet_keys: 0x2BED4F91,0x5F9E00CF,0x5EE5520C
 packet_ver: 45
 // 下面是rAthenaCN专用高强度密钥，可防WPE封包重发器 [Sola丶小克]
 packet_keys: 0x00dd7a90,0x37ea4427,0x28b79a45
-// 下面是rAthena自带的普通强度密钥
+// 下面是官方自带的普通强度密钥
 //packet_keys: 0x7E241DE0,0x5E805580,0x3D807D80 // [Shakto]
 0x0369,7,actionrequest,2:6
 0x083C,10,useskilltoid,2:4:6
@@ -2293,7 +2293,10 @@ packet_keys: 0x00dd7a90,0x37ea4427,0x28b79a45
 
 //2013-12-23Ragexe
 packet_ver: 46
-packet_keys: 0x631C511C,0x111C111C,0x111C111C // [Shakto]
+// 下面是rAthenaCN专用高强度密钥，可防WPE封包重发器 [Sola丶小克]
+packet_keys: 0x099bf56f,0x1b6a6b3b,0x1b6a6b3b
+// 下面是官方自带的普通强度密钥
+//packet_keys: 0x631C511C,0x111C111C,0x111C111C // [Shakto]
 0x0369,7,actionrequest,2:6
 0x083C,10,useskilltoid,2:4:6
 0x0437,5,walktoxy,2
