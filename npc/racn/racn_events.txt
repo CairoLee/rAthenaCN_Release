@@ -42,6 +42,29 @@ OnPCStatCalcEvent:
 end;
 }
 
+-	script	IDENTIFIED_EVENT	-1,{
+end;
+OnIdentifiedItem:
+	// OnIdentifiedItem 是与玩家关联的
+	// 当玩家成功鉴定了一件装备时，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @identify_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// -------------------------------------------------------
+	dispbottom "[事件演示] OnIdentifiedItem | " + strcharinfo(0) + " 已鉴定了背包序号为 " + @identify_idx + " 的物品";
+	dispbottom "           - 编号: " + getinventoryinfo(@identify_idx, 0) + " | 数量: " + getinventoryinfo(@identify_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@identify_idx, 2) + " | 精炼值: " + getinventoryinfo(@identify_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@identify_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@identify_idx, 5) + " | 卡片1: " + getinventoryinfo(@identify_idx, 6) + " | 卡片2: " + getinventoryinfo(@identify_idx, 7) + " | 卡片3: " + getinventoryinfo(@identify_idx, 8) + " | 卡片4: " + getinventoryinfo(@identify_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@identify_idx, 10);
+end;
+}
+
 -	script	RELOAD_WARNING	-1,{
 end;
 OnBeforeReloadScript:
@@ -67,18 +90,22 @@ end;
 -	script	MOB_KILL_EVENT	-1,{
 end;
 OnMvpKillEvent:
-	// OnMvpKillEvent 与是玩家无关的
+	// OnMvpKillEvent 是与玩家关联的(关联到给MVP带来最后一击的玩家)
 	// 死了一个MVP魔物的话，此事件只会被触发1次
 	// 
 	// 参数说明
 	// -------------------------------------------------------
-	// killerrid 	为击杀了MVP魔物的玩家角色编号(CharID)
+	// killerrid 	此参数已于 v1.4.5 版本被废弃
 	// killedrid 	为被杀死的MVP魔物的魔物编号(MobID)
 	// @mob_dead_x	魔物死亡时的X坐标
 	// @mob_dead_y	魔物死亡时的Y坐标
+	// @mob_lasthit_rid		给予MVP魔物最后一击的玩家RID(账号编号)
+	// @mob_lasthit_cid		给予MVP魔物最后一击的玩家角色编号
+	// @mob_mvp_rid			给予MVP魔物最大伤害的玩家RID(账号编号)
+	// @mob_mvp_cid			给予MVP魔物最大伤害的玩家角色编号
 	// -------------------------------------------------------
 	
-	announce "[全服公告] 玩家 “" + strcharinfo(0, killerrid) + "” 杀死了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的MVP魔物 “" + strmobinfo(2, killedrid) + "”", bc_all|bc_yellow;
+	announce "[全服公告] 玩家 “" + strcharinfo(0, @mob_lasthit_cid) + "” 给予了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的MVP魔物 “" + strmobinfo(2, killedrid) + "” 最后一击, 对魔物造成最多伤害的MVP玩家为 “" + strcharinfo(0, @mob_mvp_cid) + "”", bc_all|bc_yellow;
 end;
 OnNPCKillEvent:
 	dispbottom "[事件演示] OnNPCKillEvent | 杀死了位于 " + strcharinfo(3)+","+@mob_dead_x+","+@mob_dead_y + " 的普通魔物，魔物编号为 " + killedrid + " ！";

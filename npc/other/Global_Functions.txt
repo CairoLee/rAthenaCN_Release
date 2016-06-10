@@ -638,7 +638,7 @@ function	script	F_getpositionname	{
 		case EQI_COSTUME_HEAD_LOW:	return "时装头饰(下)";
 		case EQI_COSTUME_GARMENT:	return "时装披肩";
 		case EQI_AMMO:			return "箭矢/弹药";
-		case EQI_SHADOW_ARMOR:	return "影子箭矢";
+		case EQI_SHADOW_ARMOR:	return "影子盔甲";
 		case EQI_SHADOW_WEAPON:	return "影子武器";
 		case EQI_SHADOW_SHIELD:	return "影子盾牌";
 		case EQI_SHADOW_SHOES:	return "影子鞋子";

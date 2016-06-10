@@ -30,6 +30,7 @@ prontera,124,125,4	script	装备租赁时间	123,{
 	mes "我负责演示获取装备剩余租赁时间.";
 	mes "请选择您要的操作..";
 	next;
+	setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW, EQI_COSTUME_HEAD_LOW, EQI_COSTUME_HEAD_MID, EQI_COSTUME_HEAD_TOP, EQI_COSTUME_GARMENT, EQI_AMMO, EQI_SHADOW_ARMOR, EQI_SHADOW_WEAPON, EQI_SHADOW_SHIELD, EQI_SHADOW_SHOES, EQI_SHADOW_ACC_L, EQI_SHADOW_ACC_R;
 	switch(select("租赁装备以便测试:获取装备剩余租赁时间:增加/减少装备的租赁时间")){
 		case 1:
 			mes "[演示人员]";
@@ -51,7 +52,7 @@ prontera,124,125,4	script	装备租赁时间	123,{
 			mes "请选择要获取剩余租赁时间的装备位置.";
 			next;
 			.@sel = select("头饰上:盔甲:角色左手(武器, 盾牌):角色右手(武器):披肩:鞋子:饰品(角色右侧):饰品(角色左侧):头饰中:头饰下:时装头饰下:时装头饰中:时装头饰上:时装披肩:箭矢/弹药:影子装备 - 盔甲:影子装备 - 武器:影子装备 - 盾牌:影子装备 - 鞋子:影子装备 - 饰品(角色左侧):影子装备 - 饰品(角色右侧)");
-			
+			.@sel = .@indices[.@sel];
 			.@ret = getequipexpiretick(.@sel);
 			mes "[演示人员]";
 			switch(.@ret){
@@ -71,6 +72,7 @@ prontera,124,125,4	script	装备租赁时间	123,{
 			mes "请选择要调整剩余租赁时间的装备位置.";
 			next;
 			.@sel = select("头饰上:盔甲:角色左手(武器, 盾牌):角色右手(武器):披肩:鞋子:饰品(角色右侧):饰品(角色左侧):头饰中:头饰下:时装头饰下:时装头饰中:时装头饰上:时装披肩:箭矢/弹药:影子装备 - 盔甲:影子装备 - 武器:影子装备 - 盾牌:影子装备 - 鞋子:影子装备 - 饰品(角色左侧):影子装备 - 饰品(角色右侧)");
+			.@sel = .@indices[.@sel];
 			mes "[演示人员]";
 			mes "- 要增加租赁时间, 请填写正数";
 			mes "- 要减少租赁时间, 请填写负数";
