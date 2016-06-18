@@ -2,11 +2,22 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.4.6(2016-06-18)
+------------------
+[新增] 实现 setheaddir 与 setbodydir 脚本指令, 用来控制角色的脑袋和身体朝向
+[新增] 添加“改变头部和身体朝向” 的演示脚本，详见 npc/racn/racn_setdir.txt
+[调整] 为了方便调试，默认不再开启“多开限制演示脚本”
+[调整] 将程序中写死的简体中文字符串，提取到终端翻译数据库中，方便进行繁体化配置
+[调整] 改进编码自动判断机制，在繁体系统上链接到utf8/utf8mb4数据库时，将采用big5编码
+[汉化] 完全汉化rA自制传送脚本 npc/custom/warper.txt (感谢“I'm Lins”汉化)
+[汉化] 汉化 conf 目录下10多个配置选项的说明信息
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.4.5(2016-06-10)
 ------------------
 [新增] 支持对 pointshop 类型的商店设置变量的别名，详见 npc/racn/racn_pointshop.txt
 [新增] 实现 OnIdentifiedItem 事件，当玩家鉴定完成某件装备时触发，详见 npc/racn/racn_events.txt
-[修正] rAthena官方BUG: cashshop 类型的商店不支持打折的问题
+[新增] 让 cashshop 类型的商店支持设置打折开关
 [修正] 若玩家正在进行离线挂店，那么没有必要加入公会聊天频道(避免内存泄漏)
 [修正] 修正 setrenttime 和 getequipexpiretick 脚本指令错误(因rA更新EQI后导致装备位置获取错误)
 [调整] 对 OnMvpKillEvent 事件的参数以及关联执行玩家做了调整，详见 npc/racn/racn_events.txt

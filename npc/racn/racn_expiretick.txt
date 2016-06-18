@@ -21,6 +21,7 @@
 //= 此脚本演示的指令为:
 //= [脚本] getequipexpiretick <装备位置编号>{,<角色编号>};
 //=        为了兼容 SeAr 脚本 isrental 等效于 getequipexpiretick
+//=
 //= [脚本] setrenttime <装备位置编号>,<要增加/减少的租赁时间秒数>{,<角色编号>};
 //=        为了兼容 SeAr 脚本 resume 等效于 setrenttime
 //============================================================
