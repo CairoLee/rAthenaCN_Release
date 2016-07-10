@@ -1538,7 +1538,6 @@ tur_dun01,160,81,4	script	Skull Stone#tur	111,{
 		mes "^3355FFUnder the stone^000000";
 		mes "^3355FFis a tiny key hole^000000";
 		mes "^3355FFwith a skull mark.^000000";
-		mes "";
 		mes "^3355FFYou used the Skull key^000000";
 		mes "^3355FFin that key hole.^000000";
 		next;
@@ -1581,7 +1580,6 @@ tur_dun02,132,251,4	script	Turtle Tree Roots#tur	111,{
 		mes "^3355FFUnder the tree roots^000000";
 		mes "^3355FFis a tiny key hole^000000";
 		mes "^3355FFmarked with a root insignia.^000000";
-		mes "";
 		mes "^3355FFYou used the Roots key^000000";
 		mes "^3355FFin that key hole.^000000";
 		next;
@@ -1622,7 +1620,6 @@ tur_dun02,132,251,4	script	Turtle Tree Roots#tur	111,{
 		next;
 		mes "^3355FFInside the pile of turtle^000000";
 		mes "^3355FFcrystals, a scroll is hidden.^000000";
-		mes "";
 		set TURTLE,7;
 		mes "^3355FFYou've gained a^000000";
 		mes "^3355FFTurtle Crystal key.^000000";
@@ -1640,7 +1637,6 @@ tur_dun02,46,125,4	script	A pile of turtle crystal	111,{
 		mes "^3355FFAmong the Turtle Crystals,^000000";
 		mes "^3355FFyou find a strange key hole.^000000";
 		next;
-		mes "";
 		mes "^3355FFYou use the";
 		mes "Turtle crystal key";
 		mes "in the key hole.^000000";
@@ -1679,7 +1675,6 @@ tur_dun02,46,125,4	script	A pile of turtle crystal	111,{
 		next;
 		mes "^3355FFAt the edge of the crystal^000000";
 		mes "^3355FFplate, is a long key.^000000";
-		mes "";
 		set TURTLE,8;
 		mes "^3355FFYou've gained the^000000";
 		mes "^3355FFTurtle Pillar key.^000000";
@@ -1696,7 +1691,6 @@ tur_dun02,49,158,4	script	Turtle Pillar#tur	111,{
 		mes "^3355FFAt the base of the pillar^000000";
 		mes "^3355FFis a tiny key hole with^000000";
 		mes "^3355FFa turtle shaped mark.^000000";
-		mes "";
 		mes "^3355FFYou used the";
 		mes "Turtle Pillar key";
 		mes "in that key hole.^000000";
@@ -1937,7 +1931,6 @@ tur_dun04,113,178,4	script	Turtle Statue#tur	111,{
 		mes "^3355FFOn top of the statue";
 		mes "is a small key hole";
 		mes "with the turtle mark.^000000";
-		mes "";
 		mes "^3355FFYou used the";
 		mes "Security Key";
 		mes "in the keyhole.^000000";

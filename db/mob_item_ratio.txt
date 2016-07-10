@@ -1,30 +1,30 @@
-// Specific Item Drop Ratio Database
-// Overrides for global item_rate* values from conf/battle/drops.conf
+// 特殊物品掉率调整数据库 - 按基础掉率的倍率进行调整
+// 这里设置的掉率会无视 conf/battle/drops.conf 中以 item_rate* 开头的全局掉率配置
 //
-// Structure of Database:
-// ItemID,Ratio{,MonsterID1,...,MonsterID10}
+// 数据库格式说明:
+// 物品编号,掉落倍率{,魔物编号1,...,魔物编号10}
 //
-// Result:
-// ItemID base drop rates defined in mob_db will not get multiplied
-//  by global item_rate* values (aka drop rates) from
-//  conf/battle/drops.conf. Instead Ratio will be used (100 = 1x).
-// If no MonsterID is specified, all monsters will be affected,
-//  otherwise only listed ones.
+// 行为:
+// 在魔物数据库中所定义的物品掉率我们称之为“基础掉率”.
+// 
+// 在此数据库中设置的物品, 将会无视 conf/battle/drops.conf 中以 item_rate* 开头的全局掉率配置
+// 物品的最终掉率 = “基础掉率” x 这里设定的“掉落倍率” + 等级惩罚、VIP掉率奖励等系统的影响.
+// 此配置文件中的 “掉落倍率” 填写 100 则表示 1倍, 10000 表示 100倍.
 //
-// Examples:
-// 909,100 // Jellopies from monsters will drop with 1x drop rate regardless of global drop rate
-// 909,1000 // Jellopies from monsters will drop with 10x drop rate regardless of global drop rate
-// 909,100,1002 // Jellopies from Porings will drop with 1x drop rate. Other monsters that drop Jellopies are unaffected (use global drop rate).
+// 如果没有指定魔物编号, 那么所有掉落指定物品的魔物将会受到此设置的影响.
+// 若指定了魔物编号, 那么只影响指定魔物掉落指定物品的掉率.
 //
-// Notes:
-// - By default you can list up to 10 MonsterIDs per ItemID.
-//   It can be changed in src/map/mob.c by adjusting MAX_ITEMRATIO_MOBS.
-// - Only ItemIDs up to MAX_ITEMDB are supported (default: 32768).
-// - Does not override item_drop_*_min/max settings.
-// - Does not affect card/item-granted drops. To adjust card/item-granted
-//   drops, edit them in item_db.
-// - Does affect MVP prizes and Treasure Boxes.
-// - You can add only ONE line per ItemID. If you need various ratios
-//   for different monsters, override drop rate with Ratio=100 and edit
-//   base drop rates in mob_db.
-// - This file is reloaded by @reloadmobdb.
+// 例如:
+// 909,100      // 所有会掉落“杰勒比结晶”的魔物, 都使用1倍“魔物数据库中所配置的基础掉率”来掉落.
+// 909,1000     // 所有会掉落“杰勒比结晶”的魔物, 都使用10倍“魔物数据库中所配置的基础掉率”来掉落.
+// 909,100,1002 // 只有“波利”掉落“杰勒比结晶”的时候, 使用1倍“魔物数据库中所配置的基础掉率”来掉落.
+//
+// 注意:
+// - 每条规则最多只能设置 10 个魔物编号, 道具编号最大上限为 65535.
+// - 不会影响 conf/battle/drops.conf 中 item_drop_*_min/max 的设置.
+// - 不会影响“增加某类道具掉率的卡片效果”, 也不会影响“紫色箱子”等转蛋道具开启后获得道具的掉率.
+// - 不会影响 MVP 奖励道具和公会宝箱.
+// - 每个物品编号只能有一条规则与其对应. 如果你有多样化的掉率设置需求, 
+//   可以在这里将物品的倍率调整为1倍, 然后通过编辑魔物数据库修改“基础掉率”来实现.
+// - 此文件可以被 @reloadmobdb 指令重新加载.
+// - 这里设置的掉率并不是最终掉率. 如果是复兴后版本, 最终掉率还会被“等级惩罚”等设置影响.

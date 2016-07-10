@@ -227,7 +227,8 @@ e_tower,81,105,0	script	塔之守护石	406,{
 		mes "注意: 已经离线队友不算在人数内.";
 		close;
 	}
-	if (.@etower_timer == -1) {
+	switch(.@etower_timer) {
+	case -1:
 		if (getcharid(0) == getpartyleader(.@party_id,2)) {
 			mes "你的队伍符合进入副本的标准, 现在就预约进入“无尽之塔”吗?";
 			next;
@@ -264,38 +265,39 @@ e_tower,81,105,0	script	塔之守护石	406,{
 		case 3:
 			end;
 		}
-	} else if ((.@etower_timer >= 0) && (.@etower_timer2 < 2)) {
-		mes "若你的副本已经创建完毕且开放进场, 那么你就可以进入无尽之塔.";
-		next;
-		switch(select("进入 "+.@md_name$+":返回艾尔贝塔:结束对话")) {
-		case 1:
-			callsub L_Enter,0,0;
-		case 2:
-			mes "我将传送你回去艾尔贝塔.";
+	case 0:
+	case 1:
+		if (.@etower_timer2 < 2 && getcharid(1) == etower_partyid) {
+			mes "若你的副本已经创建完毕且开放进场, 那么你就可以进入无尽之塔.";
+			next;
+			switch(select("进入 "+.@md_name$+":返回艾尔贝塔:结束对话")) {
+			case 1:
+				callsub L_Enter,0,0;
+			case 2:
+				mes "我将传送你回去艾尔贝塔.";
+				close2;
+				warp "alberta",223,36;
+				end;
+			case 3:
+				close;
+			}
+		} else {
+			set .@dun_lim_time,etower_timer+604800; // 1 week
+			// set .@dun_lim_time2,etower_timer+14400; // 4 hours
+			set .@dun_cur_time,gettimetick(2);
+			set .@dun_ent_t,(.@dun_lim_time - .@dun_cur_time);
+			set .@dun_h,(.@dun_ent_t / 3600);
+			set .@dun_m,(.@dun_ent_t - (.@dun_h * 3600)) / 60;
+			set .@dun_s,.@dun_ent_t - ((.@dun_h * 3600) + (.@dun_m * 60));
+
+			mes "由于魔力波动的影响现在无法进入副本, 请等 " + .@dun_h + "时" + .@dun_m + "分" + .@dun_s + "秒 后才能重新进入.";
+			next;
+			mes "这里很危险, 我先把你送回艾尔贝塔.";
 			close2;
 			warp "alberta",223,36;
 			end;
-		case 3:
-			break;
 		}
-		close;
-	} else if ((.@etower_timer >= 0) && (.@etower_timer < 2) && (.@etower_timer2 == 2)) {
-
-		set .@dun_lim_time,etower_timer+604800; // 1 week
-		set .@dun_lim_time2,etower_timer+14400; // 4 hours
-		set .@dun_cur_time,gettimetick(2);
-		set .@dun_ent_t,(.@dun_lim_time - .@dun_cur_time);
-		set .@dun_h,(.@dun_ent_t / 3600);
-		set .@dun_m,(.@dun_ent_t - (.@dun_h * 3600)) / 60;
-		set .@dun_s,.@dun_ent_t - ((.@dun_h * 3600) + (.@dun_m * 60));
-
-		mes "由于魔力波动的影响现在无法进入副本, 请等 " + .@dun_h + "时" + .@dun_m + "分" + .@dun_s + "秒 后才能重新进入.";
-		next;
-		mes "这里很危险, 我先把你送回艾尔贝塔.";
-		close2;
-		warp "alberta",223,36;
-		end;
-	} else {
+	case 2:
 		set etower_timer,0;
 		if (checkquest(60200) >= 0) erasequest 60200;
 		if (checkquest(60201) >= 0) erasequest 60201;
@@ -320,6 +322,7 @@ L_Enter:
 		mapannounce "e_tower", getpartyname(getcharid(1))+" 队伍中的 "+ strcharinfo(0) +" 已经进入无尽之塔副本.",bc_map,"0x00ff99",FW_NORMAL,12;
 		if (getarg(1)) {
 			set etower_timer,gettimetick(2);
+			set etower_partyid, getcharid(1);
 			setquest 60200;
 			setquest 60201;
 		}

@@ -2,6 +2,17 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.4.7(2016-07-10)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/1f85dab1c523716d2bc469e02ed9cd47fccf9aa1
+[注意] 这次同步大概有 182 个 commit, 各位使用 rAthenaCN 的游戏管理员请谨慎测试后再更新(记得备份数据库)
+[升级] rAthena 官方调整了 db/[pre-]re/instance_db.txt 副本数据库的格式, 非全新安装的用户, 请手动对比升级.
+[升级] 若您不是全新安装，且使用了SQL版本的物品和魔物数据库的话，请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20160614.sql
+[新增] 能够固定指定魔物道具的基础掉率, 详见 db/mob_item_fixedrate.txt 配置文件
+[修正] rAthena官方BUG: 修复一个关于聊天室显示异常的问题(感谢"╰づ记忆?斑驳〤"反馈)
+
 v1.4.6(2016-06-18)
 ------------------
 [新增] 实现 setheaddir 与 setbodydir 脚本指令, 用来控制角色的脑袋和身体朝向
