@@ -27,7 +27,7 @@
 //============================================================
 
 prt_in,49,172,3	script	玛丽亚棱#juice	53,{
-	if (MISC_QUEST&1 || morison_meat == 15) {
+	if ((MISC_QUEST&1) || morison_meat == 15) {
 		mes "[家庭主妇 玛丽亚棱]";
 		mes "哇哦...!";
 		mes "不过他除了它的肉什么都不吃. 如果水果被切开，他也许也会吃. 比如~把水果加工成果汁~";
@@ -88,7 +88,7 @@ prt_in,49,172,3	script	玛丽亚棱#juice	53,{
 }
 
 prt_in,47,173,3	script	莫利孙#juice	97,{
-	if (MISC_QUEST&1 || morison_meat == 15) {
+	if ((MISC_QUEST&1) || morison_meat == 15) {
 		mes "[小孩 莫利孙]";
 		mes "噗...别在意。";
 		mes "我不要吃那难吃的水果，如果只是吃水果，我会慢慢的变得营养不良，走向死亡..... 不要为我担心 .";

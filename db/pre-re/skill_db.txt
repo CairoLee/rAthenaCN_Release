@@ -49,7 +49,7 @@
 // 15 Blowcount (amount of tiles skill knockbacks)
 // 16 inf3 (skill information 3):
 //    0x00001 - skill ignores land protector
-//    0x00002 - skill that doesn't end camouflage
+//    0x00002 - free
 //    0x00004 - usable skills while hiding
 //    0x00008 - skill that can be use while in dancing state
 //    0x00010 - skill that could hit emperium
@@ -1008,7 +1008,7 @@
 2244,9,6,1,0,0x98,0,5,1,no,0,0,0,weapon,0,0x40080,	RA_WUGBITE,Warg Bite(ÀÇËºÒ§)
 2245,0,0,0,0,0,0,10,0,no,0,0,0,none,0,0x0,		RA_TOOTHOFWUG,Tooth of Warg(ÀÇÑÀ)
 2246,0,6,4,0,0x2,3:4:5:6:7,5,1,no,0,0x40000,0,weapon,0,0x0,	RA_SENSITIVEKEEN,Sensitive Keen(ÃôÈñÐá¾õ)
-2247,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x80042,		RA_CAMOUFLAGE,Camouflage(Òþ±ÎÕ½Êõ)
+2247,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x80040,		RA_CAMOUFLAGE,Camouflage(Òþ±ÎÕ½Êõ)
 2248,0,0,0,0,0,0,5,0,no,0,0,0,none,0,0x0,		RA_RESEARCHTRAP,Research Trap(ÏÝÚåÑÐ¾¿)
 2249,3,6,2,3,0x43,2,1,1,no,0,0x80,1,misc,0,0x2000,	RA_MAGENTATRAP,Magenta Trap(×ÏºìÏÝÚå)
 2250,3,6,2,1,0x43,2,1,1,no,0,0x80,1,misc,0,0x2000,	RA_COBALTTRAP,Cobalt Trap(ÉîÀ¶ÏÝÚå)
