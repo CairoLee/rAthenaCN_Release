@@ -1,627 +1,638 @@
 //============================================================
-//= rAthenaCN ¸üÐÂÈÕÖ¾
+//= rAthenaCN æ›´æ–°æ—¥å¿—
 //============================================================
+
+v1.5.1(2016-09-04)
+------------------
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
+       https://github.com/rathena/rathena/commit/432dcda69503a7c5d5dda33d636d58b5f2d12c2d
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€ä¸»æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
+       - sql-files\upgrades\upgrade_20160814.sql
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€æ—¥å¿—æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
+       - sql-files\upgrades\upgrade_20160814_log.sql
+[æ–°å¢ž] å¯ä»¥æŽ§åˆ¶å½“NPCåœ°éœ‡æŠ€èƒ½æ— æ³•æ‰¾åˆ°é™„è¿‘çŽ©å®¶æ—¶, æ˜¯å¦æ˜¾ç¤ºæŠ¥é”™ä¿¡æ¯ (è¯¦è§ conf/battle/extend.conf)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: é¿å…ä¸€å¤„æ¶æ„æž„é€ å°åŒ…å¯èƒ½ä¼šå¯¼è‡´è§’è‰²æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜ (æ„Ÿè°¢â€œâ•°ã¥è®°å¿†â€¢æ–‘é©³ã€¤â€åé¦ˆ)
 
 v1.5.0(2016-08-12)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/9157318ee9939728b8d332a5668c13d4ad0a6f8b
-[ÐÂÔö] ¸´ÐËºóµÄ°æ±¾Ö§³ÖÊ¹ÓÃ¹ú¼Ê·þ(iRO)¹¥ËÙ¹«Ê½, Ïê¼û conf/battle/extend.conf ÖÐµÄÑ¡Ïî (¸ÐÐ»¡°ÌìÊé¡±ÊµÏÖ)
-[ÐÂÔö] µ± combo_db ÖÐ¶¨ÒåÁËÎÞÐ§µÄ bonus ½Å±¾ºó, ³ö´íÊ±ÄÜ½«¾ßÌåµÄ×éºÏÁÐ³ö(Èç 1166:2527)
-[ÐÞÕý] »¹Ô­ mob_random_db.txt Îª¾­µä´¦ÀíÂß¼­, ÄÜÔÚÀïÃæ import ÆäËûÎÄ¼þ (¸ÐÐ»¡°ºÃµ¶Ò»°Ñ¡±·´À¡)
-[ÐÞÕý] rAthena¹Ù·½BUG: ÔÚ combo_db ÖÐ×éºÏµÄµÀ¾ß¸ÕºÃÊÇÍ¬Ò»Î»ÖÃµÄ¿¨Æ¬ºÍ×°±¸Ê±(Èç: 20797:4174), »áµ¼ÖÂ´Ë×éºÏÎÞÐ§µÄÎÊÌâ (¸ÐÐ»¡°ÌìÊé¡±¡¢¡°ÎÞ¼É¡±·´À¡)
-[µ÷Õû] µ¼³ö¾Å¸öÀàËÆ SC_MOONSTAR µÄÊ±×°¹â»·³£Á¿£¬ÒÔ±ãÓÚÔÚ½Å±¾ÖÐÊ¹ÓÃ (¸ÐÐ»¡°¿áÍ·¡±·´À¡)
+[æ–°å¢ž] å¤å…´åŽçš„ç‰ˆæœ¬æ”¯æŒä½¿ç”¨å›½é™…æœ(iRO)æ”»é€Ÿå…¬å¼, è¯¦è§ conf/battle/extend.conf ä¸­çš„é€‰é¡¹ (æ„Ÿè°¢â€œå¤©ä¹¦â€å®žçŽ°)
+[æ–°å¢ž] å½“ combo_db ä¸­å®šä¹‰äº†æ— æ•ˆçš„ bonus è„šæœ¬åŽ, å‡ºé”™æ—¶èƒ½å°†å…·ä½“çš„ç»„åˆåˆ—å‡º(å¦‚ 1166:2527)
+[ä¿®æ­£] è¿˜åŽŸ mob_random_db.txt ä¸ºç»å…¸å¤„ç†é€»è¾‘, èƒ½åœ¨é‡Œé¢ import å…¶ä»–æ–‡ä»¶ (æ„Ÿè°¢â€œå¥½åˆ€ä¸€æŠŠâ€åé¦ˆ)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: åœ¨ combo_db ä¸­ç»„åˆçš„é“å…·åˆšå¥½æ˜¯åŒä¸€ä½ç½®çš„å¡ç‰‡å’Œè£…å¤‡æ—¶(å¦‚: 20797:4174), ä¼šå¯¼è‡´æ­¤ç»„åˆæ— æ•ˆçš„é—®é¢˜ (æ„Ÿè°¢â€œå¤©ä¹¦â€ã€â€œæ— å¿Œâ€åé¦ˆ)
+[è°ƒæ•´] å¯¼å‡ºä¹ä¸ªç±»ä¼¼ SC_MOONSTAR çš„æ—¶è£…å…‰çŽ¯å¸¸é‡ï¼Œä»¥ä¾¿äºŽåœ¨è„šæœ¬ä¸­ä½¿ç”¨ (æ„Ÿè°¢â€œé…·å¤´â€åé¦ˆ)
 	   
 v1.4.9(2016-08-06)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/de2d8dc935dd0a8df5b2cbb279e60447716d2b67
-[ÐÂÔö] ÊµÏÖÍâ²¿Êý¾Ý¿âÁ¬½Ó»úÖÆ, ÄÜ¹»Ê¹ÓÃ query_multidb Ö¸ÁîÀ´²Ù×÷Íâ²¿Êý¾Ý¿â
-[ÐÞÕý] ÖØÐ´»¤Éí·ûÏµÍ³£¬½â¾öÔÚ»¤Éí·ûµÄ¡°Ê¹ÓÃ½Å±¾¡±ÖÐÐ´ sc_start ÏµÁÐÖ¸Áî»áµ¼ÖÂµØÍ¼·þÎñÆ÷±ÀÀ£µÄÎÊÌâ (¸ÐÐ»"ºÃµ¶Ò»°Ñ"·´À¡)
-[ÐÞÕý] »¹Ô­ item_group_db.txt Îª¾­µä´¦ÀíÂß¼­, ÄÜÔÚÀïÃæ import ÆäËûÎÄ¼þ (¸ÐÐ»¡°ºÃµ¶Ò»°Ñ¡±·´À¡)
-[ÐÞÕý] ÐÞÕýÔÚ combo_db ÖÐ¶¨ÒåÁËÎÞÐ§µÄ bonus »áµ¼ÖÂµØÍ¼·þÎñÆ÷±ÀÀ£µÄÎÊÌâ (¸ÐÐ»¡°ßäÍÃ½´¡±·´À¡)
-[ÐÞÕý] ÐÞÕý¸³Óè SC_GLOOMYDAY_SK ×´Ì¬¿Õ²ÎÊýµÄÊ±ºò£¬»áµ¼ÖÂµØÍ¼·þÎñÆ÷±ÀÀ£µÄÎÊÌâ (¸ÐÐ»¡°ßäÍÃ½´¡±·´À¡)
-[µ÷Õû] ÄÜ¹»¶Ô¡°ÓÎÏÀ¡±Ê¹ÓÃ @bodystyle Ö¸ÁîÀ´ÇÐ»»·þ×°·ç¸ñ (¿Í»§¶Ë±ØÐëÓÐ¶ÔÓ¦µÄÍ¼µµ£¬·ñÔò»á±¨´í)
+[æ–°å¢ž] å®žçŽ°å¤–éƒ¨æ•°æ®åº“è¿žæŽ¥æœºåˆ¶, èƒ½å¤Ÿä½¿ç”¨ query_multidb æŒ‡ä»¤æ¥æ“ä½œå¤–éƒ¨æ•°æ®åº“
+[ä¿®æ­£] é‡å†™æŠ¤èº«ç¬¦ç³»ç»Ÿï¼Œè§£å†³åœ¨æŠ¤èº«ç¬¦çš„â€œä½¿ç”¨è„šæœ¬â€ä¸­å†™ sc_start ç³»åˆ—æŒ‡ä»¤ä¼šå¯¼è‡´åœ°å›¾æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜ (æ„Ÿè°¢"å¥½åˆ€ä¸€æŠŠ"åé¦ˆ)
+[ä¿®æ­£] è¿˜åŽŸ item_group_db.txt ä¸ºç»å…¸å¤„ç†é€»è¾‘, èƒ½åœ¨é‡Œé¢ import å…¶ä»–æ–‡ä»¶ (æ„Ÿè°¢â€œå¥½åˆ€ä¸€æŠŠâ€åé¦ˆ)
+[ä¿®æ­£] ä¿®æ­£åœ¨ combo_db ä¸­å®šä¹‰äº†æ— æ•ˆçš„ bonus ä¼šå¯¼è‡´åœ°å›¾æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜ (æ„Ÿè°¢â€œå’ªå…”é…±â€åé¦ˆ)
+[ä¿®æ­£] ä¿®æ­£èµ‹äºˆ SC_GLOOMYDAY_SK çŠ¶æ€ç©ºå‚æ•°çš„æ—¶å€™ï¼Œä¼šå¯¼è‡´åœ°å›¾æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜ (æ„Ÿè°¢â€œå’ªå…”é…±â€åé¦ˆ)
+[è°ƒæ•´] èƒ½å¤Ÿå¯¹â€œæ¸¸ä¾ â€ä½¿ç”¨ @bodystyle æŒ‡ä»¤æ¥åˆ‡æ¢æœè£…é£Žæ ¼ (å®¢æˆ·ç«¯å¿…é¡»æœ‰å¯¹åº”çš„å›¾æ¡£ï¼Œå¦åˆ™ä¼šæŠ¥é”™)
 	   
 v1.4.8(2016-07-15)
 ------------------
-[ÐÂÔö] Í¬ÖÖÀàµÄ»¤Éí·ûÖÐ, µÚÒ»¸ö½øÈë±³°üµÄ½«´¥·¢¡°´©´÷½Å±¾¡±, ×îºóÒ»¸öÀë¿ª±³°üµÄ½«´¥·¢¡°Ð¶×°½Å±¾¡± (¸ÐÐ»¡°ºÃµ¶Ò»°Ñ¡±µÄ½¨Òé)
-[ÐÞÕý] rAthena¹Ù·½BUG: ×Ô¶¯Ê°È¡ÔÚ item_flag.txt ÖÐÅäÖÃµôÂäÊ±¹«¸æµÄµÀ¾ßÊ±, ²»»á¹«¸æµÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ×é¶ÓµÄÎïÆ·¾ù·Ö²ßÂÔÎª¡°¾ùµÈ·ÖÅä¡±µÄÇé¿öÏÂ, »ñµÃ item_flag.txt ÖÐÅäÖÃµôÂäÊ±¹«¸æµÄµÀ¾ßÊ±, ²»»á¹«¸æµÄÎÊÌâ
+[æ–°å¢ž] åŒç§ç±»çš„æŠ¤èº«ç¬¦ä¸­, ç¬¬ä¸€ä¸ªè¿›å…¥èƒŒåŒ…çš„å°†è§¦å‘â€œç©¿æˆ´è„šæœ¬â€, æœ€åŽä¸€ä¸ªç¦»å¼€èƒŒåŒ…çš„å°†è§¦å‘â€œå¸è£…è„šæœ¬â€ (æ„Ÿè°¢â€œå¥½åˆ€ä¸€æŠŠâ€çš„å»ºè®®)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è‡ªåŠ¨æ‹¾å–åœ¨ item_flag.txt ä¸­é…ç½®æŽ‰è½æ—¶å…¬å‘Šçš„é“å…·æ—¶, ä¸ä¼šå…¬å‘Šçš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ç»„é˜Ÿçš„ç‰©å“å‡åˆ†ç­–ç•¥ä¸ºâ€œå‡ç­‰åˆ†é…â€çš„æƒ…å†µä¸‹, èŽ·å¾— item_flag.txt ä¸­é…ç½®æŽ‰è½æ—¶å…¬å‘Šçš„é“å…·æ—¶, ä¸ä¼šå…¬å‘Šçš„é—®é¢˜
 
 v1.4.7(2016-07-10)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/1f85dab1c523716d2bc469e02ed9cd47fccf9aa1
-[×¢Òâ] Õâ´ÎÍ¬²½´ó¸ÅÓÐ 182 ¸ö commit, ¸÷Î»Ê¹ÓÃ rAthenaCN µÄÓÎÏ·¹ÜÀíÔ±Çë½÷É÷²âÊÔºóÔÙ¸üÐÂ(¼ÇµÃ±¸·ÝÊý¾Ý¿â)
-[Éý¼¶] rAthena ¹Ù·½µ÷ÕûÁË db/[pre-]re/instance_db.txt ¸±±¾Êý¾Ý¿âµÄ¸ñÊ½, ·ÇÈ«ÐÂ°²×°µÄÓÃ»§, ÇëÊÖ¶¯¶Ô±ÈÉý¼¶.
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°£¬ÇÒÊ¹ÓÃÁËSQL°æ±¾µÄÎïÆ·ºÍÄ§ÎïÊý¾Ý¿âµÄ»°£¬ÇëÔÚÄúµÄ¡¾Ö÷Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂsqlÎÄ¼þ
+[æ³¨æ„] è¿™æ¬¡åŒæ­¥å¤§æ¦‚æœ‰ 182 ä¸ª commit, å„ä½ä½¿ç”¨ rAthenaCN çš„æ¸¸æˆç®¡ç†å‘˜è¯·è°¨æ…Žæµ‹è¯•åŽå†æ›´æ–°(è®°å¾—å¤‡ä»½æ•°æ®åº“)
+[å‡çº§] rAthena å®˜æ–¹è°ƒæ•´äº† db/[pre-]re/instance_db.txt å‰¯æœ¬æ•°æ®åº“çš„æ ¼å¼, éžå…¨æ–°å®‰è£…çš„ç”¨æˆ·, è¯·æ‰‹åŠ¨å¯¹æ¯”å‡çº§.
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…ï¼Œä¸”ä½¿ç”¨äº†SQLç‰ˆæœ¬çš„ç‰©å“å’Œé­”ç‰©æ•°æ®åº“çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€ä¸»æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
        - sql-files\upgrades\upgrade_20160614.sql
-[ÐÂÔö] ÄÜ¹»¹Ì¶¨Ö¸¶¨Ä§ÎïµÀ¾ßµÄ»ù´¡µôÂÊ, Ïê¼û db/mob_item_fixedrate.txt ÅäÖÃÎÄ¼þ
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞ¸´Ò»¸ö¹ØÓÚÁÄÌìÊÒÏÔÊ¾Òì³£µÄÎÊÌâ(¸ÐÐ»"¨t¤Å¼ÇÒä?°ß²µ©C"·´À¡)
+[æ–°å¢ž] èƒ½å¤Ÿå›ºå®šæŒ‡å®šé­”ç‰©é“å…·çš„åŸºç¡€æŽ‰çŽ‡, è¯¦è§ db/mob_item_fixedrate.txt é…ç½®æ–‡ä»¶
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®å¤ä¸€ä¸ªå…³äºŽèŠå¤©å®¤æ˜¾ç¤ºå¼‚å¸¸çš„é—®é¢˜(æ„Ÿè°¢"â•°ã¥è®°å¿†â€¢æ–‘é©³ã€¤"åé¦ˆ)
 
 v1.4.6(2016-06-18)
 ------------------
-[ÐÂÔö] ÊµÏÖ setheaddir Óë setbodydir ½Å±¾Ö¸Áî, ÓÃÀ´¿ØÖÆ½ÇÉ«µÄÄÔ´üºÍÉíÌå³¯Ïò
-[ÐÂÔö] Ìí¼Ó¡°¸Ä±äÍ·²¿ºÍÉíÌå³¯Ïò¡± µÄÑÝÊ¾½Å±¾£¬Ïê¼û npc/racn/racn_setdir.txt
-[µ÷Õû] ÎªÁË·½±ãµ÷ÊÔ£¬Ä¬ÈÏ²»ÔÙ¿ªÆô¡°¶à¿ªÏÞÖÆÑÝÊ¾½Å±¾¡±
-[µ÷Õû] ½«³ÌÐòÖÐÐ´ËÀµÄ¼òÌåÖÐÎÄ×Ö·û´®£¬ÌáÈ¡µ½ÖÕ¶Ë·­ÒëÊý¾Ý¿âÖÐ£¬·½±ã½øÐÐ·±Ìå»¯ÅäÖÃ
-[µ÷Õû] ¸Ä½ø±àÂë×Ô¶¯ÅÐ¶Ï»úÖÆ£¬ÔÚ·±ÌåÏµÍ³ÉÏÁ´½Óµ½utf8/utf8mb4Êý¾Ý¿âÊ±£¬½«²ÉÓÃbig5±àÂë
-[ºº»¯] ÍêÈ«ºº»¯rA×ÔÖÆ´«ËÍ½Å±¾ npc/custom/warper.txt (¸ÐÐ»¡°I'm Lins¡±ºº»¯)
-[ºº»¯] ºº»¯ conf Ä¿Â¼ÏÂ10¶à¸öÅäÖÃÑ¡ÏîµÄËµÃ÷ÐÅÏ¢
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] å®žçŽ° setheaddir ä¸Ž setbodydir è„šæœ¬æŒ‡ä»¤, ç”¨æ¥æŽ§åˆ¶è§’è‰²çš„è„‘è¢‹å’Œèº«ä½“æœå‘
+[æ–°å¢ž] æ·»åŠ â€œæ”¹å˜å¤´éƒ¨å’Œèº«ä½“æœå‘â€ çš„æ¼”ç¤ºè„šæœ¬ï¼Œè¯¦è§ npc/racn/racn_setdir.txt
+[è°ƒæ•´] ä¸ºäº†æ–¹ä¾¿è°ƒè¯•ï¼Œé»˜è®¤ä¸å†å¼€å¯â€œå¤šå¼€é™åˆ¶æ¼”ç¤ºè„šæœ¬â€
+[è°ƒæ•´] å°†ç¨‹åºä¸­å†™æ­»çš„ç®€ä½“ä¸­æ–‡å­—ç¬¦ä¸²ï¼Œæå–åˆ°ç»ˆç«¯ç¿»è¯‘æ•°æ®åº“ä¸­ï¼Œæ–¹ä¾¿è¿›è¡Œç¹ä½“åŒ–é…ç½®
+[è°ƒæ•´] æ”¹è¿›ç¼–ç è‡ªåŠ¨åˆ¤æ–­æœºåˆ¶ï¼Œåœ¨ç¹ä½“ç³»ç»Ÿä¸Šé“¾æŽ¥åˆ°utf8/utf8mb4æ•°æ®åº“æ—¶ï¼Œå°†é‡‡ç”¨big5ç¼–ç 
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–rAè‡ªåˆ¶ä¼ é€è„šæœ¬ npc/custom/warper.txt (æ„Ÿè°¢â€œI'm Linsâ€æ±‰åŒ–)
+[æ±‰åŒ–] æ±‰åŒ– conf ç›®å½•ä¸‹10å¤šä¸ªé…ç½®é€‰é¡¹çš„è¯´æ˜Žä¿¡æ¯
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.4.5(2016-06-10)
 ------------------
-[ÐÂÔö] Ö§³Ö¶Ô pointshop ÀàÐÍµÄÉÌµêÉèÖÃ±äÁ¿µÄ±ðÃû£¬Ïê¼û npc/racn/racn_pointshop.txt
-[ÐÂÔö] ÊµÏÖ OnIdentifiedItem ÊÂ¼þ£¬µ±Íæ¼Ò¼ø¶¨Íê³ÉÄ³¼þ×°±¸Ê±´¥·¢£¬Ïê¼û npc/racn/racn_events.txt
-[ÐÂÔö] ÈÃ cashshop ÀàÐÍµÄÉÌµêÖ§³ÖÉèÖÃ´òÕÛ¿ª¹Ø
-[ÐÞÕý] ÈôÍæ¼ÒÕýÔÚ½øÐÐÀëÏß¹Òµê£¬ÄÇÃ´Ã»ÓÐ±ØÒª¼ÓÈë¹«»áÁÄÌìÆµµÀ(±ÜÃâÄÚ´æÐ¹Â©)
-[ÐÞÕý] ÐÞÕý setrenttime ºÍ getequipexpiretick ½Å±¾Ö¸Áî´íÎó(ÒòrA¸üÐÂEQIºóµ¼ÖÂ×°±¸Î»ÖÃ»ñÈ¡´íÎó)
-[µ÷Õû] ¶Ô OnMvpKillEvent ÊÂ¼þµÄ²ÎÊýÒÔ¼°¹ØÁªÖ´ÐÐÍæ¼Ò×öÁËµ÷Õû£¬Ïê¼û npc/racn/racn_events.txt
-[µ÷Õû] ±êÌâÀ¸ÏÔÊ¾Á÷Á¿ÐÅÏ¢µÄÊ±ºò£¬Ö»±£Áôµ½Ð¡ÊýµãºóÁ½Î»
-[µ÷Õû] ÖØÃüÃûÆô¶¯Åú´¦ÀíÎÄ¼þºÍ×÷ÕßÃû³ÆÁÐ±íÎÄ¼þ(±ÜÃâ³öÏÖÖÐÎÄÎÄ¼þÃû£¬¶Ô·±ÌåÏµÍ³ÓÑºÃ)
-[µ÷Õû] ¸üÐÂ×÷ÕßÃûµ¥£¬¼ÓÈë rAthena Ó¢ÎÄÔ­°æ¿ª·¢ÍÅ¶ÓºÍ³ÉÔ±µÄÃû³Æ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ”¯æŒå¯¹ pointshop ç±»åž‹çš„å•†åº—è®¾ç½®å˜é‡çš„åˆ«åï¼Œè¯¦è§ npc/racn/racn_pointshop.txt
+[æ–°å¢ž] å®žçŽ° OnIdentifiedItem äº‹ä»¶ï¼Œå½“çŽ©å®¶é‰´å®šå®ŒæˆæŸä»¶è£…å¤‡æ—¶è§¦å‘ï¼Œè¯¦è§ npc/racn/racn_events.txt
+[æ–°å¢ž] è®© cashshop ç±»åž‹çš„å•†åº—æ”¯æŒè®¾ç½®æ‰“æŠ˜å¼€å…³
+[ä¿®æ­£] è‹¥çŽ©å®¶æ­£åœ¨è¿›è¡Œç¦»çº¿æŒ‚åº—ï¼Œé‚£ä¹ˆæ²¡æœ‰å¿…è¦åŠ å…¥å…¬ä¼šèŠå¤©é¢‘é“(é¿å…å†…å­˜æ³„æ¼)
+[ä¿®æ­£] ä¿®æ­£ setrenttime å’Œ getequipexpiretick è„šæœ¬æŒ‡ä»¤é”™è¯¯(å› rAæ›´æ–°EQIåŽå¯¼è‡´è£…å¤‡ä½ç½®èŽ·å–é”™è¯¯)
+[è°ƒæ•´] å¯¹ OnMvpKillEvent äº‹ä»¶çš„å‚æ•°ä»¥åŠå…³è”æ‰§è¡ŒçŽ©å®¶åšäº†è°ƒæ•´ï¼Œè¯¦è§ npc/racn/racn_events.txt
+[è°ƒæ•´] æ ‡é¢˜æ æ˜¾ç¤ºæµé‡ä¿¡æ¯çš„æ—¶å€™ï¼Œåªä¿ç•™åˆ°å°æ•°ç‚¹åŽä¸¤ä½
+[è°ƒæ•´] é‡å‘½åå¯åŠ¨æ‰¹å¤„ç†æ–‡ä»¶å’Œä½œè€…åç§°åˆ—è¡¨æ–‡ä»¶(é¿å…å‡ºçŽ°ä¸­æ–‡æ–‡ä»¶åï¼Œå¯¹ç¹ä½“ç³»ç»Ÿå‹å¥½)
+[è°ƒæ•´] æ›´æ–°ä½œè€…åå•ï¼ŒåŠ å…¥ rAthena è‹±æ–‡åŽŸç‰ˆå¼€å‘å›¢é˜Ÿå’Œæˆå‘˜çš„åç§°
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.4.4(2016-05-31)
 ------------------
-[ÐÞÕý] »Ø¹ö rAthena ¹Ù·½¶Ô¡°NPCµØ±À¡±¼¼ÄÜ×ö³öµÄ¸ü¸Ä(ÓÉÓÚÉËº¦ÓëÀúÊ·°æ±¾Ïà±È½ÏÎó²îÌ«´ó)
-[µ÷Õû] »¤Éí·ûÀàµÀ¾ß(ÀàÐÍ±àºÅÎª20)µ÷ÕûÎª¿É¶ÑµþµÀ¾ß, ÒÔ±ã±» item_stack ¿ØÖÆÍ¬Ê±Ð¯´øµÄÊýÁ¿
-[µ÷Õû] Îª 20131223 ¿Í»§¶ËÄ¬ÈÏ·ÖÅäÒ»¸ö¸ßÇ¿¶È·â°ü»ìÏýÃÜÔ¿
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[ä¿®æ­£] å›žæ»š rAthena å®˜æ–¹å¯¹â€œNPCåœ°å´©â€æŠ€èƒ½åšå‡ºçš„æ›´æ”¹(ç”±äºŽä¼¤å®³ä¸ŽåŽ†å²ç‰ˆæœ¬ç›¸æ¯”è¾ƒè¯¯å·®å¤ªå¤§)
+[è°ƒæ•´] æŠ¤èº«ç¬¦ç±»é“å…·(ç±»åž‹ç¼–å·ä¸º20)è°ƒæ•´ä¸ºå¯å †å é“å…·, ä»¥ä¾¿è¢« item_stack æŽ§åˆ¶åŒæ—¶æºå¸¦çš„æ•°é‡
+[è°ƒæ•´] ä¸º 20131223 å®¢æˆ·ç«¯é»˜è®¤åˆ†é…ä¸€ä¸ªé«˜å¼ºåº¦å°åŒ…æ··æ·†å¯†é’¥
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.4.3(2016-05-27)
 ------------------
-[ÐÂÔö] ÄÜ¹»ÔÚ²é¿´ÆäËüÍæ¼Ò×°±¸µÄÊ±Òþ²ØÆäÊ±×°Íâ¹Û£¬Ïê¼û conf/battle/extend.conf ÖÐµÄÅäÖÃ
-[µ÷Õû] »Ø¹ö¡°½â¾öÎïÆ··Åµ½ÊÖÍÆ³µºó±ØÐëÐ¡ÍË²ÅÄÜ¹Òµê¡±µÄ´úÂë
-[ºº»¯] Íê³ÉÖ¸Áî°ïÖúÎÄ¼þ conf/help.txt µÄºº»¯
+[æ–°å¢ž] èƒ½å¤Ÿåœ¨æŸ¥çœ‹å…¶å®ƒçŽ©å®¶è£…å¤‡çš„æ—¶éšè—å…¶æ—¶è£…å¤–è§‚ï¼Œè¯¦è§ conf/battle/extend.conf ä¸­çš„é…ç½®
+[è°ƒæ•´] å›žæ»šâ€œè§£å†³ç‰©å“æ”¾åˆ°æ‰‹æŽ¨è½¦åŽå¿…é¡»å°é€€æ‰èƒ½æŒ‚åº—â€çš„ä»£ç 
+[æ±‰åŒ–] å®ŒæˆæŒ‡ä»¤å¸®åŠ©æ–‡ä»¶ conf/help.txt çš„æ±‰åŒ–
 
 v1.4.2(2016-05-23)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/631187b3ec7c73dde9f2db662add30d3b7f0519f
-[×¢Òâ] ÒÑ¾­ÓÐÁ½¸öÔÂÃ»ºÍrA¹Ù·½½øÐÐÍ¬²½, Õâ´ÎÍ¬²½´ó¸ÅÓÐ220¶à¸ö commit, ¸÷Î»Ê¹ÓÃ rAthenaCN µÄÓÎÏ·¹ÜÀíÔ±Çë½÷É÷²âÊÔºóÔÙ¸üÐÂ(¼ÇµÃ±¸·ÝÊý¾Ý¿â)
-[×¢Òâ] rA¹Ù·½µ÷ÕûÁËÄ§Îï mode È¡ÖµµÄº¬Òå, Èç¹û½Å±¾ÓÐ¸ù¾ÝÄ§ÎïµÄmodeÀ´×ö³öÌØ¶¨Âß¼­µÄ»°, Çë×¢Òâ¸üÐÂ
-[×¢Òâ] rA¹Ù·½µ÷ÕûÁË npctalk Ö¸ÁîµÄÐÐÎª, ÏÖÔÚÊ¹ÓÃ npctalk ²»»á×Ô¶¯ÏÔÊ¾³öNPCµÄÃû³Æ, Ïà¹ØµÄ½Å±¾¸üÐÂÇë×¢Òâ
-[×¢Òâ] rA¹Ù·½ÏÖÔÚÖ§³ÖÔÚ conf/battle/drops.conf ÖÐµ¥¶Àµ÷Õû MVP ÏµÁÐÄ§ÎïµÄÎïÆ·µôÂÊ(²»ÔÙºÍBOSSÀàÐÍµÄÄ§Îï»ìÔÚÒ»Æð)
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÖ´ÐÐÒÔÏÂ²Ù×÷:
-       - Çë°²×° ActivePerl Ö®ºó, Ö´ÐÐ tools/convert_monstermode.pl ½Å±¾(ÓÃÀ´×ª»»Ä§ÎïÊý¾Ý¿âÖÐµÄ mode ×Ö¶Î)
-       - Èô²»ÖªµÀÈçºÎ²Ù×÷, µ½Ê±ºòÔÚÈºÀï·¢ÎÊ°É(ÔÝÊ±À´²»¼°Ð´½Ì³Ì)
-[ÐÂÔö] ´ÓÕâ¸ö°æ±¾¿ªÊ¼, rAthenaCN Ö§³ÖÐÂÖ°Òµ¡°¶ÅÀ¼×åÕÙ»½Ê¦¡±
-[ÐÂÔö] ÊµÏÖ¶àÏßÂ·Ö§³Ö»úÖÆ, ÏêÇéÇë¼û conf/multinet_athena.conf
-[¶¨ÖÆ] ¹Ø±ÕÕýÔò±í´ïÊ½µÄ¶¨ÖÆÖ§³Ö(rA¹Ù·½ÎªÄ¬ÈÏÆôÓÃ, Ìá¹©¶¨ÖÆÒâÒå²»´ó)
-[¶¨ÖÆ] ¿Í»§¶Ë·â°ü¶¨ÖÆÖ§³Öµ½ 20151104 °æ±¾
+[æ³¨æ„] å·²ç»æœ‰ä¸¤ä¸ªæœˆæ²¡å’ŒrAå®˜æ–¹è¿›è¡ŒåŒæ­¥, è¿™æ¬¡åŒæ­¥å¤§æ¦‚æœ‰220å¤šä¸ª commit, å„ä½ä½¿ç”¨ rAthenaCN çš„æ¸¸æˆç®¡ç†å‘˜è¯·è°¨æ…Žæµ‹è¯•åŽå†æ›´æ–°(è®°å¾—å¤‡ä»½æ•°æ®åº“)
+[æ³¨æ„] rAå®˜æ–¹è°ƒæ•´äº†é­”ç‰© mode å–å€¼çš„å«ä¹‰, å¦‚æžœè„šæœ¬æœ‰æ ¹æ®é­”ç‰©çš„modeæ¥åšå‡ºç‰¹å®šé€»è¾‘çš„è¯, è¯·æ³¨æ„æ›´æ–°
+[æ³¨æ„] rAå®˜æ–¹è°ƒæ•´äº† npctalk æŒ‡ä»¤çš„è¡Œä¸º, çŽ°åœ¨ä½¿ç”¨ npctalk ä¸ä¼šè‡ªåŠ¨æ˜¾ç¤ºå‡ºNPCçš„åç§°, ç›¸å…³çš„è„šæœ¬æ›´æ–°è¯·æ³¨æ„
+[æ³¨æ„] rAå®˜æ–¹çŽ°åœ¨æ”¯æŒåœ¨ conf/battle/drops.conf ä¸­å•ç‹¬è°ƒæ•´ MVP ç³»åˆ—é­”ç‰©çš„ç‰©å“æŽ‰çŽ‡(ä¸å†å’ŒBOSSç±»åž‹çš„é­”ç‰©æ··åœ¨ä¸€èµ·)
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·æ‰§è¡Œä»¥ä¸‹æ“ä½œ:
+       - è¯·å®‰è£… ActivePerl ä¹‹åŽ, æ‰§è¡Œ tools/convert_monstermode.pl è„šæœ¬(ç”¨æ¥è½¬æ¢é­”ç‰©æ•°æ®åº“ä¸­çš„ mode å­—æ®µ)
+       - è‹¥ä¸çŸ¥é“å¦‚ä½•æ“ä½œ, åˆ°æ—¶å€™åœ¨ç¾¤é‡Œå‘é—®å§(æš‚æ—¶æ¥ä¸åŠå†™æ•™ç¨‹)
+[æ–°å¢ž] ä»Žè¿™ä¸ªç‰ˆæœ¬å¼€å§‹, rAthenaCN æ”¯æŒæ–°èŒä¸šâ€œæœå…°æ—å¬å”¤å¸ˆâ€
+[æ–°å¢ž] å®žçŽ°å¤šçº¿è·¯æ”¯æŒæœºåˆ¶, è¯¦æƒ…è¯·è§ conf/multinet_athena.conf
+[å®šåˆ¶] å…³é—­æ­£åˆ™è¡¨è¾¾å¼çš„å®šåˆ¶æ”¯æŒ(rAå®˜æ–¹ä¸ºé»˜è®¤å¯ç”¨, æä¾›å®šåˆ¶æ„ä¹‰ä¸å¤§)
+[å®šåˆ¶] å®¢æˆ·ç«¯å°åŒ…å®šåˆ¶æ”¯æŒåˆ° 20151104 ç‰ˆæœ¬
 
 v1.4.1(2016-05-13)
 ------------------
-[ÐÂÔö] ÊµÏÖ»¤Éí·ûÏµÍ³£¬Ö»Ðè½«ÎïÆ·ÀàÐÍÉèÖÃÎª20£¬ÄÇÃ´µÀ¾ß·ÅÈë±³°ü½«Á¢¿Ì´¥·¢Ê¹ÓÃ½Å±¾
-[ÐÂÔö] ÊµÏÖ instance_users Ö¸Áî£¬¿ÉÒÔ»ñÈ¡Ö¸¶¨¸±±¾ÖÐµÄ²ÎÓëÈËÊý(¸ÐÐ»¡°Sariel¡±ÊµÏÖ)
-[ÐÂÔö] ÊµÏÖ openbank Ö¸Áî£¬¿ÉÒÔÈÃ½ÇÉ«´ò¿ªÒøÐÐ½çÃæ(¸ÐÐ»¡°Sariel¡±ÊµÏÖ)
-[ÐÂÔö] ÊµÏÖ party_leave ½Å±¾Ö¸Áî£¬ÄÜÈÃÍæ¼ÒÍË³ö¶ÓÎé(¸ÐÐ»¡°Sariel¡±ÊµÏÖ)
-[ÐÂÔö] ÊµÏÖ mesclear Ö¸Áî£¬ÄÜÔÚ²»ÐèÒªÍæ¼ÒµãNEXTµÄÇé¿öÏÂ£¬Çå¿ÕNPCµÄ¶Ô»°´°¿Ú(¸ÐÐ»¡°ÏþÏþ¡±ÊµÏÖ)
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°³èÎïÊý¾Ý¿âµÄÈÝÁ¿ÉÏÏÞ¡±
-[ÐÞÕý] ÐÞÕý getsameipinfo Ö¸ÁîÎÞ·¨·µ»ØÕýÈ·½á¹ûµÄÎÊÌâ
-[µ÷Õû] µ÷Õû¸´ÐËÇ°µÄµØÍ¼»º´æ£¬Ê¹ÓÃ·ûºÏrA×Ô´ø½Å±¾µÄÀÏ°æÒÀË¹Â³µÂµº»º´æ
-[µ÷Õû] ÈôÖÕ¶Ë·­ÒëÊý¾Ý¿â²»´æÔÚ£¬³ÌÐòÆô¶¯Ê±Ò²²»Òª±¨´í£¬Ö±½ÓÏÔÊ¾Ó¢ÎÄ¾ÍºÃ
-[ºº»¯] ÍêÈ«ºº»¯µÂÍßËû 47 ¸ö³ÇÕòNPCµÄ¶Ô»°ÄÚÈÝ(¸ÐÐ»¡°ÑîÃ·¡±·­Òë)
-[ºº»¯] ÍêÈ«ºº»¯¡°´ïÄÉÍÐË¹Ö®Ëþ¡±µÄËùÓÐ¶Ô»° - ÉÐÎ´¾«Ð£(¸ÐÐ»¡°Ivan¡±·­Òë)
-[ºº»¯] ÍêÈ«ºº»¯ conf/subnet_athena.conf µÄ×¢ÊÍËµÃ÷
-[ºº»¯] ÍêÈ«ºº»¯½ÇÉ«·þÎñÆ÷ÅäÖÃÎÄ¼þ conf/char_athena.conf
-[ºº»¯] ²¿·Öºº»¯ conf/help.txt ÖÐµÄGMÖ¸ÁîËµÃ÷ÐÅÏ¢
-[ºº»¯] ºº»¯ conf/battle/party.conf ÖÐ display_party_name Ñ¡ÏîµÄ×¢ÊÍ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] å®žçŽ°æŠ¤èº«ç¬¦ç³»ç»Ÿï¼Œåªéœ€å°†ç‰©å“ç±»åž‹è®¾ç½®ä¸º20ï¼Œé‚£ä¹ˆé“å…·æ”¾å…¥èƒŒåŒ…å°†ç«‹åˆ»è§¦å‘ä½¿ç”¨è„šæœ¬
+[æ–°å¢ž] å®žçŽ° instance_users æŒ‡ä»¤ï¼Œå¯ä»¥èŽ·å–æŒ‡å®šå‰¯æœ¬ä¸­çš„å‚ä¸Žäººæ•°(æ„Ÿè°¢â€œSarielâ€å®žçŽ°)
+[æ–°å¢ž] å®žçŽ° openbank æŒ‡ä»¤ï¼Œå¯ä»¥è®©è§’è‰²æ‰“å¼€é“¶è¡Œç•Œé¢(æ„Ÿè°¢â€œSarielâ€å®žçŽ°)
+[æ–°å¢ž] å®žçŽ° party_leave è„šæœ¬æŒ‡ä»¤ï¼Œèƒ½è®©çŽ©å®¶é€€å‡ºé˜Ÿä¼(æ„Ÿè°¢â€œSarielâ€å®žçŽ°)
+[æ–°å¢ž] å®žçŽ° mesclear æŒ‡ä»¤ï¼Œèƒ½åœ¨ä¸éœ€è¦çŽ©å®¶ç‚¹NEXTçš„æƒ…å†µä¸‹ï¼Œæ¸…ç©ºNPCçš„å¯¹è¯çª—å£(æ„Ÿè°¢â€œæ™“æ™“â€å®žçŽ°)
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œå® ç‰©æ•°æ®åº“çš„å®¹é‡ä¸Šé™â€
+[ä¿®æ­£] ä¿®æ­£ getsameipinfo æŒ‡ä»¤æ— æ³•è¿”å›žæ­£ç¡®ç»“æžœçš„é—®é¢˜
+[è°ƒæ•´] è°ƒæ•´å¤å…´å‰çš„åœ°å›¾ç¼“å­˜ï¼Œä½¿ç”¨ç¬¦åˆrAè‡ªå¸¦è„šæœ¬çš„è€ç‰ˆä¾æ–¯é²å¾·å²›ç¼“å­˜
+[è°ƒæ•´] è‹¥ç»ˆç«¯ç¿»è¯‘æ•°æ®åº“ä¸å­˜åœ¨ï¼Œç¨‹åºå¯åŠ¨æ—¶ä¹Ÿä¸è¦æŠ¥é”™ï¼Œç›´æŽ¥æ˜¾ç¤ºè‹±æ–‡å°±å¥½
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å¾·ç“¦ä»– 47 ä¸ªåŸŽé•‡NPCçš„å¯¹è¯å†…å®¹(æ„Ÿè°¢â€œæ¨æ¢…â€ç¿»è¯‘)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œè¾¾çº³æ‰˜æ–¯ä¹‹å¡”â€çš„æ‰€æœ‰å¯¹è¯ - å°šæœªç²¾æ ¡(æ„Ÿè°¢â€œIvanâ€ç¿»è¯‘)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ– conf/subnet_athena.conf çš„æ³¨é‡Šè¯´æ˜Ž
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–è§’è‰²æœåŠ¡å™¨é…ç½®æ–‡ä»¶ conf/char_athena.conf
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ– conf/help.txt ä¸­çš„GMæŒ‡ä»¤è¯´æ˜Žä¿¡æ¯
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/party.conf ä¸­ display_party_name é€‰é¡¹çš„æ³¨é‡Š
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.4.0(2016-04-29)
 ------------------
-[ÐÂÔö] ÊµÏÖ @eventrpt Ö¸Áî£¬¿É²é¿´·þÎñ¶ËÆô¶¯ÖÁ½ñËùÓÐÊÂ¼þµÄ´¥·¢´ÎÊýºÍ´¦ÀíºÄÊ±£¬·½±ã½øÐÐ¼òµ¥µÄ½Å±¾ÐÔÄÜÕï¶Ï
-[ÐÂÔö] ÊµÏÖ mobremove ½Å±¾Ö¸Áî£¬¸ù¾ÝÖ¸¶¨µÄGID£¬ÔÚ²»É±ËÀÄ§ÎïµÄÇé¿öÏÂ½«Ä§Îï´ÓµØÍ¼ÖÐÒÆ³ý(¸ÐÐ»¡° ¡ï¨rß÷Ááƒº¡¨¡î ¡±·ÖÏí)
-[ÐÂÔö] ÊµÏÖ max/min Á½¸ö½Å±¾Ö¸Áî£¬ÄÜ¹»·µ»Ø¸ø¶¨µÄ¶à¸öÊýÖÐ ×î´ó/×îÐ¡ µÄÄÇÒ»¸ö
-[ÐÂÔö] ÊµÏÖ cap_value ½Å±¾Ö¸Áî£¬ÄÜ¹»ÈÃÖ¸¶¨µÄÊýÖµ²»³¬¹ýÄãÖ¸¶¨µÄ×îÐ¡ÖµºÍ×î´óÖµ·¶Î§
-[ÐÂÔö] ÊµÏÖ getsameipinfo ½Å±¾Ö¸Áî£¬¿É»ñµÃÓëÖ¸¶¨IPÏàÍ¬µÄÍæ¼ÒÊýÁ¿ºÍËûÃÇµÄCID\AID\½ÇÉ«ÃûÐÅÏ¢
-[ÐÂÔö] ÊµÏÖ logout ½Å±¾Ö¸Áî£¬¿ÉÒÔÓÃÌØ¶¨µÄÀíÓÉ°ÑÍæ¼ÒÌßÏÂÏß
-[ÐÂÔö] Ôö¼Ó¡°¶à¿ªÏÞÖÆÑÝÊ¾½Å±¾¡±£¬Ïê¼û npc/racn/racn_iplimit.txt
-[ÐÂÔö] Ê¹Íæ¼ÒµÄÐÐÎª²ßÂÔËùÉèÖÃµÄµôÂÊ±¶ÂÊ£¬ÄÜÍ¬Ê±Ó¦ÓÃµ½ËûµÄ³èÎï¡¢ÉúÃüÌå¡¢Ó¶±øµÄµôÂÊÉÏ
-[ÐÂÔö] Ê¹ÓÃ@whoºÍ@whomap¿ÉÒÔ¿´µ½Íæ¼ÒµÄÐÐÎª²ßÂÔ±àºÅ
-[ÐÞÕý] rAthena¹Ù·½BUG: µ±¶ÁÈ¡ libconfig ÅäÖÃÎÄ¼þÊ§°ÜÊ±£¬ÄÜ¹»ÏÔÊ¾³öÎÄ¼þµÄÂ·¾¶£¬¶ø²»ÊÇµ¥´¿µÄÏÔÊ¾I/O´íÎó
-[µ÷Õû] ¸Ä±ä console_msg_log Ñ¡ÏîµÄÄ¬ÈÏÖµ£¬Ä¬ÈÏ¼ÇÂ¼¡°¾¯¸æ¡¢´íÎó¡¢µ÷ÊÔ¡±ÐÅÏ¢µ½logÄ¿Â¼ÖÐÈ¥
+[æ–°å¢ž] å®žçŽ° @eventrpt æŒ‡ä»¤ï¼Œå¯æŸ¥çœ‹æœåŠ¡ç«¯å¯åŠ¨è‡³ä»Šæ‰€æœ‰äº‹ä»¶çš„è§¦å‘æ¬¡æ•°å’Œå¤„ç†è€—æ—¶ï¼Œæ–¹ä¾¿è¿›è¡Œç®€å•çš„è„šæœ¬æ€§èƒ½è¯Šæ–­
+[æ–°å¢ž] å®žçŽ° mobremove è„šæœ¬æŒ‡ä»¤ï¼Œæ ¹æ®æŒ‡å®šçš„GIDï¼Œåœ¨ä¸æ€æ­»é­”ç‰©çš„æƒ…å†µä¸‹å°†é­”ç‰©ä»Žåœ°å›¾ä¸­ç§»é™¤(æ„Ÿè°¢â€œ â˜…â•®å–µçŽ²å…’ã€ƒâ˜† â€åˆ†äº«)
+[æ–°å¢ž] å®žçŽ° max/min ä¸¤ä¸ªè„šæœ¬æŒ‡ä»¤ï¼Œèƒ½å¤Ÿè¿”å›žç»™å®šçš„å¤šä¸ªæ•°ä¸­ æœ€å¤§/æœ€å° çš„é‚£ä¸€ä¸ª
+[æ–°å¢ž] å®žçŽ° cap_value è„šæœ¬æŒ‡ä»¤ï¼Œèƒ½å¤Ÿè®©æŒ‡å®šçš„æ•°å€¼ä¸è¶…è¿‡ä½ æŒ‡å®šçš„æœ€å°å€¼å’Œæœ€å¤§å€¼èŒƒå›´
+[æ–°å¢ž] å®žçŽ° getsameipinfo è„šæœ¬æŒ‡ä»¤ï¼Œå¯èŽ·å¾—ä¸ŽæŒ‡å®šIPç›¸åŒçš„çŽ©å®¶æ•°é‡å’Œä»–ä»¬çš„CID\AID\è§’è‰²åä¿¡æ¯
+[æ–°å¢ž] å®žçŽ° logout è„šæœ¬æŒ‡ä»¤ï¼Œå¯ä»¥ç”¨ç‰¹å®šçš„ç†ç”±æŠŠçŽ©å®¶è¸¢ä¸‹çº¿
+[æ–°å¢ž] å¢žåŠ â€œå¤šå¼€é™åˆ¶æ¼”ç¤ºè„šæœ¬â€ï¼Œè¯¦è§ npc/racn/racn_iplimit.txt
+[æ–°å¢ž] ä½¿çŽ©å®¶çš„è¡Œä¸ºç­–ç•¥æ‰€è®¾ç½®çš„æŽ‰çŽ‡å€çŽ‡ï¼Œèƒ½åŒæ—¶åº”ç”¨åˆ°ä»–çš„å® ç‰©ã€ç”Ÿå‘½ä½“ã€ä½£å…µçš„æŽ‰çŽ‡ä¸Š
+[æ–°å¢ž] ä½¿ç”¨@whoå’Œ@whomapå¯ä»¥çœ‹åˆ°çŽ©å®¶çš„è¡Œä¸ºç­–ç•¥ç¼–å·
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å½“è¯»å– libconfig é…ç½®æ–‡ä»¶å¤±è´¥æ—¶ï¼Œèƒ½å¤Ÿæ˜¾ç¤ºå‡ºæ–‡ä»¶çš„è·¯å¾„ï¼Œè€Œä¸æ˜¯å•çº¯çš„æ˜¾ç¤ºI/Oé”™è¯¯
+[è°ƒæ•´] æ”¹å˜ console_msg_log é€‰é¡¹çš„é»˜è®¤å€¼ï¼Œé»˜è®¤è®°å½•â€œè­¦å‘Šã€é”™è¯¯ã€è°ƒè¯•â€ä¿¡æ¯åˆ°logç›®å½•ä¸­åŽ»
 
 v1.3.9(2016-04-25)
 ------------------
-[ÐÞÕý] ½ô¼±ÐÞÕý v1.3.8 °æ±¾Ò»¸ö´¥·¢¸ÅÂÊ½Ï¸ßµÄ±ÀÀ£(¸ÐÐ»"Œ¨ñxî^ŒšŒš"·´À¡)
+[ä¿®æ­£] ç´§æ€¥ä¿®æ­£ v1.3.8 ç‰ˆæœ¬ä¸€ä¸ªè§¦å‘æ¦‚çŽ‡è¾ƒé«˜çš„å´©æºƒ(æ„Ÿè°¢"å°é§’é ­å¯¶å¯¶"åé¦ˆ)
 
 v1.3.8(2016-04-24)
 ------------------
-[ÐÂÔö] ÊµÏÖÕËºÅÐÐÎª²ßÂÔ»úÖÆ£¬¿É½«ÕËºÅ·Ö×é²¢°´ÕÕ·Ö×é¸øÓè²»Í¬µÄ¾­ÑéºÍµôÂÊ²ßÂÔ
-[ÐÂÔö] ÈÃ npctalk ½Å±¾Ö¸ÁîÄÜ¹»Ö§³ÖÖ¸¶¨NPCÃû³Æ
-[ÐÂÔö] ÊµÏÖ delinventory ½Å±¾Ö¸Áî£¬¿ÉÉ¾³ýÖ¸¶¨±³°üÐòºÅµÄÎïÆ·
-[ÐÂÔö] ÊµÏÖ equipinventory ½Å±¾Ö¸Áî£¬¿É´©´÷Ö¸¶¨±³°üÐòºÅµÄ×°±¸
-[ÐÂÔö] ÊµÏÖ unequipinventory ½Å±¾Ö¸Áî£¬¿ÉÍÑÏÂÖ¸¶¨±³°üÐòºÅµÄ×°±¸
-[ÐÂÔö] ÊµÏÖ getinventoryinfo ½Å±¾Ö¸Áî£¬¿ÉÒÔ²é¿´Ö¸¶¨±³°üÐòºÅµÄÎïÆ·ÐÅÏ¢
-[ÐÂÔö] ÊµÏÖ viewequip ½Å±¾Ö¸Áî£¬¿ÉÒÔ²é¿´Ö¸¶¨ÕËºÅÍæ¼ÒµÄ×°±¸ÐÅÏ¢
-[ÐÂÔö] ÊµÏÖ existitem ½Å±¾Ö¸Áî£¬¿ÉÒÔÈ·ÈÏÒ»¸öµÀ¾ßÔÚÎïÆ·Êý¾Ý¿âÖÐÊÇ·ñ´æÔÚ(ÎªÁË¼æÈÝSeAr½Å±¾)
-[ÐÂÔö] Ê¹ÓÃ getinventorylist ½Å±¾Ö¸ÁîÊ±£¬ÄÜ·µ»ØÒ»¸öÃûÎª @inventorylist_idx µÄÊý×é£¬ÀïÃæ°üº¬ÁËÃ¿¸öÎïÆ·µÄ±³°üÐòºÅ
-[ÐÂÔö] ÊµÏÖ searcharray ½Å±¾Ö¸Áî, ÓÃÀ´ËÑË÷Êý×éÄÚÈÝ(¸ÐÐ» ¡ï¨rß÷Ááƒº¡¨¡î ·ÖÏí£¬¸ÐÐ» Sariel ¸Ä½ø)
-[ÐÂÔö] ±àÂë×Ô¶¯ÅÐ¶¨»úÖÆÖ§³Öutf8mb4ÀàÐÍµÄÊý¾Ý¿â
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞÕýÔÚ OnPCLoginEvent¡¢OnPCLoadMapEvent ÊÂ¼þÖÐÊ¹ÓÃ setquest Ê±, ÌØ¶¨Ìõ¼þÏÂµØÍ¼·þÎñÆ÷»á±ÀÀ£µÄÎÊÌâ(¸ÐÐ»¡°Åùö¨±¬Õ¨æ¤¶ù¡±·´À¡)
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾öÊ¹ÓÃ @item2 Ö¸Áî´´½¨Ó°×Ó×°±¸Ê±, ÈôÖ¸¶¨ÊýÁ¿´óÓÚ 1 »á³öÏÖ´íÎóµÄÎÊÌâ [Sariel]
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾öµ±»ñµÃÄ§Îï±äÉí×´Ì¬ºó, ¹ýÍ¼ºó×´Ì¬Í¼±êµÄµ¹¼ÆÊ±¶ªÊ§µÄÎÊÌâ [Sariel]
-[µ÷Õû] Í³Ò»confÄ¿Â¼ÏÂËùÓÐÅäÖÃÎÄ¼þµÄÍ·²¿×¢ÊÍÐÅÏ¢¸ñÊ½
-[µ÷Õû] ÈÃ @bodystyle Ö¸ÁîÖ§³Ö¸ü¸Ä¡°´óÖ÷½Ì¡±µÄ·þ×°·ç¸ñ
+[æ–°å¢ž] å®žçŽ°è´¦å·è¡Œä¸ºç­–ç•¥æœºåˆ¶ï¼Œå¯å°†è´¦å·åˆ†ç»„å¹¶æŒ‰ç…§åˆ†ç»„ç»™äºˆä¸åŒçš„ç»éªŒå’ŒæŽ‰çŽ‡ç­–ç•¥
+[æ–°å¢ž] è®© npctalk è„šæœ¬æŒ‡ä»¤èƒ½å¤Ÿæ”¯æŒæŒ‡å®šNPCåç§°
+[æ–°å¢ž] å®žçŽ° delinventory è„šæœ¬æŒ‡ä»¤ï¼Œå¯åˆ é™¤æŒ‡å®šèƒŒåŒ…åºå·çš„ç‰©å“
+[æ–°å¢ž] å®žçŽ° equipinventory è„šæœ¬æŒ‡ä»¤ï¼Œå¯ç©¿æˆ´æŒ‡å®šèƒŒåŒ…åºå·çš„è£…å¤‡
+[æ–°å¢ž] å®žçŽ° unequipinventory è„šæœ¬æŒ‡ä»¤ï¼Œå¯è„±ä¸‹æŒ‡å®šèƒŒåŒ…åºå·çš„è£…å¤‡
+[æ–°å¢ž] å®žçŽ° getinventoryinfo è„šæœ¬æŒ‡ä»¤ï¼Œå¯ä»¥æŸ¥çœ‹æŒ‡å®šèƒŒåŒ…åºå·çš„ç‰©å“ä¿¡æ¯
+[æ–°å¢ž] å®žçŽ° viewequip è„šæœ¬æŒ‡ä»¤ï¼Œå¯ä»¥æŸ¥çœ‹æŒ‡å®šè´¦å·çŽ©å®¶çš„è£…å¤‡ä¿¡æ¯
+[æ–°å¢ž] å®žçŽ° existitem è„šæœ¬æŒ‡ä»¤ï¼Œå¯ä»¥ç¡®è®¤ä¸€ä¸ªé“å…·åœ¨ç‰©å“æ•°æ®åº“ä¸­æ˜¯å¦å­˜åœ¨(ä¸ºäº†å…¼å®¹SeArè„šæœ¬)
+[æ–°å¢ž] ä½¿ç”¨ getinventorylist è„šæœ¬æŒ‡ä»¤æ—¶ï¼Œèƒ½è¿”å›žä¸€ä¸ªåä¸º @inventorylist_idx çš„æ•°ç»„ï¼Œé‡Œé¢åŒ…å«äº†æ¯ä¸ªç‰©å“çš„èƒŒåŒ…åºå·
+[æ–°å¢ž] å®žçŽ° searcharray è„šæœ¬æŒ‡ä»¤, ç”¨æ¥æœç´¢æ•°ç»„å†…å®¹(æ„Ÿè°¢ â˜…â•®å–µçŽ²å…’ã€ƒâ˜† åˆ†äº«ï¼Œæ„Ÿè°¢ Sariel æ”¹è¿›)
+[æ–°å¢ž] ç¼–ç è‡ªåŠ¨åˆ¤å®šæœºåˆ¶æ”¯æŒutf8mb4ç±»åž‹çš„æ•°æ®åº“
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®æ­£åœ¨ OnPCLoginEventã€OnPCLoadMapEvent äº‹ä»¶ä¸­ä½¿ç”¨ setquest æ—¶, ç‰¹å®šæ¡ä»¶ä¸‹åœ°å›¾æœåŠ¡å™¨ä¼šå´©æºƒçš„é—®é¢˜(æ„Ÿè°¢â€œéœ¹é›³çˆ†ç‚¸å¦žå„¿â€åé¦ˆ)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³ä½¿ç”¨ @item2 æŒ‡ä»¤åˆ›å»ºå½±å­è£…å¤‡æ—¶, è‹¥æŒ‡å®šæ•°é‡å¤§äºŽ 1 ä¼šå‡ºçŽ°é”™è¯¯çš„é—®é¢˜ [Sariel]
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³å½“èŽ·å¾—é­”ç‰©å˜èº«çŠ¶æ€åŽ, è¿‡å›¾åŽçŠ¶æ€å›¾æ ‡çš„å€’è®¡æ—¶ä¸¢å¤±çš„é—®é¢˜ [Sariel]
+[è°ƒæ•´] ç»Ÿä¸€confç›®å½•ä¸‹æ‰€æœ‰é…ç½®æ–‡ä»¶çš„å¤´éƒ¨æ³¨é‡Šä¿¡æ¯æ ¼å¼
+[è°ƒæ•´] è®© @bodystyle æŒ‡ä»¤æ”¯æŒæ›´æ”¹â€œå¤§ä¸»æ•™â€çš„æœè£…é£Žæ ¼
 
 v1.3.7(2016-04-14)
 ------------------
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾ö½ÇÉ«·þÎñÆ÷´æµµÁ÷Ã¥¡¢ÖðÓ°µÄ¼¼ÄÜÊ±¿ÉÄÜ»á³öÏÖ -8 ±¨´íµÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞÕý½ÇÉ«·þÎñÆ÷µôÏßºó»Ö¸´£¬»áµ¼ÖÂÀëÏß¹Òµê±í±»Çå¿ÕµÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾öµÀ¾ßÉÌ³ÇÏÂ¼ÜÉÌÆ·ºó£¬ÈôÓÐÍæ¼Ò¹ºÂòÏÂ¼ÜÉÌÆ·»áµ¼ÖÂµØÍ¼·þÎñÆ÷±ÀÀ£µÄÎÊÌâ
-[ÐÞÕý] ÐÞÕý»ñÈ¡VIP×´Ì¬µÄÊ±»ú£¬±ÜÃâÆµ·±´ÓµÇÂ¼·þÎñÆ÷ÇëÇóVIP×´Ì¬
-[ÐÞÕý] ½â¾öitem_flagÖÐÎªµÀ¾ßÉèÖÃÉÏ 256 ±ê¼Çºó½«Æä¶ªµ½µØÃæ£¬µÀ¾ß²»»á±»¿Û³ýµÄÎÊÌâ(½«µ¼ÖÂµÀ¾ß¸´ÖÆ)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³è§’è‰²æœåŠ¡å™¨å­˜æ¡£æµæ°“ã€é€å½±çš„æŠ€èƒ½æ—¶å¯èƒ½ä¼šå‡ºçŽ° -8 æŠ¥é”™çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®æ­£è§’è‰²æœåŠ¡å™¨æŽ‰çº¿åŽæ¢å¤ï¼Œä¼šå¯¼è‡´ç¦»çº¿æŒ‚åº—è¡¨è¢«æ¸…ç©ºçš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³é“å…·å•†åŸŽä¸‹æž¶å•†å“åŽï¼Œè‹¥æœ‰çŽ©å®¶è´­ä¹°ä¸‹æž¶å•†å“ä¼šå¯¼è‡´åœ°å›¾æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜
+[ä¿®æ­£] ä¿®æ­£èŽ·å–VIPçŠ¶æ€çš„æ—¶æœºï¼Œé¿å…é¢‘ç¹ä»Žç™»å½•æœåŠ¡å™¨è¯·æ±‚VIPçŠ¶æ€
+[ä¿®æ­£] è§£å†³item_flagä¸­ä¸ºé“å…·è®¾ç½®ä¸Š 256 æ ‡è®°åŽå°†å…¶ä¸¢åˆ°åœ°é¢ï¼Œé“å…·ä¸ä¼šè¢«æ‰£é™¤çš„é—®é¢˜(å°†å¯¼è‡´é“å…·å¤åˆ¶)
 
 v1.3.6(2016-04-08)
 ------------------
-[ÐÂÔö] µ±packet_db.txtµÄpacket_db_verÎªautoµÄ»°, ÄÜ×Ô¶¯Ñ¡ÔñÆ¥ÅäµÄ·â°ü°æ±¾
-[ÐÂÔö] getequipexpiretick ½Å±¾Ö¸Áî, ÓÃÀ´»ñµÃÖ¸¶¨Î»ÖÃ×°±¸µÄ×âÁÞµ½ÆÚÊ£ÓàÃëÊý(¼æÈÝSeArµÄisrentalÖ¸Áî)
-[ÐÂÔö] battleignore ½Å±¾Ö¸Áî£¬¿ÉÓÃÀ´ÉèÖÃÍæ¼Ò±ÜÃâ±»Ä§Îï¹¥»÷
-[ÐÂÔö] setrenttime ½Å±¾Ö¸Áî£¬ÓÃÀ´Ôö¼Ó/¼õÉÙÖ¸¶¨Î»ÖÃ×°±¸µÄ×âÁÞÊ±¼ä(¼æÈÝSeArµÄresumeÖ¸Áî)
-[ÐÞÕý] ÈÃsocket¹¤×÷ÔÚ·Ç×èÈûÄ£Ê½, ²¢½â¾öÔÚWinÏµÍ³ÉÏÉè¶¨Á¬½ÓµÄ³¬Ê±Ê±¼ä²»ÕýÈ·µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞÕý rAthena µÀ¾ßµÄ×âÁÞÊ£ÓàÊ±¼äÌáÊ¾¿ÉÄÜÏÔÊ¾¶à´ÎµÄÎÊÌâ
-[µ÷Õû] ¸Ä½øµ±³ÌÐò±ÀÀ£Ê±×ª´¢ÎÄ¼þµÄÉú³É»úÖÆ, ²»ÔÙÊ¹ÓÃ eAthena µÄ²å¼þ»úÖÆ
-[µ÷Õû] µ÷ÕûconfÄ¿Â¼ÖÐ×¢ÊÍµÄ±êµã·ûºÅ£¬³ýÁËÒýºÅÍâ£¬ÖÐÎÄ±êµã·ûºÅÍ³Ò»¸Ä³ÉÓ¢ÎÄ±êµã·ûºÅ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] å½“packet_db.txtçš„packet_db_verä¸ºautoçš„è¯, èƒ½è‡ªåŠ¨é€‰æ‹©åŒ¹é…çš„å°åŒ…ç‰ˆæœ¬
+[æ–°å¢ž] getequipexpiretick è„šæœ¬æŒ‡ä»¤, ç”¨æ¥èŽ·å¾—æŒ‡å®šä½ç½®è£…å¤‡çš„ç§Ÿèµåˆ°æœŸå‰©ä½™ç§’æ•°(å…¼å®¹SeArçš„isrentalæŒ‡ä»¤)
+[æ–°å¢ž] battleignore è„šæœ¬æŒ‡ä»¤ï¼Œå¯ç”¨æ¥è®¾ç½®çŽ©å®¶é¿å…è¢«é­”ç‰©æ”»å‡»
+[æ–°å¢ž] setrenttime è„šæœ¬æŒ‡ä»¤ï¼Œç”¨æ¥å¢žåŠ /å‡å°‘æŒ‡å®šä½ç½®è£…å¤‡çš„ç§Ÿèµæ—¶é—´(å…¼å®¹SeArçš„resumeæŒ‡ä»¤)
+[ä¿®æ­£] è®©socketå·¥ä½œåœ¨éžé˜»å¡žæ¨¡å¼, å¹¶è§£å†³åœ¨Winç³»ç»Ÿä¸Šè®¾å®šè¿žæŽ¥çš„è¶…æ—¶æ—¶é—´ä¸æ­£ç¡®çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®æ­£ rAthena é“å…·çš„ç§Ÿèµå‰©ä½™æ—¶é—´æç¤ºå¯èƒ½æ˜¾ç¤ºå¤šæ¬¡çš„é—®é¢˜
+[è°ƒæ•´] æ”¹è¿›å½“ç¨‹åºå´©æºƒæ—¶è½¬å‚¨æ–‡ä»¶çš„ç”Ÿæˆæœºåˆ¶, ä¸å†ä½¿ç”¨ eAthena çš„æ’ä»¶æœºåˆ¶
+[è°ƒæ•´] è°ƒæ•´confç›®å½•ä¸­æ³¨é‡Šçš„æ ‡ç‚¹ç¬¦å·ï¼Œé™¤äº†å¼•å·å¤–ï¼Œä¸­æ–‡æ ‡ç‚¹ç¬¦å·ç»Ÿä¸€æ”¹æˆè‹±æ–‡æ ‡ç‚¹ç¬¦å·
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.3.5(2016-04-01)
 ------------------
-[ÐÂÔö] Ôö¼Ó bonus_script_remove ½Å±¾Ö¸Áî£¬ÓÃÀ´ÒÆ³ýÖ¸¶¨µÄµ¥¸ö bonus_script (¸ÐÐ»¡°ºÃµ¶Ò»°Ñ¡±µÄ½¨Òé)
-[ÐÂÔö] ÈôIPÔÚ packet_athena.conf µÄ°×Ãûµ¥ÁÐ±íÖÐ£¬¾ÍËã¶Ô·½Æµ·±·¢ÆðÁ¬½Ó£¬Ò²²»ÏÔÊ¾ÆäDDOS¹¥»÷ºÍ¹Ø±ÕÁ¬½ÓµÄÌáÊ¾
-[ÐÞÕý] ½â¾ö inter_athena.conf ÖÐ log_db_ip µØÖ·³¬³¤Ê±±¨´íµÄÎÊÌâ (¸ÐÐ»¡°ÖÁ×ð±¦¡±·´À¡)
-[µ÷Õû] ÒÆ³ýtoolsÄ¿Â¼ÖÐ3¸öÍæ¼Ò²»ÐèÒªÊ¹ÓÃµÄperl½Å±¾ÎÄ¼þ
-[µ÷Õû] ½«Ä§ÎïÃû³ÆÏÔÊ¾µÄÌåÐÍ¡¢ÖÖ×å¡¢ÊôÐÔÎÄ±¾ÌáÈ¡µ½ÅäÖÃÎÄ¼þÖÐ, ·½±ã·±Ìå»¯ (¸ÐÐ»¡°¹Ï¹Ï¡±½¨Òé)
-[ºº»¯] ÍêÈ«ºº»¯¡°ÁÏÀíÈÎÎñ¡±, NPCÃû³Æ²Î¿¼×ÔCRO (¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] å¢žåŠ  bonus_script_remove è„šæœ¬æŒ‡ä»¤ï¼Œç”¨æ¥ç§»é™¤æŒ‡å®šçš„å•ä¸ª bonus_script (æ„Ÿè°¢â€œå¥½åˆ€ä¸€æŠŠâ€çš„å»ºè®®)
+[æ–°å¢ž] è‹¥IPåœ¨ packet_athena.conf çš„ç™½åå•åˆ—è¡¨ä¸­ï¼Œå°±ç®—å¯¹æ–¹é¢‘ç¹å‘èµ·è¿žæŽ¥ï¼Œä¹Ÿä¸æ˜¾ç¤ºå…¶DDOSæ”»å‡»å’Œå…³é—­è¿žæŽ¥çš„æç¤º
+[ä¿®æ­£] è§£å†³ inter_athena.conf ä¸­ log_db_ip åœ°å€è¶…é•¿æ—¶æŠ¥é”™çš„é—®é¢˜ (æ„Ÿè°¢â€œè‡³å°Šå®â€åé¦ˆ)
+[è°ƒæ•´] ç§»é™¤toolsç›®å½•ä¸­3ä¸ªçŽ©å®¶ä¸éœ€è¦ä½¿ç”¨çš„perlè„šæœ¬æ–‡ä»¶
+[è°ƒæ•´] å°†é­”ç‰©åç§°æ˜¾ç¤ºçš„ä½“åž‹ã€ç§æ—ã€å±žæ€§æ–‡æœ¬æå–åˆ°é…ç½®æ–‡ä»¶ä¸­, æ–¹ä¾¿ç¹ä½“åŒ– (æ„Ÿè°¢â€œç“œç“œâ€å»ºè®®)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œæ–™ç†ä»»åŠ¡â€, NPCåç§°å‚è€ƒè‡ªCRO (æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.3.4(2016-03-26)
 ------------------
-[ÐÂÔö] Ôö¼Ó status_calc ½Å±¾Ö¸Áî£¬ÓÃÀ´ÖØËãÍæ¼ÒµÄ×´Ì¬(¼æÈÝ statuscalc)
-[ÐÂÔö] Îª item_flag.txt À©³äÁËµÀ¾ß¡°²»»á±»Íæ¼ÒÊ¹ÓÃ¶øÏûºÄ¡±ºÍ¡°²»»á±»¼¼ÄÜÏûºÄ¡±µÄÁ½¸öÑ¡Ïî
+[æ–°å¢ž] å¢žåŠ  status_calc è„šæœ¬æŒ‡ä»¤ï¼Œç”¨æ¥é‡ç®—çŽ©å®¶çš„çŠ¶æ€(å…¼å®¹ statuscalc)
+[æ–°å¢ž] ä¸º item_flag.txt æ‰©å……äº†é“å…·â€œä¸ä¼šè¢«çŽ©å®¶ä½¿ç”¨è€Œæ¶ˆè€—â€å’Œâ€œä¸ä¼šè¢«æŠ€èƒ½æ¶ˆè€—â€çš„ä¸¤ä¸ªé€‰é¡¹
 
 v1.3.3(2016-03-20)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/1ca9fb58f21bd7ea3a5ea1b6f6de1b22cc086a60
-[ÐÂÔö] Ê¹ÓÃ mobinfo µØÍ¼±ê¼Ç, ¿ÉÎªÃ¿ÕÅµØÍ¼µ¥¶ÀÅäÖÃÄ§ÎïÃû³ÆÏÔÊ¾µÄ¸½¼ÓÐÅÏ¢
-[ÐÂÔö] Ê¹ÓÃ sethotkey ºÍ gethotkey ½Å±¾Ö¸ÁîÀ´ÉèÖÃºÍ»ñÈ¡¿ì½Ý¼ü (¼æÈÝ get_hotkey ºÍ set_hotkey)
-[ÐÞÕý] ÐÞÕýÊÂ¼þÑÝÊ¾½Å±¾ÖÐµÄÒ»´¦×¢ÊÍ´íÎó(¸ÐÐ»¡°Ðì¸ð¸ó¡±Ö¸³ö)
-[ÐÞÕý] ½â¾ö¡°OnSomeOneEnterChatRoom¡±ÑÝÊ¾½Å±¾ÖÐÌáµ½µÄ½Å±¾Â·¾¶´íÎóÎÊÌâ(¸ÐÐ»¡°¤®ƒÓÈ“ˆD¤¸¡±Ö¸³ö)
-[ºº»¯] ÍêÈ«ºº»¯ÒìÊÀ½çÊ×¶¼¡°°¬¶ûµÏ¿¨Ë¹ÌØ¡±µÄµçÌÝºÍ³ÇÕòNPC(¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ÍêÈ«ºº»¯ÖÐºÍ¼Á¡¢»ìºÏ¼ÁµÄÖÆ×÷ÈÎÎñ(¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ºº»¯Ê¹ÓÃ @mapinfo Ö¸ÁîµÄ»ØÏÔÐÅÏ¢
+[æ–°å¢ž] ä½¿ç”¨ mobinfo åœ°å›¾æ ‡è®°, å¯ä¸ºæ¯å¼ åœ°å›¾å•ç‹¬é…ç½®é­”ç‰©åç§°æ˜¾ç¤ºçš„é™„åŠ ä¿¡æ¯
+[æ–°å¢ž] ä½¿ç”¨ sethotkey å’Œ gethotkey è„šæœ¬æŒ‡ä»¤æ¥è®¾ç½®å’ŒèŽ·å–å¿«æ·é”® (å…¼å®¹ get_hotkey å’Œ set_hotkey)
+[ä¿®æ­£] ä¿®æ­£äº‹ä»¶æ¼”ç¤ºè„šæœ¬ä¸­çš„ä¸€å¤„æ³¨é‡Šé”™è¯¯(æ„Ÿè°¢â€œå¾è‘›é˜â€æŒ‡å‡º)
+[ä¿®æ­£] è§£å†³â€œOnSomeOneEnterChatRoomâ€æ¼”ç¤ºè„šæœ¬ä¸­æåˆ°çš„è„šæœ¬è·¯å¾„é”™è¯¯é—®é¢˜(æ„Ÿè°¢â€œãŽå†‡è‘¥åœ–ã˜â€æŒ‡å‡º)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å¼‚ä¸–ç•Œé¦–éƒ½â€œè‰¾å°”è¿ªå¡æ–¯ç‰¹â€çš„ç”µæ¢¯å’ŒåŸŽé•‡NPC(æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä¸­å’Œå‰‚ã€æ··åˆå‰‚çš„åˆ¶ä½œä»»åŠ¡(æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] æ±‰åŒ–ä½¿ç”¨ @mapinfo æŒ‡ä»¤çš„å›žæ˜¾ä¿¡æ¯
 
 v1.3.2(2016-03-11)
 ------------------
-[ÐÂÔö] ÏÖÔÚ³Ë×ø¡°ÉÌ³Ç×øÆï¡±Ò²¿ÉÒÔÊ¹ÓÃ²ÔÓ¬³á°òµÈÀàÐÍÎª11µÄ¡°ÑÓ³ÙÏûºÄÀàÎïÆ·¡±
-[ÐÂÔö] ÔÚ conf/battle/extend.conf ÖÐµÄ cash_mounting_use_item_limit Ñ¡ÏîÒ²¿ÉÒÔ¶Ô 11 ÀàÐÍµÄµÀ¾ß½øÐÐÏÞÖÆ
-[ÐÂÔö] ÈÃ@recallÃüÁî(Ò²Ö»ÓÐ@recallÃüÁî)¿ÉÒÔÕÙ»½ÀëÏß¹ÒµêµÄÍæ¼Ò(·½±ãÅ²¶¯ËûÃÇµÄÎ»ÖÃ)
-[ÐÞÕý] ½â¾öitem_flagÖÐÅäÖÃµÄÎïÆ·µôÂä¹«¸æÄ§ÎïÃû³ÆÊ¼ÖÕÎªÓ¢ÎÄµÄÎÊÌâ(¸ÐÐ»¡°ÒÀÈ»ìáÂäÔM¡±·´À¡)
-[ÐÞÕý] ½â¾ö rare_drop_announce Ñ¡ÏîÎÞÐ§µÄÎÊÌâ(¸ÐÐ»¡°ÒÀÈ»ìáÂäÔM¡±·´À¡)
-[ºº»¯] ºº»¯ conf/battle/pet.conf ÖÐÁ½¸öÑ¡ÏîµÄËµÃ÷ (¸ÐÐ»¡°BOOGIEJIA¡±Ð­Öú)
-[ºº»¯] ºº»¯ conf/battle/player.conf ÖÐµÄ2¸öÑ¡ÏîËµÃ÷
-[ºº»¯] ºº»¯Î»ÓÚ¡°alberta,26,229¡±µÄÍÃ¶ú·¢È¦ÈÎÎñNPC (¸ÐÐ»¡°ÑîÃ·¡±·­Òë)
+[æ–°å¢ž] çŽ°åœ¨ä¹˜åâ€œå•†åŸŽåéª‘â€ä¹Ÿå¯ä»¥ä½¿ç”¨è‹è‡ç¿…è†€ç­‰ç±»åž‹ä¸º11çš„â€œå»¶è¿Ÿæ¶ˆè€—ç±»ç‰©å“â€
+[æ–°å¢ž] åœ¨ conf/battle/extend.conf ä¸­çš„ cash_mounting_use_item_limit é€‰é¡¹ä¹Ÿå¯ä»¥å¯¹ 11 ç±»åž‹çš„é“å…·è¿›è¡Œé™åˆ¶
+[æ–°å¢ž] è®©@recallå‘½ä»¤(ä¹Ÿåªæœ‰@recallå‘½ä»¤)å¯ä»¥å¬å”¤ç¦»çº¿æŒ‚åº—çš„çŽ©å®¶(æ–¹ä¾¿æŒªåŠ¨ä»–ä»¬çš„ä½ç½®)
+[ä¿®æ­£] è§£å†³item_flagä¸­é…ç½®çš„ç‰©å“æŽ‰è½å…¬å‘Šé­”ç‰©åç§°å§‹ç»ˆä¸ºè‹±æ–‡çš„é—®é¢˜(æ„Ÿè°¢â€œä¾ç„¶ç¬è½è¨«â€åé¦ˆ)
+[ä¿®æ­£] è§£å†³ rare_drop_announce é€‰é¡¹æ— æ•ˆçš„é—®é¢˜(æ„Ÿè°¢â€œä¾ç„¶ç¬è½è¨«â€åé¦ˆ)
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/pet.conf ä¸­ä¸¤ä¸ªé€‰é¡¹çš„è¯´æ˜Ž (æ„Ÿè°¢â€œBOOGIEJIAâ€ååŠ©)
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/player.conf ä¸­çš„2ä¸ªé€‰é¡¹è¯´æ˜Ž
+[æ±‰åŒ–] æ±‰åŒ–ä½äºŽâ€œalberta,26,229â€çš„å…”è€³å‘åœˆä»»åŠ¡NPC (æ„Ÿè°¢â€œæ¨æ¢…â€ç¿»è¯‘)
 
 v1.3.1(2016-03-04)
 ------------------
-[ÐÂÔö] ÐÂÔö nocapture µØÍ¼±ê¼Ç£¬¿ÉÒÔ·ÀÖ¹Íæ¼Ò²¶×½³èÎï(½ûÖ¹Ê¹ÓÃÊ±, ²»»á¿Û³ý²¶×½µÀ¾ß)
-[ÐÂÔö] Í¨¹ýmonster½Å±¾Ö¸ÁîÕÙ»½³ö°ó¶¨ÁËËÀÍöÊÂ¼þµÄÄ§Îïºó£¬Ä§ÎïËÀÍöÒ²¿ÉÒÔ»ñµÃÄ§ÎïµÄËÀÍö×ø±ê
-[ÐÂÔö] Ê¹haltÖ§³Ö¡°OnPCChangeTitleEvent¡±ÊÂ¼þ£¬ÏÖÔÚË«»÷×°±¸´°¿ÚµÄ¡°Title Release¡±»áÓÐÊ¾Àý½Å±¾
-[ÐÂÔö] ÐÂÔö noautoloot µØÍ¼±ê¼Ç£¬¿ÉÒÔ½ûÖ¹ÔÚÌØ¶¨µØÍ¼ÉÏÊ¹ÓÃ¡°×Ô¶¯Ê°È¡¡±»úÖÆ
-[ºº»¯] ºº»¯¸´ÐËÇ°Óë¸´ÐËºó°¬¶û±´Ëþ¸Û¿Ú´¦µÄNPCÃû³Æ (¸ÐÐ»¡°ÑîÃ·¡±·­Òë)
+[æ–°å¢ž] æ–°å¢ž nocapture åœ°å›¾æ ‡è®°ï¼Œå¯ä»¥é˜²æ­¢çŽ©å®¶æ•æ‰å® ç‰©(ç¦æ­¢ä½¿ç”¨æ—¶, ä¸ä¼šæ‰£é™¤æ•æ‰é“å…·)
+[æ–°å¢ž] é€šè¿‡monsterè„šæœ¬æŒ‡ä»¤å¬å”¤å‡ºç»‘å®šäº†æ­»äº¡äº‹ä»¶çš„é­”ç‰©åŽï¼Œé­”ç‰©æ­»äº¡ä¹Ÿå¯ä»¥èŽ·å¾—é­”ç‰©çš„æ­»äº¡åæ ‡
+[æ–°å¢ž] ä½¿haltæ”¯æŒâ€œOnPCChangeTitleEventâ€äº‹ä»¶ï¼ŒçŽ°åœ¨åŒå‡»è£…å¤‡çª—å£çš„â€œTitle Releaseâ€ä¼šæœ‰ç¤ºä¾‹è„šæœ¬
+[æ–°å¢ž] æ–°å¢ž noautoloot åœ°å›¾æ ‡è®°ï¼Œå¯ä»¥ç¦æ­¢åœ¨ç‰¹å®šåœ°å›¾ä¸Šä½¿ç”¨â€œè‡ªåŠ¨æ‹¾å–â€æœºåˆ¶
+[æ±‰åŒ–] æ±‰åŒ–å¤å…´å‰ä¸Žå¤å…´åŽè‰¾å°”è´å¡”æ¸¯å£å¤„çš„NPCåç§° (æ„Ÿè°¢â€œæ¨æ¢…â€ç¿»è¯‘)
 
 v1.3.0(2016-02-26)
 ------------------
-[ÐÂÔö] ÊµÏÖ2015¿Í»§¶ËµÄ³ÆºÅ»úÖÆ(²¿·ÖÊµ×°, µ«ÒÑ¹»ÓÃ), Ïê¼û npc/racn/demo/racn_title.txt
-[ÐÂÔö] ÐÂÔö³ÆºÅ±ä¸üÊÂ¼þ¡°OnPCChangeTitleEvent¡±, Ïê¼û npc/racn/demo/racn_events.txt
-[ÐÂÔö] ÐÂÔö¡°@recallmap¡±Ö¸Áî£¬ÓÃÀ´ÕÙ»½µ±Ç°µØÍ¼µÄÍæ¼Ò
-[ÐÂÔö] ÐÂÔö¡°notoken¡±µØÍ¼±ê¼Ç£¬ÓÃÀ´½ûÖ¹ÔÚÄ³µØÍ¼ÉÏÊ¹ÓÃ¡°²»ËÀÖ®Ö¤¡±½øÐÐÔ­µØ¸´»î
-[ÐÂÔö] ´¥·¢OnNPCKillEventÊÂ¼þÊ±£¬ÄÜÍ¨¹ý@mob_dead_xºÍ@mob_dead_y»ñÈ¡Ä§ÎïËÀÍöÊ±µÄ×ø±ê
-[ÐÂÔö] Ö§³ÖÊ¹ÓÃ @bodystyle ÉèÖÃ¡°»Ê¼ÒÎÀÊ¿¡±µÄ·þ×°·ç¸ñ(ÇëÅäºÏ¾ßÓÐÏà¹ØÍ¼µµµÄ¿Í»§¶ËÊ¹ÓÃ)
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾öÓÉÓÚ instance_db µ¼ÖÂµÄÒ»¸öÄÚ´æÐ¹Â¶ÎÊÌâ (¸ÐÐ»¡°CK¡±·´À¡)
-[ÐÞÕý] À©´óµØÃæ¼¼ÄÜ¼ÆÊ±Æ÷µÄÈÝÁ¿, ½µµÍ¡°tickset is full¡±µÄ±¨´í¸ÅÂÊ (¸ÐÐ»¡°¡ï¨rß÷Ááƒº¡¨¡î¡±Ö¸³ö)
-[ºº»¯] ÓÅ»¯¡°hide_woe_damage¡±Ñ¡ÏîµÄÃèÊö
-[ºº»¯] ÓÅ»¯ conf/login_athena.conf ÖÐ¼¸¸öÑ¡ÏîµÄÃèÊö
-[ºº»¯] ÍêÈ«ºº»¯¡°¸±±¾Êý¾Ý¿â¡±µÄËµÃ÷ db/[pre-]re/instance_db.txt
-[ºº»¯] ÍêÈ«ºº»¯¡°ÎïÆ·¶ÑµþÏÞÖÆÊý¾Ý¿â¡±µÄËµÃ÷ db/item_stack.txt
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
-[µ÷Õû] µ÷Õû rAthenaCN ¿ª·¢ÍÅ¶Ó×«Ð´µÄÊ¾Àý½Å±¾´æ·ÅÎ»ÖÃµ½ npc/racn Ä¿Â¼ÖÐ
+[æ–°å¢ž] å®žçŽ°2015å®¢æˆ·ç«¯çš„ç§°å·æœºåˆ¶(éƒ¨åˆ†å®žè£…, ä½†å·²å¤Ÿç”¨), è¯¦è§ npc/racn/demo/racn_title.txt
+[æ–°å¢ž] æ–°å¢žç§°å·å˜æ›´äº‹ä»¶â€œOnPCChangeTitleEventâ€, è¯¦è§ npc/racn/demo/racn_events.txt
+[æ–°å¢ž] æ–°å¢žâ€œ@recallmapâ€æŒ‡ä»¤ï¼Œç”¨æ¥å¬å”¤å½“å‰åœ°å›¾çš„çŽ©å®¶
+[æ–°å¢ž] æ–°å¢žâ€œnotokenâ€åœ°å›¾æ ‡è®°ï¼Œç”¨æ¥ç¦æ­¢åœ¨æŸåœ°å›¾ä¸Šä½¿ç”¨â€œä¸æ­»ä¹‹è¯â€è¿›è¡ŒåŽŸåœ°å¤æ´»
+[æ–°å¢ž] è§¦å‘OnNPCKillEventäº‹ä»¶æ—¶ï¼Œèƒ½é€šè¿‡@mob_dead_xå’Œ@mob_dead_yèŽ·å–é­”ç‰©æ­»äº¡æ—¶çš„åæ ‡
+[æ–°å¢ž] æ”¯æŒä½¿ç”¨ @bodystyle è®¾ç½®â€œçš‡å®¶å«å£«â€çš„æœè£…é£Žæ ¼(è¯·é…åˆå…·æœ‰ç›¸å…³å›¾æ¡£çš„å®¢æˆ·ç«¯ä½¿ç”¨)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³ç”±äºŽ instance_db å¯¼è‡´çš„ä¸€ä¸ªå†…å­˜æ³„éœ²é—®é¢˜ (æ„Ÿè°¢â€œCKâ€åé¦ˆ)
+[ä¿®æ­£] æ‰©å¤§åœ°é¢æŠ€èƒ½è®¡æ—¶å™¨çš„å®¹é‡, é™ä½Žâ€œtickset is fullâ€çš„æŠ¥é”™æ¦‚çŽ‡ (æ„Ÿè°¢â€œâ˜…â•®å–µçŽ²å…’ã€ƒâ˜†â€æŒ‡å‡º)
+[æ±‰åŒ–] ä¼˜åŒ–â€œhide_woe_damageâ€é€‰é¡¹çš„æè¿°
+[æ±‰åŒ–] ä¼˜åŒ– conf/login_athena.conf ä¸­å‡ ä¸ªé€‰é¡¹çš„æè¿°
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå‰¯æœ¬æ•°æ®åº“â€çš„è¯´æ˜Ž db/[pre-]re/instance_db.txt
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œç‰©å“å †å é™åˆ¶æ•°æ®åº“â€çš„è¯´æ˜Ž db/item_stack.txt
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
+[è°ƒæ•´] è°ƒæ•´ rAthenaCN å¼€å‘å›¢é˜Ÿæ’°å†™çš„ç¤ºä¾‹è„šæœ¬å­˜æ”¾ä½ç½®åˆ° npc/racn ç›®å½•ä¸­
 
 v1.2.9(2016-02-21)
 ------------------
-[µ÷Õû] ½â¾ö¿ªÆôVIP»úÖÆµÄÇé¿öÏÂ, ¶¨ÖÆ²Ö¿âÈÝÁ¿´íÎóµÄÎÊÌâ(¸ÐÐ»¡°ºÃµ¶Ò»°Ñ¡±·´À¡)
+[è°ƒæ•´] è§£å†³å¼€å¯VIPæœºåˆ¶çš„æƒ…å†µä¸‹, å®šåˆ¶ä»“åº“å®¹é‡é”™è¯¯çš„é—®é¢˜(æ„Ÿè°¢â€œå¥½åˆ€ä¸€æŠŠâ€åé¦ˆ)
 
 v1.2.8(2016-02-18)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/9f0ae128247f070eb15eff74f28b25d0e8474e0e
-[ÐÂÔö] ÐÂÔö @adopt Ö¸Áî£¬¿É¶ÔÖ¸¶¨Íæ¼Ò·¢ÆðÁìÑøÇëÇó(½â¾ö2015¿Í»§¶ËÎÞ·¨³öÏÖÁìÑø²Ëµ¥µÄÁÙÊ±·½°¸)
-[ÐÂÔö] ÐÂÔö¡°script4each¡±½Å±¾Ö¸Áî£¬¶ÔÖ¸¶¨·¶Î§µÄÍæ¼ÒÖ´ÐÐÏàÍ¬µÄÒ»¶Î½Å±¾
-[ÐÂÔö] ÈôÃ»ÓÐ×Ô¶¨Òå¿Í»§¶Ë°æ±¾µÄ»°£¬ÖÕ¶ËÄÜ¹»ÏÔÊ¾³öÏÖÔÚ³ÌÐòÅäÌ×µÄ¿Í»§¶Ë°æ±¾ÊÇ¶àÉÙ
-[ÐÂÔö] µ±Ã»ÓÐÈ¨ÏÞµÄÍæ¼ÒÖ´ÐÐÁËGMÖ¸ÁîÊ±, Ä¬ÈÏ²»»á½«ÏûÏ¢·¢³öÈ¥(¸ÐÐ»¡°ÌìÍÃ-´ó»µ¡±µÄ½¨Òé)
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¹«»áÈËÊýÉÏÏÞºÍ¡°À©³ä×éºÏÌåÖÆ¡±Ã¿¼¶ÌáÉýµÄÈËÊý
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°ÉùÍûÁÐ±íµÄ³¤¶ÈÉÏÏÞ¡±
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°Ä§ÎïÊý¾Ý¿âµÄIDÉÏÏÞ¡±
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°²Ö¿â¿É´æ·ÅµÄÎïÆ·ÖÖÀàÉÏÏÞ¡±
-[ÐÞÕý] rAthena¹Ù·½BUG: ÆôÓÃVIP»úÖÆºó£¬Ö»ÓÐµÇÂ¼Ê±²Å»áÏÔÊ¾±¶ÂÊÐÅÏ¢£¬¹ýÍ¼²»ÔÙÏÔÊ¾
-[ÐÞÕý] rAthena¹Ù·½BUG: µ± bone_drop Îª 2 Ê±£¬ËÀÍö²»»áµô÷¼÷ÃÍ·µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾ö item_cash_db.txt ÖÐ×Ö¶Î²»×ãÊ±£¬»áµ¼ÖÂµØÍ¼·þÎñÆ÷±ÀÀ£µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃ¡°¶¨Î»ÏÝÚå¡±×½×¡Íæ¼Ò»òÄ§ÎïµÄ»°£¬×î¶Ì¶¨Î»Ê±³¤ÐÞÕýÎª4Ãë(Ö®Ç°ÊÇ5Ãë).
-[ÐÞÕý] ½â¾ö¡°¶¨Î»ÏÝÚå¡±×¥×¡Íæ¼Òºó, ¶¨Î»µÄ³ÖÐøÊ±¼äÒì³£ÎÊÌâ(¸ÐÐ»¡°ÌìÍÃ-´ó»µ¡±·´À¡)
-[ÐÞÕý] ½â¾ö @refreshnpc ºÍ @unloadnpcfile ÎÞ·¨´¦Àí´¿function½Å±¾ÎÄ¼þµÄÎÊÌâ.
-[ÐÞÕý] ÓÅ»¯±ÀÀ£´¦ÀíÂß¼­£¬Ê¹·þÎñ¶ËÔÚ±ÀÀ£ºó¿ÉÒÔ×öÒ»Ð©°²È«´¦Àí
-[ºº»¯] ÍêÈ«ºº»¯¡°×´Ì¬½ûÓÃÊý¾Ý¿â¡±µÄËµÃ÷ db/status_disabled.txt (rAthenaÐÂÔöµÄÒ»¸öÊý¾Ý¿â)
-[ºº»¯] ÍêÈ«ºº»¯Î»ÓÚ¡°payon,173,141¡±µÄ¡°ÖØÁ¦Ê¥ÈË¡±
-[ºº»¯] ÍêÈ«ºº»¯³öÈëÉîÔ¨Ö®ºþÖÐÑëµÄÏà¹ØNPC (¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ÍêÈ«ºº»¯´Ó¡°ÀïÏ£ËþÀÖÕòÆ¶ÃñÇø¡±½øÈë¡°ÑÐ¾¿Ëù¡±µÄÏÂË®µÀ¹Ü¶Ô»° (¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ÍêÈ«ºº»¯GVG¹¥³Ç½Å±¾ÖÐ¡°³Ç±¤¹ÜÀíÔ±¡±µÄÐÕÃû(¸ÐÐ»¡°±ý±ý Wing075¡±Ö¸³ö)
-[ºº»¯] ÍêÈ«ºº»¯Ò»Ð©¸´ÐËºóÐÂ³ÇÕòµÄ¿¨ÆÕÀ­Ö°Ô±(¸ÐÐ»¡°±ý±ý Wing075¡±Ö¸³ö)
-[ºº»¯] ÍêÈ«ºº»¯¿¨ÆÕÀ­ÒÆ¶¯²Ö¿âÊ¹ÓÃÈ¯µÄ¶Ô»°£¬ÒÔ¼°´«ËÍ¾íÖáµÄÄ¿µÄµØÃû³Æ(¸ÐÐ»¡°±ý±ý Wing075¡±·ÖÏí)
-[ºº»¯] ´Ö²Úºº»¯ÁËÍ¼Êé¹ÝµÄ¶Ô»°ÄÚÈÝºÍ¸÷³ÇÊÐµÄ¿´°å (¸ÐÐ»¡°ÑîÃ·¡±ºº»¯)
-[ºº»¯] ºº»¯2015-08ÔÂ·Ý¿Í»§¶ËÖÐ£¬ÉÌÈËÐÂÔöµÄ¡°×°ÊÎÊÖÍÆ³µ¡±¼¼ÄÜ£¬¼¼ÄÜ±àºÅÎª2544
-[ºº»¯] ºº»¯ battle Ä¿Â¼ÖÐ 18 ¸öÑ¡ÏîµÄÊ¹ÓÃËµÃ÷
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
-[µ÷Õû] ÒÆ³ýËùÓÐÎ´±»´Ö²Úºº»¯µÄ½Å±¾, ±ÜÃâ rough Ä¿Â¼¹ý¶ÈÓ·Ö×ÖØ¸´
-[µ÷Õû] Í³Ò»²¿·ÖµØÍ¼Ãû³ÆµÄ½Ð·¨(±ÈÈç¡°ÒÁË¹Â³µÂµº¡±Í³Ò»³É¡°ÒÀË¹Â³µÃµº¡±)
-[µ÷Õû] ÓÅ»¯¡°ÉùÍûÁÐ±íµÄ³¤¶ÈÉèÖÃ¡±µÄËµÃ÷£¬¸ÐÐ»¡°ÀÁÒ»±²×Ó¡±Ö¸³ö´íÎó
-[µ÷Õû] ÓÅ»¯¿¨ÆÕÀ­Ö°Ô±µÄ¶Ô»°ÄÚÈÝ
-[µ÷Õû] ¹éÒ»´¦Àí, ¡°ËØÖÊµãÊý¡±Í³Ò»ºº»¯»»³É¡°ÄÜÁ¦µãÊý¡±
-[µ÷Õû] ÓÅ»¯ battle/guild.conf ÖÐ²¿·ÖÑ¡ÏîµÄËµÃ÷
-[µ÷Õû] µ÷Õû¡°ÔªËØÊôÐÔÉËº¦µ÷ÕûÊý¾Ý¿â¡±µÄÖÐÎÄ¶ººÅ, ¸ÄÓÃÓ¢ÎÄ¶ººÅ
-[¸ÐÐ»] ¸ÐÐ»¡°ÑîÃ·¡±ºÍ¡°±ý±ý Wing075¡±¶Ô rAthenaCN µÄ¹±Ï×£¬ÒÑÁÐÈë¡°rAthenaCN ×÷ÕßÃûµ¥¡±
+[æ–°å¢ž] æ–°å¢ž @adopt æŒ‡ä»¤ï¼Œå¯å¯¹æŒ‡å®šçŽ©å®¶å‘èµ·é¢†å…»è¯·æ±‚(è§£å†³2015å®¢æˆ·ç«¯æ— æ³•å‡ºçŽ°é¢†å…»èœå•çš„ä¸´æ—¶æ–¹æ¡ˆ)
+[æ–°å¢ž] æ–°å¢žâ€œscript4eachâ€è„šæœ¬æŒ‡ä»¤ï¼Œå¯¹æŒ‡å®šèŒƒå›´çš„çŽ©å®¶æ‰§è¡Œç›¸åŒçš„ä¸€æ®µè„šæœ¬
+[æ–°å¢ž] è‹¥æ²¡æœ‰è‡ªå®šä¹‰å®¢æˆ·ç«¯ç‰ˆæœ¬çš„è¯ï¼Œç»ˆç«¯èƒ½å¤Ÿæ˜¾ç¤ºå‡ºçŽ°åœ¨ç¨‹åºé…å¥—çš„å®¢æˆ·ç«¯ç‰ˆæœ¬æ˜¯å¤šå°‘
+[æ–°å¢ž] å½“æ²¡æœ‰æƒé™çš„çŽ©å®¶æ‰§è¡Œäº†GMæŒ‡ä»¤æ—¶, é»˜è®¤ä¸ä¼šå°†æ¶ˆæ¯å‘å‡ºåŽ»(æ„Ÿè°¢â€œå¤©å…”-å¤§åâ€çš„å»ºè®®)
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶å…¬ä¼šäººæ•°ä¸Šé™å’Œâ€œæ‰©å……ç»„åˆä½“åˆ¶â€æ¯çº§æå‡çš„äººæ•°
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œå£°æœ›åˆ—è¡¨çš„é•¿åº¦ä¸Šé™â€
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œé­”ç‰©æ•°æ®åº“çš„IDä¸Šé™â€
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œä»“åº“å¯å­˜æ”¾çš„ç‰©å“ç§ç±»ä¸Šé™â€
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å¯ç”¨VIPæœºåˆ¶åŽï¼Œåªæœ‰ç™»å½•æ—¶æ‰ä¼šæ˜¾ç¤ºå€çŽ‡ä¿¡æ¯ï¼Œè¿‡å›¾ä¸å†æ˜¾ç¤º
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å½“ bone_drop ä¸º 2 æ—¶ï¼Œæ­»äº¡ä¸ä¼šæŽ‰éª·é«…å¤´çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³ item_cash_db.txt ä¸­å­—æ®µä¸è¶³æ—¶ï¼Œä¼šå¯¼è‡´åœ°å›¾æœåŠ¡å™¨å´©æºƒçš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨â€œå®šä½é™·é˜±â€æ‰ä½çŽ©å®¶æˆ–é­”ç‰©çš„è¯ï¼Œæœ€çŸ­å®šä½æ—¶é•¿ä¿®æ­£ä¸º4ç§’(ä¹‹å‰æ˜¯5ç§’).
+[ä¿®æ­£] è§£å†³â€œå®šä½é™·é˜±â€æŠ“ä½çŽ©å®¶åŽ, å®šä½çš„æŒç»­æ—¶é—´å¼‚å¸¸é—®é¢˜(æ„Ÿè°¢â€œå¤©å…”-å¤§åâ€åé¦ˆ)
+[ä¿®æ­£] è§£å†³ @refreshnpc å’Œ @unloadnpcfile æ— æ³•å¤„ç†çº¯functionè„šæœ¬æ–‡ä»¶çš„é—®é¢˜.
+[ä¿®æ­£] ä¼˜åŒ–å´©æºƒå¤„ç†é€»è¾‘ï¼Œä½¿æœåŠ¡ç«¯åœ¨å´©æºƒåŽå¯ä»¥åšä¸€äº›å®‰å…¨å¤„ç†
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œçŠ¶æ€ç¦ç”¨æ•°æ®åº“â€çš„è¯´æ˜Ž db/status_disabled.txt (rAthenaæ–°å¢žçš„ä¸€ä¸ªæ•°æ®åº“)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä½äºŽâ€œpayon,173,141â€çš„â€œé‡åŠ›åœ£äººâ€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å‡ºå…¥æ·±æ¸Šä¹‹æ¹–ä¸­å¤®çš„ç›¸å…³NPC (æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä»Žâ€œé‡Œå¸Œå¡”ä¹é•‡è´«æ°‘åŒºâ€è¿›å…¥â€œç ”ç©¶æ‰€â€çš„ä¸‹æ°´é“ç®¡å¯¹è¯ (æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–GVGæ”»åŸŽè„šæœ¬ä¸­â€œåŸŽå ¡ç®¡ç†å‘˜â€çš„å§“å(æ„Ÿè°¢â€œé¥¼é¥¼ Wing075â€æŒ‡å‡º)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä¸€äº›å¤å…´åŽæ–°åŸŽé•‡çš„å¡æ™®æ‹‰èŒå‘˜(æ„Ÿè°¢â€œé¥¼é¥¼ Wing075â€æŒ‡å‡º)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å¡æ™®æ‹‰ç§»åŠ¨ä»“åº“ä½¿ç”¨åˆ¸çš„å¯¹è¯ï¼Œä»¥åŠä¼ é€å·è½´çš„ç›®çš„åœ°åç§°(æ„Ÿè°¢â€œé¥¼é¥¼ Wing075â€åˆ†äº«)
+[æ±‰åŒ–] ç²—ç³™æ±‰åŒ–äº†å›¾ä¹¦é¦†çš„å¯¹è¯å†…å®¹å’Œå„åŸŽå¸‚çš„çœ‹æ¿ (æ„Ÿè°¢â€œæ¨æ¢…â€æ±‰åŒ–)
+[æ±‰åŒ–] æ±‰åŒ–2015-08æœˆä»½å®¢æˆ·ç«¯ä¸­ï¼Œå•†äººæ–°å¢žçš„â€œè£…é¥°æ‰‹æŽ¨è½¦â€æŠ€èƒ½ï¼ŒæŠ€èƒ½ç¼–å·ä¸º2544
+[æ±‰åŒ–] æ±‰åŒ– battle ç›®å½•ä¸­ 18 ä¸ªé€‰é¡¹çš„ä½¿ç”¨è¯´æ˜Ž
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
+[è°ƒæ•´] ç§»é™¤æ‰€æœ‰æœªè¢«ç²—ç³™æ±‰åŒ–çš„è„šæœ¬, é¿å… rough ç›®å½•è¿‡åº¦è‡ƒè‚¿é‡å¤
+[è°ƒæ•´] ç»Ÿä¸€éƒ¨åˆ†åœ°å›¾åç§°çš„å«æ³•(æ¯”å¦‚â€œä¼Šæ–¯é²å¾·å²›â€ç»Ÿä¸€æˆâ€œä¾æ–¯é²å¾—å²›â€)
+[è°ƒæ•´] ä¼˜åŒ–â€œå£°æœ›åˆ—è¡¨çš„é•¿åº¦è®¾ç½®â€çš„è¯´æ˜Žï¼Œæ„Ÿè°¢â€œæ‡’ä¸€è¾ˆå­â€æŒ‡å‡ºé”™è¯¯
+[è°ƒæ•´] ä¼˜åŒ–å¡æ™®æ‹‰èŒå‘˜çš„å¯¹è¯å†…å®¹
+[è°ƒæ•´] å½’ä¸€å¤„ç†, â€œç´ è´¨ç‚¹æ•°â€ç»Ÿä¸€æ±‰åŒ–æ¢æˆâ€œèƒ½åŠ›ç‚¹æ•°â€
+[è°ƒæ•´] ä¼˜åŒ– battle/guild.conf ä¸­éƒ¨åˆ†é€‰é¡¹çš„è¯´æ˜Ž
+[è°ƒæ•´] è°ƒæ•´â€œå…ƒç´ å±žæ€§ä¼¤å®³è°ƒæ•´æ•°æ®åº“â€çš„ä¸­æ–‡é€—å·, æ”¹ç”¨è‹±æ–‡é€—å·
+[æ„Ÿè°¢] æ„Ÿè°¢â€œæ¨æ¢…â€å’Œâ€œé¥¼é¥¼ Wing075â€å¯¹ rAthenaCN çš„è´¡çŒ®ï¼Œå·²åˆ—å…¥â€œrAthenaCN ä½œè€…åå•â€
 
 v1.2.7(2016-01-28)
 ------------------
-[ÐÞÕý] v1.2.6 °æ±¾´æÔÚÓÃÊÖÍÆ³µË¢µÀ¾ßµÄ¿ÉÄÜÐÔ(¸ÐÐ» °¢Éñ¡¦ ·´À¡)
+[ä¿®æ­£] v1.2.6 ç‰ˆæœ¬å­˜åœ¨ç”¨æ‰‹æŽ¨è½¦åˆ·é“å…·çš„å¯èƒ½æ€§(æ„Ÿè°¢ é˜¿ç¥žË‡ åé¦ˆ)
 
 v1.2.6(2016-01-23)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/30395fa9cf607cd30dcbb098ba014675d16d8a2a
-[ÐÂÔö] ÐÂÔö@refreshnpcÖ¸Áî£¬¿ÉÒÔÖ¸¶¨Ë¢ÐÂÄ³Ò»¸öNPCÎÄ¼þ
-[ÐÞÕý] rAthena¹Ù·½BUG: ·þÎñ¶ËÔËÐÐÊ±£¬MySQLµôÏßÖØÁ¬ºó´øÀ´µÄ±àÂë´íÂÒÎÊÌâ(¸ÐÐ» ×ÏÔÂ-´ó»µ ·´À¡)
-[ÐÞÕý] rAthena¹Ù·½BUG: ·Åµ½ÊÖÍÆ³µµÄÎïÆ·²»ÄÜÁ¢¿Ì¹Òµê³öÊÛ£¬±ØÐëÐ¡ÍËÖ®ºó²Å¿ÉÒÔµÄÎÊÌâ
-[µ÷Õû] ½« 192.168 ¿ªÍ·µÄIPµØÖ·ºÍ 127.0.0.1 Ä¬ÈÏ·ÅÈëDDOS°×Ãûµ¥
-[ºº»¯] ºº»¯Ê¹ÓÃ@unloadnpcfileÖ¸ÁîµÄ»ØÏÔÐÅÏ¢
-[ºº»¯] ºº»¯Ê¹ÓÃ@mapflagÖ¸ÁîµÄ»ØÏÔÐÅÏ¢
+[æ–°å¢ž] æ–°å¢ž@refreshnpcæŒ‡ä»¤ï¼Œå¯ä»¥æŒ‡å®šåˆ·æ–°æŸä¸€ä¸ªNPCæ–‡ä»¶
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: æœåŠ¡ç«¯è¿è¡Œæ—¶ï¼ŒMySQLæŽ‰çº¿é‡è¿žåŽå¸¦æ¥çš„ç¼–ç é”™ä¹±é—®é¢˜(æ„Ÿè°¢ ç´«æœˆ-å¤§å åé¦ˆ)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: æ”¾åˆ°æ‰‹æŽ¨è½¦çš„ç‰©å“ä¸èƒ½ç«‹åˆ»æŒ‚åº—å‡ºå”®ï¼Œå¿…é¡»å°é€€ä¹‹åŽæ‰å¯ä»¥çš„é—®é¢˜
+[è°ƒæ•´] å°† 192.168 å¼€å¤´çš„IPåœ°å€å’Œ 127.0.0.1 é»˜è®¤æ”¾å…¥DDOSç™½åå•
+[æ±‰åŒ–] æ±‰åŒ–ä½¿ç”¨@unloadnpcfileæŒ‡ä»¤çš„å›žæ˜¾ä¿¡æ¯
+[æ±‰åŒ–] æ±‰åŒ–ä½¿ç”¨@mapflagæŒ‡ä»¤çš„å›žæ˜¾ä¿¡æ¯
 
 v1.2.5(2016-01-15)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/3a8aac4fb0d4ce56b6057facd35ba3579b78ed7a
-[ÐÞÕý] ÐÞÕý¶¨ÖÆ¡°×Ô¶¯Ê°È¡µÄÎïÆ·Çåµ¥ÉÏÏÞ¡±³¬¹ý256Ö®ºó£¬´òËÀÄ§ÎïµôÂäÎïÆ·Ê±µØÍ¼·þÎñÆ÷»á¼ÙËÀµÄÎÊÌâ(¸ÐÐ»¿ÉÀÖ¼¦³á)
-[µ÷Õû] µ÷ÕûÒ»ÏÂ conf/packet_athena.conf ÖÐµÄËµÃ÷
-[ºº»¯] ÐÞ¸Ä conf/battle/client.conf Óë¡°·þ×°·ç¸ñ¡±ÓÐ¹ØµÄÑ¡ÏîÃèÊö
+[ä¿®æ­£] ä¿®æ­£å®šåˆ¶â€œè‡ªåŠ¨æ‹¾å–çš„ç‰©å“æ¸…å•ä¸Šé™â€è¶…è¿‡256ä¹‹åŽï¼Œæ‰“æ­»é­”ç‰©æŽ‰è½ç‰©å“æ—¶åœ°å›¾æœåŠ¡å™¨ä¼šå‡æ­»çš„é—®é¢˜(æ„Ÿè°¢å¯ä¹é¸¡ç¿…)
+[è°ƒæ•´] è°ƒæ•´ä¸€ä¸‹ conf/packet_athena.conf ä¸­çš„è¯´æ˜Ž
+[æ±‰åŒ–] ä¿®æ”¹ conf/battle/client.conf ä¸Žâ€œæœè£…é£Žæ ¼â€æœ‰å…³çš„é€‰é¡¹æè¿°
 
 v1.2.4(2016-01-13)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/88d2cd7cfd2fe0516b926cd568a39b9bf0d3cfbe
-[ËµÃ÷] v1.2.3°æ±¾ÖÐÍâ¹úÈË¸ã»µÁËÒ»¸ö»ù´¡¹¦ÄÜ£¬ÍÆ¼ö¶¼Éý¼¶µ½v1.2.4ÉÏÀ´
-[ËµÃ÷] ´Óv1.2.4¿ªÊ¼£¬Ö§³Ödressroom»úÖÆ£¬²»¹ý¿Í»§¶Ë°æ±¾ºÅÐèÒª´óÓÚµÈÓÚ20150513£¬ÇÒÊý¾ÝÎÄ¼þÒªÖ§³Ö²Å¿ÉÒÔÊ¹ÓÃ
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÔÚÄúµÄ¡¾Ö÷Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂsqlÎÄ¼þ
+[è¯´æ˜Ž] v1.2.3ç‰ˆæœ¬ä¸­å¤–å›½äººæžåäº†ä¸€ä¸ªåŸºç¡€åŠŸèƒ½ï¼ŒæŽ¨èéƒ½å‡çº§åˆ°v1.2.4ä¸Šæ¥
+[è¯´æ˜Ž] ä»Žv1.2.4å¼€å§‹ï¼Œæ”¯æŒdressroomæœºåˆ¶ï¼Œä¸è¿‡å®¢æˆ·ç«¯ç‰ˆæœ¬å·éœ€è¦å¤§äºŽç­‰äºŽ20150513ï¼Œä¸”æ•°æ®æ–‡ä»¶è¦æ”¯æŒæ‰å¯ä»¥ä½¿ç”¨
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€ä¸»æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
        - sql-files\upgrades\upgrade_20160112.sql
-[ÐÂÔö] ÐÂÔöÄÜ¹ØÁªµ½Íæ¼ÒµÄ OnSomeOneEnterChatRoom ÊÂ¼þ£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[µ÷Õû] ²¹³äÒ»Ð©Ãô¸Ð´ÊÌõ db/manner.txt
-[ºº»¯] ºº»¯ conf/battle/client.conf ÖÐµÄ¼¸¸öÑ¡ÏîËµÃ÷
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ–°å¢žèƒ½å…³è”åˆ°çŽ©å®¶çš„ OnSomeOneEnterChatRoom äº‹ä»¶ï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[è°ƒæ•´] è¡¥å……ä¸€äº›æ•æ„Ÿè¯æ¡ db/manner.txt
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/client.conf ä¸­çš„å‡ ä¸ªé€‰é¡¹è¯´æ˜Ž
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.2.3(2016-01-08)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/315056b02ef9e132443efe16e7a7e7ba01255ba4
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°£¬ÇÒÊ¹ÓÃÁËSQL°æ±¾µÄÎïÆ·ºÍÄ§ÎïÊý¾Ý¿âµÄ»°£¬ÇëÔÚÄúµÄ¡¾Ö÷Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂsqlÎÄ¼þ
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…ï¼Œä¸”ä½¿ç”¨äº†SQLç‰ˆæœ¬çš„ç‰©å“å’Œé­”ç‰©æ•°æ®åº“çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€ä¸»æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
        - sql-files\upgrades\upgrade_20160106.sql
-       - ±¾ÖÜ rAthena ¹Ù·½ÐÞ¸ÄµÄÎïÆ·¡¢Ä§ÎïÒÔ¼°Ä§Îï¼¼ÄÜÊý¾Ý¿âÄÚÈÝ½Ï¶à£¬½¨ÒéÖØÐÂµ¼Èë
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÔÚÄúµÄ¡¾ÈÕÖ¾Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂsqlÎÄ¼þ
+       - æœ¬å‘¨ rAthena å®˜æ–¹ä¿®æ”¹çš„ç‰©å“ã€é­”ç‰©ä»¥åŠé­”ç‰©æŠ€èƒ½æ•°æ®åº“å†…å®¹è¾ƒå¤šï¼Œå»ºè®®é‡æ–°å¯¼å…¥
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€æ—¥å¿—æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
        - sql-files\logs.sql
-[ÐÂÔö] ÐÂÔö·þÎñ¶Ë¼¶±ðµÄ¡°ÁÄÌìÄÚÈÝÃô¸Ð´Ê¹ýÂË»úÖÆ¡±£¬Ïê¼û conf/battle/extend.conf ÖÐµÄÅäÖÃ
-[ÐÂÔö] ÐÂÔöÒ»¸ö @reloadmannerdb Ö¸Áî£¬ÓÃÀ´ÖØÐÂ¼ÓÔØÃô¸Ð´Ê¿â
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃ @ban Ö¸Áî·â½ûÕËºÅÊ±£¬µÇÂ¼·þÎñÆ÷ÏÔÊ¾µÄÌáÊ¾ÄÚÈÝ´íÎóµÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ½â¾öµ±Íæ¼Ò±»GM½ûÑÔÖ®ºó£¬½ÇÉ«¹ýÍ¼¡¢ÖØÐÂ½øÈëÓÎÏ·»áµ¼ÖÂÉíÉÏµÄºìÉ«½ûÑÔÍ¼±ê¶ªÊ§µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞÕýÒ»´¦¹Ø±ÕµÇÂ¼·þÎñÆ÷Ê±£¬³ÌÐò»á±ÀÀ£µÄÎÊÌâ
-[µ÷Õû] µ÷Õû¼¼ÄÜÊý¾Ý¿âµÄºº»¯·½Ê½£¬±£Áô¼¼ÄÜÓ¢ÎÄÃû£¬·½±ã¶ÔÕÕ(¸ÐÐ»¡ï¨rß÷Ááƒº¡¨¡îµÄ½¨Òé)
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ–°å¢žæœåŠ¡ç«¯çº§åˆ«çš„â€œèŠå¤©å†…å®¹æ•æ„Ÿè¯è¿‡æ»¤æœºåˆ¶â€ï¼Œè¯¦è§ conf/battle/extend.conf ä¸­çš„é…ç½®
+[æ–°å¢ž] æ–°å¢žä¸€ä¸ª @reloadmannerdb æŒ‡ä»¤ï¼Œç”¨æ¥é‡æ–°åŠ è½½æ•æ„Ÿè¯åº“
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨ @ban æŒ‡ä»¤å°ç¦è´¦å·æ—¶ï¼Œç™»å½•æœåŠ¡å™¨æ˜¾ç¤ºçš„æç¤ºå†…å®¹é”™è¯¯çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: è§£å†³å½“çŽ©å®¶è¢«GMç¦è¨€ä¹‹åŽï¼Œè§’è‰²è¿‡å›¾ã€é‡æ–°è¿›å…¥æ¸¸æˆä¼šå¯¼è‡´èº«ä¸Šçš„çº¢è‰²ç¦è¨€å›¾æ ‡ä¸¢å¤±çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®æ­£ä¸€å¤„å…³é—­ç™»å½•æœåŠ¡å™¨æ—¶ï¼Œç¨‹åºä¼šå´©æºƒçš„é—®é¢˜
+[è°ƒæ•´] è°ƒæ•´æŠ€èƒ½æ•°æ®åº“çš„æ±‰åŒ–æ–¹å¼ï¼Œä¿ç•™æŠ€èƒ½è‹±æ–‡åï¼Œæ–¹ä¾¿å¯¹ç…§(æ„Ÿè°¢â˜…â•®å–µçŽ²å…’ã€ƒâ˜†çš„å»ºè®®)
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 	   
 v1.2.2(2016-01-01)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/118fa28ae9ac832e89968ce214c27b17d780027d
-[ÐÂÔö] ÊµÏÖÍæ¼Ò¿ªÊ¼ÒÆ¶¯ÊÂ¼þ¡°OnPCMoveEvent¡±£¨Ö§³ÖÅäÖÃÍæ¼ÒÒÆ¶¯ÊÂ¼þ(OnPCMoveEvent)µÄ´¥·¢·½Ê½£©
-[ÐÂÔö] ÐÂÔö¡°OnPCBeforeLoadMapEvent¡±£¬µ±Íæ¼Ò×¼±¸¹ýÍ¼Ê±´¥·¢
-[ÐÞÕý] ÄÚÂë±í×Ô¶¯ÅÐ¶¨»úÖÆÉý¼¶£¬¶Ô×Ö·û¼¯Îªgbk»òbig5µÄMySQLÊý¾Ý¿â¸ü¼ÓÓÑºÃ
-[ÐÞÕý] rAthena¹Ù·½BUG: ÔÚ db/pre-re/skill_require_db.txt µÄµÚ 886 ÐÐÉÙÁËÒ»¸ö×Ö¶ÎµÄÎÊÌâ
-[ºº»¯] ÓÅ»¯Ò»ÏÂ conf/battle/guild.conf ÖÐ guild_notice_changemap Ñ¡ÏîµÄ×¢ÊÍËµÃ÷
-[ºº»¯] ÐÞ¸Ä db/item_announce.txt µÄËµÃ÷
-[ºº»¯] ÓÅ»¯¡°ÊÞÈËµÄ¼ÇÒä¡±¸±±¾µÄ¼¸ÐÐ¶Ô»°
-[ºº»¯] ÄÜ¹»×Ô¶¯·­Òë db Ä¿Â¼ÏÂ³ýÁË skill_cast_db Ö®ÍâÒÔ skill_ ¿ªÍ·µÄ12¸ödbÎÄ¼þÖÐµÄ¼¼ÄÜÃû
-[ºº»¯] ºº»¯ conf/battle/client.conf ÖÐ hide_woe_damage Ñ¡ÏîµÄËµÃ÷
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] å®žçŽ°çŽ©å®¶å¼€å§‹ç§»åŠ¨äº‹ä»¶â€œOnPCMoveEventâ€ï¼ˆæ”¯æŒé…ç½®çŽ©å®¶ç§»åŠ¨äº‹ä»¶(OnPCMoveEvent)çš„è§¦å‘æ–¹å¼ï¼‰
+[æ–°å¢ž] æ–°å¢žâ€œOnPCBeforeLoadMapEventâ€ï¼Œå½“çŽ©å®¶å‡†å¤‡è¿‡å›¾æ—¶è§¦å‘
+[ä¿®æ­£] å†…ç è¡¨è‡ªåŠ¨åˆ¤å®šæœºåˆ¶å‡çº§ï¼Œå¯¹å­—ç¬¦é›†ä¸ºgbkæˆ–big5çš„MySQLæ•°æ®åº“æ›´åŠ å‹å¥½
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: åœ¨ db/pre-re/skill_require_db.txt çš„ç¬¬ 886 è¡Œå°‘äº†ä¸€ä¸ªå­—æ®µçš„é—®é¢˜
+[æ±‰åŒ–] ä¼˜åŒ–ä¸€ä¸‹ conf/battle/guild.conf ä¸­ guild_notice_changemap é€‰é¡¹çš„æ³¨é‡Šè¯´æ˜Ž
+[æ±‰åŒ–] ä¿®æ”¹ db/item_announce.txt çš„è¯´æ˜Ž
+[æ±‰åŒ–] ä¼˜åŒ–â€œå…½äººçš„è®°å¿†â€å‰¯æœ¬çš„å‡ è¡Œå¯¹è¯
+[æ±‰åŒ–] èƒ½å¤Ÿè‡ªåŠ¨ç¿»è¯‘ db ç›®å½•ä¸‹é™¤äº† skill_cast_db ä¹‹å¤–ä»¥ skill_ å¼€å¤´çš„12ä¸ªdbæ–‡ä»¶ä¸­çš„æŠ€èƒ½å
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/client.conf ä¸­ hide_woe_damage é€‰é¡¹çš„è¯´æ˜Ž
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.2.1(2015-12-25)
 ------------------
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°×Ô¶¯Ê°È¡µÄÎïÆ·Çåµ¥ÉÏÏÞ¡±
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°ÆôÓÃÕýÔò±í´ïÊ½Ö§³Ö¡±
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°ÔÚ±êÌâÖÐÏÔÊ¾Á÷Á¿ÐÅÏ¢¡±
-[ÐÂÔö] µ±·þÎñ¶Ë±ÀÀ£Ê±£¬ÄÜ¹»×Ô¶¯Éú³É±ÀÀ£±¨¸æÎÄ¼þ
-[ÐÞÕý] Ê¹ÓÃ¹­Éíµ¯Ó°Ê¹ÓÃµÄÊ±ºò£¬½ÇÉ«Í·ÉÏÒªÏÔÊ¾¡°¹­Éíµ¯Ó°¡±ÎÄ×Ö
-[ÐÞÕý] ÐÞÕýºÍNPC¶Ô»°Ê±Á¢¿ÌÊ¹ÓÃ callshop À´´ò¿ªÉÌµêµÄ¡°¹ºÂò/³öÊÛ¡±Ñ¡ÔñÒ³Ãæºó£¬µã»÷¡°¹ºÂò/³öÊÛ¡±Ñ¡ÏîÎÞÐ§µÄÎÊÌâ
-[ºº»¯] ÍêÈ«ºº»¯¡°ÔªËØÊôÐÔÉËº¦µ÷ÕûÊý¾Ý¿â¡± db/[pre-]re/attr_fix.txt
-[ºº»¯] ºº»¯ conf/battle/battle.conf ÖÐ 5 ¸öÑ¡ÏîµÄ×¢ÊÍËµÃ÷
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œè‡ªåŠ¨æ‹¾å–çš„ç‰©å“æ¸…å•ä¸Šé™â€
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œå¯ç”¨æ­£åˆ™è¡¨è¾¾å¼æ”¯æŒâ€
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œåœ¨æ ‡é¢˜ä¸­æ˜¾ç¤ºæµé‡ä¿¡æ¯â€
+[æ–°å¢ž] å½“æœåŠ¡ç«¯å´©æºƒæ—¶ï¼Œèƒ½å¤Ÿè‡ªåŠ¨ç”Ÿæˆå´©æºƒæŠ¥å‘Šæ–‡ä»¶
+[ä¿®æ­£] ä½¿ç”¨å¼“èº«å¼¹å½±ä½¿ç”¨çš„æ—¶å€™ï¼Œè§’è‰²å¤´ä¸Šè¦æ˜¾ç¤ºâ€œå¼“èº«å¼¹å½±â€æ–‡å­—
+[ä¿®æ­£] ä¿®æ­£å’ŒNPCå¯¹è¯æ—¶ç«‹åˆ»ä½¿ç”¨ callshop æ¥æ‰“å¼€å•†åº—çš„â€œè´­ä¹°/å‡ºå”®â€é€‰æ‹©é¡µé¢åŽï¼Œç‚¹å‡»â€œè´­ä¹°/å‡ºå”®â€é€‰é¡¹æ— æ•ˆçš„é—®é¢˜
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå…ƒç´ å±žæ€§ä¼¤å®³è°ƒæ•´æ•°æ®åº“â€ db/[pre-]re/attr_fix.txt
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/battle.conf ä¸­ 5 ä¸ªé€‰é¡¹çš„æ³¨é‡Šè¯´æ˜Ž
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.2.0(2015-12-21)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/d8830d21f69c9f6b7577ef13b8ffbe3b348ceff8
-[ÐÞÕý] rAthena¹Ù·½BUG: Æô¶¯µØÍ¼·þÎñÆ÷Ê±ÌáÊ¾ Invalid sc group "SC_SEARCH_STORE_INFO" µÄÎÊÌâ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å¯åŠ¨åœ°å›¾æœåŠ¡å™¨æ—¶æç¤º Invalid sc group "SC_SEARCH_STORE_INFO" çš„é—®é¢˜
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.9(2015-12-20)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/9aa832570e997423937b1be9bd42ce90bc7039ae
-[ÐÞÕý] ÐÞÕý±àÂë×Ô¶¯ÅÐ¶¨ÏµÍ³ÔÚ¼ì²âµ½ default_codepage ²»ÊÇ auto µÄÊ±ºò£¬²»»á½«ÓÃ»§Ö¸¶¨¾ßÌå±àÂëÓ¦ÓÃµ½Á¬½ÓµÄÎÊÌâ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[ä¿®æ­£] ä¿®æ­£ç¼–ç è‡ªåŠ¨åˆ¤å®šç³»ç»Ÿåœ¨æ£€æµ‹åˆ° default_codepage ä¸æ˜¯ auto çš„æ—¶å€™ï¼Œä¸ä¼šå°†ç”¨æˆ·æŒ‡å®šå…·ä½“ç¼–ç åº”ç”¨åˆ°è¿žæŽ¥çš„é—®é¢˜
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.8(2015-12-18)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/b53eacd7b24eb20cdf8c7b32630f1135b8485f63
-[ÐÂÔö] Ö§³Ö×Ô¶¯Ì½²â±àÂë£¬²¢ÐÞ¸Ä×Ö·û¼¯À´½øÐÐ×Ô¶¯ÊÊÓ¦£¬¼õÉÙÐÂÊÖ½â¾öÖÐÎÄÂÒÂëÎÊÌâµÄÄÑ¶È
-[ÐÂÔö] ½â¾öÁ¬½Ó°¢ÀïÔÆRDSÊý¾Ý¿âÊ±£¬ÓÉÓÚRDSÓòÃû¹ý³¤´øÀ´µÄÁ¬½Ó´íÎóÎÊÌâ
-[ÐÂÔö] ÊµÏÖ OnPCUseSkillEvent ºÍ OnPCUseSkillFinishEvent ÊÂ¼þ£¬µ±Íæ¼ÒÊ¹ÓÃ¼¼ÄÜÖ®Ç°/Ö®ºó´¥·¢
-[ÐÂÔö] ÊµÏÖ OnPCUseItemEvent ºÍ OnPCUseItemFinishEvent ÊÂ¼þ£¬µ±Íæ¼ÒÊ¹ÓÃÎïÆ·Ö®Ç°/Ö®ºó´¥·¢
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ¡°Íæ¼ÒËæÉíÐ¯´øµÄ½ð±ÒÉÏÏÞ¡±ÒÔ¼°¡°±³°üÖÐµÄÎïÆ·ÖÖÀàÉÏÏÞ¡±
-[ÐÂÔö] Ìí¼Ó¡°extremityfist_spiritball_strict¡±Ñ¡Ïî£¬ÓÃÀ´ÔÚ°¢ÐÞÂÞ°Ô»ËÈ­Ó½³ªÍê±Ïºó£¬ÊÇ·ñÔÙ´ÎÅÐ¶¨Æøµ¯ÊýÁ¿ÊÇ·ñ´ï±ê£¬Èô²»´ï±êÔò¼¼ÄÜÊ¹ÓÃÊ§°Ü
-[ÐÂÔö] Ìí¼Ó¡°extremityfist_explosion_strict¡±Ñ¡Ïî£¬ÓÃÀ´ÔÚ°¢ÐÞÂÞ°Ô»ËÈ­Ó½³ªÍê±Ïºó£¬ÊÇ·ñÔÙ´ÎÅÐ¶¨±¬Æø×´Ì¬ÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔò¼¼ÄÜÊ¹ÓÃÊ§°Ü
-[ÐÞÕý] rAthena¹Ù·½BUG: ³¹µ×½â¾ö20130807ºÍ20150513È«°æ±¾ÔÚÊ¹ÓÃcallshopÖ±½Ó´ò¿ª¹ºÂò/³öÊÛÒ³ÃæÊ±Íæ¼Ò¿ÉÒÔÒÆ¶¯µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: Õë¶ÔMVPÄ§ÎïÏÔÊ¾´óÑªÌõºó£¬MVPÄ§ÎïÊÜµ½¹¥»÷Ê±£¬ÑªÌõ²»¸üÐÂµÄÎÊÌâ
-[ÐÞÕý] ½â¾öÓÐÍæ¼ÒÔÚ¸±±¾µÄÊ±ºò£¬¹Ø±ÕµØÍ¼·þÎñÆ÷»áµ¼ÖÂ±¼À£µÄÎÊÌâ [¸ÐÐ»ÏþÏþÐÞÕý]
-[ÐÞÕý] ½â¾ö¸´ÐËÇ°°æ±¾»áÌáÊ¾ÕÒ²»µ½ novice_skills.txt ½Å±¾ÎÄ¼þµÄÎÊÌâ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ”¯æŒè‡ªåŠ¨æŽ¢æµ‹ç¼–ç ï¼Œå¹¶ä¿®æ”¹å­—ç¬¦é›†æ¥è¿›è¡Œè‡ªåŠ¨é€‚åº”ï¼Œå‡å°‘æ–°æ‰‹è§£å†³ä¸­æ–‡ä¹±ç é—®é¢˜çš„éš¾åº¦
+[æ–°å¢ž] è§£å†³è¿žæŽ¥é˜¿é‡Œäº‘RDSæ•°æ®åº“æ—¶ï¼Œç”±äºŽRDSåŸŸåè¿‡é•¿å¸¦æ¥çš„è¿žæŽ¥é”™è¯¯é—®é¢˜
+[æ–°å¢ž] å®žçŽ° OnPCUseSkillEvent å’Œ OnPCUseSkillFinishEvent äº‹ä»¶ï¼Œå½“çŽ©å®¶ä½¿ç”¨æŠ€èƒ½ä¹‹å‰/ä¹‹åŽè§¦å‘
+[æ–°å¢ž] å®žçŽ° OnPCUseItemEvent å’Œ OnPCUseItemFinishEvent äº‹ä»¶ï¼Œå½“çŽ©å®¶ä½¿ç”¨ç‰©å“ä¹‹å‰/ä¹‹åŽè§¦å‘
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶â€œçŽ©å®¶éšèº«æºå¸¦çš„é‡‘å¸ä¸Šé™â€ä»¥åŠâ€œèƒŒåŒ…ä¸­çš„ç‰©å“ç§ç±»ä¸Šé™â€
+[æ–°å¢ž] æ·»åŠ â€œextremityfist_spiritball_strictâ€é€‰é¡¹ï¼Œç”¨æ¥åœ¨é˜¿ä¿®ç½—éœ¸å‡°æ‹³å’å”±å®Œæ¯•åŽï¼Œæ˜¯å¦å†æ¬¡åˆ¤å®šæ°”å¼¹æ•°é‡æ˜¯å¦è¾¾æ ‡ï¼Œè‹¥ä¸è¾¾æ ‡åˆ™æŠ€èƒ½ä½¿ç”¨å¤±è´¥
+[æ–°å¢ž] æ·»åŠ â€œextremityfist_explosion_strictâ€é€‰é¡¹ï¼Œç”¨æ¥åœ¨é˜¿ä¿®ç½—éœ¸å‡°æ‹³å’å”±å®Œæ¯•åŽï¼Œæ˜¯å¦å†æ¬¡åˆ¤å®šçˆ†æ°”çŠ¶æ€æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æŠ€èƒ½ä½¿ç”¨å¤±è´¥
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å½»åº•è§£å†³20130807å’Œ20150513å…¨ç‰ˆæœ¬åœ¨ä½¿ç”¨callshopç›´æŽ¥æ‰“å¼€è´­ä¹°/å‡ºå”®é¡µé¢æ—¶çŽ©å®¶å¯ä»¥ç§»åŠ¨çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: é’ˆå¯¹MVPé­”ç‰©æ˜¾ç¤ºå¤§è¡€æ¡åŽï¼ŒMVPé­”ç‰©å—åˆ°æ”»å‡»æ—¶ï¼Œè¡€æ¡ä¸æ›´æ–°çš„é—®é¢˜
+[ä¿®æ­£] è§£å†³æœ‰çŽ©å®¶åœ¨å‰¯æœ¬çš„æ—¶å€™ï¼Œå…³é—­åœ°å›¾æœåŠ¡å™¨ä¼šå¯¼è‡´å¥”æºƒçš„é—®é¢˜ [æ„Ÿè°¢æ™“æ™“ä¿®æ­£]
+[ä¿®æ­£] è§£å†³å¤å…´å‰ç‰ˆæœ¬ä¼šæç¤ºæ‰¾ä¸åˆ° novice_skills.txt è„šæœ¬æ–‡ä»¶çš„é—®é¢˜
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.7(2015-12-11)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/b2b37fc3ae2da89122df43b27ed579734e0ca916
-[ÐÂÔö] Ôö¼Ó warpparty2 ½Å±¾Ö¸Áî£¬Óë warpparty ÓÃ·¨Ò»ÖÂ£¬µ«ÄÜ¹»´«ËÍÒÑ¾­ËÀÍöµÄ¶ÓÔ±
-[ÐÂÔö] Ö§³Ö¶¨ÖÆ ÊÂ¼þ¶ÓÁÐµÄÈÝÁ¿ÉÏÏÞ(MAX_EVENTQUEUE)
-[ÐÂÔö] ÐÂÔö½Å±¾Ö¸Áî sc_check ÎªÀÏ½Å±¾Ìá¹©Ö§³Ö£¬µ«¸üÍÆ¼öÊ¹ÓÃ rAthena ¹Ù·½×Ô´øµÄ getstatus Ö¸Áî
-[ÐÞÕý] ÐÞÕýµ±HP´óÓÚ11ÍòÊ±£¬10¼¶»¢ÅÚ²»¿ÛÑªµÄÎÊÌâ
-[ÐÞÕý] ½â¾ö°æ±¾´óÓÚµÈÓÚ 20131223 µÄ¿Í»§¶Ë£¬Ê¹ÓÃcallshopÖ±½Ó´ò¿ª¹ºÂò/³öÊÛÒ³ÃæÊ±Íæ¼Ò¿ÉÒÔÒÆ¶¯µÄÎÊÌâ
-       °æ±¾ºÅÐ¡ÓÚ 20131223 µÄ¿Í»§¶ËÔÝÊ±Ã»ÕÒµ½ºÃµÄ½â¾ö°ì·¨
-[ºº»¯] ºº»¯Îå¸ö conf ÎÄ¼þÖÐ£¬¹² 18 ¸öÑ¡ÏîµÄ×¢ÊÍËµÃ÷
+[æ–°å¢ž] å¢žåŠ  warpparty2 è„šæœ¬æŒ‡ä»¤ï¼Œä¸Ž warpparty ç”¨æ³•ä¸€è‡´ï¼Œä½†èƒ½å¤Ÿä¼ é€å·²ç»æ­»äº¡çš„é˜Ÿå‘˜
+[æ–°å¢ž] æ”¯æŒå®šåˆ¶ äº‹ä»¶é˜Ÿåˆ—çš„å®¹é‡ä¸Šé™(MAX_EVENTQUEUE)
+[æ–°å¢ž] æ–°å¢žè„šæœ¬æŒ‡ä»¤ sc_check ä¸ºè€è„šæœ¬æä¾›æ”¯æŒï¼Œä½†æ›´æŽ¨èä½¿ç”¨ rAthena å®˜æ–¹è‡ªå¸¦çš„ getstatus æŒ‡ä»¤
+[ä¿®æ­£] ä¿®æ­£å½“HPå¤§äºŽ11ä¸‡æ—¶ï¼Œ10çº§è™Žç‚®ä¸æ‰£è¡€çš„é—®é¢˜
+[ä¿®æ­£] è§£å†³ç‰ˆæœ¬å¤§äºŽç­‰äºŽ 20131223 çš„å®¢æˆ·ç«¯ï¼Œä½¿ç”¨callshopç›´æŽ¥æ‰“å¼€è´­ä¹°/å‡ºå”®é¡µé¢æ—¶çŽ©å®¶å¯ä»¥ç§»åŠ¨çš„é—®é¢˜
+       ç‰ˆæœ¬å·å°äºŽ 20131223 çš„å®¢æˆ·ç«¯æš‚æ—¶æ²¡æ‰¾åˆ°å¥½çš„è§£å†³åŠžæ³•
+[æ±‰åŒ–] æ±‰åŒ–äº”ä¸ª conf æ–‡ä»¶ä¸­ï¼Œå…± 18 ä¸ªé€‰é¡¹çš„æ³¨é‡Šè¯´æ˜Ž
 
 v1.1.6(2015-12-06)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/8b3b32e0007255bd7cde1a936bd006cc7e66f7b7
-[ÐÂÔö] ´Ë°æ±¾¿ªÊ¼£¬Ö§³Ö¡°Ë½ÈË¶¨ÖÆ¡±±àÒë
-[ÌáÊ¾] rAthenaÒÑ¾­ÕûºÏÁË¸´ÐËºóµÄ¡°¿ËÀïÍ¼À­Ñ§Ôº¡±£¬ÏÖÔÚ¸´ÐËºóµÄ³öÉúµãÔÚ¡°´¬ÉÏ¡±
+[æ–°å¢ž] æ­¤ç‰ˆæœ¬å¼€å§‹ï¼Œæ”¯æŒâ€œç§äººå®šåˆ¶â€ç¼–è¯‘
+[æç¤º] rAthenaå·²ç»æ•´åˆäº†å¤å…´åŽçš„â€œå…‹é‡Œå›¾æ‹‰å­¦é™¢â€ï¼ŒçŽ°åœ¨å¤å…´åŽçš„å‡ºç”Ÿç‚¹åœ¨â€œèˆ¹ä¸Šâ€
 
 v1.1.5(2015-11-27)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/25cb15161f00e636a1cd4091f7784c1877143e78
-[ÐÂÔö] ´Ë°æ±¾¿ªÊ¼Ö§³Ö2015-05-13¿Í»§¶Ë
-       ÈçÐèÊ¹ÓÃ£¬Çë½«¡°2015-05-13¡±Ä¿Â¼ÖÐµÄÎÄ¼þ¸´ÖÆ³öÀ´£¬¸²¸Çµ½·þÎñ¶ËÄ¿Â¼ÏÂ¼´¿É
-[ÐÞÕý] ÐÞÕý cash_mounting_use_item_limit Ñ¡ÏîÎÞ·¨ÏÞÖÆ¡°Ó°×Ó×°±¸¡±µÄÎÊÌâ
-[µ÷Õû] µ÷Õû cash_mounting_use_item_limit Ñ¡ÏîµÄËµÃ÷
-[ºº»¯] ´Ö²Úºº»¯´óÔ¼ 573 ¸öNPC£¬¸ÐÐ»ÍøÓÑÌá¹©£¨Ó¦ÆäÒªÇó£¬²»¹«¿ªÆäÍøÃû£©
-[ºº»¯] ´Ö²Úºº»¯Ñ§Ï°¡°ÊÕ¹ºÉÌµê¡±¼¼ÄÜµÄ¡°ÐÞÏÈÉú¡±ºÍ¡°ºÚÊÐÉÌÈË¡±
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ­¤ç‰ˆæœ¬å¼€å§‹æ”¯æŒ2015-05-13å®¢æˆ·ç«¯
+       å¦‚éœ€ä½¿ç”¨ï¼Œè¯·å°†â€œ2015-05-13â€ç›®å½•ä¸­çš„æ–‡ä»¶å¤åˆ¶å‡ºæ¥ï¼Œè¦†ç›–åˆ°æœåŠ¡ç«¯ç›®å½•ä¸‹å³å¯
+[ä¿®æ­£] ä¿®æ­£ cash_mounting_use_item_limit é€‰é¡¹æ— æ³•é™åˆ¶â€œå½±å­è£…å¤‡â€çš„é—®é¢˜
+[è°ƒæ•´] è°ƒæ•´ cash_mounting_use_item_limit é€‰é¡¹çš„è¯´æ˜Ž
+[æ±‰åŒ–] ç²—ç³™æ±‰åŒ–å¤§çº¦ 573 ä¸ªNPCï¼Œæ„Ÿè°¢ç½‘å‹æä¾›ï¼ˆåº”å…¶è¦æ±‚ï¼Œä¸å…¬å¼€å…¶ç½‘åï¼‰
+[æ±‰åŒ–] ç²—ç³™æ±‰åŒ–å­¦ä¹ â€œæ”¶è´­å•†åº—â€æŠ€èƒ½çš„â€œä¿®å…ˆç”Ÿâ€å’Œâ€œé»‘å¸‚å•†äººâ€
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 
 v1.1.4(2015-11-20)
 ------------------
-[ÐÂÔö] Ìí¼Ó rAthenaCN ÃâÔðÉùÃ÷
-[ÐÂÔö] Ìí¼Ó force_identified Ñ¡Ïî£¬ÄÜ¹»Ç¿ÖÆ´ÓÌØ¶¨ÇþµÀ»ñµÃµÄ×°±¸£¬×Ô¶¯±ä³É¡°ÒÑ¼ø¶¨¡±
-[ÐÂÔö] Ìí¼Ó cash_mounting_use_item_limit Ñ¡Ïî£¬ÔÚ³Ë×ø¡°ÉÌ³Ç×øÆï¡±Ê±½ûÖ¹Ê¹ÓÃÌØ¶¨ÀàÐÍµÄÎïÆ·
-[ÐÞÕý] ½â¾ö÷ÈÓ°µÄ¡°ÈË¿×¡±¼¼ÄÜÔÚÖ»Ê£ÏÂ2ÃëµÄÇé¿öÏÂ£¬¿××¡Ò»¸öÈËÖ®ºóÐèÒª15ÃëÕâ¸öÈË²ÅÄÜÌÓÍÑµÄÎÊÌâ
-[ÐÞÕý] ÐÞÕýµ±¡°¼«ÏÞ¿ÕÐé|ºÚ°µÏÝÚå¡±±»ÌáÇ°½â³ýºó£¬±»ÆäÐ§¹ûÓ°ÏìµÄµ¥Î»ÎÞ·¨Á¢¿Ì½â³ý¸ºÃæÐ§¹ûµÄÎÊÌâ
-[ÐÞÕý] ÐÞÕýÍæ¼Ò²»»á±»ÔªËØÊ¹µÄ¡°¼«ÏÞ¿ÕÐé|ºÚ°µÏÝÚå¡±Îüµ½Ðý·çÖÐÑëµÄÎÊÌâ
-[ÐÞÕý] ÈÃ¡°·è¿ñÒ°²Ý¡±ÄÜ¹»È¡ÏûÔªËØÊ¹µÄ¡°¼«ÏÞ¿ÕÐé|ºÚ¶´ÏÝÚå¡±¼¼ÄÜ
-[µ÷Õû] ½« @showzeny µÄ»ØÏÔÐÅÏ¢³é³öµ½ conf/msg_conf/racn_map_msg.conf ·½±ã½øÐÐºº»¯
-[µ÷Õû] ½« @showexp µÄ»ØÏÔÐÅÏ¢³é³öµ½ conf/msg_conf/racn_map_msg.conf ·½±ã½øÐÐºº»¯
-[µ÷Õû] À©´óµ¥¸ö½ÇÉ«Í¬Ò»Ê±¼äÄÜ¹»ÓµÓÐµÄ¡°×Ô¶¯ÄîÖä¡±ÊýÁ¿
-[µ÷Õû] ÍØÕ¹ÊÂ¼þ²âÊÔ½Å±¾ÖÐ£¬¼ÓÈë rAthena ¹Ù·½ÊÂ¼þ OnPCStatCalcEvent µÄÊ¾ÀýËµÃ÷
-[ºº»¯] ÍêÈ«ºº»¯ºÍGMÖ¸ÁîÏà¹ØµÄÕ½¶·ÅäÖÃÎÄ¼þ conf/battle/gm.conf
-[ºº»¯] ²¿·Öºº»¯¡°µØÍ¼·þÎñÆ÷µÄÏûÏ¢ÅäÖÃÎÄ¼þ¡±¶¥²¿µÄ×¢ÊÍ conf/msg_conf/map_msg.conf
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ·»åŠ  rAthenaCN å…è´£å£°æ˜Ž
+[æ–°å¢ž] æ·»åŠ  force_identified é€‰é¡¹ï¼Œèƒ½å¤Ÿå¼ºåˆ¶ä»Žç‰¹å®šæ¸ é“èŽ·å¾—çš„è£…å¤‡ï¼Œè‡ªåŠ¨å˜æˆâ€œå·²é‰´å®šâ€
+[æ–°å¢ž] æ·»åŠ  cash_mounting_use_item_limit é€‰é¡¹ï¼Œåœ¨ä¹˜åâ€œå•†åŸŽåéª‘â€æ—¶ç¦æ­¢ä½¿ç”¨ç‰¹å®šç±»åž‹çš„ç‰©å“
+[ä¿®æ­£] è§£å†³é­…å½±çš„â€œäººå­”â€æŠ€èƒ½åœ¨åªå‰©ä¸‹2ç§’çš„æƒ…å†µä¸‹ï¼Œå­”ä½ä¸€ä¸ªäººä¹‹åŽéœ€è¦15ç§’è¿™ä¸ªäººæ‰èƒ½é€ƒè„±çš„é—®é¢˜
+[ä¿®æ­£] ä¿®æ­£å½“â€œæžé™ç©ºè™š|é»‘æš—é™·é˜±â€è¢«æå‰è§£é™¤åŽï¼Œè¢«å…¶æ•ˆæžœå½±å“çš„å•ä½æ— æ³•ç«‹åˆ»è§£é™¤è´Ÿé¢æ•ˆæžœçš„é—®é¢˜
+[ä¿®æ­£] ä¿®æ­£çŽ©å®¶ä¸ä¼šè¢«å…ƒç´ ä½¿çš„â€œæžé™ç©ºè™š|é»‘æš—é™·é˜±â€å¸åˆ°æ—‹é£Žä¸­å¤®çš„é—®é¢˜
+[ä¿®æ­£] è®©â€œç–¯ç‹‚é‡Žè‰â€èƒ½å¤Ÿå–æ¶ˆå…ƒç´ ä½¿çš„â€œæžé™ç©ºè™š|é»‘æ´žé™·é˜±â€æŠ€èƒ½
+[è°ƒæ•´] å°† @showzeny çš„å›žæ˜¾ä¿¡æ¯æŠ½å‡ºåˆ° conf/msg_conf/racn_map_msg.conf æ–¹ä¾¿è¿›è¡Œæ±‰åŒ–
+[è°ƒæ•´] å°† @showexp çš„å›žæ˜¾ä¿¡æ¯æŠ½å‡ºåˆ° conf/msg_conf/racn_map_msg.conf æ–¹ä¾¿è¿›è¡Œæ±‰åŒ–
+[è°ƒæ•´] æ‰©å¤§å•ä¸ªè§’è‰²åŒä¸€æ—¶é—´èƒ½å¤Ÿæ‹¥æœ‰çš„â€œè‡ªåŠ¨å¿µå’’â€æ•°é‡
+[è°ƒæ•´] æ‹“å±•äº‹ä»¶æµ‹è¯•è„šæœ¬ä¸­ï¼ŒåŠ å…¥ rAthena å®˜æ–¹äº‹ä»¶ OnPCStatCalcEvent çš„ç¤ºä¾‹è¯´æ˜Ž
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å’ŒGMæŒ‡ä»¤ç›¸å…³çš„æˆ˜æ–—é…ç½®æ–‡ä»¶ conf/battle/gm.conf
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–â€œåœ°å›¾æœåŠ¡å™¨çš„æ¶ˆæ¯é…ç½®æ–‡ä»¶â€é¡¶éƒ¨çš„æ³¨é‡Š conf/msg_conf/map_msg.conf
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.3(2015-11-13)
 ------------------
-[ÐÂÔö] ÐÂÔö ¡°ÎïÆ·µôÂä¹«¸æÅäÖÃÎÄ¼þ¡± db/item_announce.txt
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÖØÃüÃûÒÔÏÂÎÄ¼þ
-       - conf/msg_conf/import/map_msg_eng_conf.txt ÖØÃüÃûÎª map_msg_chs_conf.txt
-[ÐÞÕý] µ± show_mob_info Ñ¡ÏîÎª 6 Ê±£¬Ä§ÎïÃû³Æ¸ñÊ½ÏÔÊ¾´íÎóµÄÎÊÌâ£¬¸ÐÐ» wf7admin ÉÏ±¨
-[µ÷Õû] ÊÂ¼þ¶ÓÁÐµÄÈÝÁ¿´Ó2Ôö¼Óµ½200£¬ÒÔ±ã¼õÉÙ¶ÓÁÐÂúµÄÇé¿ö
-[µ÷Õû] ¾«¼òconf/msg_conf/Ä¿Â¼ÏÂ¶àÓàµÄÐÅÏ¢ÅäÖÃÎÄ¼þ£¬Ö»ÁôÏÂ¼òÌåÖÐÎÄºÍ·±ÌåÖÐÎÄ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[æ–°å¢ž] æ–°å¢ž â€œç‰©å“æŽ‰è½å…¬å‘Šé…ç½®æ–‡ä»¶â€ db/item_announce.txt
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·é‡å‘½åä»¥ä¸‹æ–‡ä»¶
+       - conf/msg_conf/import/map_msg_eng_conf.txt é‡å‘½åä¸º map_msg_chs_conf.txt
+[ä¿®æ­£] å½“ show_mob_info é€‰é¡¹ä¸º 6 æ—¶ï¼Œé­”ç‰©åç§°æ ¼å¼æ˜¾ç¤ºé”™è¯¯çš„é—®é¢˜ï¼Œæ„Ÿè°¢ wf7admin ä¸ŠæŠ¥
+[è°ƒæ•´] äº‹ä»¶é˜Ÿåˆ—çš„å®¹é‡ä»Ž2å¢žåŠ åˆ°200ï¼Œä»¥ä¾¿å‡å°‘é˜Ÿåˆ—æ»¡çš„æƒ…å†µ
+[è°ƒæ•´] ç²¾ç®€conf/msg_conf/ç›®å½•ä¸‹å¤šä½™çš„ä¿¡æ¯é…ç½®æ–‡ä»¶ï¼Œåªç•™ä¸‹ç®€ä½“ä¸­æ–‡å’Œç¹ä½“ä¸­æ–‡
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.2(2015-10-30)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/ea497b2938e51a526438f78aa6fc4de43af5cc23
-[ÐÂÔö] Ìí¼Ó4¸öºÍÈË¹¤ÉúÃüÌåÏà¹ØµÄÊÂ¼þ£¬°üÀ¨ÕÙ»½¡¢°²Ï¢¡¢ËÀÍö¡¢¸´»î
-[µ÷Õû] ¹Ø±ÕNPC³¬Ê±¼ì²â»úÖÆ£¬±ÜÃâÍæ²ÂÊý×ÖµÈÓÎÏ·µÈÌ«¾ÃNPC×Ô¶¯¹Ø±ÕµÄÎÊÌâ
-[µ÷Õû] µ÷Õû¡°½ÇÉ«·þÎñÆ÷ÅäÖÃÎÄ¼þ¡±µÄÒ»Ð©×¢ÊÍ½á¹û
-[ºº»¯] ×Ô¶¯ºº»¯ËùÓÐÒ°ÍâÄ§ÎïÕÙ»½ÎÄ¼þ(npc/mobs | npc/re/mobs | npc/pre-re/mobs)
-[ºº»¯] ÍêÈ«ºº»¯¡°ÊÞÈËµÄ¼ÇÒä¡±¸±±¾
-[ºº»¯] ÍêÈ«ºº»¯ÅÄÂôÐÐµÄÏòµ¼ÈËÔ±ºÍÅÄÂôÊ¦
-[ºº»¯] ÍêÈ«ºº»¯´ò¿×¹¤³ÌÊ¦¡°ÊÀÑÅ²¼Á«¡±
-[ºº»¯] ºº»¯µØÍ¼·þÎñÆ÷ºÚ¿òÖÐ£¬¹ØÓÚ´´½¨ºÍÏú»Ù¸±±¾µÄºÚ¿òÌáÊ¾ÐÅÏ¢
+[æ–°å¢ž] æ·»åŠ 4ä¸ªå’Œäººå·¥ç”Ÿå‘½ä½“ç›¸å…³çš„äº‹ä»¶ï¼ŒåŒ…æ‹¬å¬å”¤ã€å®‰æ¯ã€æ­»äº¡ã€å¤æ´»
+[è°ƒæ•´] å…³é—­NPCè¶…æ—¶æ£€æµ‹æœºåˆ¶ï¼Œé¿å…çŽ©çŒœæ•°å­—ç­‰æ¸¸æˆç­‰å¤ªä¹…NPCè‡ªåŠ¨å…³é—­çš„é—®é¢˜
+[è°ƒæ•´] è°ƒæ•´â€œè§’è‰²æœåŠ¡å™¨é…ç½®æ–‡ä»¶â€çš„ä¸€äº›æ³¨é‡Šç»“æžœ
+[æ±‰åŒ–] è‡ªåŠ¨æ±‰åŒ–æ‰€æœ‰é‡Žå¤–é­”ç‰©å¬å”¤æ–‡ä»¶(npc/mobs | npc/re/mobs | npc/pre-re/mobs)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå…½äººçš„è®°å¿†â€å‰¯æœ¬
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æ‹å–è¡Œçš„å‘å¯¼äººå‘˜å’Œæ‹å–å¸ˆ
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æ‰“å­”å·¥ç¨‹å¸ˆâ€œä¸–é›…å¸ƒèŽ²â€
+[æ±‰åŒ–] æ±‰åŒ–åœ°å›¾æœåŠ¡å™¨é»‘æ¡†ä¸­ï¼Œå…³äºŽåˆ›å»ºå’Œé”€æ¯å‰¯æœ¬çš„é»‘æ¡†æç¤ºä¿¡æ¯
 
 v1.1.1(2015-10-23)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â£¬Git Hash£ºe0b24fc670a3f2a056117746f79b7f90a999dd40
-[ÐÂÔö] Ìí¼Ó¡°ÈË¹¤ÉúÃüÌåÉý¼¶¡±ÊÂ¼þ OnPCHomLvUpEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°´©´÷×°±¸¡±ÊÂ¼þ OnPCEquipEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°ÍÑÏÂ×°±¸¡±ÊÂ¼þ OnPCUnequipEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°»ñµÃ×´Ì¬¡±ÊÂ¼þ OnPCSCStartEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°½â³ý×´Ì¬¡±ÊÂ¼þ OnPCSCEndEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°´´½¨¶ÓÎé¡±ÊÂ¼þ OnPCPartyCreateEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°¼ÓÈë¶ÓÎé¡±ÊÂ¼þ OnPCPartyJoinEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°Àë¿ª¶ÓÎé¡±ÊÂ¼þ OnPCPartyLeaveEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°´´½¨¹«»á¡±ÊÂ¼þ OnPCGuildCreateEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°¼ÓÈë¹«»á¡±ÊÂ¼þ OnPCGuildJoinEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°Àë¿ª¹«»á¡±ÊÂ¼þ OnPCGuildLeaveEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°³èÎïÊ°È¡µÀ¾ß¡±ÊÂ¼þ OnPetLootItemEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°¸ø³èÎïÎ¹Ê³¡±ÊÂ¼þ OnPCFeedPet & OnPCFoodPet£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] Ìí¼Ó¡°²é¿´ÆäËüÍæ¼Ò×°±¸¡±ÊÂ¼þ OnPCViewEquipEvent£¬¾ßÌåÓÃ·¨Çë¼û¡°ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[ÐÂÔö] ½«´´½¨¹«»áÊ±µÄÖ°Î»Ãû³ÆÌáÈ¡³ÉÅäÖÃÎÄ¼þ£¬¿ÉÔÚ conf/msg_conf/char_msg_racn.conf ÖÐÐÞ¸Ä
-[µ÷Õû] ½«Î´ÍêÈ«ºº»¯µÄ½Å±¾¸´ÖÆÒ»·Ýµ½roughÄ¿Â¼£¬Îª´Ö²Úºº»¯×ö×¼±¸
-[µ÷Õû] Ä¬ÈÏ¼ÓÔØÊÂ¼þÑÝÊ¾½Å±¾£¬ÈôÏë¹Ø±ÕÇë±à¼­ npc/scripts_custom.conf ÅäÖÃÎÄ¼þ
-[ºº»¯] ºº»¯¸´ÐËºó°æ±¾ÖÐ£¬ÒÀË¹Â³µÂµº4ÕÅ¾µÏñµØÍ¼µÄ¡°ÓÊ¼þÍ²¡±NPCÃû³Æ
-[ºº»¯] ¸üÐÂ conf/char_athena.conf ÖÐ char_new_display Ñ¡ÏîµÄËµÃ÷
-[ºº»¯] ºº»¯³èÎïÕ½¶·ÐÅÏ¢ÅäÖÃÎÄ¼þÖÐµÄ²¿·ÖÑ¡Ïî conf/battle/pet.conf
-[ºº»¯] ºº»¯ conf/battle/exp.conf ÖÐ¹ØÓÚËÀÍö¾­Ñé³Í·£Ïà¹ØÑ¡ÏîµÄËµÃ÷
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“ï¼ŒGit Hashï¼še0b24fc670a3f2a056117746f79b7f90a999dd40
+[æ–°å¢ž] æ·»åŠ â€œäººå·¥ç”Ÿå‘½ä½“å‡çº§â€äº‹ä»¶ OnPCHomLvUpEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œç©¿æˆ´è£…å¤‡â€äº‹ä»¶ OnPCEquipEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œè„±ä¸‹è£…å¤‡â€äº‹ä»¶ OnPCUnequipEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œèŽ·å¾—çŠ¶æ€â€äº‹ä»¶ OnPCSCStartEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œè§£é™¤çŠ¶æ€â€äº‹ä»¶ OnPCSCEndEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œåˆ›å»ºé˜Ÿä¼â€äº‹ä»¶ OnPCPartyCreateEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œåŠ å…¥é˜Ÿä¼â€äº‹ä»¶ OnPCPartyJoinEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œç¦»å¼€é˜Ÿä¼â€äº‹ä»¶ OnPCPartyLeaveEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œåˆ›å»ºå…¬ä¼šâ€äº‹ä»¶ OnPCGuildCreateEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œåŠ å…¥å…¬ä¼šâ€äº‹ä»¶ OnPCGuildJoinEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œç¦»å¼€å…¬ä¼šâ€äº‹ä»¶ OnPCGuildLeaveEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œå® ç‰©æ‹¾å–é“å…·â€äº‹ä»¶ OnPetLootItemEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œç»™å® ç‰©å–‚é£Ÿâ€äº‹ä»¶ OnPCFeedPet & OnPCFoodPetï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] æ·»åŠ â€œæŸ¥çœ‹å…¶å®ƒçŽ©å®¶è£…å¤‡â€äº‹ä»¶ OnPCViewEquipEventï¼Œå…·ä½“ç”¨æ³•è¯·è§â€œäº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[æ–°å¢ž] å°†åˆ›å»ºå…¬ä¼šæ—¶çš„èŒä½åç§°æå–æˆé…ç½®æ–‡ä»¶ï¼Œå¯åœ¨ conf/msg_conf/char_msg_racn.conf ä¸­ä¿®æ”¹
+[è°ƒæ•´] å°†æœªå®Œå…¨æ±‰åŒ–çš„è„šæœ¬å¤åˆ¶ä¸€ä»½åˆ°roughç›®å½•ï¼Œä¸ºç²—ç³™æ±‰åŒ–åšå‡†å¤‡
+[è°ƒæ•´] é»˜è®¤åŠ è½½äº‹ä»¶æ¼”ç¤ºè„šæœ¬ï¼Œè‹¥æƒ³å…³é—­è¯·ç¼–è¾‘ npc/scripts_custom.conf é…ç½®æ–‡ä»¶
+[æ±‰åŒ–] æ±‰åŒ–å¤å…´åŽç‰ˆæœ¬ä¸­ï¼Œä¾æ–¯é²å¾·å²›4å¼ é•œåƒåœ°å›¾çš„â€œé‚®ä»¶ç­’â€NPCåç§°
+[æ±‰åŒ–] æ›´æ–° conf/char_athena.conf ä¸­ char_new_display é€‰é¡¹çš„è¯´æ˜Ž
+[æ±‰åŒ–] æ±‰åŒ–å® ç‰©æˆ˜æ–—ä¿¡æ¯é…ç½®æ–‡ä»¶ä¸­çš„éƒ¨åˆ†é€‰é¡¹ conf/battle/pet.conf
+[æ±‰åŒ–] æ±‰åŒ– conf/battle/exp.conf ä¸­å…³äºŽæ­»äº¡ç»éªŒæƒ©ç½šç›¸å…³é€‰é¡¹çš„è¯´æ˜Ž
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
 
 v1.1.0(2015-10-16)
 ------------------
-[ÐÂÔö] ·þÎñÆ÷ºÚ¿òÖÐÄÜÏÔÊ¾³ö rAthenaCN µÄ°æ±¾ºÅ
-[ÐÂÔö] Ð¯´ø rAthenaCN ×¨ÓÃµÄ LeeStarter Æô¶¯¹ÜÀíÆ÷(Ðè°²×°Î¢ÈíµÄ.Net Framework 4.0¿ò¼Ü²ÅÄÜÔËÐÐ)
-[ÐÂÔö] É±ËÀMVPÄ§ÎïÊ±£¬»á´¥·¢ÓëÍæ¼ÒÎÞ¹ØÁªµÄ OnMvpKillEvent ÊÂ¼þ
-[ÐÂÔö] Ê¹ÓÃ @reloadscript Ë¢ÐÂNPCÖ®Ç°£¬»á´¥·¢ÓëÍæ¼ÒÏà¹ØÁªµÄ OnBeforeReloadScript ÊÂ¼þ
-[ÐÂÔö] Ê¹ÓÃ @reloadscript Ë¢ÐÂÍêNPCºó£¬»á´¥·¢ÓëÍæ¼ÒÏà¹ØÁªµÄ OnAfterReloadScript ÊÂ¼þ
-[ÐÂÔö] Ìí¼Ó rAthenaCN ÍØÕ¹ÊÂ¼þµÄÑÝÊ¾½Å±¾£¬Î»ÓÚ npc/custom/rAthenaCN_Events_Tester.txt
-[µ÷Õû] Äú¿ÉÒÔÍ¨¹ý±à¼­ npc/scripts_custom.conf ÎÄ¼þÀ´ÆôÓÃ¡°ÍØÕ¹ÊÂ¼þÑÝÊ¾½Å±¾¡±
-[µ÷Õû] ½« rAthenaCN ×Ô¶¨ÒåµÄÐÅÏ¢ÅäÖÃÎÄ¼þ¶ÀÁ¢³öÀ´·Åµ½ conf/msg_conf/map_msg_racn.conf
-[ÐÞÕý] rAthena¹Ù·½BUG: ÐÞÕý¸´ÐËÇ°(pre-re)µÄÒÀË¹Â³µÂµºµØÍ¼»º´æ(map_cache.dat)²»ÕýÈ·µÄÎÊÌâ (ÐèÅäºÏÐÂµÄµÇÂ¼²¹¶¡)
-[ºº»¯] ºº»¯³èÎïÊý¾Ý¿â db/(pre-)re/pet_db.txt ÖÐµÄ³èÎïÃû³Æ
-[ºº»¯] ¸üÐÂÖÕ¶Ëºº»¯ÅäÖÃÎÄ¼þ conf/msg_conf/translation.conf
-[ºº»¯] ÍêÈ«ºº»¯¸´ÐËÇ°\¸´ÐËºóµÄÆÕÂ¡µÂÀ­µ¼ÓÎÈËÔ±
-[ºº»¯] Ð£Ñé²¢ÓÅ»¯Î»ÓÚ¡°airplane_01,33¡±µÄ¡°¿ËÀ­ÀòË¹¡±(·É¿ÕÍ§÷»×ÓÓÎÏ·ÈËÔ±)
+[æ–°å¢ž] æœåŠ¡å™¨é»‘æ¡†ä¸­èƒ½æ˜¾ç¤ºå‡º rAthenaCN çš„ç‰ˆæœ¬å·
+[æ–°å¢ž] æºå¸¦ rAthenaCN ä¸“ç”¨çš„ LeeStarter å¯åŠ¨ç®¡ç†å™¨(éœ€å®‰è£…å¾®è½¯çš„.Net Framework 4.0æ¡†æž¶æ‰èƒ½è¿è¡Œ)
+[æ–°å¢ž] æ€æ­»MVPé­”ç‰©æ—¶ï¼Œä¼šè§¦å‘ä¸ŽçŽ©å®¶æ— å…³è”çš„ OnMvpKillEvent äº‹ä»¶
+[æ–°å¢ž] ä½¿ç”¨ @reloadscript åˆ·æ–°NPCä¹‹å‰ï¼Œä¼šè§¦å‘ä¸ŽçŽ©å®¶ç›¸å…³è”çš„ OnBeforeReloadScript äº‹ä»¶
+[æ–°å¢ž] ä½¿ç”¨ @reloadscript åˆ·æ–°å®ŒNPCåŽï¼Œä¼šè§¦å‘ä¸ŽçŽ©å®¶ç›¸å…³è”çš„ OnAfterReloadScript äº‹ä»¶
+[æ–°å¢ž] æ·»åŠ  rAthenaCN æ‹“å±•äº‹ä»¶çš„æ¼”ç¤ºè„šæœ¬ï¼Œä½äºŽ npc/custom/rAthenaCN_Events_Tester.txt
+[è°ƒæ•´] æ‚¨å¯ä»¥é€šè¿‡ç¼–è¾‘ npc/scripts_custom.conf æ–‡ä»¶æ¥å¯ç”¨â€œæ‹“å±•äº‹ä»¶æ¼”ç¤ºè„šæœ¬â€
+[è°ƒæ•´] å°† rAthenaCN è‡ªå®šä¹‰çš„ä¿¡æ¯é…ç½®æ–‡ä»¶ç‹¬ç«‹å‡ºæ¥æ”¾åˆ° conf/msg_conf/map_msg_racn.conf
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä¿®æ­£å¤å…´å‰(pre-re)çš„ä¾æ–¯é²å¾·å²›åœ°å›¾ç¼“å­˜(map_cache.dat)ä¸æ­£ç¡®çš„é—®é¢˜ (éœ€é…åˆæ–°çš„ç™»å½•è¡¥ä¸)
+[æ±‰åŒ–] æ±‰åŒ–å® ç‰©æ•°æ®åº“ db/(pre-)re/pet_db.txt ä¸­çš„å® ç‰©åç§°
+[æ±‰åŒ–] æ›´æ–°ç»ˆç«¯æ±‰åŒ–é…ç½®æ–‡ä»¶ conf/msg_conf/translation.conf
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å¤å…´å‰\å¤å…´åŽçš„æ™®éš†å¾·æ‹‰å¯¼æ¸¸äººå‘˜
+[æ±‰åŒ–] æ ¡éªŒå¹¶ä¼˜åŒ–ä½äºŽâ€œairplane_01,33â€çš„â€œå…‹æ‹‰èŽ‰æ–¯â€(é£žç©ºè‰‡éª°å­æ¸¸æˆäººå‘˜)
 
 v1.0.9(2015-10-09)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/fd7d6c31fdae22ab951b2d8acb86117fc0869b8c
-[ÐÂÔö] ¿ÉÒÔÉèÖÃÇ¿ÖÆ´¥·¢ OnPCLoadMapEvent ÊÂ¼þ (conf/battle/extend.conf µÄ force_loadevent Ñ¡Ïî)
-[ºº»¯] ÍêÈ«ºº»¯Î»ÓÚ¡°hu_in01,381,304¡±µÄ¡°ÁÔÓ¥ËÇÑøÔ±¡±
-[ºº»¯] ÍêÈ«ºº»¯À´ÍùÃàÃàµºµÄ´«ËÍNPC¡°Ã¨ÃàÃà¡±¡¢¡°Ã¨°Â¿Ë¡±ºÍ¡°Ã¨¶¹¶¹¡±
-[ºº»¯] ÍêÈ«ºº»¯¡°ÕÙ»½ÉúÃüÌå¡±ËùÕÙ»½³öÀ´µÄÉúÃüÌåÄ¬ÈÏÃû³Æ
-[ºº»¯] ÍêÈ«ºº»¯¡°ÔªËØ¾«Áé¡±µÄÄ¬ÈÏÃû³Æ
-[ºº»¯] ÍêÈ«ºº»¯Õ½¶·ÅäÖÃÎÄ¼þ conf/battle/battle.conf ÖÐ arrow_decrement Ñ¡ÏîµÄÃèÊö
-[ºº»¯] ºº»¯sql-filesÄ¿Â¼ÖÐ4¸öÓëmob_dbÏà¹ØµÄsqlÎÄ¼þ
+[æ–°å¢ž] å¯ä»¥è®¾ç½®å¼ºåˆ¶è§¦å‘ OnPCLoadMapEvent äº‹ä»¶ (conf/battle/extend.conf çš„ force_loadevent é€‰é¡¹)
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä½äºŽâ€œhu_in01,381,304â€çš„â€œçŒŽé¹°é¥²å…»å‘˜â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æ¥å¾€ç»µç»µå²›çš„ä¼ é€NPCâ€œçŒ«ç»µç»µâ€ã€â€œçŒ«å¥¥å…‹â€å’Œâ€œçŒ«è±†è±†â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå¬å”¤ç”Ÿå‘½ä½“â€æ‰€å¬å”¤å‡ºæ¥çš„ç”Ÿå‘½ä½“é»˜è®¤åç§°
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå…ƒç´ ç²¾çµâ€çš„é»˜è®¤åç§°
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æˆ˜æ–—é…ç½®æ–‡ä»¶ conf/battle/battle.conf ä¸­ arrow_decrement é€‰é¡¹çš„æè¿°
+[æ±‰åŒ–] æ±‰åŒ–sql-filesç›®å½•ä¸­4ä¸ªä¸Žmob_dbç›¸å…³çš„sqlæ–‡ä»¶
 
 v1.0.8(2015-10-07)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/81662aaceec44b653b1aaaa143ca2e75d51ad54d
-[ÐÂÔö] ¿ÉÒÔÉèÖÃ¡°Ê¹ÓÃ°¢ÐÞÂÞ°Ô»ËÈ­Ê±²»ÏûºÄÍæ¼ÒµÄSP¡± (conf/battle/extend.conf µÄ extremityfist_no_require_sp Ñ¡Ïî)
-[ÐÂÔö] ¿ÉÒÔÉèÖÃ¡°ÎÞÊÓÊ¹ÓÃ°¢ÐÞÂÞ°Ô»ËÈ­ºóµÄSP»Ö¸´ÏÞÖÆ¡± (conf/battle/extend.conf µÄ ignore_extremityfist_sp_limit Ñ¡Ïî)
-[ÐÂÔö] ÔÊÐíµ¥¶ÀÏÞÖÆÍæ¼ÒÔÚPVPµØÍ¼Ê±µÄ¹¥ËÙ (conf/battle/extend.conf µÄ max_aspd_for_pvp Ñ¡Ïî)
-[ÐÂÔö] ÔÊÐíµ¥¶ÀÏÞÖÆÍæ¼ÒÔÚGVGµØÍ¼Ê±µÄ¹¥ËÙ (conf/battle/extend.conf µÄ max_aspd_for_gvg Ñ¡Ïî)
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃ bonus4 bAddEffWhenHit,eff,n,y,t; Ê±£¬Èô n Éè¶¨µÄÖµ´óÓÚ 624 Ê±»á±¨´íµÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃ bonus4 bAddEffWhenHit,eff,n,y,t; Ê±£¬ÉèÖÃ y Îª ATF_SELF Ê±ÎÞÐ§µÄÎÊÌâ
-[ÐÞÕý] ÐÞÕýÏ®»÷·É¿ÕÍ§ÈÎÎñ±»´¥·¢Ê±£¬ÌáÊ¾Airship Staff#airplane01²»´æÔÚµÄÎÊÌâ
-[ºº»¯] ÍêÈ«ºº»¯ÆÕÂ¡µÂÀ­ÆïÊ¿ºÍÊ®×Ö¾üµÄ´ó×ìÄñËÇÑøÔ±
-[ºº»¯] ºº»¯sql-filesÄ¿Â¼ÖÐ4¸öÓëitem_dbÏà¹ØµÄsqlÎÄ¼þ
-[ºº»¯] Ð£¶Ô²¢ÓÅ»¯°¬Òô²¼ÂÞ¿Ë¡¢ÖìÅµ·É¿ÕÍ§µÄ»ú³¡Ö°Ô±¶Ô»°
-[ºº»¯] Ð£¶ÔºÍÓÅ»¯»Ù¸ð¡¢À­ºÕ¡¢ÀïÏ£ËþÀÖÕò¡¢ÒÀË¹Â³µÂµºµÄ»ú³¡Ö°Ô±¶Ô»°
-[ºº»¯] ÓÅ»¯²¢Ð£¶ÔÎ»ÓÚ¡°airplane_01,32,61¡±µÄ·É¿ÕÍ§Ð¡ÓÎÏ·¡°RO´ò×Ö´óÌôÕ½¡±Ö÷¿ØNPC¡°ÄßË¼¡±µÄ¶Ô»°
+[æ–°å¢ž] å¯ä»¥è®¾ç½®â€œä½¿ç”¨é˜¿ä¿®ç½—éœ¸å‡°æ‹³æ—¶ä¸æ¶ˆè€—çŽ©å®¶çš„SPâ€ (conf/battle/extend.conf çš„ extremityfist_no_require_sp é€‰é¡¹)
+[æ–°å¢ž] å¯ä»¥è®¾ç½®â€œæ— è§†ä½¿ç”¨é˜¿ä¿®ç½—éœ¸å‡°æ‹³åŽçš„SPæ¢å¤é™åˆ¶â€ (conf/battle/extend.conf çš„ ignore_extremityfist_sp_limit é€‰é¡¹)
+[æ–°å¢ž] å…è®¸å•ç‹¬é™åˆ¶çŽ©å®¶åœ¨PVPåœ°å›¾æ—¶çš„æ”»é€Ÿ (conf/battle/extend.conf çš„ max_aspd_for_pvp é€‰é¡¹)
+[æ–°å¢ž] å…è®¸å•ç‹¬é™åˆ¶çŽ©å®¶åœ¨GVGåœ°å›¾æ—¶çš„æ”»é€Ÿ (conf/battle/extend.conf çš„ max_aspd_for_gvg é€‰é¡¹)
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨ bonus4 bAddEffWhenHit,eff,n,y,t; æ—¶ï¼Œè‹¥ n è®¾å®šçš„å€¼å¤§äºŽ 624 æ—¶ä¼šæŠ¥é”™çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨ bonus4 bAddEffWhenHit,eff,n,y,t; æ—¶ï¼Œè®¾ç½® y ä¸º ATF_SELF æ—¶æ— æ•ˆçš„é—®é¢˜
+[ä¿®æ­£] ä¿®æ­£è¢­å‡»é£žç©ºè‰‡ä»»åŠ¡è¢«è§¦å‘æ—¶ï¼Œæç¤ºAirship Staff#airplane01ä¸å­˜åœ¨çš„é—®é¢˜
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æ™®éš†å¾·æ‹‰éª‘å£«å’Œåå­—å†›çš„å¤§å˜´é¸Ÿé¥²å…»å‘˜
+[æ±‰åŒ–] æ±‰åŒ–sql-filesç›®å½•ä¸­4ä¸ªä¸Žitem_dbç›¸å…³çš„sqlæ–‡ä»¶
+[æ±‰åŒ–] æ ¡å¯¹å¹¶ä¼˜åŒ–è‰¾éŸ³å¸ƒç½—å…‹ã€æœ±è¯ºé£žç©ºè‰‡çš„æœºåœºèŒå‘˜å¯¹è¯
+[æ±‰åŒ–] æ ¡å¯¹å’Œä¼˜åŒ–æ¯è‘›ã€æ‹‰èµ«ã€é‡Œå¸Œå¡”ä¹é•‡ã€ä¾æ–¯é²å¾·å²›çš„æœºåœºèŒå‘˜å¯¹è¯
+[æ±‰åŒ–] ä¼˜åŒ–å¹¶æ ¡å¯¹ä½äºŽâ€œairplane_01,32,61â€çš„é£žç©ºè‰‡å°æ¸¸æˆâ€œROæ‰“å­—å¤§æŒ‘æˆ˜â€ä¸»æŽ§NPCâ€œå€ªæ€â€çš„å¯¹è¯
 
 v1.0.7(2015-09-25)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/5e18376dc8a84f1f33398aa5db36aacc8b4d9207
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÉ¾³ýÒÔÏÂÎÄ¼þ
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åˆ é™¤ä»¥ä¸‹æ–‡ä»¶
        - db/quest_db.txt
-[µ÷Õû] ÔÝÊ±¹Ø±Õ¶Ô¹Ù·½VIP»úÖÆµÄÖ§³Ö
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃ @accinfo Ö¸Áî²éÑ¯Ò»¸öpincode²»Îª¿ÕµÄÕËºÅÊ±£¬È´¿´µ½pincodeÊÇ¡°¿ÕÃÜÂë¡±µÄÎÊÌâ
-[ÐÞÕý] rAthena¹Ù·½BUG: µ±item_cash_db.txtÎª¿ÕÊ±£¬cashshop ÀàÐÍµÄNPCÉÌµêÎÞ·¨Õý³£½»Ò×µÄÎÊÌâ
-[ºº»¯] ÍêÈ«ºº»¯ @accinfo Ö¸ÁîµÄ»ØÏÔÐÅÏ¢
-[ºº»¯] ºº»¯Õ½¶·ÅäÖÃÎÄ¼þ conf/battle/status.conf µÄ4¸öÑ¡ÏîËµÃ÷
-[ºº»¯] ºº»¯ºÍÈóÉ«·É¿ÕÍ§ÉÏµÄÏà¹ØÉèÊ© npc/airports/airships.txt(»¹ÓÐ2¸öNPCÃ»Ð£¶ÔÈóÉ«)
+[è°ƒæ•´] æš‚æ—¶å…³é—­å¯¹å®˜æ–¹VIPæœºåˆ¶çš„æ”¯æŒ
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨ @accinfo æŒ‡ä»¤æŸ¥è¯¢ä¸€ä¸ªpincodeä¸ä¸ºç©ºçš„è´¦å·æ—¶ï¼Œå´çœ‹åˆ°pincodeæ˜¯â€œç©ºå¯†ç â€çš„é—®é¢˜
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: å½“item_cash_db.txtä¸ºç©ºæ—¶ï¼Œcashshop ç±»åž‹çš„NPCå•†åº—æ— æ³•æ­£å¸¸äº¤æ˜“çš„é—®é¢˜
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ– @accinfo æŒ‡ä»¤çš„å›žæ˜¾ä¿¡æ¯
+[æ±‰åŒ–] æ±‰åŒ–æˆ˜æ–—é…ç½®æ–‡ä»¶ conf/battle/status.conf çš„4ä¸ªé€‰é¡¹è¯´æ˜Ž
+[æ±‰åŒ–] æ±‰åŒ–å’Œæ¶¦è‰²é£žç©ºè‰‡ä¸Šçš„ç›¸å…³è®¾æ–½ npc/airports/airships.txt(è¿˜æœ‰2ä¸ªNPCæ²¡æ ¡å¯¹æ¶¦è‰²)
 	   
 v1.0.6(2015-09-20)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/e46574a12d5a137c9d5423223d392969381c870d
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÔÚÄúµÄ¡¾ÈÕÖ¾Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂsqlÎÄ¼þ
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€æ—¥å¿—æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹sqlæ–‡ä»¶
        - sql-files\upgrades\upgrade_20150917_log.sql
-[ºº»¯] ÍêÈ«ºº»¯¡°ÎÞ¾¡Ö®Ëþ¡±¸±±¾
-[ºº»¯] ²¿·Öºº»¯ conf/battle/feature.conf ÖÐ feature.roulette Ñ¡ÏîµÄËµÃ÷
-[ºº»¯] ²¿·Öºº»¯ @accinfo Ö¸ÁîµÄ»ØÏÔÐÅÏ¢ ¸ÐÐ» ¨t¤Å¼ÇÒä?°ß²µ©C Ð­Öúºº»¯
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œæ— å°½ä¹‹å¡”â€å‰¯æœ¬
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ– conf/battle/feature.conf ä¸­ feature.roulette é€‰é¡¹çš„è¯´æ˜Ž
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ– @accinfo æŒ‡ä»¤çš„å›žæ˜¾ä¿¡æ¯ æ„Ÿè°¢ â•°ã¥è®°å¿†â€¢æ–‘é©³ã€¤ ååŠ©æ±‰åŒ–
 
 v1.0.5(2015-09-12)
 ------------------
-[ÐÂÔö] Ë«»÷batÆô¶¯µÄÅú´¦ÀíÓÐ¸ü¼Ó×¨ÒµµÄ±êÌâÏÔÊ¾
-[ÐÂÔö] ÈôÊÇ³õ´ÎÊ¹ÓÃ£¬»á×Ô¶¯½« import-tmpl Ä¿Â¼ÖØÃüÃûÎª import
-[ÐÞÕý] rAthena¹Ù·½BUG: Ê¹ÓÃunitwalk½Å±¾Ö¸ÁîÒÆ¶¯Íê±Ïºó£¬²»»á´¥·¢Ö¸¶¨ÊÂ¼þµÄÎÊÌâ ¸ÐÐ» Sariel »ã±¨
-[ÐÞÕý] ÐÞÕý²¿·Öºº»¯µÄÄ§ÎïÃû³ÆÊÇµÀ¾ßÃû×ÖµÄÎÊÌâ
-[ºº»¯] ²¿·Öºº»¯Ê£ÓàµÄ´ó²¿·ÖÉÌÈËNPCµÄÃû³Æ¡¢Ê£ÏÂÉÙÊý¼¸¸ö¸´ÐËºó³ÇÕòµÄÉÌÈËÃ»ºº»¯
-[ºº»¯] ÍêÈ«ºº»¯Î»ÓÚ¡°alberta,118,160¡±µÄ¡°×Óµ¯ÉÌÈË ÌÀÄá¡±
-[ºº»¯] ÍêÈ«ºº»¯¹«»á³Ç±¤Êý¾Ý¿âÖÐµÄ³Ç±¤Ãû³Æ db/castle_db.txt
-[ºº»¯] ÍêÈ«ºº»¯ÆÕÍ¨¹«»áÕ½µÄÏà¹Ø½Å±¾£¬°üÀ¨ÆìÖÄ¡¢¹«»á³Ç±¤ÄÚµÄ¿¨ÆÕÀ­ÉèÊ©µÈ
-[ºº»¯] ÍêÉÆÎïÆ·µôÂÊÏà¹ØÑ¡ÏîµÄÏêÏ¸ËµÃ÷
+[æ–°å¢ž] åŒå‡»batå¯åŠ¨çš„æ‰¹å¤„ç†æœ‰æ›´åŠ ä¸“ä¸šçš„æ ‡é¢˜æ˜¾ç¤º
+[æ–°å¢ž] è‹¥æ˜¯åˆæ¬¡ä½¿ç”¨ï¼Œä¼šè‡ªåŠ¨å°† import-tmpl ç›®å½•é‡å‘½åä¸º import
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: ä½¿ç”¨unitwalkè„šæœ¬æŒ‡ä»¤ç§»åŠ¨å®Œæ¯•åŽï¼Œä¸ä¼šè§¦å‘æŒ‡å®šäº‹ä»¶çš„é—®é¢˜ æ„Ÿè°¢ Sariel æ±‡æŠ¥
+[ä¿®æ­£] ä¿®æ­£éƒ¨åˆ†æ±‰åŒ–çš„é­”ç‰©åç§°æ˜¯é“å…·åå­—çš„é—®é¢˜
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–å‰©ä½™çš„å¤§éƒ¨åˆ†å•†äººNPCçš„åç§°ã€å‰©ä¸‹å°‘æ•°å‡ ä¸ªå¤å…´åŽåŸŽé•‡çš„å•†äººæ²¡æ±‰åŒ–
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä½äºŽâ€œalberta,118,160â€çš„â€œå­å¼¹å•†äºº æ±¤å°¼â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å…¬ä¼šåŸŽå ¡æ•°æ®åº“ä¸­çš„åŸŽå ¡åç§° db/castle_db.txt
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–æ™®é€šå…¬ä¼šæˆ˜çš„ç›¸å…³è„šæœ¬ï¼ŒåŒ…æ‹¬æ——å¸œã€å…¬ä¼šåŸŽå ¡å†…çš„å¡æ™®æ‹‰è®¾æ–½ç­‰
+[æ±‰åŒ–] å®Œå–„ç‰©å“æŽ‰çŽ‡ç›¸å…³é€‰é¡¹çš„è¯¦ç»†è¯´æ˜Ž
 
 v1.0.4(2015-09-04)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/6295c77d393555fe5a366f092a75f4cf0d2de933
-[Éý¼¶] ÈôÄú²»ÊÇÈ«ÐÂ°²×°µÄ»°£¬ÇëÔÚÄúµÄ¡¾Ö÷Êý¾Ý¿â¡¿ÉÏ°´Ë³Ðòµ¼ÈëÒÔÏÂÁ½¸ösqlÎÄ¼þ
+[å‡çº§] è‹¥æ‚¨ä¸æ˜¯å…¨æ–°å®‰è£…çš„è¯ï¼Œè¯·åœ¨æ‚¨çš„ã€ä¸»æ•°æ®åº“ã€‘ä¸ŠæŒ‰é¡ºåºå¯¼å…¥ä»¥ä¸‹ä¸¤ä¸ªsqlæ–‡ä»¶
        - sql-files\upgrades\upgrade_20150828.sql
 	   - sql-files\upgrades\upgrade_20150831.sql
-[ºº»¯] ²¿·Öºº»¯Ê¹ÓÃGMÖ¸ÁîÖ®ºóÏµÍ³·µ»ØµÄÐÅÏ¢ conf/msg_conf/map_msg.conf
-[ºº»¯] ²¿·Öºº»¯ºÍ×´Ì¬Ïà¹ØµÄÕ½¶·ÅäÖÃÎÄ¼þ conf/battle/status.conf
-[ºº»¯] ÍêÈ«ºº»¯Á¶½ðÊõÊ¦¹«»á··ÂôÒ©Ë®ÖÆ×÷ÊéµÄ¡°¹«»áÏúÊÛÔ±¡±
-[ºº»¯] ÍêÈ«ºº»¯¡°Î¢Ð¦Ð¡½ã¡±
-[ºº»¯] ÍêÈ«ºº»¯¡°¹ûÖ­ÖÆ×÷ÈÎÎñ¡±Ïà¹ØµÄNPC
-[ºº»¯] ÍêÈ«ºº»¯¡°¼ýÊ¸Í²ÖÆ×÷¡±Ïà¹ØµÄNPC
-[ºº»¯] ÍêÈ«ºº»¯Î»ÓÚ¡°prontera,73,140¡±µÄ¡°Å£ÄÌ¹©Ó¦ÉÌ¡±
-[ºº»¯] ÍêÈ«ºº»¯¼ª·ÒÌú½³¹«»á··ÂôÌúÕèµÄ¡°¿ËÀíË¹¶à¸£¡±
-[ºº»¯] ÍêÈ«ºº»¯×°±¸ÐÞÀí¹¤
-[ºº»¯] ÍêÈ«ºº»¯ºö¿ËÁ¬µÈ¾­µäµÄ×°±¸¾«Á¶ÈËÔ±
-[ºº»¯] ÍêÈ«ºº»¯¶Ò»»ÉñÖ®½ðÊôºÍÂÁµÄ¡°µÛÌØÁ¢Î÷¡±µÈÈËÔ±
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–ä½¿ç”¨GMæŒ‡ä»¤ä¹‹åŽç³»ç»Ÿè¿”å›žçš„ä¿¡æ¯ conf/msg_conf/map_msg.conf
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–å’ŒçŠ¶æ€ç›¸å…³çš„æˆ˜æ–—é…ç½®æ–‡ä»¶ conf/battle/status.conf
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ç‚¼é‡‘æœ¯å¸ˆå…¬ä¼šè´©å–è¯æ°´åˆ¶ä½œä¹¦çš„â€œå…¬ä¼šé”€å”®å‘˜â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå¾®ç¬‘å°å§â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œæžœæ±åˆ¶ä½œä»»åŠ¡â€ç›¸å…³çš„NPC
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œç®­çŸ¢ç­’åˆ¶ä½œâ€ç›¸å…³çš„NPC
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–ä½äºŽâ€œprontera,73,140â€çš„â€œç‰›å¥¶ä¾›åº”å•†â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å‰èŠ¬é“åŒ å…¬ä¼šè´©å–é“ç §çš„â€œå…‹ç†æ–¯å¤šç¦â€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–è£…å¤‡ä¿®ç†å·¥
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å¿½å…‹è¿žç­‰ç»å…¸çš„è£…å¤‡ç²¾ç‚¼äººå‘˜
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–å…‘æ¢ç¥žä¹‹é‡‘å±žå’Œé“çš„â€œå¸ç‰¹ç«‹è¥¿â€ç­‰äººå‘˜
 
 v1.0.3(2015-08-28)
 ------------------
-[ÐÂÔö] Ä¬ÈÏÆôÓÃ·â°ü»ìÏý»úÖÆ£¬ÅäÌ×¿Í»§¶Ë²¹¶¡Ê¹ÓÃ¿É·ÀWPE
-       »ìÏýÃÜÔ¿Îª: 0x00dd7a90,0x37ea4427,0x28b79a45
-[ÐÂÔö] Ö§³ÖÊ¹ÓÃ @reloadmsgconf ÖØÐÂ¶ÁÈ¡ conf/msg_conf/translation.conf ÖÐµÄºº»¯½á¹û
-[ÐÞÕý] rAthena¹Ù·½BUG: ÓÐÊ±VIPÓÃ»§Ê¹ÓÃ¼¼ÄÜ»¹ÐèÒªÏûºÄÀ¶É«Ä§Á¦¿óÊ¯µÄÎÊÌâ ¸ÐÐ» alone »ã±¨
-[ºº»¯] ÍêÈ«ºº»¯¡°rAthena¹¦ÄÜÅäÖÃÎÄ¼þ¡± conf/battle/feature.conf ¸ÐÐ» alone Ð­Öúºº»¯
-[ºº»¯] ÍêÈ«ºº»¯¡°ÁúÏÉÈå/ÁúÏÈÉú¡±
-[ºº»¯] ÍêÈ«ºº»¯¡°ÎïÆ·µôÂäÕ½¶·ÅäÖÃÎÄ¼þ¡± conf/battle/drops.conf
-[ºº»¯] ²¿·Öºº»¯¡°Ö¸Áî°ïÖúÎÄ¼þ¡± conf/help.txt
-[ºº»¯] ²¿·Öºº»¯¡°µØÍ¼ÁÐ±íÎÄ¼þ¡±ÖÐµÄ×¢ÊÍ conf/maps_athena.conf
-[ºº»¯] ²¿·Öºº»¯¡°µÇÂ¼¡¢½ÇÉ«¡¢µØÍ¼·þÎñÆ÷µÄÐÅÏ¢ÅäÖÃÎÄ¼þ¡± conf/msg_conf/login_msg.conf¡¢char_msg.conf¡¢map_msg.conf
-[ÅäÖÃ] Ä¬ÈÏÆôÓÃVIP»úÖÆºÍ¼¼ÄÜÉËº¦ÐÞÕý»úÖÆ
-[ÅäÖÃ] Ä¬ÈÏ½« conf/battle/exp.conf µÄ multi_level_up Ñ¡ÏîÉèÖÃÎª yes
+[æ–°å¢ž] é»˜è®¤å¯ç”¨å°åŒ…æ··æ·†æœºåˆ¶ï¼Œé…å¥—å®¢æˆ·ç«¯è¡¥ä¸ä½¿ç”¨å¯é˜²WPE
+       æ··æ·†å¯†é’¥ä¸º: 0x00dd7a90,0x37ea4427,0x28b79a45
+[æ–°å¢ž] æ”¯æŒä½¿ç”¨ @reloadmsgconf é‡æ–°è¯»å– conf/msg_conf/translation.conf ä¸­çš„æ±‰åŒ–ç»“æžœ
+[ä¿®æ­£] rAthenaå®˜æ–¹BUG: æœ‰æ—¶VIPç”¨æˆ·ä½¿ç”¨æŠ€èƒ½è¿˜éœ€è¦æ¶ˆè€—è“è‰²é­”åŠ›çŸ¿çŸ³çš„é—®é¢˜ æ„Ÿè°¢ alone æ±‡æŠ¥
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œrAthenaåŠŸèƒ½é…ç½®æ–‡ä»¶â€ conf/battle/feature.conf æ„Ÿè°¢ alone ååŠ©æ±‰åŒ–
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œé¾™ä»™å„’/é¾™å…ˆç”Ÿâ€
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œç‰©å“æŽ‰è½æˆ˜æ–—é…ç½®æ–‡ä»¶â€ conf/battle/drops.conf
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–â€œæŒ‡ä»¤å¸®åŠ©æ–‡ä»¶â€ conf/help.txt
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–â€œåœ°å›¾åˆ—è¡¨æ–‡ä»¶â€ä¸­çš„æ³¨é‡Š conf/maps_athena.conf
+[æ±‰åŒ–] éƒ¨åˆ†æ±‰åŒ–â€œç™»å½•ã€è§’è‰²ã€åœ°å›¾æœåŠ¡å™¨çš„ä¿¡æ¯é…ç½®æ–‡ä»¶â€ conf/msg_conf/login_msg.confã€char_msg.confã€map_msg.conf
+[é…ç½®] é»˜è®¤å¯ç”¨VIPæœºåˆ¶å’ŒæŠ€èƒ½ä¼¤å®³ä¿®æ­£æœºåˆ¶
+[é…ç½®] é»˜è®¤å°† conf/battle/exp.conf çš„ multi_level_up é€‰é¡¹è®¾ç½®ä¸º yes
 
 v1.0.2(2015-08-22)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/a2e9a8a88c9e2ef93611e64c2cb1f21d4619cd43
-[ÐÂÔö] À©Õ¹Ä§ÎïÃû³ÆÄÜÕ¹ÏÖµÄÐÅÏ¢£¬¼ÓÈëÌåÐÍ¡¢ÖÖ×å¡¢ÊôÐÔµÈ
-[ÐÞÕý] ²¿·Öºº×ÖÎÞ·¨±»ÓÃ×÷½ÇÉ«ÃûµÄÎÊÌâ
-[ÐÞÕý] npcÄ¿Â¼ÖÐµÄconfÎÄ¼þÀï£¬ÅäÖÃÁËÄ³¸ö²»´æÔÚµÄ½Å±¾Ê±£¬ÖÕ¶Ë²»±¨´íµÄÎÊÌâ
-[ÐÞÕý] GM½ÇÉ«»ñµÃÊÖÍÆ³µºó£¬ÓÃ@hide½øÈëÒþÉí×´Ì¬£¬Ð¡ÍË»ØÀ´ºóALT+WÎÞ·¨´ò¿ªÊÖÍÆ³µµÄÎÊÌâ
-[ºº»¯] ÍêÈ«ºº»¯¡°¹«»áÕ½¶·ÅäÖÃÎÄ¼þ¡± (conf/battle/guild.conf) ¸ÐÐ» alone Ð­Öúºº»¯
-[ºº»¯] ×·¼Óºº»¯Ò»Ð©ÖÕ¶ËµÄ´íÎóÌáÊ¾ÐÅÏ¢
-[ÅäÖÃ] Íæ¼ÒµÇÂ¼ÓÎÏ·Ê±Ä¬ÈÏ²»ÏÔÊ¾·þÎñ¶Ë°æ±¾ºÅ
+[æ–°å¢ž] æ‰©å±•é­”ç‰©åç§°èƒ½å±•çŽ°çš„ä¿¡æ¯ï¼ŒåŠ å…¥ä½“åž‹ã€ç§æ—ã€å±žæ€§ç­‰
+[ä¿®æ­£] éƒ¨åˆ†æ±‰å­—æ— æ³•è¢«ç”¨ä½œè§’è‰²åçš„é—®é¢˜
+[ä¿®æ­£] npcç›®å½•ä¸­çš„confæ–‡ä»¶é‡Œï¼Œé…ç½®äº†æŸä¸ªä¸å­˜åœ¨çš„è„šæœ¬æ—¶ï¼Œç»ˆç«¯ä¸æŠ¥é”™çš„é—®é¢˜
+[ä¿®æ­£] GMè§’è‰²èŽ·å¾—æ‰‹æŽ¨è½¦åŽï¼Œç”¨@hideè¿›å…¥éšèº«çŠ¶æ€ï¼Œå°é€€å›žæ¥åŽALT+Wæ— æ³•æ‰“å¼€æ‰‹æŽ¨è½¦çš„é—®é¢˜
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œå…¬ä¼šæˆ˜æ–—é…ç½®æ–‡ä»¶â€ (conf/battle/guild.conf) æ„Ÿè°¢ alone ååŠ©æ±‰åŒ–
+[æ±‰åŒ–] è¿½åŠ æ±‰åŒ–ä¸€äº›ç»ˆç«¯çš„é”™è¯¯æç¤ºä¿¡æ¯
+[é…ç½®] çŽ©å®¶ç™»å½•æ¸¸æˆæ—¶é»˜è®¤ä¸æ˜¾ç¤ºæœåŠ¡ç«¯ç‰ˆæœ¬å·
 
 v1.0.1(2015-08-19)
 ------------------
-[ºº»¯] ÎïÆ·Êý¾Ý¿âÖÐµÄ³£ÓÃÎïÆ·Ãû³Æ
-[ºº»¯] Ä§ÎïÊý¾Ý¿âÖÐµÄ³£¼ûÄ§ÎïÃû³Æ
-[ºº»¯] ÍêÈ«ºº»¯¡°Êý¾Ý·â°üÅäÖÃÎÄ¼þ¡± (conf/packet_athena.conf) ¸ÐÐ» alone ½øÐÐºº»¯
-[ÅäÖÃ] ÒÑ½« conf/battle/monster.conf ÖÐ override_mob_names µÄÖµ¸Ä³É 2 ÒÔ±ã¼ÓÔØÖÐÎÄÄ§ÎïÃû³Æ
+[æ±‰åŒ–] ç‰©å“æ•°æ®åº“ä¸­çš„å¸¸ç”¨ç‰©å“åç§°
+[æ±‰åŒ–] é­”ç‰©æ•°æ®åº“ä¸­çš„å¸¸è§é­”ç‰©åç§°
+[æ±‰åŒ–] å®Œå…¨æ±‰åŒ–â€œæ•°æ®å°åŒ…é…ç½®æ–‡ä»¶â€ (conf/packet_athena.conf) æ„Ÿè°¢ alone è¿›è¡Œæ±‰åŒ–
+[é…ç½®] å·²å°† conf/battle/monster.conf ä¸­ override_mob_names çš„å€¼æ”¹æˆ 2 ä»¥ä¾¿åŠ è½½ä¸­æ–‡é­”ç‰©åç§°
 
 v1.0.0(2015-08-17)
 ------------------
-[Í¬²½] rAthena¹Ù·½Github¿â
+[åŒæ­¥] rAthenaå®˜æ–¹Githubåº“
        https://github.com/rathena/rathena/commit/c4dab3cf92060398a2e31ee3684f05ce59f0bcf7
-[ÐÂÔö] ·ÖÏírAthenaCNµÄµÚÒ»¸ö°æ±¾
-[ºº»¯] ¿¨ÆÕÀ­¡¢ÓÊ¼þÍ²¡¢·É¿ÕÍ§¹«¸æ¡¢NPCÉÌµê
-[ºº»¯] ²¿·Ö»ù´¡ÅäÖÃÎÄ¼þ
-[ºº»¯] ³£¼ûµÄ¿ØÖÆÌ¨Êä³öÐÅÏ¢ÄÚÈÝ
+[æ–°å¢ž] åˆ†äº«rAthenaCNçš„ç¬¬ä¸€ä¸ªç‰ˆæœ¬
+[æ±‰åŒ–] å¡æ™®æ‹‰ã€é‚®ä»¶ç­’ã€é£žç©ºè‰‡å…¬å‘Šã€NPCå•†åº—
+[æ±‰åŒ–] éƒ¨åˆ†åŸºç¡€é…ç½®æ–‡ä»¶
+[æ±‰åŒ–] å¸¸è§çš„æŽ§åˆ¶å°è¾“å‡ºä¿¡æ¯å†…å®¹
