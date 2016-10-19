@@ -1,0 +1,72 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script ======================================
+//= Dimensional Gap Warps
+//===== Description: =========================================
+//= Warps for Dimensional Gap
+//===== Additional Comments: =================================
+//= 1.0 First Version. [Nova]
+//============================================================
+
+mid_camp,210,292,4	script	Transport Device#01	10007,{
+	mes "Do you wish to enter the Dimensional Gap?";
+	next;
+	switch(select("Yes:No")) {
+	case 1:
+		close2;
+		warp "dali",141,82;
+		end;
+	case 2:
+		close;
+	}
+}
+
+moc_fild22b,222,200,4	script	Transport Device#02	10007,{
+	mes "Do you wish to enter the Dimensional Gap?";
+	next;
+	switch(select("Yes:No")) {
+	case 1:
+		close2;
+		warp "dali",119,56;
+		end;
+	case 2:
+		close;
+	}
+}
+
+bif_fild01,318,159,4	script	Transport Device#03	10007,{
+	mes "Do you wish to enter the Dimensional Gap?";
+	next;
+	switch(select("Yes:No")) {
+	case 1:
+		close2;
+		warp "dali",43,92;
+		end;
+	case 2:
+		close;
+	}
+}
+
+dic_fild02,241,31,4	script	Transport Device#04	10007,{
+	mes "Do you wish to enter the Dimensional Gap?";
+	next;
+	switch(select("Yes:No")) {
+	case 1:
+		close2;
+		warp "dali",41,134;
+		end;
+	case 2:
+		close;
+	}
+}
+
+dali,149,82,0	warp	dg001	2,2,mid_camp,210,289
+dali,122,48,0	warp	dg002	2,2,moc_fild22b,227,200
+dali,38,87,0	warp	dg003	2,2,bif_fild01,318,155
+dali,34,139,0	warp	dg004	2,2,dic_fild02,237,32

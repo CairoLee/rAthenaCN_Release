@@ -133,7 +133,7 @@ OnInit:
 	disablenpc "AbyssWarp";
 	end;
 
-OnTouch:
+OnTouch_:
 	warp "abyss_01",260,268;
 	end;
 

@@ -261,7 +261,7 @@ payon,103,63,3	script	葛豪	88,3,3,{
 	mes "还能对世界做出什么贡献呢?";
 	close;
 
-OnTouch:
+OnTouch_:
 	mes "[???]";
 	mes "咳呜呜呜嗯....";
 	close;

@@ -300,7 +300,7 @@ prt_monk,59,247,1	script	Guarding Monk#mk	120,6,2,{
 		}
 	}
 
-OnTouch:
+OnTouch_:
 	if (MONK_Q == 0) {
 		mes "[Tohobu]";
 		mes "How dare you set foot in";
@@ -1976,7 +1976,7 @@ monk_test,386,388,4	script	Apprentice Monk#mk	110,{
 }
 
 monk_test,387,350,0	script	Supervisor#race_monk	45,2,2,{
-OnTouch:
+OnTouch_:
 	if (MONK_Q >= 15 && MONK_Q <= 23) {
 		set MONK_Q,MONK_Q+1;
 		warp "monk_test",385,388;
@@ -2001,7 +2001,7 @@ OnTouch:
 }
 
 monk_test,82,384,0	script	Trap#t_monk1_1::MonkTrap	-1,{
-OnTouch:
+OnTouch_:
 	mapannounce "monk_test",""+ strcharinfo(0) + ", you're trapped. You will be returned.",bc_map;
 	warp "monk_test",387,387;
 	end;
@@ -2270,7 +2270,7 @@ monk_test,82,85,1	script	Proctor#mk	95,{
 }
 
 monk_test,144,277,0	script	mob_monk#1_1	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",144,277,"Zombie",1015,1;
 	monster "monk_test",144,277,"Zombie",1015,1;
 	monster "monk_test",144,277,"Zombie",1015,1;
@@ -2283,7 +2283,7 @@ OnDisable:
 }
 
 monk_test,134,291,0	script	mob_monk#1_2	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",134,291,"Zombie",1015,1;
 	monster "monk_test",134,291,"Zombie",1015,1;
 	monster "monk_test",134,291,"Zombie",1015,1;
@@ -2296,7 +2296,7 @@ OnDisable:
 }
 
 monk_test,157,284,0	script	mob_monk#1_3	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",157,284,"Mummy",1041,1;
 	end;
 
@@ -2306,7 +2306,7 @@ OnDisable:
 }
 
 monk_test,156,261,0	script	mob_monk#1_4	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",156,261,"Mummy",1041,1;
 	end;
 
@@ -2316,7 +2316,7 @@ OnDisable:
 }
 
 monk_test,149,268,0	script	mob_monk#1_5	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",149,268,"Zombie",1015,1;
 	monster "monk_test",149,268,"Zombie",1015,1;
 	monster "monk_test",149,268,"Zombie",1015,1;
@@ -2330,7 +2330,7 @@ OnDisable:
 }
 
 monk_test,166,278,0	script	exit_monk#1	45,1,1,{
-OnTouch:
+OnTouch_:
 	mes "[Proctor]";
 	mes "You did well. Please return to Tomoon, he's waiting for you.";
 	set MONK_Q,27;
@@ -2377,7 +2377,7 @@ monk_test,88,91,1	script	Proctor#mk2	52,{
 }
 
 monk_test,140,181,0	script	mob_monk#2_1	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",140,181,"Zombie",1015,1;
 	monster "monk_test",140,181,"Zombie",1015,1;
 	monster "monk_test",140,181,"Zombie",1015,1;
@@ -2390,7 +2390,7 @@ OnDisable:
 }
 
 monk_test,150,164,0	script	mob_monk#2_2	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",150,164,"Zombie",1015,1;
 	monster "monk_test",150,164,"Zombie",1015,1;
 	monster "monk_test",150,164,"Zombie",1015,1;
@@ -2403,7 +2403,7 @@ OnDisable:
 }
 
 monk_test,158,192,0	script	mob_monk#2_3	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",158,192,"Mummy",1041,1;
 	end;
 
@@ -2413,7 +2413,7 @@ OnDisable:
 }
 
 monk_test,165,186,0	script	mob_monk#2_4	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",165,186,"Mummy",1041,1;
 	end;
 
@@ -2423,7 +2423,7 @@ OnDisable:
 }
 
 monk_test,162,182,0	script	mob_monk#2_5	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",162,182,"Zombie",1015,1;
 	monster "monk_test",162,182,"Zombie",1015,1;
 	monster "monk_test",162,182,"Zombie",1015,1;
@@ -2437,7 +2437,7 @@ OnDisable:
 }
 
 monk_test,166,178,0	script	exit_monk#2	45,1,1,{
-OnTouch:
+OnTouch_:
 	mes "[Proctor]";
 	mes "You did well. Please return to Tomoon, he's waiting for you.";
 	set MONK_Q,27;
@@ -2484,7 +2484,7 @@ monk_test,95,85,1	script	Proctor#btl#3	79,{
 }
 
 monk_test,249,277,0	script	mob_monk#3_1	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",249,277,"Zombie",1015,1;
 	monster "monk_test",249,277,"Zombie",1015,1;
 	monster "monk_test",249,277,"Zombie",1015,1;
@@ -2496,7 +2496,7 @@ OnDisable:
 }
 
 monk_test,231,296,0	script	mob_monk#3_2	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",231,296,"Zombie",1015,1;
 	monster "monk_test",231,296,"Zombie",1015,1;
 	monster "monk_test",231,296,"Zombie",1015,1;
@@ -2509,7 +2509,7 @@ OnDisable:
 }
 
 monk_test,264,292,0	script	mob_monk#3_3	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",264,292,"Mummy",1041,1;
 	end;
 
@@ -2519,7 +2519,7 @@ OnDisable:
 }
 
 monk_test,252,284,0	script	mob_monk#3_4	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",252,284,"Mummy",1041,1;
 	end;
 
@@ -2529,7 +2529,7 @@ OnDisable:
 }
 
 monk_test,257,285,0	script	mob_monk#3_5	-1,1,1,{
-OnTouch:
+OnTouch_:
 	monster "monk_test",257,285,"Zombie",1015,1;
 	monster "monk_test",257,285,"Zombie",1015,1;
 	monster "monk_test",257,285,"Zombie",1015,1;
@@ -2544,7 +2544,7 @@ OnDisable:
 }
 
 monk_test,270,278,0	script	exit_monk#3	45,1,1,{
-OnTouch:
+OnTouch_:
 	mes "[Proctor]";
 	mes "You did well. Please return to Tomoon, he's waiting for you.";
 	set MONK_Q,27;

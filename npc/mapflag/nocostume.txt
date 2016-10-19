@@ -1,0 +1,36 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthena Script =======================================
+//= Mapflag: nocostume
+//===== Description: =========================================
+//= A mapflag to disable costume's sprite on map.
+//= Usage:
+//=     [mapname]	mapflag	nocostume
+//===== Changelogs: ==========================================
+//= 1.0 Initial release. [Cydh]
+//= 1.0.1 Added arug_dun01 and schg_dun01 to the list. [Cydh]
+//============================================================
+
+// WOE:TE Castles =========
+te_prtcas01	mapflag	nocostume
+te_prtcas02	mapflag	nocostume
+te_prtcas03	mapflag	nocostume
+te_prtcas04	mapflag	nocostume
+te_prtcas05	mapflag	nocostume
+te_aldecas1	mapflag	nocostume
+te_aldecas2	mapflag	nocostume
+te_aldecas3	mapflag	nocostume
+te_aldecas4	mapflag	nocostume
+te_aldecas5	mapflag	nocostume
+
+// Guild Dungeons =========
+teg_dun01	mapflag	nocostume
+teg_dun02	mapflag	nocostume
+arug_dun01	mapflag	nocostume
+schg_dun01	mapflag	nocostume

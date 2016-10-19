@@ -1,0 +1,35 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//============================================================ 
+//===== rAthena Script =======================================
+//= Global Functions
+//===== Description: =========================================
+//= General script functions.
+//===== Changelogs: ==========================================
+//= 1.0 WoeTETimeStart(X) function check if the woe
+//	will start in X seconds or less. [Capuche]
+//============================================================
+
+// WoeTETimeStart(<seconds>) : return true if the woe te will start in X seconds or less, false otherwise
+function	script	WoeTETimeStart	{
+	.@woe_status = agitcheck3();
+	.@min_today  = gettime(2);
+	.@hour_today = gettime(3);
+	.@day_today  = gettime(4);
+
+	if (getvariableofnpc( getd( ".day_"+ .@day_today ),"woe_TE_contoller" )) {
+		.@h = getvariableofnpc( getd( ".hour_start_"+ .@hour_today ),"woe_TE_contoller" );
+		if (.@h > .@hour_today) {
+			.@time = (60 - .@min_today) *60 + ( .@h - .@hour_today -1 ) *3600;
+			if (.@time <= getarg(0))
+				return true;
+		}
+	}
+	return false;
+}

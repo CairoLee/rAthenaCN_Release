@@ -410,7 +410,7 @@ OnEnable:
 	areamonster instance_mapname("1@orcs"),103,105,109,111,"魔力封印的兽人",1023,1,instance_npcname("B1 Area Mobs")+"::OnMyMobDead1";
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("1@orcs"),168,130;
 	end;
 
@@ -439,7 +439,7 @@ OnEnable:
 	areamonster instance_mapname("1@orcs"),32,40,38,46,"魔力封印的兽人",1023,1,instance_npcname("B1 Area Mobs")+"::OnMyMobDead2";
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("1@orcs"),85,85;
 	end;
 
@@ -468,7 +468,7 @@ OnEnable:
 	areamonster instance_mapname("1@orcs"),19,177,25,183,"魔力封印的兽人",1023,1,instance_npcname("B1 Area Mobs")+"::OnMyMobDead3";
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("1@orcs"),38,110;
 	end;
 
@@ -500,7 +500,7 @@ OnEnable:
 	donpcevent instance_npcname("#Resurrect Monsters4")+"::OnDisable";
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("2@orcs"),32,171;
 	end;
 }
@@ -745,7 +745,7 @@ OnTimer10000:
 	stopnpctimer;
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("2@orcs"),47,93;
 	end;
 }
@@ -776,7 +776,7 @@ OnTimer10000:
 	stopnpctimer;
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("2@orcs"),107,55;
 	end;
 }
@@ -821,7 +821,7 @@ OnTimer13110:
 	stopnpctimer;
 	end;
 
-OnTouch:
+OnTouch_:
 	warp instance_mapname("2@orcs"),167,95;
 	end;
 }
@@ -874,7 +874,7 @@ OnEnable:
 	enablenpc instance_npcname("#Warp Outside Orc Dun");
 	end;
 
-OnTouch:
+OnTouch_:
 	warp "gef_fild10",240,197;
 	end;
 }
