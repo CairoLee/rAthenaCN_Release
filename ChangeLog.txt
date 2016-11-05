@@ -2,6 +2,18 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.5.5(2016-11-05)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/805f11d9f0e5a1285ed26b5f6a28231e5d325625
+[新增] 添加“是否隐藏角色服务器的在线人数”的设置, 详见 conf/char_athena.conf
+[新增] 新增“extra_ammo_requirement”选项, 详见 conf/battle/extend.conf
+[修正] rAthena官方BUG: 修正公会技能的一部分代码可能导致崩溃的问题 (感谢“the world”反馈)
+[修正] rAthena官方BUG: 修正在特定操作情况下，被 disablenpc 禁用的 NPC 重登后可见的问题 (感谢“聽風”反馈)
+[汉化] 完全汉化“物品战斗配置文件”, 详见 conf/battle/items.conf
+[汉化] 汉化其他 4 个战斗配置文件的部分内容, 以及指令回显文案
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.5.4(2016-10-29)
 ------------------
 [同步] rAthena官方Github库

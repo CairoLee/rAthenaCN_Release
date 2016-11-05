@@ -1,4 +1,4 @@
-// 物品的特殊标记数据库
+// 物品特殊标记数据库
 // 这里可以为物品设定一些特殊的效果, 以便服务端针对这些物品做特殊处理
 //
 // 数据库格式说明:
@@ -8,7 +8,7 @@
 //   1 - 这是一个魔物召唤道具 (使用后将会被记录到 `branchlog` 表中, 并且禁止在拥有 'nobranch' 地图标记的地图上使用)
 //   2 - 这是一个盒子类的物品, 消耗之前, 会先检查玩家的背包空间和负重量
 //   4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
-//   8 - Item will be bound item when equipped
+//   8 - 此物品在装备之后将会被绑定(具体绑定到角色还是账号等, 请参见 conf/battle/items.conf 的 default_bind_on_equip 选项)
 //  16 - 特殊公告: 当物品由魔物掉落, 且被玩家拾起的时候, 发送全服公告!
 // 
 // 以下为 rAthenaCN 拓展的标记选项:
