@@ -2,6 +2,19 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.5.6(2016-11-11)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/4c2adc0d0b3a65a599c0cb7e5ea089af801970f7
+[修正] 防止在处理事件队列的时候发生崩溃的问题 (感谢“the world”反馈)
+[修正] 修正一个可能会导致地图服务器崩溃的问题 (感谢“the world”反馈)
+[汉化] 完全汉化“宠物战斗配置文件”, 详见 conf/battle/pet.conf
+[汉化] 完全汉化“其他战斗配置信息”, 详见 conf/battle/misc.conf
+[汉化] 汉化“玩家战斗配置文件”中的 6 个选项, 详见 conf/battle/player.conf
+[汉化] 汉化“魔物战斗配置文件”中的 5 个选项, 详见 conf/battle/monster.conf
+[汉化] 汉化“客户端战斗配置文件”中的 7 个选项, 详见 conf/battle/client.conf
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.5.5(2016-11-05)
 ------------------
 [同步] rAthena官方Github库
