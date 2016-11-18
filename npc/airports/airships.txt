@@ -1271,6 +1271,8 @@ function	script	applegamble	{
 				getitem 512,.@amount; //Apple
 				end;
 			}
+			mes "Alright.";
+			mes "Let me cast the dice again.";
 		}
 		else {
 			mes "^FF0000" + strcharinfo(0) + "^000000, 您获得了 ^FF0000" + .@player3 + "^000000, 总点数变为 ^FF0000" + .@playertotal + "^000000.";

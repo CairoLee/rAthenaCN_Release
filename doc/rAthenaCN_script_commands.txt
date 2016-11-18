@@ -521,7 +521,7 @@
 
 ---------------------------------------
 
-*readoptarray <Random Option 字符串数组>,<第几个Option>,<要读取的数据类型>;
+*readoptarray(<Random Option 字符串数组>,<第几个Option>,<要读取的数据类型>);
 
 快速从 Random Option 字符串数组中读取指定的内容.
 
@@ -537,19 +537,19 @@
 		"RDMOPT_VAR_MAXSPAMOUNT|5000|0";
 	
 	// 读取 .@opt$ 中索引为 1 (第二个元素)的 ROA_VALUE 的值
-	.@result = readoptarray .@opt$,1,ROA_VALUE;		// .@result = 5000
+	.@result = readoptarray(.@opt$,1,ROA_VALUE);		// .@result = 5000
 	
 	// 读取 .@opt$ 中索引为 0 (第一个元素)的 ROA_ID 的值
 	// 这里不会返回常量字符串 RDMOPT_VAR_MAXHPAMOUNT, 
 	// 而是根据 const.txt 中的定义返回 RDMOPT_VAR_MAXHPAMOUNT 对应的数值 1
-	.@result = readoptarray .@opt$,0,ROA_ID;		// .@result = 1
+	.@result = readoptarray(.@opt$,0,ROA_ID);		// .@result = 1
 
 返回值:
 	正常的话能返回所需要的内容, 出错则返回 -1
 
 ---------------------------------------
 
-*writeoptarray <Random Option 数组>,<第几个Option>,<要修改的数据类型>,<新的值>;
+*writeoptarray(<Random Option 数组>,<第几个Option>,<要修改的数据类型>,<新的值>);
 
 快速从 Random Option 字符串数组中修改指定的内容.
 
@@ -565,10 +565,10 @@
 		"RDMOPT_VAR_MAXSPAMOUNT|5000|0";
 	
 	// 修改 .@opt$ 中索引为 1 (第二个元素)的 ROA_VALUE 的值为 5121
-	.@result = writeoptarray .@opt$,1,ROA_VALUE,5121;
+	.@result = writeoptarray(.@opt$,1,ROA_VALUE,5121);
 	
 	// 修改 .@opt$ 中索引为 0 (第一个元素)的 ROA_ID 的值为 RDMOPT_VAR_STRAMOUNT
-	.@result = writeoptarray .@opt$,0,ROA_ID,RDMOPT_VAR_STRAMOUNT;
+	.@result = writeoptarray(.@opt$,0,ROA_ID,RDMOPT_VAR_STRAMOUNT);
 
 返回值:
 	操作成功则返回 1, 失败则返回 0

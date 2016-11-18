@@ -2,6 +2,19 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.5.7(2016-11-18)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/1aa2012cff16d1bbe4f5172db52de483366b16ca
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20161116.sql
+[修正] getoptionitem、readoptarray、writeoptarray的返回结果错误问题(感谢“好刀一把”反馈)
+[汉化] 完全汉化“仓库配置文件”, 详见 conf/inter_server.conf
+[汉化] 汉化“战斗配置文件”中关于“物理防御力惩罚”的 4 个选项, 详见 conf/battle/battle.conf
+[汉化] 汉化“客户端战斗配置文件”中的 3 个选项, 详见 conf/battle/client.conf
+[汉化] 汉化“魔物战斗配置文件”中的 1 个选项, 详见 conf/battle/monster.conf
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.5.6(2016-11-11)
 ------------------
 [同步] rAthena官方Github库
