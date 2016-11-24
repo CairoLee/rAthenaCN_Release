@@ -1,0 +1,38 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthenaCN Script =======================================
+//= 进度条打断事件演示脚本
+//===== By: ==================================================
+//= Sola丶小克
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthenaCN 开发团队
+//===== Description: =========================================
+//= 演示如何通过 when_progressbar_abort_doevent 指令来让
+//= 进度条被打断时触发 OnProgressbarAbortEvent 事件
+//============================================================
+
+prontera,106,125,4	script	进度条打断事件	123,{
+	dispbottom "当进度条开始后, 请点击地面走动, 以便打断进度条.";
+	
+	// 在执行 progressbar 之前, 执行 when_progressbar_abort_doevent();
+	// 表示接下来的 progressbar 若被打断, 则触发 OnProgressbarAbortEvent 事件
+	when_progressbar_abort_doevent();
+	
+	progressbar "0xffffffff", 10;
+	dispbottom "进度条正常执行完毕.";
+	end;
+OnProgressbarAbortEvent:
+	mes "进度条被打断.";
+	close;
+OnInit:
+	waitingroom "进度条打断事件",1;
+	end;
+}

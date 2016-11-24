@@ -60,7 +60,7 @@ moc_prydb1,39,129,2	script	Thief Guide	69,{
 			}
 			else {
 				mes "[Thief Guide]";
-				if (Sex)
+				if (Sex == SEX_MALE)
 					mes "Hey, dude.";
 				else
 					mes "Hey, baby~";
@@ -69,7 +69,7 @@ moc_prydb1,39,129,2	script	Thief Guide	69,{
 		}
 		else {
 			mes "[Thief Guide]";
-			if (Sex)
+			if (Sex == SEX_MALE)
 				mes "Hey, dude.";
 			else
 				mes "Hey, baby.";

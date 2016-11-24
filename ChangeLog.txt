@@ -2,6 +2,24 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.5.8(2016-11-24)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/9040613fa6577a9c302a77a544a58b0a51db62bc
+[新增] 实现“共享任务杀怪进度的范围”选项, 详见 conf/battle/extend.conf (感谢“VegetableMelody”建议)
+[新增] 实现“combo_db_overwrite_mode”选项, 用来控制 item_combo_db 的生效策略, 详见 conf/battle/extend.conf (感谢“咪兔酱”反馈)
+[新增] 实现 OnProgressbarAbortEvent 事件, 当进度条被打断时触发, 详见 npc/racn/racn_progressbar_abort.txt (感谢“好刀一把”建议)
+[新增] 在 item_noequip.txt 中被禁用的护身符道具将不会触发它的“使用效果”, 但穿戴和脱下脚本不受影响 (感谢“好刀一把”建议)
+[新增] 让 getinventorylist 和 getinventoryinfo 能返回装备的唯一编号 (感谢“懒猪”反馈)
+[新增] 支持在终端翻译数据库中修改定制信息的文案, 便于进行繁体化操作 (感谢“VegetableMelody”反馈)
+[修正] rAthena官方BUG: 修正 @accinfo 中显示杜兰族召唤师的职业名称错误的问题(感谢“VegetableMelody”指出)
+[修正] rAthena官方BUG: 修正特殊情况下, 基因学者的三转技能习得后重新登录游戏技能丢失的问题(感谢“Ray”反馈)
+[修正] rAthena官方BUG: 修正当特殊情况下, 角色无法进入地图服务器的问题(感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 修正一处可能导致地图服务器崩溃的问题
+[汉化] 汉化“玩家战斗配置文件”中的 6 个选项说明, 详见 conf/battle/player.conf
+[汉化] 完善“use_MD5_passwords”选项的注释说明(感谢“好刀一把”反馈)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.5.7(2016-11-18)
 ------------------
 [同步] rAthena官方Github库
@@ -35,7 +53,7 @@ v1.5.5(2016-11-05)
 [新增] 添加“是否隐藏角色服务器的在线人数”的设置, 详见 conf/char_athena.conf
 [新增] 新增“extra_ammo_requirement”选项, 详见 conf/battle/extend.conf
 [修正] rAthena官方BUG: 修正公会技能的一部分代码可能导致崩溃的问题 (感谢“the world”反馈)
-[修正] rAthena官方BUG: 修正在特定操作情况下，被 disablenpc 禁用的 NPC 重登后可见的问题 (感谢“聽風”反馈)
+[修正] rAthena官方BUG: 修正在特定操作情况下, 被 disablenpc 禁用的 NPC 重登后可见的问题 (感谢“聽風”反馈)
 [汉化] 完全汉化“物品战斗配置文件”, 详见 conf/battle/items.conf
 [汉化] 汉化其他 4 个战斗配置文件的部分内容, 以及指令回显文案
 [汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
@@ -52,7 +70,7 @@ v1.5.4(2016-10-29)
 
 v1.5.3(2016-10-21)
 ------------------
-[修正] 客户端删除角色时可能会卡住，以及删除时间可能错乱的问题 (感谢“. L .”协助测试)
+[修正] 客户端删除角色时可能会卡住, 以及删除时间可能错乱的问题 (感谢“. L .”协助测试)
 [修正] resetoptionbyidx 在处理尚未装备的道具时会报错的问题
 [修正] getoptionitem、readoptarray、writeoptarray 可能导致内存泄露的问题
 [修正] 一处终端提示信息中的翻译错误 (TE城战错误的翻译成了TD城战, 现已修正)

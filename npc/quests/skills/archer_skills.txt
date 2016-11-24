@@ -127,7 +127,7 @@ moc_ruins,118,99,5	script	爵 纳利	88,{
 				close;
 			case 2:
 				mes "[爵 纳利]";
-				mes "...嘿 "+((Sex)?"小姐":"先生")+".";
+				mes "...嘿 "+((Sex == SEX_MALE)?"先生":"小姐")+".";
 				mes "...晚上走路小心啊.";
 				close;
 			}
