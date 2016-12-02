@@ -2,6 +2,20 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.5.9(2016-12-02)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/33fa182c48752ff76a35f847142c994b8476c5e0
+[新增] 实现“reject_create_doram_character”选项, 允许禁止创建杜兰族角色, 详见 conf/char_athena.conf (感谢“好刀一把”建议)
+[新增] 实现“装备外观隐藏数据库”, 详见 db/item_noview.txt
+[修正] 修正偶尔会出现 Zero-Length 报错，以及地图服务器不定时崩溃的问题
+[修正] rAthena官方BUG: 避免复兴前服务端使用杜兰族技能可能会导致崩溃的问题(感谢“好刀一把”反馈)
+[调整] 完善 script4each 指令的的使用说明, 详见 doc/rAthenaCN_script_commands.txt
+[调整] 由于新增了““装备外观隐藏数据库””, 所以取消 “viewequip_hide_costume_aspect” 选项, 详见 conf/battle/extend.conf
+[汉化] 汉化 db 目录中所有涉及到“区域限制”的注释说明
+[汉化] 汉化“玩家战斗配置文件”中的 2 个选项, 详见 conf/battle/player.conf
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.5.8(2016-11-24)
 ------------------
 [同步] rAthena官方Github库
