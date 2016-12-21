@@ -2,13 +2,20 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.0(2016-12-21)
+------------------
+[新增] 全方位过滤 <ITEM> 物品链接炸弹(正常的物品链接不受影响), 完全免费(感谢“龙王蛮蛮”反馈)
+[新增] 新增“close_skill_common_delay”选项, 用来关闭技能的公用延迟特性, 详见 conf/battle/extend.conf
+[新增] 在使用 announce、mapannounce、areaannounce 脚本指令时, 若内容包含 db/manner.txt 中所定义的敏感词, 则不发送公告
+[修正] 修正被隐藏外观的装备, 在首次穿戴后立刻打开“装备面板”还能看见有外观的问题 (感谢“the world”反馈)
+
 v1.5.9(2016-12-02)
 ------------------
 [同步] rAthena官方Github库
        https://github.com/rathena/rathena/commit/33fa182c48752ff76a35f847142c994b8476c5e0
 [新增] 实现“reject_create_doram_character”选项, 允许禁止创建杜兰族角色, 详见 conf/char_athena.conf (感谢“好刀一把”建议)
 [新增] 实现“装备外观隐藏数据库”, 详见 db/item_noview.txt
-[修正] 修正偶尔会出现 Zero-Length 报错，以及地图服务器不定时崩溃的问题
+[修正] 修正偶尔会出现 Zero-Length 报错, 以及地图服务器不定时崩溃的问题
 [修正] rAthena官方BUG: 避免复兴前服务端使用杜兰族技能可能会导致崩溃的问题(感谢“好刀一把”反馈)
 [调整] 完善 script4each 指令的的使用说明, 详见 doc/rAthenaCN_script_commands.txt
 [调整] 由于新增了““装备外观隐藏数据库””, 所以取消 “viewequip_hide_costume_aspect” 选项, 详见 conf/battle/extend.conf
