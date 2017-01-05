@@ -98,17 +98,17 @@ gef_fild10,242,202,0	script	裂痕的碎片	406,{
 	close;
 L_Enter:
 	switch(instance_enter("兽人的记忆")) {
-	case 3:
+	case IE_OTHER:
 		mes "很抱歉, 发生了未知错误";
 		close;
-	case 2:
+	case IE_NOINSTANCE:
 		mes "兽人的记忆 副本不存在.";
 		mes "可能是副本已被超过了时间限制, 或者被队长主动销毁. 您可以请队长重新预约创建副本, 如果队长预约失败的话, 请在两小时之后再尝试重新进入.";
 		close;
-	case 1:
+	case IE_NOMEMBER:
 		mes "您必须先加入队伍才能进入副本.";
 		close;
-	case 0:
+	case IE_OK:
 		mapannounce "gef_fild10", getpartyname( getcharid(1) ) +" 队伍的 "+strcharinfo(0)+" 已经进入 兽人的记忆.",bc_map,"0x00ff99";
 		if (checkquest(12059) == -1) setquest 12059;
 		//warp "1@orcs",179,15;

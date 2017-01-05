@@ -307,18 +307,18 @@ e_tower,81,105,0	script	塔之守护石	406,{
 
 L_Enter:
 	switch(instance_enter("无尽之塔")) {
-	case 3:
+	case IE_OTHER:
 		mes "发生不明错误.";
 		mes "可能是副本名称设定错误, 请联系管理员.";
 		close;
-	case 2:
+	case IE_NOINSTANCE:
 		mes "无尽之塔副本不存在.";
 		mes "队长尚未创建副本, 你无法进入.";
 		close;
-	case 1:
+	case IE_NOMEMBER:
 		mes "加入或组建一个队伍后, 就能进入副本.";
 		close;
-	case 0:
+	case IE_OK:
 		mapannounce "e_tower", getpartyname(getcharid(1))+" 队伍中的 "+ strcharinfo(0) +" 已经进入无尽之塔副本.",bc_map,"0x00ff99",FW_NORMAL,12;
 		if (getarg(1)) {
 			set etower_timer,gettimetick(2);
