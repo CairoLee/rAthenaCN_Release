@@ -2,11 +2,19 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.2(2017-01-14)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/f5c43329b2c241acd35ec9b2b8bc96d900290b12
+[新增] 在 OnSellItem 事件返回的数组中, 增加被出售物品的背包序号数组, 数组名为 @sold_idx[] (感谢“好刀一把”建议)
+[新增] 能够为默认的 main、support 等频道设置中文名称, 详见 conf/channels.conf (感谢“VegetableMelody”建议)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.6.1(2017-01-05)
 ------------------
 [同步] rAthena官方Github库
        https://github.com/rathena/rathena/commit/03a54402bc14c620d4f478c5c8b887728213aad4
-[修正] rAthena官方BUG: 修正启用 change_party_leader_samemap 选项后, 在 20130807 客户端中将队长交给不同地图玩家时, 提示文案错误的问题
+[修正] rAthena官方BUG: 修正在 20130807 客户端中将队长交给不同地图玩家时, 提示文案错误的问题
 [调整] 配合官网的更新, 上线新的定制引擎
 [汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
 
