@@ -4681,10 +4681,10 @@
 12115,Elemental_Water,水之元素卷轴,11,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ itemskill "ITEM_ENCHANTARMS",2; },{},{}
 12116,Elemental_Earth,地之元素卷轴,11,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ itemskill "ITEM_ENCHANTARMS",3; },{},{}
 12117,Elemental_Wind,风之元素卷轴,11,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ itemskill "ITEM_ENCHANTARMS",5; },{},{}
-12118,Resist_Fire,火属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT,1200000,-15,0,20,0; },{},{}
-12119,Resist_Water,水属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT,1200000,20,0,0,-15; },{},{}
-12120,Resist_Earth,地属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT,1200000,0,20,-15,0; },{},{}
-12121,Resist_Wind,风属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT,1200000,0,-15,0,20; },{},{}
+12118,Resist_Fire,火属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT_FIRE,1200000,-15,0,20,0; },{},{}
+12119,Resist_Water,水属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT_WATER,1200000,20,0,0,-15; },{},{}
+12120,Resist_Earth,地属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT_EARTH,1200000,0,20,-15,0; },{},{}
+12121,Resist_Wind,风属性抵抗药水,2,2,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start4 SC_ARMOR_ELEMENT_WIND,1200000,0,-15,0,20; },{},{}
 12122,Sesame_Pastry,茶食,2,2,,70,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_HITFOOD,1200000,30; },{},{}
 12123,Honey_Pastry,油果,2,2,,70,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_FLEEFOOD,1200000,30; },{},{}
 12124,Rainbow_Cake,彩色糕饼,2,2,,70,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_BATKFOOD,1200000,10; sc_start SC_MATKFOOD,120000,10; },{},{}

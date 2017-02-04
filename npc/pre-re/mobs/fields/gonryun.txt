@@ -21,10 +21,10 @@
 //==================================================
 // gon_fild01 - Gonryun Field
 //==================================================
-gon_fild01,0,0,0,0	monster	小花豹	1415,40,600000,300000,0
-gon_fild01,0,0,0,0	monster	拉链熊	1417,20,0,0,0
-gon_fild01,0,0,0,0	monster	波波利	1031,20,0,0,0
-gon_fild01,0,0,0,0	monster	元宵童子	1409,30,0,0,0
-gon_fild01,0,0,0,0	monster	人参精	1413,2,630000,330000,0
-gon_fild01,0,0,0,0	monster	绿草	1080,5,0,0,0
-gon_fild01,0,0,0,0	monster	光芒草	1083,1,0,0,0
+gon_fild01,0,0	monster	小花豹	1415,40,600000,300000
+gon_fild01,0,0	monster	拉链熊	1417,20
+gon_fild01,0,0	monster	波波利	1031,20
+gon_fild01,0,0	monster	元宵童子	1409,30
+gon_fild01,0,0	monster	人参精	1413,2,630000,330000
+gon_fild01,0,0	monster	绿草	1080,5
+gon_fild01,0,0	monster	光芒草	1083,1

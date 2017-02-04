@@ -826,14 +826,14 @@
 4008,63,1,8,1,0,0,0,0,0,0,0,0 //KN_RIDING#Peco Peco Riding(骑乘术)#
 4008,64,5,63,1,0,0,0,0,0,0,0,0 //KN_CAVALIERMASTERY#Cavalier Mastery(骑兵修练)#
 4008,1001,1,0,0,0,0,0,0,0,0,0,0 //KN_CHARGEATK#Charge Attack(冲锋攻击)#
-4008,355,5,5,5,7,5,3,5,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
+4008,355,5,7,5,3,5,0,0,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
 4008,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4008,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4008,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
 4008,359,1,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has an extra column after "MaxLevel" for Job Level 50 requirement
 4008,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4008,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
-4008,399,10,55,9,64,3,398,3,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
+4008,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
 4008,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4008,495,1,60,10,0,0,0,0,0,0,0,0	//KN_ONEHAND#Onehand Quicken(单手剑攻击速度增加)#
 //HighPriest
@@ -1053,14 +1053,14 @@
 4014,63,1,8,1,0,0,0,0,0,0,0,0 //KN_RIDING#Peco Peco Riding(骑乘术)#
 4014,64,5,63,1,0,0,0,0,0,0,0,0 //KN_CAVALIERMASTERY#Cavalier Mastery(骑兵修练)#
 4014,1001,1,0,0,0,0,0,0,0,0,0,0 //KN_CHARGEATK#Charge Attack(冲锋攻击)#
-4014,355,5,5,5,7,5,3,5,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
+4014,355,5,7,5,3,5,0,0,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
 4014,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4014,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4014,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
 4014,359,1,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has an extra column after "MaxLevel" for Job Level 50 requirement
 4014,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4014,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
-4014,399,10,55,9,64,3,398,3,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
+4014,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
 4014,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4014,495,1,60,10,0,0,0,0,0,0,0,0	//KN_ONEHAND#Onehand Quicken(单手剑攻击速度增加)#
 //Paladin
@@ -1096,7 +1096,7 @@
 4015,258,10,55,10,0,0,0,0,0,0,0,0 //CR_SPEARQUICKEN#Spear Quicken(长矛加速术)#
 4015,1002,1,0,0,0,0,0,0,0,0,0,0 //CR_SHRINK#Shrink(退缩)#
 4015,367,5,8,5,248,5,250,2,0,0,0,0 //PA_PRESSURE#Gloria Domini(神之威压)#
-4015,368,5,8,1,248,5,255,3,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
+4015,368,5,8,1,255,3,0,0,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
 4015,369,10,248,8,22,3,23,5,0,0,0,0 //PA_GOSPEL#Battle Chant(圣音)#
 4015,480,5,251,5,0,0,0,0,0,0,0,0 //PA_SHIELDCHAIN#Shield Chain(连续盾击)#
 4015,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -1136,9 +1136,9 @@
 4016,1015,1,0,0,0,0,0,0,0,0,0,0 //MO_KITRANSLATION#Ki Translation(注气)#
 4016,1016,1,0,0,0,0,0,0,0,0,0,0 //MO_BALKYOUNG#Ki Explosion(气爆散)#
 4016,370,5,259,7,261,5,0,0,0,0,0,0 //CH_PALMSTRIKE#Raging Palm Strike(猛虎硬爬山)#
-4016,371,5,259,5,263,5,261,5,273,3,0,0 //CH_TIGERFIST#Glacier Fist(伏虎拳)#
+4016,371,5,259,5,263,5,273,3,0,0,0,0 //CH_TIGERFIST#Glacier Fist(伏虎拳)#
 4016,372,10,259,5,261,5,371,2,0,0,0,0 //CH_CHAINCRUSH#Chain Crush Combo(气绝崩击)#
-4016,401,1,261,5,262,1,270,5,0,0,0,0 //CH_SOULCOLLECT#Hyper Spirit Sphere(狂蓄气)#
+4016,401,1,270,5,0,0,0,0,0,0,0,0 //CH_SOULCOLLECT#Hyper Spirit Sphere(狂蓄气)#
 4016,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 //Professor
 4017,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -1185,7 +1185,7 @@
 4017,373,5,9,1,276,1,0,0,0,0,0,0 //PF_HPCONVERSION#Indulge(HP转换)#
 4017,374,1,276,3,277,2,0,0,0,0,0,0 //PF_SOULCHANGE#Soul Exhale(心神互换)#
 4017,375,5,275,5,276,3,289,3,0,0,0,0 //PF_SOULBURN#Soul Siphon(精神耗弱术)#
-4017,402,5,9,3,375,1,0,0,0,0,0,0 //PF_MINDBREAKER#Mind Breaker(精神撼动)#
+4017,402,5,9,3,375,2,0,0,0,0,0,0 //PF_MINDBREAKER#Mind Breaker(精神撼动)#
 4017,403,1,274,5,278,5,279,1,0,0,0,0 //PF_MEMORIZE#Foresight(速读术)#
 4017,404,1,286,2,287,2,0,0,0,0,0,0 //PF_FOGWALL#Blinding Mist(薄雾墙)#
 4017,405,1,284,4,0,0,0,0,0,0,0,0 //PF_SPIDERWEB#Fiber Lock(易燃之网)#
@@ -1301,10 +1301,10 @@
 4020,312,1,306,1,0,0,0,0,0,0,0,0 //BD_INTOABYSS#Power Chord(触媒之所)#
 4020,313,5,321,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4020,1010,1,0,0,0,0,0,0,0,0,0,0 //BA_PANGVOICE#Pang Voice(苦痛之音)#
-4020,394,10,47,5,316,1,0,0,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
+4020,394,10,47,5,316,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
 4020,395,1,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
-4020,396,1,45,5,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
-4020,487,5,315,10,396,1,0,0,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
+4020,396,1,45,10,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
+4020,487,5,315,10,396,1,317,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4020,488,5,45,10,315,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
 4020,489,5,45,10,317,3,0,0,0,0,0,0 //CG_TAROTCARD#Tarot Card of Fate(命运的塔罗牌)#
 4020,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -1337,10 +1337,10 @@
 4021,312,1,306,1,0,0,0,0,0,0,0,0 //BD_INTOABYSS#Power Chord(触媒之所)#
 4021,313,5,329,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4021,1011,1,0,0,0,0,0,0,0,0,0,0 //DC_WINKCHARM#Wink of Charm(媚眼)#
-4021,394,10,47,5,324,1,0,0,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
+4021,394,10,47,5,324,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
 4021,395,1,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
-4021,396,1,45,5,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
-4021,487,5,323,10,396,1,0,0,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
+4021,396,1,45,10,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
+4021,487,5,323,10,396,1,325,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4021,488,5,45,10,323,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
 4021,489,5,45,10,325,3,0,0,0,0,0,0 //CG_TAROTCARD#Tarot Card of Fate(命运的塔罗牌)#
 4021,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -1377,7 +1377,7 @@
 4022,258,10,55,10,0,0,0,0,0,0,0,0 //CR_SPEARQUICKEN#Spear Quicken(长矛加速术)#
 4022,1002,1,0,0,0,0,0,0,0,0,0,0 //CR_SHRINK#Shrink(退缩)#
 4022,367,5,8,5,248,5,250,2,0,0,0,0 //PA_PRESSURE#Gloria Domini(神之威压)#
-4022,368,5,8,5,248,5,255,3,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
+4022,368,5,8,1,255,3,0,0,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
 4022,369,10,248,8,22,3,23,5,0,0,0,0 //PA_GOSPEL#Battle Chant(圣音)#
 4022,480,5,251,5,0,0,0,0,0,0,0,0 //PA_SHIELDCHAIN#Shield Chain(连续盾击)#
 4022,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -2029,7 +2029,7 @@
 4045,32,10,23,3,0,0,0,0,0,0,0,0 //AL_CRUCIS#Signum Crusis(天使之光)#
 4045,33,10,22,3,0,0,0,0,0,0,0,0 //AL_ANGELUS#Angelus(天使之障壁)#
 4045,34,10,22,5,0,0,0,0,0,0,0,0 //AL_BLESSING#Blessing(天使之赐福)#
-4045,35,1,0,0,0,0,0,0,0,0,0,0 //AL_CURE#Cure(治疗术)#
+4045,35,1,28,2,0,0,0,0,0,0,0,0 //AL_CURE#Cure(治疗术)#
 4045,36,10,0,0,0,0,0,0,0,0,0,0 //MC_INCCARRY#Enlarge Weight Limit(负重量上升)#
 4045,37,10,36,3,0,0,0,0,0,0,0,0 //MC_DISCOUNT#Discount(低价买进)#
 4045,38,10,37,3,0,0,0,0,0,0,0,0 //MC_OVERCHARGE#Overcharge(高价卖出)#
@@ -2174,7 +2174,7 @@
 4049,448,5,0,0,0,0,0,0,0,0,0,0	//SL_STAR#Spirit of the Star Knight(拳圣的灵魂)#
 4049,449,5,0,0,0,0,0,0,0,0,0,0	//SL_SAGE#Spirit of the Professor(贤者的灵魂)#
 4049,450,5,0,0,0,0,0,0,0,0,0,0	//SL_CRUSADER#Spirit of the Crusader(十字军的灵魂)#
-4049,451,5,0,0,0,0,0,0,0,0,0,0	//SL_SUPERNOVICE#Spirit of the Supernovice(超级初学者的灵魂)#
+4049,451,5,448,1,0,0,0,0,0,0,0,0	//SL_SUPERNOVICE#Spirit of the Supernovice(超级初学者的灵魂)#
 4049,452,5,450,1,0,0,0,0,0,0,0,0	//SL_KNIGHT#Spirit of the Knight(骑士的灵魂)#
 4049,453,5,449,1,0,0,0,0,0,0,0,0	//SL_WIZARD#Spirit of the Wizard(巫师的灵魂)#
 4049,454,5,447,1,0,0,0,0,0,0,0,0	//SL_PRIEST#Spirit of the Priest(祭司的灵魂)#
@@ -2185,9 +2185,9 @@
 4049,460,5,455,1,0,0,0,0,0,0,0,0	//SL_HUNTER#Spirit of the Hunter(猎人的灵魂)#
 4049,461,5,448,1,0,0,0,0,0,0,0,0	//SL_SOULLINKER#Spirit of the Soul Linker(悟灵士的灵魂)#
 4049,462,7,454,1,0,0,0,0,0,0,0,0	//SL_KAIZEL#Kaizel(凯易哲)#
-4049,463,7,454,1,450,1,0,0,0,0,0,0	//SL_KAAHI#Kahai(凯阿希)#
-4049,464,3,456,1,0,0,0,0,0,0,0,0	//SL_KAUPE#Kauf(凯诬仆)#
-4049,465,7,453,1,0,0,0,0,0,0,0,0	//SL_KAITE#Kaite(凯易特)#
+4049,463,7,454,1,450,1,447,1,0,0,0,0	//SL_KAAHI#Kahai(凯阿希)#
+4049,464,3,456,1,457,1,0,0,0,0,0,0	//SL_KAUPE#Kauf(凯诬仆)#
+4049,465,7,453,1,449,1,0,0,0,0,0,0	//SL_KAITE#Kaite(凯易特)#
 4049,466,7,423,1,0,0,0,0,0,0,0,0	//SL_KAINA#Kaina(凯易娜)#
 4049,467,7,453,1,0,0,0,0,0,0,0,0	//SL_STIN#Estin(艾斯提)#
 4049,468,7,453,1,0,0,0,0,0,0,0,0	//SL_STUN#Estern(艾斯敦)#
@@ -2515,7 +2515,7 @@
 4056,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4056,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4056,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4056,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4056,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4056,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4056,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4056,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -2568,7 +2568,7 @@
 4057,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4057,2038,5,77,1,0,0,0,0,0,0,0,0 //AB_JUDEX#Judex(审判)#
 4057,2039,1,2041,3,0,0,0,0,0,0,0,0 //AB_ANCILLA#Ancilla(辅助者)#
-4057,2040,10,79,1,2038,1,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
+4057,2040,10,79,1,2038,5,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
 4057,2041,3,34,1,0,0,0,0,0,0,0,0 //AB_CLEMENTIA#Crementia(慈悲之心)#
 4057,2042,3,29,1,0,0,0,0,0,0,0,0 //AB_CANTO#Canto Candidus(圣洁百合)#
 4057,2043,3,28,1,0,0,0,0,0,0,0,0 //AB_CHEAL#Coluceo Heal(治愈之光)#
@@ -2629,7 +2629,7 @@
 4058,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4058,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4058,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4058,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4058,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4058,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4058,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4058,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -2645,16 +2645,16 @@
 4058,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4058,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4058,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4058,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4058,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4058,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4058,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4058,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4058,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4058,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4058,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4058,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4058,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4058,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4058,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4058,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4058,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4058,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4058,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -2727,14 +2727,14 @@
 4060,63,1,8,1,0,0,0,0,0,0,0,0 //KN_RIDING#Peco Peco Riding(骑乘术)#
 4060,64,5,63,1,0,0,0,0,0,0,0,0 //KN_CAVALIERMASTERY#Cavalier Mastery(骑兵修练)#
 4060,1001,1,0,0,0,0,0,0,0,0,0,0 //KN_CHARGEATK#Charge Attack(冲锋攻击)#
-4060,355,5,5,5,7,5,3,5,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
+4060,355,5,7,5,3,5,0,0,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
 4060,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4060,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4060,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
 4060,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra column removed. Rune Knights dont require job level 50 to use Berserk.
 4060,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4060,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
-4060,399,10,55,9,64,3,398,3,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
+4060,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
 4060,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4060,495,1,60,10,0,0,0,0,0,0,0,0	//KN_ONEHAND#Onehand Quicken(单手剑攻击速度增加)#
 4060,2001,5,2010,2,0,0,0,0,0,0,0,0 //RK_ENCHANTBLADE#Enchant Blade(附魔之刃)#
@@ -2858,7 +2858,7 @@
 4062,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4062,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4062,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4062,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4062,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4062,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4062,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4062,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -2915,7 +2915,7 @@
 4063,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4063,2038,5,77,1,0,0,0,0,0,0,0,0 //AB_JUDEX#Judex(审判)#
 4063,2039,1,2041,3,0,0,0,0,0,0,0,0 //AB_ANCILLA#Ancilla(辅助者)#
-4063,2040,10,79,1,2038,1,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
+4063,2040,10,79,1,2038,5,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
 4063,2041,3,34,1,0,0,0,0,0,0,0,0 //AB_CLEMENTIA#Crementia(慈悲之心)#
 4063,2042,3,29,1,0,0,0,0,0,0,0,0 //AB_CANTO#Canto Candidus(圣洁百合)#
 4063,2043,3,28,1,0,0,0,0,0,0,0,0 //AB_CHEAL#Coluceo Heal(治愈之光)#
@@ -2981,7 +2981,7 @@
 4064,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4064,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4064,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4064,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4064,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4064,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4064,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4064,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -2997,16 +2997,16 @@
 4064,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4064,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4064,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4064,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4064,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4064,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4064,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4064,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4064,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4064,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4064,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4064,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4064,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4064,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4064,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4064,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4064,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4064,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4064,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -3239,7 +3239,7 @@
 4068,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4068,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4068,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4068,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4068,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4068,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Wanderer (Regular)
 4069,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -3295,7 +3295,7 @@
 4069,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4069,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4069,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4069,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4069,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4069,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Sura (Regular)
 4070,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -3505,7 +3505,7 @@
 4073,258,10,55,10,0,0,0,0,0,0,0,0 //CR_SPEARQUICKEN#Spear Quicken(长矛加速术)#
 4073,1002,1,0,0,0,0,0,0,0,0,0,0 //CR_SHRINK#Shrink(退缩)#
 4073,367,5,8,5,248,5,250,2,0,0,0,0 //PA_PRESSURE#Gloria Domini(神之威压)#
-4073,368,5,8,1,248,5,255,3,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
+4073,368,5,8,1,255,3,0,0,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
 4073,369,10,248,8,22,3,23,5,0,0,0,0 //PA_GOSPEL#Battle Chant(圣音)#
 4073,480,5,251,5,0,0,0,0,0,0,0,0 //PA_SHIELDCHAIN#Shield Chain(连续盾击)#
 4073,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -3575,7 +3575,7 @@
 4074,373,5,9,1,276,1,0,0,0,0,0,0 //PF_HPCONVERSION#Indulge(HP转换)#
 4074,374,1,276,3,277,2,0,0,0,0,0,0 //PF_SOULCHANGE#Soul Exhale(心神互换)#
 4074,375,5,275,5,276,3,289,3,0,0,0,0 //PF_SOULBURN#Soul Siphon(精神耗弱术)#
-4074,402,5,9,3,375,1,0,0,0,0,0,0 //PF_MINDBREAKER#Mind Breaker(精神撼动)#
+4074,402,5,9,3,375,2,0,0,0,0,0,0 //PF_MINDBREAKER#Mind Breaker(精神撼动)#
 4074,403,1,274,5,278,5,279,1,0,0,0,0 //PF_MEMORIZE#Foresight(速读术)#
 4074,404,1,286,2,287,2,0,0,0,0,0,0 //PF_FOGWALL#Blinding Mist(薄雾墙)#
 4074,405,1,284,4,0,0,0,0,0,0,0,0 //PF_SPIDERWEB#Fiber Lock(易燃之网)#
@@ -3638,10 +3638,10 @@
 4075,312,1,306,1,0,0,0,0,0,0,0,0 //BD_INTOABYSS#Power Chord(触媒之所)#
 4075,313,5,321,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4075,1010,1,0,0,0,0,0,0,0,0,0,0 //BA_PANGVOICE#Pang Voice(苦痛之音)#
-4075,394,10,47,5,316,1,0,0,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
+4075,394,10,47,5,316,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
 4075,395,1,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
-4075,396,1,45,5,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
-4075,487,5,315,10,396,1,0,0,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
+4075,396,1,45,10,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
+4075,487,5,315,10,396,1,317,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4075,488,5,45,10,315,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
 4075,489,5,45,10,317,3,0,0,0,0,0,0 //CG_TAROTCARD#Tarot Card of Fate(命运的塔罗牌)#
 4075,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -3669,7 +3669,7 @@
 4075,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4075,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4075,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4075,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4075,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4075,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Wanderer (Trans)
 4076,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -3700,10 +3700,10 @@
 4076,312,1,306,1,0,0,0,0,0,0,0,0 //BD_INTOABYSS#Power Chord(触媒之所)#
 4076,313,5,329,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4076,1011,1,0,0,0,0,0,0,0,0,0,0 //DC_WINKCHARM#Wink of Charm(媚眼)#
-4076,394,10,47,5,324,1,0,0,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
+4076,394,10,47,5,324,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
 4076,395,1,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
-4076,396,1,45,5,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
-4076,487,5,323,10,396,1,0,0,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
+4076,396,1,45,10,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
+4076,487,5,323,10,396,1,325,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4076,488,5,45,10,323,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
 4076,489,5,45,10,325,3,0,0,0,0,0,0 //CG_TAROTCARD#Tarot Card of Fate(命运的塔罗牌)#
 4076,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -3731,7 +3731,7 @@
 4076,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4076,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4076,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4076,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4076,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4076,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Sura (Trans)
 4077,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -3769,9 +3769,9 @@
 4077,1015,1,0,0,0,0,0,0,0,0,0,0 //MO_KITRANSLATION#Ki Translation(注气)#
 4077,1016,1,0,0,0,0,0,0,0,0,0,0 //MO_BALKYOUNG#Ki Explosion(气爆散)#
 4077,370,5,259,7,261,5,0,0,0,0,0,0 //CH_PALMSTRIKE#Raging Palm Strike(猛虎硬爬山)#
-4077,371,5,259,5,263,5,261,5,273,3,0,0 //CH_TIGERFIST#Glacier Fist(伏虎拳)#
+4077,371,5,259,5,263,5,273,3,0,0,0,0 //CH_TIGERFIST#Glacier Fist(伏虎拳)#
 4077,372,10,259,5,261,5,371,2,0,0,0,0 //CH_CHAINCRUSH#Chain Crush Combo(气绝崩击)#
-4077,401,1,261,5,262,1,270,5,0,0,0,0 //CH_SOULCOLLECT#Hyper Spirit Sphere(狂蓄气)#
+4077,401,1,270,5,0,0,0,0,0,0,0,0 //CH_SOULCOLLECT#Hyper Spirit Sphere(狂蓄气)#
 4077,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4077,2326,10,263,5,0,0,0,0,0,0,0,0 //SR_DRAGONCOMBO#Dragon Combo(双龙摆尾)#
 4077,2327,5,2326,3,0,0,0,0,0,0,0,0 //SR_SKYNETBLOW#Sky Net Blow(天罗地网)#
@@ -3983,14 +3983,14 @@
 4081,63,1,8,1,0,0,0,0,0,0,0,0 //KN_RIDING#Peco Peco Riding(骑乘术)#
 4081,64,5,63,1,0,0,0,0,0,0,0,0 //KN_CAVALIERMASTERY#Cavalier Mastery(骑兵修练)#
 4081,1001,1,0,0,0,0,0,0,0,0,0,0 //KN_CHARGEATK#Charge Attack(冲锋攻击)#
-4081,355,5,5,5,7,5,3,5,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
+4081,355,5,7,5,3,5,0,0,0,0,0,0 //LK_AURABLADE#Aura Blade(灵气剑)#
 4081,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4081,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4081,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
 4081,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra column removed. Rune Knights dont require job level 50 to use Berserk.
 4081,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4081,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
-4081,399,10,55,9,64,3,398,3,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
+4081,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
 4081,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
 4081,495,1,60,10,0,0,0,0,0,0,0,0	//KN_ONEHAND#Onehand Quicken(单手剑攻击速度增加)#
 4081,2001,5,2010,2,0,0,0,0,0,0,0,0 //RK_ENCHANTBLADE#Enchant Blade(附魔之刃)#
@@ -4093,7 +4093,7 @@
 4083,258,10,55,10,0,0,0,0,0,0,0,0 //CR_SPEARQUICKEN#Spear Quicken(长矛加速术)#
 4083,1002,1,0,0,0,0,0,0,0,0,0,0 //CR_SHRINK#Shrink(退缩)#
 4083,367,5,8,5,248,5,250,2,0,0,0,0 //PA_PRESSURE#Gloria Domini(神之威压)#
-4083,368,5,8,1,248,5,255,3,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
+4083,368,5,8,1,255,3,0,0,0,0,0,0 //PA_SACRIFICE#Martyr's Reckoning(舍命攻击)#
 4083,369,10,248,8,22,3,23,5,0,0,0,0 //PA_GOSPEL#Battle Chant(圣音)#
 4083,480,5,251,5,0,0,0,0,0,0,0,0 //PA_SHIELDCHAIN#Shield Chain(连续盾击)#
 4083,410,1,0,0,0,0,0,0,0,0,0,0 //WE_CALLBABY#Call Baby(宝贝请来这里)#
@@ -4159,7 +4159,7 @@
 4084,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4084,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4084,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4084,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4084,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4084,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4084,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4084,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -4217,7 +4217,7 @@
 4085,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4085,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4085,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4085,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4085,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4085,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4085,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4085,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -4272,7 +4272,7 @@
 4086,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4086,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4086,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4086,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4086,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4086,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4086,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4086,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -4288,16 +4288,16 @@
 4086,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4086,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4086,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4086,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4086,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4086,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4086,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4086,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4086,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4086,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4086,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4086,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4086,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4086,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4086,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4086,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4086,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4086,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4086,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -4348,7 +4348,7 @@
 4087,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4087,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4087,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4087,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4087,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4087,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4087,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4087,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -4364,16 +4364,16 @@
 4087,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4087,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4087,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4087,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4087,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4087,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4087,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4087,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4087,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4087,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4087,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4087,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4087,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4087,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4087,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4087,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4087,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4087,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4087,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -4517,7 +4517,7 @@
 4098,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4098,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4098,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4098,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4098,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4098,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4098,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4098,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -4571,7 +4571,7 @@
 4099,1014,1,0,0,0,0,0,0,0,0,0,0 //PR_REDEMPTIO#Redemptio(救赎)#
 4099,2038,5,77,1,0,0,0,0,0,0,0,0 //AB_JUDEX#Judex(审判)#
 4099,2039,1,2041,3,0,0,0,0,0,0,0,0 //AB_ANCILLA#Ancilla(辅助者)#
-4099,2040,10,79,1,2038,1,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
+4099,2040,10,79,1,2038,5,2039,1,0,0,0,0 //AB_ADORAMUS#Adoramus(赞歌)#
 4099,2041,3,34,1,0,0,0,0,0,0,0,0 //AB_CLEMENTIA#Crementia(慈悲之心)#
 4099,2042,3,29,1,0,0,0,0,0,0,0,0 //AB_CANTO#Canto Candidus(圣洁百合)#
 4099,2043,3,28,1,0,0,0,0,0,0,0,0 //AB_CHEAL#Coluceo Heal(治愈之光)#
@@ -4633,7 +4633,7 @@
 4100,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4100,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4100,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4100,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4100,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4100,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4100,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4100,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -4649,16 +4649,16 @@
 4100,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4100,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4100,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4100,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4100,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4100,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4100,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4100,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4100,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4100,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4100,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4100,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4100,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4100,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4100,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4100,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4100,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4100,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4100,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -4890,7 +4890,7 @@
 4104,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4104,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4104,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4104,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4104,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4104,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Baby Wanderer
 4105,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -4947,7 +4947,7 @@
 4105,2432,5,2427,1,0,0,0,0,0,0,0,0 //WM_MELODYOFSINK#Melody Of Sink(夕阳之歌)#
 4105,2433,5,2431,1,0,0,0,0,0,0,0,0 //WM_BEYOND_OF_WARCRY#Warcry Of Beyond(远古呐喊)#
 4105,2434,5,2429,1,2433,1,0,0,0,0,0,0 //WM_UNLIMITED_HUMMING_VOICE#Unlimited Humming Voice(无限吟唱)#
-4105,5007,5,2412,1,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
+4105,5007,5,2412,2,0,0,0,0,0,0,0,0 //WM_FRIGG_SONG#
 4105,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 //Baby Sura
 4106,1,9,0,0,0,0,0,0,0,0,0,0 //NV_BASIC#Basic Skill(基本技能)#
@@ -5264,7 +5264,7 @@
 4111,2241,3,2240,1,0,0,0,0,0,0,0,0 //RA_WUGRIDER#Warg Rider(骑狼术)#
 4111,2242,1,2241,1,0,0,0,0,0,0,0,0 //RA_WUGDASH#Warg Dash(狼疾走)#
 4111,2243,5,2245,1,0,0,0,0,0,0,0,0 //RA_WUGSTRIKE#Warg Strike(狼突击)#
-4111,2244,5,2240,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
+4111,2244,5,2243,1,0,0,0,0,0,0,0,0 //RA_WUGBITE#Warg Bite(狼撕咬)#
 4111,2245,10,2240,1,0,0,0,0,0,0,0,0 //RA_TOOTHOFWUG#Tooth Of Warg(狼牙)#
 4111,2246,5,2245,3,0,0,0,0,0,0,0,0 //RA_SENSITIVEKEEN#Sensitive Keen(敏锐嗅觉)#
 4111,2247,5,2235,1,0,0,0,0,0,0,0,0 //RA_CAMOUFLAGE#Camouflage(隐蔽战术)#
@@ -5320,7 +5320,7 @@
 4112,2256,5,2255,1,0,0,0,0,0,0,0,0 //NC_BOOSTKNUCKLE#Boost Knuckle(喷射飞拳)#
 4112,2257,3,2256,2,0,0,0,0,0,0,0,0 //NC_PILEBUNKER#Pile Bunker(冲击锥)#
 4112,2258,3,2256,2,0,0,0,0,0,0,0,0 //NC_VULCANARM#Vulcan Arm(火神炮)#
-4112,2259,3,2258,3,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
+4112,2259,3,2258,1,0,0,0,0,0,0,0,0 //NC_FLAMELAUNCHER#Flame Launcher(火焰喷射器)#
 4112,2260,3,2258,3,0,0,0,0,0,0,0,0 //NC_COLDSLOWER#Cold Slower(急速冰冻)#
 4112,2261,3,2259,2,2260,2,0,0,0,0,0,0 //NC_ARMSCANNON#Arm Cannon(加农炮)#
 4112,2262,3,2255,1,0,0,0,0,0,0,0,0 //NC_ACCELERATION#Acceleration(涡轮增压)#
@@ -5336,16 +5336,16 @@
 4112,2272,3,2269,1,0,0,0,0,0,0,0,0 //NC_MAGNETICFIELD#Magnetic Field(磁场)#
 4112,2273,3,2272,2,0,0,0,0,0,0,0,0 //NC_NEUTRALBARRIER#Neutral Barrier(中粒子屏障)#
 4112,2274,3,2271,3,2273,2,0,0,0,0,0,0 //NC_STEALTHFIELD#Stealth Field(光学迷彩立场)#
-4112,2275,5,2255,1,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
+4112,2275,5,2255,2,0,0,0,0,0,0,0,0 //NC_REPAIR#Repair(机械维修)#
 4112,2276,10,0,0,0,0,0,0,0,0,0,0 //NC_TRAININGAXE#Axe Training(斧修炼)#
 4112,2277,5,0,0,0,0,0,0,0,0,0,0 //NC_RESEARCHFE#Research Fire/Earth(火和大地研究)#
 4112,2278,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXEBOOMERANG#Axe Boomerang(回旋斧)#
 4112,2279,5,2278,3,0,0,0,0,0,0,0,0 //NC_POWERSWING#Power Swing(强力回旋)#
 4112,2280,5,2276,1,0,0,0,0,0,0,0,0 //NC_AXETORNADO#Axe Tornado(利刃风暴)#
 4112,2281,5,2277,2,0,0,0,0,0,0,0,0 //NC_SILVERSNIPER#FAW - Silver Sniper(银色狙击手)#
-4112,2282,5,2277,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
+4112,2282,5,2281,2,0,0,0,0,0,0,0,0 //NC_MAGICDECOY#FAW - Magic Decoy(FAW 魔法傀儡)#
 4112,2283,1,2281,1,0,0,0,0,0,0,0,0 //NC_DISJOINT#FAW Removal(FAW解除)#
-4112,5006,5,0,0,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
+4112,5006,5,2277,1,0,0,0,0,0,0,0,0 //NC_MAGMA_ERUPTION#Magma Eruption(熔岩喷发)#
 4112,5014,5,0,0,0,0,0,0,0,0,0,0 //ALL_FULL_THROTTLE#Full Throttle(全力以赴)#
 4112,2535,1,41,1,0,0,0,0,0,0,0,0 //ALL_BUYING_STORE#Open Buying Store(开设采购商店)#
 4112,2544,1,0,0,0,0,0,0,0,0,0,0 //MC_CARTDECORATE#Cart Decorate(装饰手推车)#
@@ -5468,7 +5468,7 @@
 4191,32,10,23,3,0,0,0,0,0,0,0,0 //AL_CRUCIS#Signum Crusis(天使之光)#
 4191,33,10,22,3,0,0,0,0,0,0,0,0 //AL_ANGELUS#Angelus(天使之障壁)#
 4191,34,10,22,5,0,0,0,0,0,0,0,0 //AL_BLESSING#Blessing(天使之赐福)#
-4191,35,1,0,0,0,0,0,0,0,0,0,0 //AL_CURE#Cure(治疗术)#
+4191,35,1,28,2,0,0,0,0,0,0,0,0 //AL_CURE#Cure(治疗术)#
 4191,36,10,0,0,0,0,0,0,0,0,0,0 //MC_INCCARRY#Enlarge Weight Limit(负重量上升)#
 4191,37,10,36,3,0,0,0,0,0,0,0,0 //MC_DISCOUNT#Discount(低价买进)#
 4191,38,10,37,3,0,0,0,0,0,0,0,0 //MC_OVERCHARGE#Overcharge(高价卖出)#

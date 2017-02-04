@@ -2,6 +2,24 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.4(2017-02-04)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/7377f0f674525aa6ffcf96218791408cb031bb20
+[升级] 若您不是全新安装的话, 请在您的【日志数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20170113_log.sql
+[新增] 完善 processhalt 指令的说明和支持的事件范围(该指令慎用)
+[新增] 现在开始小写的 #cashpoints 和 #kafrapoints 变量强制等价于大写的 #CASHPOINTS 和 #KAFRAPOINTS 变量
+[调整] 废弃 @refreshnpc 指令并使用 rAthena 官方实现的 @reloadnpcfile 指令取而代之
+[修正] 修正开启 VIP 会员功能之后, 角色选择界面中角色可用洞数显示错误的问题(感谢“月朗风清”反馈)
+[修正] 修正敏感词过滤机制对 channel 频道系统无效的问题(感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 修正在 OnPCEquipEvent 事件中使用无效的 bonus 指令会导致地图服务器崩溃的问题(感谢“赑咭嗒”反馈)
+[修正] 修正过滤“物品链接炸弹”会误判部分正常物品的问题(感谢“Jian916”反馈)
+[文档] 修改GM指令和脚本指令文档的编码为 UTF8
+[文档] 新增 rAthenaCN 地图标记说明文件, 详见 doc/rAthenaCN_mapflags.txt
+[汉化] 汉化 hide_fav_sell 战斗配置选项的说明, 详见 conf/battle/misc.conf
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.6.3(2017-01-21)
 ------------------
 [新增] 使“聊天内容敏感词过滤”功能支持正则表达式, 详见 db/manner.txt
