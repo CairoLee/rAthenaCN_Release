@@ -1,0 +1,113 @@
+//===== rAthenaCN 文档 =======================================
+//= rAthenaCN 事件标签说明文件
+//===== 作者: ================================================
+//= rAthenaCN 开发团队
+//===== 最后更新: ============================================
+//= 20170304
+//===== 文档简介: ============================================
+//= rAthenaCN 是基于 rAthena 进行二次开发的, 在 rAthena 官方支
+//= 持的事件标签基础上, rAthenaCN 也拓展了一些事件标签, 请参阅
+//= 下面的说明, 它会介绍这些事件的触发时机和使用方法.
+//============================================================
+
+OnSomeOneEnterChatRoom:
+当玩家进入NPC开启的聊天室时触发的事件
+
+OnMvpKillEvent:
+杀死MVP魔物时的事件
+
+OnBeforeReloadScript:
+即将刷新NPC之前的事件
+
+OnAfterReloadScript:
+刷新NPC完毕后的事件
+
+OnPCBeforeEquipEvent:
+准备穿戴一件装备的事件
+
+OnPCBeforeUnequipEvent:
+准备脱掉一件装备的事件
+
+OnPCEquipEvent:
+已经成功穿戴一件装备的事件
+
+OnPCUnequipEvent:
+已经成功脱掉一件装备的事件
+
+OnPCSCStartEvent:
+玩家获得某种状态时的事件（关联获得状态的玩家）
+
+OnPCSCEndEvent:
+玩家解除某种状态时的事件（关联解除状态的玩家）
+
+OnPCPartyCreateEvent:
+创建队伍的事件（关联队长）
+
+OnPCPartyJoinEvent:
+加入队伍的事件（关联加入队伍的人）
+
+OnPCPartyLeaveEvent:
+离开队伍的事件
+
+OnPCGuildCreateEvent:
+创建公会的事件（关联会长）
+
+OnPCGuildJoinEvent:
+加入公会的事件（关联加入公会的人）
+
+OnPCGuildLeaveEvent:
+离开公会的事件
+
+OnPetLootItemEvent:
+宠物拾取物品时的事件
+
+OnPCFeedPet:
+宠物喂食事件
+
+OnPCFoodPet:
+宠物喂食事件（为了兼容SEA和CSEA）
+
+OnPCViewEquipEvent:
+查看玩家装备时触发的事件
+
+OnPCHomLvUpEvent:
+生命体升级事件
+
+OnHomCallEvent:
+召唤生命体事件
+
+OnHomRestEvent:
+生命体休息事件
+
+OnHomDeadEvent:
+生命体死亡事件
+
+OnHomWakeEvent:
+生命体复活事件
+
+OnPCUseSkillEvent:
+玩家开始使用技能事件
+
+OnPCUseSkillFinishEvent:
+玩家技能使用完毕事件
+
+OnPCUseItemEvent:
+玩家开始使用物品事件
+
+OnPCUseItemFinishEvent:
+玩家物品使用完毕事件
+
+OnPCMoveEvent:
+玩家移动事件
+
+OnPCBeforeLoadMapEvent:
+玩家准备过图事件
+
+OnPCChangeTitleEvent:
+玩家双击装备面板中更换称号的事件
+
+OnIdentifiedItem:
+玩家装备鉴定完成事件
+
+OnProgressbarAbortEvent:
+当 progressbar 被打断时候的触发事件

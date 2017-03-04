@@ -158,9 +158,36 @@ end;
 
 -	script	PC_EQUIP_EVENT	-1,{
 end;
+OnPCBeforeEquipEvent:
+	// OnPCBeforeEquipEvent 是与玩家关联的
+	// 当玩家准备穿戴上一件物品的时候，此事件会被触发
+	//
+	// 时机注意事项
+	// -------------------------------------------------------
+	// “准备穿戴”说明还没完成穿戴, 所以此时使用 
+	// getinventoryinfo(@equip_idx, 2) 去获取该装备的穿戴位置时,
+	// 返回的内容只会是 0
+	//
+	// 参数说明
+	// -------------------------------------------------------
+	// @equip_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @equip_pos 也被赋予了和 @equip_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCBeforeEquipEvent | " + strcharinfo(0) + " 即将穿戴一件装备，它的背包序号为: " + @equip_idx;
+end;
 OnPCEquipEvent:
 	// OnPCEquipEvent 是与玩家关联的
-	// 当玩家成功穿戴一件物品的话，此事件会被触发
+	// 当玩家成功穿戴上一件物品的时候，此事件会被触发
 	// 
 	// 参数说明
 	// -------------------------------------------------------
@@ -177,13 +204,26 @@ OnPCEquipEvent:
 	// @equip_pos 也被赋予了和 @equip_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCEquipEvent | " + strcharinfo(0) + " 穿戴了一件装备，它的背包序号为: " + @equip_idx;
+	dispbottom "[事件演示] OnPCEquipEvent | " + strcharinfo(0) + " 已经穿戴了一件装备，它的背包序号为: " + @equip_idx;
 	dispbottom "           - 编号: " + getinventoryinfo(@equip_idx, 0) + " | 数量: " + getinventoryinfo(@equip_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@equip_idx, 2) + " | 精炼值: " + getinventoryinfo(@equip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@equip_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@equip_idx, 5) + " | 卡片1: " + getinventoryinfo(@equip_idx, 6) + " | 卡片2: " + getinventoryinfo(@equip_idx, 7) + " | 卡片3: " + getinventoryinfo(@equip_idx, 8) + " | 卡片4: " + getinventoryinfo(@equip_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@equip_idx, 10);
 end;
-OnPCUnequipEvent:
-	// OnPCUnequipEvent 是与玩家关联的
-	// 当玩家成功脱掉一件物品的话，此事件会被触发
+OnPCBeforeUnequipEvent:
+	// OnPCBeforeUnequipEvent 是与玩家关联的
+	// 当玩家准备脱掉一件物品的时候，此事件会被触发
+	// 
+	// 时机注意事项
+	// -------------------------------------------------------
+	// “准备脱掉”说明还没完全脱掉, 所以此时使用 
+	// getinventoryinfo(@equip_idx, 2) 去获取该装备的穿戴位置时,
+	// 返回的内容绝对不会是 0
+	//
+	// 中断注意事项
+	// -------------------------------------------------------
+	// 当你使用 processhalt 脚本指令中断本事件的后续动作时,
+	// 可能会导致切换装备失败. 因为切换装备实际上是由两个动作组成的,
+	// 分别是 “先脱下旧的, 再穿上新的”. 若脱下旧的装备操作被中断,
+	// 那么新的装备也会穿不上.
 	// 
 	// 参数说明
 	// -------------------------------------------------------
@@ -200,8 +240,29 @@ OnPCUnequipEvent:
 	// @unequip_pos 也被赋予了和 @unequip_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCUnequipEvent | " + strcharinfo(0) + " 脱下了一件装备，它的背包序号为: " + @unequip_idx;
-	dispbottom "           - 编号: " + getinventoryinfo(@unequip_idx, 0) + " | 数量: " + getinventoryinfo(@unequip_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@unequip_idx, 2) + " | 精炼值: " + getinventoryinfo(@unequip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@unequip_idx, 4);
+	dispbottom "[事件演示] OnPCBeforeUnequipEvent | " + strcharinfo(0) + " 准备脱下一件装备，它的背包序号为: " + @unequip_idx;
+end;
+OnPCUnequipEvent:
+	// OnPCUnequipEvent 是与玩家关联的
+	// 当玩家成功脱掉一件物品的时候，此事件会被触发
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @unequip_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// 
+	// 为了兼容SEA和CSEA服务端
+	// @unequip_pos 也被赋予了和 @unequip_idx 一样的值
+	// -------------------------------------------------------
+	
+	dispbottom "[事件演示] OnPCUnequipEvent | " + strcharinfo(0) + " 已经脱下了一件装备，它的背包序号为: " + @unequip_idx;
+	dispbottom "           - 编号: " + getinventoryinfo(@unequip_idx, 0) + " | 数量: " + getinventoryinfo(@unequip_idx, 1) + " | 精炼值: " + getinventoryinfo(@unequip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@unequip_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@unequip_idx, 5) + " | 卡片1: " + getinventoryinfo(@unequip_idx, 6) + " | 卡片2: " + getinventoryinfo(@unequip_idx, 7) + " | 卡片3: " + getinventoryinfo(@unequip_idx, 8) + " | 卡片4: " + getinventoryinfo(@unequip_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@unequip_idx, 10);
 end;
 }

@@ -394,8 +394,8 @@
 	- OnSomeOneEnterChatRoom    中断后客户端将不会打开聊天室窗口
 	- OnPCChangeTitleEvent      中断后服务端将不会根据 @now_title_id 变量的值来设定玩家的称号
 
-	- OnPCEquipEvent            中断后服务端会无视玩家本次装备穿戴操作
-	- OnPCUnequipEvent          中断后服务端会无视玩家本次装备脱下操作
+	- OnPCBeforeEquipEvent      中断后服务端会无视玩家本次装备穿戴操作
+	- OnPCBeforeUnequipEvent    中断后服务端会无视玩家本次装备脱下操作
 
 	- OnPCPartyCreateEvent      中断后服务端会无视玩家本次创建队伍的请求
 	- OnPCPartyJoinEvent        中断后服务端会无视玩家本次加入队伍的请求

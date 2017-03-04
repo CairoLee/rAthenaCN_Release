@@ -2,6 +2,21 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.5(2017-03-04)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/800f22b77bb63c2305d05956de8fbe5db0327ded
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20170215.sql
+       - sql-files\upgrades\upgrade_20170218.sql
+[升级] 若您不是全新安装的话, 请在您的【日志数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\upgrade_20170218_log.sql
+[新增] 新增 OnPCBeforeEquipEvent 和 OnPCBeforeUnequipEvent 事件
+[新增] 初步添加 rAthenaCN 自定义的事件说明文档 (事件是全的, 但内容有待完善)
+[修正] 修正 OnPCEquipEvent 与 OnPCUnEquipEvent 触发顺序错误的问题 (感谢“好刀一把”反馈)
+[修正] 修正 conf/char_athena.conf 中 char_del_option 选项的注释错误 (感谢“懒猪”反馈)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.6.4(2017-02-04)
 ------------------
 [同步] rAthena官方Github库
