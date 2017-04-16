@@ -5605,6 +5605,8 @@ everything not equippable by the new job class anyway.
 These commands will make a character sit or stand.
 If no character is specified, the command will run for the invoking character.
 
+Additionnally Sitting constant is true when the character is sitting, false otherwise.
+
 ---------------------------------------
 
 *disguise <Monster ID>{,<char_id>};
@@ -6116,6 +6118,18 @@ the attached NPC will display the message.
     // This will make everyone in the area see the NPC greet the character
     // who just invoked it.
     npctalk "Hello "+strcharinfo(0)+", how are you?";
+
+---------------------------------------
+
+*chatmes "<message>"{,"<NPC name>"};
+
+This command will display a message in the waitingroom (chat) of the NPC.
+If the <NPC name> option is given, then that NPC will display the message, else
+the attached NPC will display the message.
+If the NPC is not in a waitingroom, nothing happens.
+
+    // Everyone in the waitingroom will see this message:
+    chatmes "Waiting 5 minutes until the next match will start";
 
 ---------------------------------------
 
@@ -8268,6 +8282,22 @@ Example:
 		warp .@map$, .@x, .@y;
 		end;
 	}
+
+---------------------------------------
+
+*getfreecell "<map name>",<rX>,<rY>{,<x>,<y>,<rangeX>,<rangeY>,<flag>};
+
+Finds a free cell on the given map and stores the reference to the found cell
+in <rX> and <rY>. Passing <x> and <y> with <rangeX> and <rangeY> allows for
+searching within a specified area on the given map. The <flag> is a bitmask
+and has the following possible values:
+ - 1 = Random cell on the map or from <x>,<y> range. (default)
+ - 2 = The target should be able to walk to the target tile.
+ - 4 = There shouldn't be any players around the target tile (use the no_spawn_on_player setting).
+
+Examples:
+	getfreecell("prontera",.@x,.@y); // Find a random empty cell in Prontera and store it within .@x and .@y
+	getfreecell("prontera",.@x,.@y,150,150,5,5); // Find a random empty cell on 150,150 (with a range of 5x5) in Prontera and store it within .@x and .@y
 
 ---------------------------------------
 

@@ -11,7 +11,7 @@
 //===== By: ================================================== 
 //= Evera
 //===== Current Version: ===================================== 
-//= 2.9
+//= 2.9a
 //===== Compatible With: ===================================== 
 //= rAthena Project
 //===== Description: =========================================
@@ -62,6 +62,7 @@
 //= 2.7 Fixed a typo, a - to a +. Not sure how that happened. [L0ne_w0lf]
 //= 2.8 Corrected another typo this time in a variable.
 //= 2.9 Added GM management function. [Euphy]
+//= 2.9a Tweaked NPC sprite & cutin used. [Liam]
 //============================================================ 
 
 einbroch,246,70,0	script	Vote Timer#ein	-1,{
@@ -676,7 +677,7 @@ yuno,162,191,4	script	卡普拉投票 宣传人员#yuno	861,{
 prontera,164,125,4	script	卡普拉投票 宣传人员#prt	116,{
 	callfunc "F_VoteKafra",2;
 }
-moc_ruins,97,133,4	script	卡普拉投票 宣传人员#moc	4_M_ZONDAMAN,{
+moc_ruins,104,133,4	script	卡普拉投票 宣传人员#moc	116,{
 	callfunc "F_VoteKafra",2;
 }
 geffen,122,37,4	script	卡普拉投票 宣传人员#gef	116,{
@@ -1059,7 +1060,7 @@ lighthalzen,163,60,4	script	卡普拉投票 宣传人员#lght	861,{
 
 yuno,153,191,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#yuno	874
 prontera,147,125,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#prt	874
-moc_ruins,104,133,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#moc	874
+moc_ruins,97,133,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#moc	874
 geffen,117,37,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#gef	874
 payon,153,182,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#pay	874
 alberta,114,70,6	duplicate(VotingStaffCCE)	准它社投票 宣传人员#alb	874

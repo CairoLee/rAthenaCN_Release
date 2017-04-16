@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `auction` (
 -- Table structure for `db_roulette`
 --
 
-CREATE TABLE `db_roulette` (
+CREATE TABLE IF NOT EXISTS `db_roulette` (
   `index` int(11) NOT NULL default '0',
   `level` smallint(5) unsigned NOT NULL,
   `item_id` smallint(5) unsigned NOT NULL,
@@ -287,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `charlog` (
 --
 -- Table structure for table `clan`
 --
-CREATE TABLE `clan` (
+CREATE TABLE IF NOT EXISTS `clan` (
   `clan_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL DEFAULT '',
   `master` varchar(24) NOT NULL DEFAULT '',
@@ -299,15 +299,15 @@ CREATE TABLE `clan` (
 -- ----------------------------
 -- Records of clan
 -- ----------------------------
-INSERT INTO `clan` VALUES ('1', 'Swordman Clan', 'Raffam Oranpere', 'prontera', '500');
-INSERT INTO `clan` VALUES ('2', 'Arcwand Clan', 'Devon Aire', 'geffen', '500');
-INSERT INTO `clan` VALUES ('3', 'Golden Mace Clan', 'Berman Aire', 'prontera', '500');
-INSERT INTO `clan` VALUES ('4', 'Crossbow Clan', 'Shaam Rumi', 'payon', '500');
+INSERT INTO `clan` VALUES ('1', '剑士部落', '瑞夫曼欧莱比亚', 'prontera', '500');
+INSERT INTO `clan` VALUES ('2', '言灵魔杖部落', '德丰艾尔', 'geffen', '500');
+INSERT INTO `clan` VALUES ('3', '黄金之锤部落', '伯曼艾尔', 'prontera', '500');
+INSERT INTO `clan` VALUES ('4', '十字弓部落', '沙姆鲁米', 'payon', '500');
 
 -- ----------------------------
 -- Table structure for `clan_alliance`
 -- ----------------------------
-CREATE TABLE `clan_alliance` (
+CREATE TABLE IF NOT EXISTS `clan_alliance` (
   `clan_id` int(11) unsigned NOT NULL DEFAULT '0',
   `opposition` int(11) unsigned NOT NULL DEFAULT '0',
   `alliance_id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -319,14 +319,14 @@ CREATE TABLE `clan_alliance` (
 -- ----------------------------
 -- Records of clan_alliance
 -- ----------------------------
-INSERT INTO `clan_alliance` VALUES ('1', '0', '3', 'Golden Mace Clan');
-INSERT INTO `clan_alliance` VALUES ('2', '0', '3', 'Golden Mace Clan');
-INSERT INTO `clan_alliance` VALUES ('2', '1', '4', 'Crossbow Clan');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '1', 'Swordman Clan');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '2', 'Arcwand Clan');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '4', 'Crossbow Clan');
-INSERT INTO `clan_alliance` VALUES ('4', '0', '3', 'Golden Mace Clan');
-INSERT INTO `clan_alliance` VALUES ('4', '1', '2', 'Arcwand Clan');
+INSERT INTO `clan_alliance` VALUES ('1', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('2', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('2', '1', '4', '十字弓部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '1', '剑士部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '2', '言灵魔杖部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '4', '十字弓部落');
+INSERT INTO `clan_alliance` VALUES ('4', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('4', '1', '2', '言灵魔杖部落');
 
 --
 -- Table structure for table `elemental`
