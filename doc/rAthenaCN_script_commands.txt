@@ -568,6 +568,10 @@
 *getoptionitem <item id>,<amount>,<identify>,<refine>,<attribute>,<card1>,<card2>,<card3>,<card4>,<Random Option 字符串数组>{,<account ID>};
 *getoptionitem "<item name>",<amount>,<identify>,<refine>,<attribute>,<card1>,<card2>,<card3>,<card4>,<Random Option 字符串数组>{,<account ID>};
 
+[指令弃用声明]
+该指令于 '2017-05-13' 开始被声明弃用, 在未来版本中可能随时会被移除.
+您应该使用 rAthena 官方新提供的 getitem3 指令来替代它, 详细用法请见: doc\script_commands.txt
+
 根据你提供的一个“Random Option 字符串数组”, 创造出带有指定 Random Option 的道具到玩家的背包中(注意, 如果创造的道具不是“装备”类型的道具, 那么<Random Option 字符串数组>字段将被无视).
 
 单个数组元素的格式:
@@ -593,6 +597,9 @@
 ---------------------------------------
 
 *readoptarray(<Random Option 字符串数组>,<第几个Option>,<要读取的数据类型>);
+
+[指令弃用声明]
+该指令于 '2017-05-13' 开始被声明弃用, 在未来版本中可能随时会被移除.
 
 快速从 Random Option 字符串数组中读取指定的内容.
 
@@ -622,6 +629,9 @@
 
 *writeoptarray(<Random Option 数组>,<第几个Option>,<要修改的数据类型>,<新的值>);
 
+[指令弃用声明]
+该指令于 '2017-05-13' 开始被声明弃用, 在未来版本中可能随时会被移除.
+
 快速从 Random Option 字符串数组中修改指定的内容.
 
 要修改的数据类型:
@@ -648,6 +658,9 @@
 
 *getoptionarraybyidx <背包位置序号>,<保存到的目标 Random Option 数组名称>;
 
+[指令弃用声明]
+该指令于 '2017-05-13' 开始被声明弃用, 在未来版本中可能随时会被移除.
+
 给定背包位置序号, 获取一个用来表示此物品的 Random Option 字符串数组.
 
 例如:
@@ -659,6 +672,9 @@
 ---------------------------------------
 
 *getoptionarraybypos <装备位置编号>,<保存到的目标 Random Option 数组名称>;
+
+[指令弃用声明]
+该指令于 '2017-05-13' 开始被声明弃用, 在未来版本中可能随时会被移除.
 
 给定装备位置编号, 获取一个用来表示此物品的 Random Option 字符串数组.
 

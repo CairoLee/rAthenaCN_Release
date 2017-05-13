@@ -2,10 +2,27 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.8(2017-05-13)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/79ad0a1902009b7509e0b2a97ecb2571fd0af6f1
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.6.8\upgrade_20170417.sql
+       - sql-files\upgrades\v1.6.8\upgrade_20170509.sql
+[升级] 若您不是全新安装的话, 请在您的【日志数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.6.8\upgrade_20170417_logs.sql
+[修正] rAthena官方BUG: 修正使用 channel_kick 脚本指令时的回显信息错误 (感谢“Jian916”反馈)
+[修正] rAthena官方BUG: 修正 channel_create 指令的 color 代码没有进行 RGB2BGR 转换的问题 (感谢“Jian916”反馈)
+[调整] 声明弃用 getoptionitem 脚本指令, 请使用 rAthena 官方新增的 getitem3 指令替代
+[调整] 声明弃用 readoptarray、writeoptarray 脚本指令
+[调整] 声明弃用 getoptionarraybyidx、getoptionarraybypos 脚本指令
+[汉化] 完善 ignore_extremityfist_sp_limit 的选项说明, 详见 conf/battle/extend.conf
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.6.7(2017-04-28)
 ------------------
 [同步] rAthena官方Github库
-       https://github.com/rathena/rathena/commit/52c94551fa0d8c3c395822428ba8ec7024b71512
+       https://github.com/rathena/rathena/commit/bf2461f2b071f51bb3cb4cf832960be22424f91b
 [新增] 此版本开始支持 2016-02-03aRagexeRE 客户端 (试验功能, 无法保证稳定性)
 [新增] 扩展更详细的 npc_event_dequeue: event timer is full ! 报错信息
 [修正] rAthena官方BUG: 修正在使用“开设采购商店”技能后, 角色可以随意移动的问题 (感谢“湅”提供情报)
