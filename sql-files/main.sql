@@ -1,3 +1,12 @@
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `acc_reg_num`
 --
@@ -300,10 +309,10 @@ CREATE TABLE IF NOT EXISTS `clan` (
 -- ----------------------------
 -- Records of clan
 -- ----------------------------
-INSERT INTO `clan` VALUES ('1', '��ʿ����', '�����ŷ������', 'prontera', '500');
-INSERT INTO `clan` VALUES ('2', '����ħ�Ȳ���', '�·ᰬ��', 'geffen', '500');
-INSERT INTO `clan` VALUES ('3', '�ƽ�֮������', '��������', 'prontera', '500');
-INSERT INTO `clan` VALUES ('4', 'ʮ�ֹ�����', 'ɳķ³��', 'payon', '500');
+INSERT INTO `clan` VALUES ('1', '剑士部落', '瑞夫曼欧莱比亚', 'prontera', '500');
+INSERT INTO `clan` VALUES ('2', '言灵魔杖部落', '德丰艾尔', 'geffen', '500');
+INSERT INTO `clan` VALUES ('3', '黄金之锤部落', '伯曼艾尔', 'prontera', '500');
+INSERT INTO `clan` VALUES ('4', '十字弓部落', '沙姆鲁米', 'payon', '500');
 
 -- ----------------------------
 -- Table structure for `clan_alliance`
@@ -320,14 +329,14 @@ CREATE TABLE IF NOT EXISTS `clan_alliance` (
 -- ----------------------------
 -- Records of clan_alliance
 -- ----------------------------
-INSERT INTO `clan_alliance` VALUES ('1', '0', '3', '�ƽ�֮������');
-INSERT INTO `clan_alliance` VALUES ('2', '0', '3', '�ƽ�֮������');
-INSERT INTO `clan_alliance` VALUES ('2', '1', '4', 'ʮ�ֹ�����');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '1', '��ʿ����');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '2', '����ħ�Ȳ���');
-INSERT INTO `clan_alliance` VALUES ('3', '0', '4', 'ʮ�ֹ�����');
-INSERT INTO `clan_alliance` VALUES ('4', '0', '3', '�ƽ�֮������');
-INSERT INTO `clan_alliance` VALUES ('4', '1', '2', '����ħ�Ȳ���');
+INSERT INTO `clan_alliance` VALUES ('1', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('2', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('2', '1', '4', '十字弓部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '1', '剑士部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '2', '言灵魔杖部落');
+INSERT INTO `clan_alliance` VALUES ('3', '0', '4', '十字弓部落');
+INSERT INTO `clan_alliance` VALUES ('4', '0', '3', '黄金之锤部落');
+INSERT INTO `clan_alliance` VALUES ('4', '1', '2', '言灵魔杖部落');
 
 --
 -- Table structure for table `elemental`
@@ -1020,3 +1029,8 @@ CREATE TABLE IF NOT EXISTS `vendings` (
   `autotrade` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

@@ -2,6 +2,17 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.6.9(2017-05-21)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/6a75b173801bbc19982522126d9e217a4eb5cd80
+[修正] rAthena官方BUG: 修正 RandomOptions 系列指令严格要求 Value 和 Parameter 不能为 0 的问题 (感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 修正 zlib.dll 及 pcre8.dll 依赖 VCRUNTIME140.dll 和 MSVCR110.dll 的问题 (感谢“づAtメ、”和“Mr.Siu””反馈)
+[修正] 修正直接导入 main.sql 时, clan 表与 clan_alliance 表的内容为乱码的问题
+[调整] 脚本指令 logout 支持以账号编号、角色编号、角色名称等多种方式来指定角色(感谢“Jian916”反馈)
+[调整] 自带微软官方提供的 msvcr120.dll (x86版) 运行时库文件
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.6.8(2017-05-13)
 ------------------
 [同步] rAthena官方Github库
