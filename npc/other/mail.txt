@@ -145,3 +145,14 @@ rachel,122,146,0	duplicate(MailBox)	ÓÊ¼þÍ²#ra	888
 // ·ÆÒôË¹
 //============================================================
 veins,218,123,0	duplicate(MailBox)	ÓÊ¼þÍ²#ve	888
+
+// RODEX makes these NPCs useless
+-	script	RodexMailBoxInit	-1,{
+	end;
+
+OnInit:
+	if( PACKETVER >= 20150513 ){
+		unloadnpc "MailBox";
+	}
+	end;
+}

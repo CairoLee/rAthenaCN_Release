@@ -2,6 +2,26 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.0(2017-06-23)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/6a75b173801bbc19982522126d9e217a4eb5cd80
+[警告] 此版本整合了 rAthena 测试中的成就系统, 尚未经过充分测试.
+[警告] 此版本支持了新的邮件系统(RODEX), 也是 rAthena 官方刚上线的功能.
+[警告] 此版本不推荐应用于线上服务器, 若发现任何问题请随时上报, 以便修正改进.
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.0\upgrade_20170407.sql
+       - sql-files\upgrades\v1.7.0\upgrade_20170620.sql
+[升级] 若您不是全新安装的话, 请进行以下文件操作
+       - 将压缩包中的 db\import-tmpl\achievement_db.conf 复制到你服务端的 db\import 目录下
+[新增] 新增 getidxrandomoption 和 setidxrandomoption 脚本指令, 用来根据背包序号读写装备的 Random Option 属性 (感谢“づAtメ、”建议)
+[新增] 使 OnPCViewEquipEvent 支持被 processhalt 指令中断 (感谢“Jian916”建议)
+[新增] 扩展 getiteminfo 指令的返回内容, 详见 doc/rAthenaCN_script_commands.txt (感谢“Sz”建议)
+[修正] rAthena官方BUG: 修正 rAthena 官方的 RandomOptions 系列指令不能接受 ID 数组为空的情况 (感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 避免使用 recalculatestat 会导致 OnPCStatCalcEvent 中的 bonus 系列指令工作不正常 (感谢“Jian916”反馈, “╰づ记忆•斑驳〤”提供核心代码)
+[修正] rAthena官方BUG: 修正当 marketshop 类型商店的道具数量无效时, 地图服务器会在载入脚本时崩溃的问题 (感谢“Jian916”反馈)
+[修正] 修正在 OnPCBeforeEquipEvent / OnPCBeforeUnequipEvent 事件中, 使用 delinventory 删掉对应道具会导致服务器崩溃的问题 (感谢“locuse”反馈)
+
 v1.6.9(2017-05-21)
 ------------------
 [同步] rAthena官方Github库

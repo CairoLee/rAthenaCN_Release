@@ -34,6 +34,29 @@ CREATE TABLE IF NOT EXISTS `acc_reg_str` (
 ) ENGINE=MyISAM;
 
 --
+-- Table structure for table `achievement`
+--
+
+CREATE TABLE IF NOT EXISTS `achievement` (
+  `char_id` int(11) unsigned NOT NULL default '0',
+  `id` bigint(11) unsigned NOT NULL,
+  `count1` mediumint(8) unsigned NOT NULL default '0',
+  `count2` mediumint(8) unsigned NOT NULL default '0',
+  `count3` mediumint(8) unsigned NOT NULL default '0',
+  `count4` mediumint(8) unsigned NOT NULL default '0',
+  `count5` mediumint(8) unsigned NOT NULL default '0',
+  `count6` mediumint(8) unsigned NOT NULL default '0',
+  `count7` mediumint(8) unsigned NOT NULL default '0',
+  `count8` mediumint(8) unsigned NOT NULL default '0',
+  `count9` mediumint(8) unsigned NOT NULL default '0',
+  `count10` mediumint(8) unsigned NOT NULL default '0',
+  `completed` datetime,
+  `rewarded` datetime,
+  PRIMARY KEY (`char_id`,`id`),
+  KEY `char_id` (`char_id`)
+) ENGINE=MyISAM;
+
+--
 -- Table structure for table `auction`
 --
 
@@ -239,6 +262,7 @@ CREATE TABLE IF NOT EXISTS `char` (
   `sex` ENUM('M','F','U') NOT NULL default 'U',
   `hotkey_rowshift` tinyint(3) unsigned NOT NULL default '0',
   `clan_id` int(11) unsigned NOT NULL default '0',
+  `title_id` INT(11) unsigned NOT NULL default '0',
   `last_login` datetime DEFAULT NULL,
   PRIMARY KEY  (`char_id`),
   UNIQUE KEY `name_key` (`name`),
@@ -725,33 +749,44 @@ CREATE TABLE IF NOT EXISTS `mail` (
   `time` int(11) unsigned NOT NULL default '0',
   `status` tinyint(2) NOT NULL default '0',
   `zeny` int(11) unsigned NOT NULL default '0',
-  `nameid` smallint(5) unsigned NOT NULL default '0',
-  `amount` int(11) unsigned NOT NULL default '0',
-  `refine` tinyint(3) unsigned NOT NULL default '0',
-  `attribute` tinyint(4) unsigned NOT NULL default '0',
-  `identify` smallint(6) NOT NULL default '0',
-  `card0` smallint(5) unsigned NOT NULL default '0',
-  `card1` smallint(5) unsigned NOT NULL default '0',
-  `card2` smallint(5) unsigned NOT NULL default '0',
-  `card3` smallint(5) unsigned NOT NULL default '0',
-  `option_id0` smallint(5) unsigned NOT NULL default '0',
-  `option_val0` smallint(5) unsigned NOT NULL default '0',
-  `option_parm0` tinyint(3) unsigned NOT NULL default '0',
-  `option_id1` smallint(5) unsigned NOT NULL default '0',
-  `option_val1` smallint(5) unsigned NOT NULL default '0',
-  `option_parm1` tinyint(3) unsigned NOT NULL default '0',
-  `option_id2` smallint(5) unsigned NOT NULL default '0',
-  `option_val2` smallint(5) unsigned NOT NULL default '0',
-  `option_parm2` tinyint(3) unsigned NOT NULL default '0',
-  `option_id3` smallint(5) unsigned NOT NULL default '0',
-  `option_val3` smallint(5) unsigned NOT NULL default '0',
-  `option_parm3` tinyint(3) unsigned NOT NULL default '0',
-  `option_id4` smallint(5) unsigned NOT NULL default '0',
-  `option_val4` smallint(5) unsigned NOT NULL default '0',
-  `option_parm4` tinyint(3) unsigned NOT NULL default '0',
-  `unique_id` bigint(20) unsigned NOT NULL default '0',
-  `bound` tinyint(1) unsigned NOT NULL default '0',
+  `type` smallint(5) NOT NULL default '0',
   PRIMARY KEY  (`id`)
+) ENGINE=MyISAM;
+
+-- ----------------------------
+-- Table structure for `mail_attachments`
+-- ----------------------------
+
+CREATE TABLE IF NOT EXISTS `mail_attachments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `index` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `nameid` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `amount` int(11) unsigned NOT NULL DEFAULT '0',
+  `refine` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `attribute` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  `identify` smallint(6) NOT NULL DEFAULT '0',
+  `card0` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `card1` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `card2` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `card3` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_id0` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_val0` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_parm0` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `option_id1` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_val1` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_parm1` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `option_id2` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_val2` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_parm2` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `option_id3` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_val3` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_parm3` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `option_id4` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_val4` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `option_parm4` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `unique_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `bound` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    PRIMARY KEY (`id`,`index`)
 ) ENGINE=MyISAM;
 
 --
