@@ -2,6 +2,28 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.1(2017-07-15)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/0d103bf6a788a09a13512e5ca20fa94fc907360c
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.1\upgrade_20170702.sql
+[新增] 新增 copynpc/dupnpc 脚本指令, 用来动态的复制NPC (感谢“冰点”建议)
+[修正] rAthena官方BUG: 避免有副本处于活跃状态时, 使用 CTRL+C 关闭地图服务器会导致崩溃的问题
+[修正] rAthena官方BUG: 修正将已经放到RODEX邮件中的道具移除时，重量计算不正确的问题 (感谢“Jian916”反馈)
+[修正] rAthena官方BUG: 修正 RODEX 通知图标显示逻辑不正确的问题 (感谢“西瓜”反馈)
+[修正] rAthena官方BUG: 修正某些情况下 disable_items/enable_items 脚本指令可能会失效的问题 (感谢“dicer”反馈)
+[修正] rAthena官方BUG: 修正自从开始支持 RODEX 之后, 老邮件系统的附件处理不正常的问题
+[修正] rAthena官方BUG: 修正在某些情况下 RODEX 无法撰写新邮件的问题 (感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 修正当 mail_show_status 选项为 2 的情况下, 玩家登陆时如果仅有 1 封新邮件, 则不会显示信件状态的问题
+[修正] rAthena官方BUG: 修正老邮件系统在某些情况下, 客户端还能看到被寄出去的道具还能被返还到背包的问题 (实际上没被返还)
+[修正] rAthena官方BUG: 修正 channel_chat 脚本指令的 color 没有进行 RGB2BGR 转换的问题 (感谢“Jian916”反馈)
+[修正] 修正 chars_per_account 选项在不启用VIP会员系统的情况下没有限制作用的问题 (感谢“Jian916”反馈)
+[修正] 修正当 renewal_disable_items_logic 选项为 1 的时候, 无法使用消耗品道具的问题 (感谢“づAtメ、”反馈)
+[修正] 修正在 OnPCStatCalcEvent 中使用 end 指令在某些情况下会导致当前的 NPC 对话被异常终止的问题 (感谢“locuse”反馈)
+[调整] 不强制要求 sleep2 指令必须关联到玩家才能用 (感谢“懒猪”反馈)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.0(2017-06-23)
 ------------------
 [同步] rAthena官方Github库

@@ -29,6 +29,8 @@
 │ *sethotkey                   │ *set_hotkey                 │
 ├──────────────────────────────┼─────────────────────────────┤
 │ *recalculatestat             │ *statuscalc 或 *status_calc │
+├──────────────────────────────┼─────────────────────────────┤
+│ *copynpc                     │ *dupnpc                     │
 └──────────────────────────────┴─────────────────────────────┘
 
 
@@ -757,5 +759,45 @@
 20 - 不会被技能当做消耗品而消耗, 1表示是, 0表示否
 21 - 是否为宠物捕捉道具, 0表示否, 若是则返回能捕获的魔物编号
 22 - 是否在其使用脚本中调用了 callfunc 指令, 1表示是, 0表示否 (复兴前版本返回 -1)
+
+---------------------------------------
+
+*copynpc("<复制出来的新NPC所在地图名称>,<X坐标>,<Y坐标>,<朝向编号>","duplicate(<来源NPC名称>)","<复制出来的新NPC名称>","<角色编号>");
+
+将一个指定的NPC复制到一个新的位置.
+主要的参数是4个字符串, 这四个字符串与使用 duplicate 进行静态复制时候的四个用 %TAB% 分隔的内容是一样的.
+
+假设有以下NPC, 我们想把它复制一个新的出来:
+
+	prontera,146,99,2    script    PVP管理员::PVPCOPYTEST    917,{
+		mes "[PVP管理员]";
+		mes "场地正在修理, 请稍后再来...";
+		close;
+	}
+
+通常的做法是在脚本中, 使用 duplicate 指令进行静态复制, 如:
+
+	prontera,156,99,2	duplicate(PVPCOPYTEST)	PVP管理员#1	917
+
+现在你可以使用 copynpc 脚本指令, 将上面这一行静态复制代码按 %TAB% 分割为4个字段, 然后以字符串形式传递给 copynpc 脚本指令, 如:
+
+	copynpc "prontera,156,99,2","duplicate(PVPCOPYTEST)","PVP管理员#1","917";
+
+同时此函数支持返回复制出来的新NPC的GID, 方便你使用 unit 系列指令对其进行操作, 如:
+
+	.@gid = copynpc("prontera,156,99,2","duplicate(PVPCOPYTEST)","PVP管理员#1","917");
+	unittalk .@gid, "My GID is : " + .@gid;
+	
+如果想要复制一个副本中的NPC, 那么需要在用到地图名称的地方使用 instance_mapname 进行转换, 原始NPC的名称也需要用 instance_npcname 进行转换, 如:
+
+	.@w1 = instance_mapname("1@tower") + ",156,99,2";
+	.@w2 = "duplicate(" + instance_npcname("PVPCOPYTEST") + ")";
+	.@w3 = "PVP管理员#1";
+	.@w4 = "917";
+	
+	copynpc .@w1, .@w2, .@w3, .@w4;
+
+返回值:
+	复制成功, 则返回复制出来的新NPC的GID, 失败则返回 0
 
 ---------------------------------------

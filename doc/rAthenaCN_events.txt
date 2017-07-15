@@ -10,6 +10,19 @@
 //= 下面的说明, 它会介绍这些事件的触发时机和使用方法.
 //============================================================
 
+OnPCStatCalcEvent:
+当角色的能力被重新计算时触发的事件
+
+rAthenaCN 在官方的基础上做了以下改进:
+	- 此事件默认不会被放入“事件队列”, 只要被触发都能被立刻执行
+	- 在 conf/battle/extend.conf 的 execute_npce_statcalc_right_now 选项可以改回官方默认流程
+
+当此事件不会被放入“事件队列”时, 以下部分脚本指令将不会被执行:
+	mes,next,end,close,close2,menu,select,prompt,
+	input,progressbar,produce,cooking,makerune,buyingstore,openstorage,
+	openstorage2,openauction,openmail,guildopenstorage,
+	callshop,bpet,opendressroom,sleep,sleep2
+
 OnSomeOneEnterChatRoom:
 当玩家进入NPC开启的聊天室时触发的事件
 
