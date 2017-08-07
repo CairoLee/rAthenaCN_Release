@@ -2,6 +2,23 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.2(2017-08-02)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/c0556a397e864f8a73dce6f2ff32bb367443e18b
+[升级] 若您不是全新安装的话, 请进行以下文件操作
+       - 将压缩包中的 db\import-tmpl\achievement_db.yml 复制到你服务端的 db\import 目录下
+[注意] 从这个版本开始, rAthena 官方弃用了原先的 db/packet_db.txt 配置文件
+[注意] 从这个版本开始, rAthena 官方将成就系统的数据库文件从 conf 格式调整为 yaml 格式
+[新增] 支持设定封包混淆密钥, 详情请见 conf/map_athena.conf 中的 packet_keys 选项
+[新增] 加入战斗配置文件完整性校验机制, 当战斗配置文件中缺少选项时, 能显示警告信息 (感谢“╰づ记忆•斑驳〤”实现)
+[新增] 能够对“元素使”使用 @bodystyle 指令来切换服装风格 (客户端必须有对应的图档，否则会报错)
+[新增] 实现 OnBeforeIdentifiedItem 事件, 当选择一个装备进行鉴定时触发 (支持 processhalt 中断)
+[新增] 新增 countinventory 脚本指令, 用来根据指定背包序号获取该道具在背包中的数量
+[新增] 新增 identifybyidx 脚本指令, 能够根据指定的背包序号, 对该道具进行鉴定操作
+[修正] 修正多线网络支持机制从 v1.6.8 开始就无法正常使用的问题
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.1(2017-07-15)
 ------------------
 [同步] rAthena官方Github库
@@ -32,7 +49,7 @@ v1.7.0(2017-06-23)
 [警告] 此版本支持了新的邮件系统(RODEX), 也是 rAthena 官方刚上线的功能.
 [警告] 此版本不推荐应用于线上服务器, 若发现任何问题请随时上报, 以便修正改进.
 [升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
-       - sql-files\upgrades\v1.7.0\upgrade_20170407.sql
+       - sql-files\upgrades\v1.7.0\upgrade_20170727.sql
        - sql-files\upgrades\v1.7.0\upgrade_20170620.sql
 [升级] 若您不是全新安装的话, 请进行以下文件操作
        - 将压缩包中的 db\import-tmpl\achievement_db.conf 复制到你服务端的 db\import 目录下

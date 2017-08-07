@@ -42,7 +42,35 @@ OnPCStatCalcEvent:
 end;
 }
 
--	script	IDENTIFIED_EVENT	-1,{
+-	script	EVENT_IDENTIFIED	-1,{
+end;
+OnBeforeIdentifiedItem:
+	// OnBeforeIdentifiedItem 是与玩家关联的
+	// 在鉴定列表中选中装备点确定按钮时触发, 此时系统的鉴定过程还未发生
+	// 
+	// 参数说明
+	// -------------------------------------------------------
+	// @identify_idx 为物品的背包序号
+	// 
+	// 问: 什么是背包序号？
+	// 答: 玩家的背包最多可以携带100种物品, 每种物品在背包都有
+	//     一个内在的序号用来标记此物品的位置。
+	//
+	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
+	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
+	// -------------------------------------------------------
+	dispbottom "[事件演示] OnBeforeIdentifiedItem | " + strcharinfo(0) + " 准备鉴定背包序号为 " + @identify_idx + " 的物品";
+	dispbottom "           - 编号: " + getinventoryinfo(@identify_idx, 0) + " | 数量: " + getinventoryinfo(@identify_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@identify_idx, 2) + " | 精炼值: " + getinventoryinfo(@identify_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@identify_idx, 4);
+	dispbottom "           - 是否损坏: " + getinventoryinfo(@identify_idx, 5) + " | 卡片1: " + getinventoryinfo(@identify_idx, 6) + " | 卡片2: " + getinventoryinfo(@identify_idx, 7) + " | 卡片3: " + getinventoryinfo(@identify_idx, 8) + " | 卡片4: " + getinventoryinfo(@identify_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@identify_idx, 10);
+	
+	processhalt;	// 中断系统的默认鉴定操作
+	
+	.@itemid = getinventoryinfo(@identify_idx, 0);
+	.@amount = getinventoryinfo(@identify_idx, 1);
+	.@refine = rand(1,9);	// 被鉴定的装备精炼值随机+1到+9
+	
+	delinventory @identify_idx,.@amount;
+	getitem2 .@itemid,.@amount,1,.@refine,0,0,0,0,0;
 end;
 OnIdentifiedItem:
 	// OnIdentifiedItem 是与玩家关联的

@@ -119,8 +119,11 @@ OnPCBeforeLoadMapEvent:
 OnPCChangeTitleEvent:
 玩家双击装备面板中更换称号的事件
 
+OnBeforeIdentifiedItem:
+玩家在鉴定列表中选择好装备, 点确定时触发
+
 OnIdentifiedItem:
-玩家装备鉴定完成事件
+玩家已经完成对一件装备的鉴定时触发此事件
 
 OnProgressbarAbortEvent:
 当 progressbar 被打断时候的触发事件
