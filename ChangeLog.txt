@@ -2,14 +2,43 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.3(2017-09-03)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/470364cbe15519e2268a7f6f91668320cb622371
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.3\upgrade_20170806.sql
+       - sql-files\upgrades\v1.7.3\upgrade_20170830.sql
+[新增] 实现 OnPCBFOpenRouletteEvent 事件, 当准备打开乐透大转盘时触发, 详见 npc/racn/racn_events.txt
+[新增] 实现 OnPCAFCloseRouletteEvent 事件, 当乐透大转盘被关闭时触发, 详见 npc/racn/racn_events.txt
+[新增] 实现 aspd_formula_bAspd_fixed 选项, 可控制 bAspd 加成是否会被其他因素影响, 详见: conf/battle/extend.conf
+[新增] 实现 sendmail 系列脚本指令, 详见演示脚本: npc/racn/racn_sendmail.txt
+[新增] 实现 getareagid 脚本指令, 可获得特定范围内各类型单位的全部GID (感谢“╰づ记忆•斑驳〤”实现该指令)
+[新增] 默认禁止在使用 _M/_F 方式进行注册时使用中文账号, 详见 conf/login_athena.conf (感谢“づAtメ、”建议)
+[定制] 从此版本开始, 客户端封包定制支持到 20170614 版本
+[修正] 修正人工生命体无法自动回复HP和SP的问题 (感谢“西瓜”反馈)
+[修正] 修正 import 目录的升级方式, 使之能够将 import-tmpl 中新增的文件自动复制到 import 目录中
+[修正] 对 processhalt 的机制进行了改良, 解决某些情况下中断会出现异常的问题 (感谢“づAtメ、”反馈)
+[修正] rAthena官方BUG: 修正老邮件系统在提取附件时, 可能会出现多次的“附件提取成功”提示的问题
+[修正] rAthena官方BUG: 修正在不支持成就系统的客户端版本中, 使用成就系统相关的脚本指令会导致地图服务器崩溃的问题
+[修正] rAthena官方BUG: 使版本大于等于 20131223 的客户端在NPC一上来就直接调用 callshop 时, 玩家能够被禁止移动
+[修正] rAthena官方BUG: 当成就系统的yml文件不存在时, 地图服务器能够显示错误信息而不是直接崩溃
+[调整] 完成对事件名称的重新梳理和改造, 并完善事件说明文档 doc/rAthenaCN_events.txt
+[调整] 调整 conf/battle/extend.conf 配置文件中的一些说明错误
+[调整] 调整 doc/rAthenaCN_atcommands.txt 中关于 @refreshnpc 已废弃指令的说明
+[调整] 由于 rAthena 官方已经解决了使用 @autoloot 时 item_flag.txt 为 16 的道具无公告的问题, 去掉之前的修正代码
+[调整] 移除老版本的成就系统数据库文件(achievement_db.conf)
+[汉化] 完全汉化 doc/item_bonus.txt 文档 (感谢“西瓜”提供翻译初稿)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.2(2017-08-02)
 ------------------
 [同步] rAthena官方Github库
        https://github.com/rathena/rathena/commit/c0556a397e864f8a73dce6f2ff32bb367443e18b
 [升级] 若您不是全新安装的话, 请进行以下文件操作
        - 将压缩包中的 db\import-tmpl\achievement_db.yml 复制到你服务端的 db\import 目录下
-[注意] 从这个版本开始, rAthena 官方弃用了原先的 db/packet_db.txt 配置文件
-[注意] 从这个版本开始, rAthena 官方将成就系统的数据库文件从 conf 格式调整为 yaml 格式
+[注意] 从此版本开始, rAthena 官方弃用了原先的 db/packet_db.txt 配置文件
+[注意] 从此版本开始, rAthena 官方将成就系统的数据库文件从 conf 格式调整为 yaml 格式
 [新增] 支持设定封包混淆密钥, 详情请见 conf/map_athena.conf 中的 packet_keys 选项
 [新增] 加入战斗配置文件完整性校验机制, 当战斗配置文件中缺少选项时, 能显示警告信息 (感谢“╰づ记忆•斑驳〤”实现)
 [新增] 能够对“元素使”使用 @bodystyle 指令来切换服装风格 (客户端必须有对应的图档，否则会报错)
@@ -401,10 +430,10 @@ v1.4.2(2016-05-23)
 [升级] 若您不是全新安装的话, 请执行以下操作:
        - 请安装 ActivePerl 之后, 执行 tools/convert_monstermode.pl 脚本(用来转换魔物数据库中的 mode 字段)
        - 若不知道如何操作, 到时候在群里发问吧(暂时来不及写教程)
-[新增] 从这个版本开始, rAthenaCN 支持新职业“杜兰族召唤师”
+[新增] 从此版本开始, rAthenaCN 支持新职业“杜兰族召唤师”
 [新增] 实现多线路支持机制, 详情请见 conf/multinet_athena.conf
 [定制] 关闭正则表达式的定制支持(rA官方为默认启用, 提供定制意义不大)
-[定制] 客户端封包定制支持到 20151104 版本
+[定制] 从此版本开始, 客户端封包定制支持到 20151104 版本
 
 v1.4.1(2016-05-13)
 ------------------

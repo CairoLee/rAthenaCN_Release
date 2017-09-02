@@ -44,8 +44,8 @@ end;
 
 -	script	EVENT_IDENTIFIED	-1,{
 end;
-OnBeforeIdentifiedItem:
-	// OnBeforeIdentifiedItem 是与玩家关联的
+OnPCIdentifyFilter:
+	// OnPCIdentifyFilter 是与玩家关联的
 	// 在鉴定列表中选中装备点确定按钮时触发, 此时系统的鉴定过程还未发生
 	// 
 	// 参数说明
@@ -59,7 +59,7 @@ OnBeforeIdentifiedItem:
 	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
 	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
 	// -------------------------------------------------------
-	dispbottom "[事件演示] OnBeforeIdentifiedItem | " + strcharinfo(0) + " 准备鉴定背包序号为 " + @identify_idx + " 的物品";
+	dispbottom "[事件演示] OnPCIdentifyFilter | " + strcharinfo(0) + " 准备鉴定背包序号为 " + @identify_idx + " 的物品";
 	dispbottom "           - 编号: " + getinventoryinfo(@identify_idx, 0) + " | 数量: " + getinventoryinfo(@identify_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@identify_idx, 2) + " | 精炼值: " + getinventoryinfo(@identify_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@identify_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@identify_idx, 5) + " | 卡片1: " + getinventoryinfo(@identify_idx, 6) + " | 卡片2: " + getinventoryinfo(@identify_idx, 7) + " | 卡片3: " + getinventoryinfo(@identify_idx, 8) + " | 卡片4: " + getinventoryinfo(@identify_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@identify_idx, 10);
 	
@@ -72,8 +72,8 @@ OnBeforeIdentifiedItem:
 	delinventory @identify_idx,.@amount;
 	getitem2 .@itemid,.@amount,1,.@refine,0,0,0,0,0;
 end;
-OnIdentifiedItem:
-	// OnIdentifiedItem 是与玩家关联的
+OnPCIdentifyEvent:
+	// OnPCIdentifyEvent 是与玩家关联的
 	// 当玩家成功鉴定了一件装备时，此事件会被触发
 	// 
 	// 参数说明
@@ -87,7 +87,7 @@ OnIdentifiedItem:
 	// 注意: 这个序号每次玩家登录、或者是拾取、存仓后，都可能都
 	//       会变化。不推荐拿“背包序号”来作为识别物品的唯一序号。
 	// -------------------------------------------------------
-	dispbottom "[事件演示] OnIdentifiedItem | " + strcharinfo(0) + " 已鉴定了背包序号为 " + @identify_idx + " 的物品";
+	dispbottom "[事件演示] OnPCIdentifyEvent | " + strcharinfo(0) + " 已鉴定了背包序号为 " + @identify_idx + " 的物品";
 	dispbottom "           - 编号: " + getinventoryinfo(@identify_idx, 0) + " | 数量: " + getinventoryinfo(@identify_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@identify_idx, 2) + " | 精炼值: " + getinventoryinfo(@identify_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@identify_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@identify_idx, 5) + " | 卡片1: " + getinventoryinfo(@identify_idx, 6) + " | 卡片2: " + getinventoryinfo(@identify_idx, 7) + " | 卡片3: " + getinventoryinfo(@identify_idx, 8) + " | 卡片4: " + getinventoryinfo(@identify_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@identify_idx, 10);
 end;
@@ -95,8 +95,8 @@ end;
 
 -	script	RELOAD_WARNING	-1,{
 end;
-OnBeforeReloadScript:
-	// OnBeforeReloadScript 是与玩家关联的
+OnBfReloadScriptEvent:
+	// OnBfReloadScriptEvent 是与玩家关联的
 	// 刷新NPC之前若有100个玩家在线，那么该事件会以100个玩家的身份被触发100次
 	// 因此，下面的 announce 公告必须是只有玩家自己可见的 bc_self 类型
 	// 如果是 bc_all 类型的话，刷新时若有100个玩家在线，则每个玩家会看到100条全服公告
@@ -104,8 +104,8 @@ OnBeforeReloadScript:
 	
 	announce "[全服公告] 正在刷新服务器，可能会卡住几秒钟，请别强制退出游戏！", bc_self|bc_yellow;
 end;
-OnAfterReloadScript:
-	// OnAfterReloadScript 是与玩家关联的
+OnAfReloadScriptEvent:
+	// OnAfReloadScriptEvent 是与玩家关联的
 	// 刷新NPC之后若有100个玩家在线，那么该事件会以100个玩家的身份被触发100次
 	// 因此，下面的 announce 公告必须是只有玩家自己可见的 bc_self 类型
 	// 如果是 bc_all 类型的话，刷新时若有100个玩家在线，则每个玩家会看到100条全服公告
@@ -117,8 +117,8 @@ end;
 
 -	script	MOB_KILL_EVENT	-1,{
 end;
-OnMvpKillEvent:
-	// OnMvpKillEvent 是与玩家关联的(关联到给MVP带来最后一击的玩家)
+OnPCKillMvpEvent:
+	// OnPCKillMvpEvent 是与玩家关联的(关联到给MVP带来最后一击的玩家)
 	// 死了一个MVP魔物的话，此事件只会被触发1次
 	// 
 	// 参数说明
@@ -150,44 +150,44 @@ OnPCHomLvUpEvent:
 	dispbottom "[事件演示] OnPCHomLvUpEvent | " + strcharinfo(0) + " 的人工生命体升级了！";
 	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
-OnHomCallEvent:
-	// OnHomCallEvent 是与玩家关联的(关联到生命体的主人)
+OnPCHomCallEvent:
+	// OnPCHomCallEvent 是与玩家关联的(关联到生命体的主人)
 	// 当玩家召唤出人工生命体之后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnHomCallEvent | " + strcharinfo(0) + " 召唤了人工生命体！";
+	dispbottom "[事件演示] OnPCHomCallEvent | " + strcharinfo(0) + " 召唤了人工生命体！";
 	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
-OnHomRestEvent:
-	// OnHomRestEvent 是与玩家关联的(关联到生命体的主人)
+OnPCHomRestEvent:
+	// OnPCHomRestEvent 是与玩家关联的(关联到生命体的主人)
 	// 当玩家将人工生命体安息之后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnHomRestEvent | " + strcharinfo(0) + " 的人工生命体安息了！";
+	dispbottom "[事件演示] OnPCHomRestEvent | " + strcharinfo(0) + " 的人工生命体安息了！";
 	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
-OnHomDeadEvent:
-	// OnHomDeadEvent 是与玩家关联的(关联到生命体的主人)
+OnPCHomDeadEvent:
+	// OnPCHomDeadEvent 是与玩家关联的(关联到生命体的主人)
 	// 当玩家的人工生命体死亡之后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnHomDeadEvent | " + strcharinfo(0) + " 的人工生命体死亡了！";
+	dispbottom "[事件演示] OnPCHomDeadEvent | " + strcharinfo(0) + " 的人工生命体死亡了！";
 	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
-OnHomWakeEvent:
-	// OnHomWakeEvent 是与玩家关联的(关联到生命体的主人)
+OnPCHomAliveEvent:
+	// OnPCHomAliveEvent 是与玩家关联的(关联到生命体的主人)
 	// 当玩家复活人工生命体之后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnHomWakeEvent | " + strcharinfo(0) + " 的人工生命体复活了！";
+	dispbottom "[事件演示] OnPCHomAliveEvent | " + strcharinfo(0) + " 的人工生命体复活了！";
 	dispbottom "           - 生命体类型为: " + gethominfo(1) + " | 名字: " + gethominfo(2) + " | 等级: " + gethominfo(6) + " | 更多信息请用 gethominfo 指令获取";
 end;
 }
 
 -	script	PC_EQUIP_EVENT	-1,{
 end;
-OnPCBeforeEquipEvent:
-	// OnPCBeforeEquipEvent 是与玩家关联的
+OnPCEquipFilter:
+	// OnPCEquipFilter 是与玩家关联的
 	// 当玩家准备穿戴上一件物品的时候，此事件会被触发
 	//
 	// 时机注意事项
@@ -211,7 +211,7 @@ OnPCBeforeEquipEvent:
 	// @equip_pos 也被赋予了和 @equip_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCBeforeEquipEvent | " + strcharinfo(0) + " 即将穿戴一件装备，它的背包序号为: " + @equip_idx;
+	dispbottom "[事件演示] OnPCEquipFilter | " + strcharinfo(0) + " 即将穿戴一件装备，它的背包序号为: " + @equip_idx;
 end;
 OnPCEquipEvent:
 	// OnPCEquipEvent 是与玩家关联的
@@ -236,8 +236,8 @@ OnPCEquipEvent:
 	dispbottom "           - 编号: " + getinventoryinfo(@equip_idx, 0) + " | 数量: " + getinventoryinfo(@equip_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@equip_idx, 2) + " | 精炼值: " + getinventoryinfo(@equip_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@equip_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@equip_idx, 5) + " | 卡片1: " + getinventoryinfo(@equip_idx, 6) + " | 卡片2: " + getinventoryinfo(@equip_idx, 7) + " | 卡片3: " + getinventoryinfo(@equip_idx, 8) + " | 卡片4: " + getinventoryinfo(@equip_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@equip_idx, 10);
 end;
-OnPCBeforeUnequipEvent:
-	// OnPCBeforeUnequipEvent 是与玩家关联的
+OnPCUnequipFilter:
+	// OnPCUnequipFilter 是与玩家关联的
 	// 当玩家准备脱掉一件物品的时候，此事件会被触发
 	// 
 	// 时机注意事项
@@ -268,7 +268,7 @@ OnPCBeforeUnequipEvent:
 	// @unequip_pos 也被赋予了和 @unequip_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCBeforeUnequipEvent | " + strcharinfo(0) + " 准备脱下一件装备，它的背包序号为: " + @unequip_idx;
+	dispbottom "[事件演示] OnPCUnequipFilter | " + strcharinfo(0) + " 准备脱下一件装备，它的背包序号为: " + @unequip_idx;
 end;
 OnPCUnequipEvent:
 	// OnPCUnequipEvent 是与玩家关联的
@@ -297,8 +297,8 @@ end;
 
 -	script	PC_STATUS_CHANGE_EVENT	-1,{
 end;
-OnPCSCStartEvent:
-	// OnPCSCStartEvent 是与玩家关联的
+OnPCBuffStartEvent:
+	// OnPCBuffStartEvent 是与玩家关联的
 	// 当玩家获得了一个状态(俗称Buff)后，此事件会被触发
 	// 
 	// 参数说明
@@ -316,11 +316,11 @@ OnPCSCStartEvent:
 	// @startedsc 也被赋予了和 @started_sc_id 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCSCStartEvent | " + strcharinfo(0) + " 获得了编号为 " + @started_sc_id + " 的状态！";
+	dispbottom "[事件演示] OnPCBuffStartEvent | " + strcharinfo(0) + " 获得了编号为 " + @started_sc_id + " 的状态！";
 	dispbottom "           - 概率: " + @started_sc_rate + " | 时长: " + @started_sc_tick + " | 参数1: " + @started_sc_val1 + " | 参数2: " + @started_sc_val2 + " | 参数3: " + @started_sc_val3 + " | 参数4: " + @started_sc_val4;
 end;
-OnPCSCEndEvent:
-	// OnPCSCEndEvent 是与玩家关联的
+OnPCBuffEndEvent:
+	// OnPCBuffEndEvent 是与玩家关联的
 	// 当玩家解除了一个状态(俗称Buff)后，此事件会被触发
 	// 
 	// 参数说明
@@ -331,28 +331,28 @@ OnPCSCEndEvent:
 	// @endedsc 也被赋予了和 @ended_sc_id 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCSCEndEvent | " + strcharinfo(0) + " 解除了编号为 " + @ended_sc_id + " 的状态！";
+	dispbottom "[事件演示] OnPCBuffEndEvent | " + strcharinfo(0) + " 解除了编号为 " + @ended_sc_id + " 的状态！";
 end;
 }
 
 -	script	PARTY_EVENT	-1,{
 end;
-OnPCPartyCreateEvent:
-	// OnPCPartyCreateEvent 是与玩家关联的(关联到队长)
+OnPCPartyCreateFilter:
+	// OnPCPartyCreateFilter 是与玩家关联的(关联到队长)
 	// 当玩家创建了一个队伍后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCPartyCreateEvent | 您创建了一个队伍！";
+	dispbottom "[事件演示] OnPCPartyCreateFilter | 您创建了一个队伍！";
 end;
-OnPCPartyJoinEvent:
-	// OnPCPartyJoinEvent 是与玩家关联的(关联到加入队伍的玩家)
+OnPCPartyJoinFilter:
+	// OnPCPartyJoinFilter 是与玩家关联的(关联到加入队伍的玩家)
 	// 当玩家加入了一个队伍后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCPartyCreateEvent | 您加入了一个队伍！";
+	dispbottom "[事件演示] OnPCPartyCreateFilter | 您加入了一个队伍！";
 end;
-OnPCPartyLeaveEvent:
-	// OnPCPartyLeaveEvent 是与玩家关联的(关联到离开队伍的玩家)
+OnPCPartyLeaveFilter:
+	// OnPCPartyLeaveFilter 是与玩家关联的(关联到离开队伍的玩家)
 	// 当玩家离开了一个队伍后(无论是自愿还是被踢)，此事件会被触发
 	//
 	// 参数说明
@@ -361,28 +361,28 @@ OnPCPartyLeaveEvent:
 	// @left_party_name$	为已经离开的队伍名称
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCPartyCreateEvent | 您离开了编号为 " + @left_party_id + " 的队伍，队名为: " + @left_party_name$;
+	dispbottom "[事件演示] OnPCPartyCreateFilter | 您离开了编号为 " + @left_party_id + " 的队伍，队名为: " + @left_party_name$;
 end;
 }
 
 -	script	GUILD_EVENT	-1,{
 end;
-OnPCGuildCreateEvent:
-	// OnPCGuildCreateEvent 是与玩家关联的(关联到会长)
+OnPCGuildCreateFilter:
+	// OnPCGuildCreateFilter 是与玩家关联的(关联到会长)
 	// 当玩家创建了一个公会后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCGuildCreateEvent | 您创建了一个公会！";
+	dispbottom "[事件演示] OnPCGuildCreateFilter | 您创建了一个公会！";
 end;
-OnPCGuildJoinEvent:
-	// OnPCGuildJoinEvent 是与玩家关联的(关联到加入公会的玩家)
+OnPCGuildJoinFilter:
+	// OnPCGuildJoinFilter 是与玩家关联的(关联到加入公会的玩家)
 	// 当玩家加入了一个公会后，此事件会被触发
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCGuildJoinEvent | 您加入了一个公会！";
+	dispbottom "[事件演示] OnPCGuildJoinFilter | 您加入了一个公会！";
 end;
-OnPCGuildLeaveEvent:
-	// OnPCGuildLeaveEvent 是与玩家关联的(关联到离开公会的玩家)
+OnPCGuildLeaveFilter:
+	// OnPCGuildLeaveFilter 是与玩家关联的(关联到离开公会的玩家)
 	// 当玩家离开了一个公会后，此事件会被触发
 	//
 	// 参数说明
@@ -391,14 +391,14 @@ OnPCGuildLeaveEvent:
 	// @left_guild_name$	为已经离开的公会名称
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCGuildLeaveEvent | 您离开了编号为 " + @left_guild_id + " 的公会，会名为: " + @left_guild_name$;
+	dispbottom "[事件演示] OnPCGuildLeaveFilter | 您离开了编号为 " + @left_guild_id + " 的公会，会名为: " + @left_guild_name$;
 end;
 }
 
 -	script	PET_EVENT	-1,{
 end;
-OnPetLootItemEvent:
-	// OnPetLootItemEvent 是与玩家关联的(关联到宠物的主人)
+OnPCPetLootEvent:
+	// OnPCPetLootEvent 是与玩家关联的(关联到宠物的主人)
 	// 当玩家的宠物拾取到物品之后，此事件会被触发
 	//
 	// 参数说明
@@ -413,24 +413,24 @@ OnPetLootItemEvent:
 	// @petloot_amount 也被赋予了和 @petloot_item_amount 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPetLootItemEvent | 您的宠物捡取了 " + @petloot_item_amount + " 个 " + getitemname(@petloot_item_id) + " ！";
+	dispbottom "[事件演示] OnPCPetLootEvent | 您的宠物捡取了 " + @petloot_item_amount + " 个 " + getitemname(@petloot_item_id) + " ！";
 end;
-OnPCFeedPet:
-	// OnPCFeedPet 是与玩家关联的(关联到宠物的主人)
+OnPCPetFeedEvent:
+	// OnPCPetFeedEvent 是与玩家关联的(关联到宠物的主人)
 	// 当玩家给自己的宠物喂食后，此事件会被触发
 	//
 	// 为了兼容SEA和CSEA服务端
-	// OnPCFoodPet 事件也会被同时执行，等效于 OnPCFeedPet 事件
+	// OnPCFoodPet 事件也会被同时执行，等效于 OnPCPetFeedEvent 事件
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCFeedPet | 您喂养了宠物！";
+	dispbottom "[事件演示] OnPCPetFeedEvent | 您喂养了宠物！";
 end;
 }
 
 -	script	VIEW_EQUIP_EVENT	-1,{
 end;
-OnPCViewEquipEvent:
-	// OnPCViewEquipEvent 是与玩家关联的(关联到主动发起查看请求的玩家)
+OnPCViewEquipFilter:
+	// OnPCViewEquipFilter 是与玩家关联的(关联到主动发起查看请求的玩家)
 	// 当玩家点击查看某个玩家的装备之后，此事件会被触发
 	//
 	// 参数说明
@@ -448,14 +448,14 @@ OnPCViewEquipEvent:
 	// @eqview_cid 也被赋予了和 @view_equip_target_cid 一样的值
 	// -------------------------------------------------------
 
-	dispbottom "[事件演示] OnPCViewEquipEvent | 您查看了“" + @view_equip_target_name$ + "”的装备，他的AID为 " + @view_equip_target_aid + " | CID为 " + @view_equip_target_cid + "！";
+	dispbottom "[事件演示] OnPCViewEquipFilter | 您查看了“" + @view_equip_target_name$ + "”的装备，他的AID为 " + @view_equip_target_aid + " | CID为 " + @view_equip_target_cid + "！";
 end;
 }
 
 -	script	USE_SKILL_EVENT	-1,{
 end;
-OnPCUseSkillEvent:
-	// OnPCUseSkillEvent 是与技能施放者关联的
+OnPCUseSkillExFilter:
+	// OnPCUseSkillExFilter 是与技能施放者关联的
 	// 当玩家施放技能时，咏唱之前此事件会被触发
 	// 无论技能的所需道具是否足够，最终技能会不会使用失败，只要玩家使用了技能，就必定触发此事件
 	//
@@ -468,11 +468,11 @@ OnPCUseSkillEvent:
 	// @useskill_y		被施法的地面Y坐标
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCUseSkillEvent | 开始使用技能";
+	dispbottom "[事件演示] OnPCUseSkillExFilter | 开始使用技能";
 	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面坐标: " + @useskill_x + "," + @useskill_y;
 end;
-OnPCUseSkillFinishEvent:
-	// OnPCUseSkillFinishEvent 是与技能施放者关联的
+OnPCUseSkillExEvent:
+	// OnPCUseSkillExEvent 是与技能施放者关联的
 	// 当玩家技能成功施放完毕时，此事件会被触发
 	// 只有技能成功被施放出来了，才会触发此事件
 	//
@@ -485,15 +485,15 @@ OnPCUseSkillFinishEvent:
 	// @useskill_y		被施法的地面Y坐标
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCUseSkillFinishEvent | 技能使用完毕";
+	dispbottom "[事件演示] OnPCUseSkillExEvent | 技能使用完毕";
 	dispbottom "           - 技能编号: " + @useskill_id + " | 技能等级: " + @useskill_lv + " | 目标GID/AID: " + @useskill_target + " | 地面坐标: " + @useskill_x + "," + @useskill_y;
 end;
 }
 
 -	script	USE_ITEM_EVENT	-1,{
 end;
-OnPCUseItemEvent:
-	// OnPCUseItemEvent 是与物品使用者关联的
+OnPCUseItemExFilter:
+	// OnPCUseItemExFilter 是与物品使用者关联的
 	// 当玩家双击使用“非装备”类型道具时，此事件会被触发
 	// 无论物品最终是否会使用失败，只要玩家双击了物品，就必定触发此事件
 	//
@@ -513,13 +513,13 @@ OnPCUseItemEvent:
 	// @useitem_pos 也被赋予了和 @useitem_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCUseItemEvent | 开始使用物品";
+	dispbottom "[事件演示] OnPCUseItemExFilter | 开始使用物品";
 	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
 	dispbottom "           - 编号: " + getinventoryinfo(@useitem_idx, 0) + " | 数量: " + getinventoryinfo(@useitem_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@useitem_idx, 2) + " | 精炼值: " + getinventoryinfo(@useitem_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@useitem_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@useitem_idx, 5) + " | 卡片1: " + getinventoryinfo(@useitem_idx, 6) + " | 卡片2: " + getinventoryinfo(@useitem_idx, 7) + " | 卡片3: " + getinventoryinfo(@useitem_idx, 8) + " | 卡片4: " + getinventoryinfo(@useitem_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@useitem_idx, 10);
 end;
-OnPCUseItemFinishEvent:
-	// OnPCUseItemFinishEvent 是与物品使用者关联的
+OnPCUseItemExEvent:
+	// OnPCUseItemExEvent 是与物品使用者关联的
 	// 当玩家成功使用“非装备”类型道具时，此事件会被触发
 	// 只有当物品被成功使用时，才会触发此事件
 	//
@@ -539,7 +539,7 @@ OnPCUseItemFinishEvent:
 	// @useitem_pos 也被赋予了和 @useitem_idx 一样的值
 	// -------------------------------------------------------
 	
-	dispbottom "[事件演示] OnPCUseItemFinishEvent | 物品使用完毕";
+	dispbottom "[事件演示] OnPCUseItemExEvent | 物品使用完毕";
 	dispbottom "           - 物品编号: " + @useitem_nameid + " | 物品名称: " + getitemname(@useitem_nameid) + " | 背包序号: " + @useitem_idx;
 	dispbottom "           - 编号: " + getinventoryinfo(@useitem_idx, 0) + " | 数量: " + getinventoryinfo(@useitem_idx, 1) + " | 装备到哪个位置: " + getinventoryinfo(@useitem_idx, 2) + " | 精炼值: " + getinventoryinfo(@useitem_idx, 3) + " | 是否鉴定: " + getinventoryinfo(@useitem_idx, 4);
 	dispbottom "           - 是否损坏: " + getinventoryinfo(@useitem_idx, 5) + " | 卡片1: " + getinventoryinfo(@useitem_idx, 6) + " | 卡片2: " + getinventoryinfo(@useitem_idx, 7) + " | 卡片3: " + getinventoryinfo(@useitem_idx, 8) + " | 卡片4: " + getinventoryinfo(@useitem_idx, 9) + " | 租赁到期时间: " + getinventoryinfo(@useitem_idx, 10);
@@ -553,16 +553,16 @@ OnWhisperGlobal:
 	// 即可触发这里的代码
 	
 	if (getbattleflag("pc_move_event_trigger_type") == 0){
-		dispbottom "[事件演示] 您在 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0, 无法触发 OnPCMoveEvent 事件";
+		dispbottom "[事件演示] 您在 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0, 无法触发 OnPCMoveFilter 事件";
 		end;
 	}
 	else {
 		when_pcmove_doevent;
-		dispbottom "[事件演示] 已经触发 when_pcmove_doevent; 玩家的下次移动会触发 OnPCMoveEvent 事件";
+		dispbottom "[事件演示] 已经触发 when_pcmove_doevent; 玩家的下次移动会触发 OnPCMoveFilter 事件";
 	}
 end;
-OnPCMoveEvent:
-	// OnPCMoveEvent 是与想要移动的玩家关联的
+OnPCMoveFilter:
+	// OnPCMoveFilter 是与想要移动的玩家关联的
 	// 当玩家点击地面的某个格子想要移动时，此事件会在玩家开始走路之前触发
 	// 
 	// 若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0
@@ -579,14 +579,14 @@ OnPCMoveEvent:
 	// @moveto_x	玩家想要移动到的目标位置的x坐标
 	// @moveto_y	玩家想要移动到的目标位置的y坐标
 	// -------------------------------------------------------
-	dispbottom "[事件演示] OnPCMoveEvent | 玩家开始移动, 目的地坐标是: " + @moveto_x + "," + @moveto_y;
+	dispbottom "[事件演示] OnPCMoveFilter | 玩家开始移动, 目的地坐标是: " + @moveto_x + "," + @moveto_y;
 end;
 }
 
 -	script	BEFORE_LOADMAP	-1,{
 end;
-OnPCBeforeLoadMapEvent:
-	// OnPCBeforeLoadMapEvent 将关联到想要过图的玩家
+OnPCWillLoadMapEvent:
+	// OnPCWillLoadMapEvent 将关联到想要过图的玩家
 	// 当玩家登录后准备进入地图、或者准备切换地图时，都会触发此事件
 	//
 	// 参数说明
@@ -602,17 +602,17 @@ OnPCBeforeLoadMapEvent:
 	// @loadmap_newmap_y		玩家准备过图时，会在目的地地图的哪个y坐标出现
 	// -------------------------------------------------------
 	if (@loadmap_oldmap_id == 0){
-		dispbottom "[事件演示] OnPCBeforeLoadMapEvent | 准备进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
+		dispbottom "[事件演示] OnPCWillLoadMapEvent | 准备进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
 	}
 	else {
-		dispbottom "[事件演示] OnPCBeforeLoadMapEvent | 准备从 " + @loadmap_oldmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y +" 进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
+		dispbottom "[事件演示] OnPCWillLoadMapEvent | 准备从 " + @loadmap_oldmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y +" 进入 " + @loadmap_newmap_name$ + "," + @loadmap_newmap_x + "," + @loadmap_newmap_y;
 	}
 end;
 }
 
 prontera,142,125,3	script	进入聊天室事件	123,{
 	mes "[rAthenaCN 演示]";
-	mes "事件名: ^ff0000OnSomeOneEnterChatRoom^000000";
+	mes "事件名: ^ff0000OnPCInChatroomFilter^000000";
 	mes "直接点击我可以正常对话. ^0000ff双击进入我头上的牌子能够在不打开聊天室的情况下, 直接打开仓库.^000000";
 	next;
 	mes "[rAthenaCN 演示]";
@@ -624,12 +624,12 @@ OnInit:
 	// 如果设置为 1 的话，那么NPC就已经把聊天室占满了
 	// 此时双击聊天室牌子的话，客户端会直接告诉玩家“聊天室已满员”
 	//
-	// 所以，为了让下面的 OnSomeOneEnterChatRoom 事件可以触发，
+	// 所以，为了让下面的 OnPCInChatroomFilter 事件可以触发，
 	// 这里的人数限制必须大于或者等于 2 才可以哟
 	waitingroom "双击打开仓库",2;
 	end;
-OnSomeOneEnterChatRoom:
-	// OnSomeOneEnterChatRoom 将关联到进入本NPC聊天室的玩家
+OnPCInChatroomFilter:
+	// OnPCInChatroomFilter 将关联到进入本NPC聊天室的玩家
 	// 当玩家双击进入本NPC开启的聊天室时，将触发此事件
 	//
 	// 中断说明
@@ -658,8 +658,8 @@ OnSomeOneEnterChatRoom:
 
 -	script	PC_CHANGE_TITLE	-1,{
 end;
-OnPCChangeTitleEvent:
-	// OnPCChangeTitleEvent 是与触发改变称号请求的玩家关联的
+OnPCChangeTitleFilter:
+	// OnPCChangeTitleFilter 是与触发改变称号请求的玩家关联的
 	// 
 	// 当符合以下时机时, 就会触发此事件:
 	// - 当玩家在装备窗口的“称号”界面中双击了某个称号时
@@ -727,10 +727,35 @@ OnPCChangeTitleEvent:
 		}
 	}
 	
-	dispbottom "[事件演示] OnPCChangeTitleEvent | 通过“" + .@mode_str$ + "”更换称号, ID从 " + @pre_title_id + " 变为 " + @now_title_id;
+	dispbottom "[事件演示] OnPCChangeTitleFilter | 通过“" + .@mode_str$ + "”更换称号, ID从 " + @pre_title_id + " 变为 " + @now_title_id;
 end;
 }
 
+-	script	PC_OPEN_ROULETTE	-1,{
+end;
+OnPCOpenRouletteFilter:
+	// 当玩家点击打开乐透大转盘的时候会触发此事件
+	// 关于此事件的说明请参阅: doc\rAthenaCN_events.txt 文档
+	if (@roulette_demo == 0) {
+		@roulette_demo = 1;
+		
+		processhalt;
+		mes "[rAthenaCN 演示]";
+		mes "^ff0000您点击了乐透大转盘按钮.^000000";
+		mes "此操作被 npc/racn/racn_events.txt 脚本中的 PC_OPEN_ROULETTE 拦截.";
+		mes "若不需要此演示, 请注销对应的脚本.";
+		mes "^0000ff下一次点击转盘将不再拦截您的操作, 直到你退出此角色.^000000";
+		close;
+	}
+end;
+OnPCCloseRouletteEvent:
+	// 当玩家关闭乐透大转盘的时候会触发此事件
+	// 关于此事件的说明请参阅: doc\rAthenaCN_events.txt 文档
+	mes "[rAthenaCN 演示]";
+	mes "^ff0000您刚刚关闭了乐透大转盘.^000000";
+	close;
+end;
+}
 
 
 

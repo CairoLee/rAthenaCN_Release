@@ -10,6 +10,7 @@
 //   4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
 //   8 - 此物品在装备之后将会被绑定(具体绑定到角色还是账号等, 请参见 conf/battle/items.conf 的 default_bind_on_equip 选项)
 //  16 - 特殊公告: 当物品由魔物掉落, 且被玩家拾起的时候, 发送全服公告!
+//  32 - Item will not be removed on consumption. Also supports 'itemskill'
 // 
 // 以下为 rAthenaCN 拓展的标记选项:
 // --------------------------------------------------------------
@@ -1805,3 +1806,8 @@
 // Special Broadcast
 7782,16 //Gold_Key77
 7783,16 //Silver_Key77
+
+// Not removed after consumption
+12622,32 //Boarding_Halter
+12887,32 //C_Wing_Of_Fly
+22508,32 //Para_Team_Mark_

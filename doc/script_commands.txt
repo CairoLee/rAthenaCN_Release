@@ -3019,10 +3019,10 @@ It will only return numbers. If another type is supplied -1 will be returned.
 
 ---------------------------------------
 
-*gettimestr(<format string>,<max length>)
+*gettimestr(<"time format">,<max length>{,<time_tick>})
 
 This function will return a string containing time data as specified by the
-format string.
+time format.
 
 This uses the C function 'strfmtime', which obeys special format characters. For
 a full description see, for example, the description of 'strfmtime' at
@@ -3034,7 +3034,11 @@ The example given in rAthena sample scripts works like this:
 
   mes gettimestr("%Y-%m/%d %H:%M:%S",21);
 
-This will print a full date and time like 'YYYY-MM/DD HH:MM:SS'.
+The example above will print the current date and time like 'YYYY-MM/DD HH:MM:SS'.
+The following example will print the date and time when the player's VIP status
+expires by the given <time_tick>:
+
+  mes gettimestr("%Y-%m/%d %H:%M:%S",21,vip_status(VIP_STATUS_EXPIRE));
 
 ---------------------------------------
 
@@ -5158,7 +5162,7 @@ window, to avoid any disruption when both windows overlap.
 *openstorage2 <storage_id>,<mode>{,<account_id>};
 
 Just like the 'openstorage' command, except this command can open additional storages
-by the specified <storage_id>. For <storage_id>, please read the conf/inter_server.conf
+by the specified <storage_id>. For <storage_id>, please read the conf/inter_server.yml
 for storage groups.
 
 Values for <mode> are:
@@ -5312,10 +5316,11 @@ Used in reset NPC's (duh!)
 
 ---------------------------------------
 
-*sc_start 	<effect type>,<ticks>,<value 1>{,<rate>,<flag>{,<GID>}};
-*sc_start2 	<effect type>,<ticks>,<value 1>,<value 2>{,<rate>,<flag>{,<GID>}};
-*sc_start4 	<effect type>,<ticks>,<value 1>,<value 2>,<value 3>,<value 4>{,<rate>,<flag>{,<GID>}};
-*sc_end 	<effect type>{,<GID>};
+*sc_start <effect type>,<ticks>,<value 1>{,<rate>,<flag>{,<GID>}};
+*sc_start2 <effect type>,<ticks>,<value 1>,<value 2>{,<rate>,<flag>{,<GID>}};
+*sc_start4 <effect type>,<ticks>,<value 1>,<value 2>,<value 3>,<value 4>{,<rate>,<flag>{,<GID>}};
+*sc_end <effect type>{,<GID>};
+*sc_end_class {<char_id>};
 
 These commands will bestow a status effect on a character.
 
@@ -5352,6 +5357,9 @@ and theirs val1, val2, val3, and val4 usage in source.
 
 'sc_end' will remove a specified status effect. If SC_ALL (-1) is given, it will
 perform a complete removal of all statuses (although permanent ones will re-apply).
+
+'sc_end_class' works like 'sc_end' but will remove all status effects from any learned
+skill on the invoking character.
 
 Examples:
 	// This will poison the invoking character for 10 minutes at 50% chance.
@@ -7352,11 +7360,16 @@ Examples:
 *unitattack <GID>,<Target ID>{,<action type>};
 *unitattack <GID>,"<Target Name>"{,<action type>};
 
-This command will make a <GID> attack the specified target. It returns 1 upon
-success and 0 for all failures.
+This command will make a <GID> attack the specified target. It returns true upon
+success and false for all failures.
 
 If <GID> is a player and a non-zero <action type> is given, the unit will perform a
 continuous attack instead of a single attack.
+
+Note:
+Using unitattack with <GID> 0 means that it will use the currently attached unit.
+For players any attack requests will fail, because talking to an NPC prevents attacking a monster.
+Therefore you need to detach the player from the NPC before using this command.
 
 ---------------------------------------
 

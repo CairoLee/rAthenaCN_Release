@@ -10,6 +10,7 @@
 //   4 - GUID Item: When this item is obtained, will generates GUID that cannot be stacked even same or stackable item
 //   8 - Item will be bound item when equipped
 //  16 - Special Broadcast: When item dropped by monster and player loot it, will be broadcasted!
+//  32 - Item will not be removed on consumption. Also supports 'itemskill'
 // 
 // 以下为 rAthenaCN 拓展的标记选项:
 // 256 - 物品不会由于被玩家主动使用而消耗

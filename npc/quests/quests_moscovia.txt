@@ -9083,7 +9083,7 @@ OnTouch_:
 		}
 	}
 	emotion e_what,1;
-	close;
+	end;
 }
 
 mosk_que,45,131,0	script	Stone Furnace#rus28	HIDDEN_NPC,{
@@ -9132,7 +9132,7 @@ mosk_que,45,131,0	script	Stone Furnace#rus28	HIDDEN_NPC,{
 		}
 	}
 	emotion e_what,1;
-	close;
+	end;
 
 OnMyMobDead:
 	stopnpctimer;
@@ -9181,7 +9181,7 @@ mosk_que,56,202,0	script	Occult Apple Tree#rus29	HIDDEN_NPC,{
 		}
 	}
 	emotion e_what,1;
-	close;
+	end;
 }
 
 mosk_que,47,217,0	warp	Escape#rus30	3,3,mosk_fild02,237,266

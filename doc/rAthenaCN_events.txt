@@ -3,15 +3,42 @@
 //===== 作者: ================================================
 //= rAthenaCN 开发团队
 //===== 最后更新: ============================================
-//= 20170304
+//= 20170831
 //===== 文档简介: ============================================
 //= rAthenaCN 是基于 rAthena 进行二次开发的, 在 rAthena 官方支
 //= 持的事件标签基础上, rAthenaCN 也拓展了一些事件标签, 请参阅
 //= 下面的说明, 它会介绍这些事件的触发时机和使用方法.
 //============================================================
 
-OnPCStatCalcEvent:
-当角色的能力被重新计算时触发的事件
+事件名称约定:
+	On[事件关联到的对象][事件名称][事件类型]
+
+事件关联到的对象:
+	是指到时候事件被触发时, 脚本会关联到的对象, 普遍的值为: PC(表示玩家)
+
+事件名称:
+	只事件的名字, 没什么特别的
+
+事件类型:
+	现在开始事件分为两种类型: Filter 和 Event
+	其实 Filter 和 Event 都是事件, 它们之间唯一区别在于:
+	如果事件名字结尾为 Filter, 则意味着他可以被 processhalt 中断
+
+---------------------------------------
+
+事件别名:
+	由于事件名称进行过一次大规模的梳理, 所以很多事件名字都有了新的变化,
+	但老的事件名字还将发挥等同效用. 这里只是列出来, 但是推荐大家尽量用事件的新名字.
+
+中断说明:
+	如果一个事件可被中断, 那么会具体描述一下中断后的效果
+
+---------------------------------------
+
+*OnPCStatCalcEvent:
+
+事件描述: 
+	当角色的能力被重新计算时触发的事件
 
 rAthenaCN 在官方的基础上做了以下改进:
 	- 此事件默认不会被放入“事件队列”, 只要被触发都能被立刻执行
@@ -23,107 +50,517 @@ rAthenaCN 在官方的基础上做了以下改进:
 	openstorage2,openauction,openmail,guildopenstorage,
 	callshop,bpet,opendressroom,sleep,sleep2
 
-OnSomeOneEnterChatRoom:
-当玩家进入NPC开启的聊天室时触发的事件
+---------------------------------------
 
-OnMvpKillEvent:
-杀死MVP魔物时的事件
+*OnPCInChatroomFilter:
 
-OnBeforeReloadScript:
-即将刷新NPC之前的事件
+事件别名: OnSomeOneEnterChatRoom
 
-OnAfterReloadScript:
-刷新NPC完毕后的事件
+事件描述: 
+	当玩家双击进入本NPC开启的聊天室时, 将触发此事件 (关联到进入此NPC聊天室的玩家)
 
-OnPCBeforeEquipEvent:
-准备穿戴一件装备的事件
+中断说明: 
+	中断后客户端将不会打开聊天室窗口
 
-OnPCBeforeUnequipEvent:
-准备脱掉一件装备的事件
+事件顺序:
+	我们知道 waitingroom 本身自带一个事件, 当聊天室中的成员
+	数量足够时, 就会被触发。
 
-OnPCEquipEvent:
-已经成功穿戴一件装备的事件
+	在这里你需要知道的是, 若您使用 processhalt 中断了本事件, 那么
+	这个 rAthena 自带的 waitingroom 事件将不会被触发。
 
-OnPCUnequipEvent:
-已经成功脱掉一件装备的事件
+---------------------------------------
 
-OnPCSCStartEvent:
-玩家获得某种状态时的事件（关联获得状态的玩家）
+*OnPCKillMvpEvent:
 
-OnPCSCEndEvent:
-玩家解除某种状态时的事件（关联解除状态的玩家）
+事件别名: OnMvpKillEvent
 
-OnPCPartyCreateEvent:
-创建队伍的事件（关联队长）
+事件描述: 
+	杀死MVP魔物时触发的事件 (关联到给MVP带来最后一击的玩家)
+	死了一个MVP魔物的话, 此事件只会被触发1次
 
-OnPCPartyJoinEvent:
-加入队伍的事件（关联加入队伍的人）
+参数说明:
+	killerrid 			此参数已于 v1.4.5 版本被废弃
+	killedrid 			为被杀死的MVP魔物的魔物编号(MobID)
+	@mob_dead_x			魔物死亡时的X坐标
+	@mob_dead_y			魔物死亡时的Y坐标
+	@mob_lasthit_rid	给予MVP魔物最后一击的玩家RID(账号编号)
+	@mob_lasthit_cid	给予MVP魔物最后一击的玩家角色编号
+	@mob_mvp_rid		给予MVP魔物最大伤害的玩家RID(账号编号)
+	@mob_mvp_cid		给予MVP魔物最大伤害的玩家角色编号
 
-OnPCPartyLeaveEvent:
-离开队伍的事件
+---------------------------------------
 
-OnPCGuildCreateEvent:
-创建公会的事件（关联会长）
+*OnBfReloadScriptEvent:
 
-OnPCGuildJoinEvent:
-加入公会的事件（关联加入公会的人）
+事件别名: OnBeforeReloadScript
 
-OnPCGuildLeaveEvent:
-离开公会的事件
+事件描述: 
+	即将刷新NPC之前的事件, 使用 @reloadscript 指令后, 会先触发此事件
+	刷新NPC之前若有100个玩家在线, 那么该事件会以100个玩家的身份被触发100次
+	因此, 在这个事件中如果有 announce 公告, 那么必须是只有玩家自己可见的 bc_self 类型
+	如果是 bc_all 类型的话, 刷新时若有100个玩家在线, 则每个玩家会看到100条全服公告
 
-OnPetLootItemEvent:
-宠物拾取物品时的事件
+---------------------------------------
 
-OnPCFeedPet:
-宠物喂食事件
+*OnAfReloadScriptEvent:
 
-OnPCFoodPet:
-宠物喂食事件（为了兼容SEA和CSEA）
+事件别名: OnAfterReloadScript
 
-OnPCViewEquipEvent:
-查看玩家装备时触发的事件
+事件描述: 
+	刷新NPC完毕后的事件, 使用 @reloadscript 刷新完成NPC后, 会再触发此事件
+	刷新NPC之后若有100个玩家在线, 那么该事件会以100个玩家的身份被触发100次
+	因此, 在这个事件中如果有 announce 公告, 那么必须是只有玩家自己可见的 bc_self 类型
+	如果是 bc_all 类型的话, 刷新时若有100个玩家在线, 则每个玩家会看到100条全服公告
 
-OnPCHomLvUpEvent:
-生命体升级事件
+---------------------------------------
 
-OnHomCallEvent:
-召唤生命体事件
+*OnPCEquipFilter:
 
-OnHomRestEvent:
-生命体休息事件
+事件别名: OnPCBeforeEquipEvent
 
-OnHomDeadEvent:
-生命体死亡事件
+事件描述: 
+	当玩家准备穿戴上一件物品的时候, 此事件会被触发 (关联到穿戴物品的玩家)
 
-OnHomWakeEvent:
-生命体复活事件
+中断说明: 
+	中断后服务端会无视玩家本次装备穿戴操作
 
-OnPCUseSkillEvent:
-玩家开始使用技能事件
+时机注意事项:
+	“准备穿戴”说明还没完成穿戴, 所以此时使用 
+	getinventoryinfo(@equip_idx, 2) 去获取该装备的穿戴位置时,
+	返回的内容只会是 0
 
-OnPCUseSkillFinishEvent:
-玩家技能使用完毕事件
+参数说明:
+	@equip_idx 为物品的背包序号
+	@equip_pos 为了兼容SEA和CSEA服务端, 被赋予了和 @equip_idx 一样的值
 
-OnPCUseItemEvent:
-玩家开始使用物品事件
+---------------------------------------
 
-OnPCUseItemFinishEvent:
-玩家物品使用完毕事件
+*OnPCUnequipFilter:
 
-OnPCMoveEvent:
-玩家移动事件
+事件别名: OnPCBeforeUnequipEvent
 
-OnPCBeforeLoadMapEvent:
-玩家准备过图事件
+事件描述: 
+	当玩家准备脱掉一件物品的时候, 此事件会被触发 (关联到脱下物品的玩家)
 
-OnPCChangeTitleEvent:
-玩家双击装备面板中更换称号的事件
+中断说明: 
+	中断后服务端会无视玩家本次装备脱下操作
 
-OnBeforeIdentifiedItem:
-玩家在鉴定列表中选择好装备, 点确定时触发
+时机注意事项:
+	“准备脱掉”说明还没完全脱掉, 所以此时使用 
+	getinventoryinfo(@equip_idx, 2) 去获取该装备的穿戴位置时,
+	返回的内容绝对不会是 0
 
-OnIdentifiedItem:
-玩家已经完成对一件装备的鉴定时触发此事件
+中断注意事项:
+	当你使用 processhalt 脚本指令中断本事件的后续动作时,
+	可能会导致切换装备失败. 因为切换装备实际上是由两个动作组成的,
+	分别是 “先脱下旧的, 再穿上新的”. 若脱下旧的装备操作被中断,
+	那么新的装备也会穿不上.
 
-OnProgressbarAbortEvent:
-当 progressbar 被打断时候的触发事件
+参数说明:
+	@unequip_idx 为物品的背包序号
+	@unequip_pos 为了兼容SEA和CSEA服务端, 被赋予了和 @unequip_idx 一样的值
+
+---------------------------------------
+
+*OnPCEquipEvent:
+
+事件描述: 
+	当玩家成功穿戴上一件物品的时候, 此事件会被触发 (关联到穿戴物品的玩家)
+
+参数说明:
+	@equip_idx 为物品的背包序号
+	@equip_pos 为了兼容SEA和CSEA服务端, 被赋予了和 @equip_idx 一样的值
+
+---------------------------------------
+
+*OnPCUnequipEvent:
+
+事件描述: 
+	当玩家成功脱掉一件物品的时候, 此事件会被触发 (关联到脱下物品的玩家)
+
+参数说明:
+	@unequip_idx 为物品的背包序号
+	@unequip_pos 为了兼容SEA和CSEA服务端, 被赋予了和 @unequip_idx 一样的值
+
+---------------------------------------
+
+*OnPCBuffStartEvent:
+
+事件别名: OnPCSCStartEvent
+
+事件描述:
+	当玩家获得了一个状态(Buff)后, 此事件会被触发 (关联获得状态的玩家)
+
+参数说明:
+	@started_sc_id		为这个新增状态的编号
+	@started_sc_rate	为这个新增状态的触发概率(10000 = 100%)
+	@started_sc_tick	为这个新增状态的持续时长(单位为毫秒)
+						时长根据内部实现方式的不同, 有可能是指多长时间后剩余秒数减一
+	@started_sc_val1	为这个新增状态的第1个参数的值
+	@started_sc_val2	为这个新增状态的第2个参数的值
+	@started_sc_val3	为这个新增状态的第3个参数的值
+	@started_sc_val4	为这个新增状态的第4个参数的值
+	
+	@startedsc 			为了兼容SEA和CSEA服务端, 被赋予了和 @started_sc_id 一样的值
+
+---------------------------------------
+
+*OnPCBuffEndEvent:
+
+事件别名: OnPCSCEndEvent
+
+事件描述: 
+	当玩家解除了一个状态(Buff)后, 此事件会被触发 (关联解除状态的玩家)
+
+参数说明:
+	@ended_sc_id	为这个被解除状态的编号
+	@endedsc 		为了兼容SEA和CSEA服务端, 也被赋予了和 @ended_sc_id 一样的值
+
+---------------------------------------
+
+*OnPCPartyCreateFilter:
+
+事件别名: OnPCPartyCreateEvent
+事件描述: 当玩家创建了一个队伍后, 此事件会被触发 (关联队长)
+中断说明: 中断后服务端会无视玩家本次创建队伍的请求
+
+---------------------------------------
+
+*OnPCPartyJoinFilter:
+
+事件别名: OnPCPartyJoinEvent
+事件描述: 当玩家加入了一个队伍后, 此事件会被触发 (关联加入队伍的玩家)
+中断说明: 中断后服务端会无视玩家本次加入队伍的请求
+
+---------------------------------------
+
+*OnPCPartyLeaveFilter:
+
+事件别名: OnPCPartyLeaveEvent
+
+事件描述: 
+	当玩家离开了一个队伍后(无论是自愿还是被踢), 此事件会被触发 (关联到离开队伍的玩家)
+
+中断说明: 
+	中断后服务端会无视玩家本次离开队伍的请求
+
+参数说明:
+	@left_party_id		为已经离开的队伍编号
+	@left_party_name$	为已经离开的队伍名称
+
+---------------------------------------
+
+*OnPCGuildCreateFilter:
+
+事件别名: OnPCGuildCreateEvent
+事件描述: 当玩家创建了一个公会后, 此事件会被触发 (关联到会长)
+中断说明: 中断后服务端会无视玩家本次创建公会的请求
+
+---------------------------------------
+
+*OnPCGuildJoinFilter:
+
+事件别名: OnPCGuildJoinEvent
+事件描述: 当玩家加入了一个公会后, 此事件会被触发 (关联到加入公会的玩家)
+中断说明: 中断后服务端会无视玩家本次加入公会的请求
+
+---------------------------------------
+
+*OnPCGuildLeaveFilter:
+
+事件别名: OnPCGuildLeaveEvent
+
+事件描述:
+	当玩家离开了一个公会后, 此事件会被触发 (关联到离开公会的玩家)
+
+中断说明: 
+	中断后服务端会无视玩家本次离开公会的请求
+
+参数说明:
+	@left_guild_id		为已经离开的公会编号
+	@left_guild_name$	为已经离开的公会名称
+
+---------------------------------------
+
+*OnPCPetLootEvent:
+
+事件别名: OnPetLootItemEvent
+
+事件描述: 
+	当玩家的宠物拾取到物品之后, 此事件会被触发 (关联到宠物的主人)
+
+参数说明:
+	@petloot_item_id		为拾取到的物品编号
+	@petloot_item_amount	为拾取到的物品数量
+	@petloot_game_id		为此物品的游戏单位编号
+	
+	@petloot_id 			为了兼容SEA和CSEA服务端, 被赋予了和 @petloot_item_id 一样的值
+	@petloot_gid 			为了兼容SEA和CSEA服务端, 被赋予了和 @petloot_game_id 一样的值
+	@petloot_amount 		为了兼容SEA和CSEA服务端, 被赋予了和 @petloot_item_amount 一样的值
+
+---------------------------------------
+
+*OnPCPetFeedEvent:
+
+事件别名: OnPCFeedPet, OnPCFoodPet
+事件描述: 当玩家给自己的宠物喂食后, 此事件会被触发 (关联到宠物的主人)
+
+---------------------------------------
+
+*OnPCViewEquipFilter:
+
+事件别名: OnPCViewEquipEvent
+
+事件描述: 
+	当玩家点击查看某个玩家的装备之后, 此事件会被触发 (关联到主动发起查看请求的玩家)
+
+中断说明: 
+	中断后服务端会无视玩家本次查看他人装备信息的请求
+
+参数说明:
+	@view_equip_target_name$	被查看者的角色名
+	@view_equip_target_cid	被查看者的角色编号
+	@view_equip_target_aid	被查看者的账号编号
+	
+	@vieweq_name$ 	为了兼容CSEA服务端, 被赋予了和 @view_equip_target_name$ 一样的值
+	@vieweq_cid 	为了兼容CSEA服务端, 被赋予了和 @view_equip_target_cid 一样的值
+	@vieweq_aid 	为了兼容CSEA服务端, 被赋予了和 @view_equip_target_aid 一样的值
+	@eqview_cid 	为了兼容CSEA服务端, 被赋予了和 @view_equip_target_cid 一样的值
+
+---------------------------------------
+
+*OnPCHomLvUpEvent:
+
+事件描述: 当玩家的人工生命体升级之后, 此事件会被触发 (关联到生命体的主人)
+
+---------------------------------------
+
+*OnPCHomCallEvent:
+
+事件别名: OnHomCallEvent
+事件描述: 当玩家召唤出人工生命体之后, 此事件会被触发 (关联到生命体的主人)
+
+---------------------------------------
+
+*OnPCHomRestEvent:
+
+事件别名: OnHomRestEvent
+事件描述: 当玩家将人工生命体安息(休息)之后, 此事件会被触发 (关联到生命体的主人)
+
+---------------------------------------
+
+*OnPCHomDeadEvent:
+
+事件别名: OnHomDeadEvent
+事件描述: 当玩家的人工生命体死亡之后, 此事件会被触发 (关联到生命体的主人)
+
+---------------------------------------
+
+*OnPCHomAliveEvent:
+
+事件别名: OnHomWakeEvent
+事件描述: 当玩家复活人工生命体之后, 此事件会被触发 (关联到生命体的主人)
+
+---------------------------------------
+
+*OnPCUseSkillExFilter:
+
+事件别名: OnPCUseSkillEvent
+
+事件描述:
+	当玩家施放技能时, 在实际咏唱之前, 此事件会被触发 (关联到技能施放者)
+	无论技能的所需道具是否足够, 最终技能会不会使用失败, 只要玩家使用了技能, 就必定触发此事件
+
+中断说明:
+	中断后服务端会无视玩家本次使用技能的请求
+
+参数说明:
+	@useskill_id		施放的技能ID
+	@useskill_lv		被施放的技能等级
+	@useskill_target	被施法目标的GameID或者AccountID, 若为 0 则表示这是个对地面施放的技能
+	@useskill_x			被施法的地面X坐标
+	@useskill_y			被施法的地面Y坐标
+
+---------------------------------------
+
+*OnPCUseSkillExEvent:
+
+事件别名: OnPCUseSkillFinishEvent
+
+事件描述:
+	当玩家技能成功施放完毕时, 此事件会被触发 (关联到技能施放者)
+
+参数说明:
+	@useskill_id		施放的技能ID
+	@useskill_lv		被施放的技能等级
+	@useskill_target	被施法目标的GameID或者AccountID, 若为 0 则表示这是个对地面施放的技能
+	@useskill_x			被施法的地面X坐标
+	@useskill_y			被施法的地面Y坐标
+
+---------------------------------------
+
+*OnPCUseItemExFilter:
+
+事件别名: OnPCUseItemEvent
+
+事件描述:
+	当玩家双击使用“非装备”类型道具时, 此事件会被触发 (关联到物品使用者)
+	无论物品最终是否会使用失败, 只要玩家双击了物品, 就必定触发此事件
+
+中断说明:
+	中断后服务端会无视玩家本次使用物品的请求
+
+参数说明:
+	@useitem_nameid		玩家所使用的物品编号
+	@useitem_idx		玩家所使用物品的背包序号
+	@useitem_pos 		为了兼容SEA和CSEA服务端, 被赋予了和 @useitem_idx 一样的值
+
+---------------------------------------
+
+*OnPCUseItemExEvent:
+
+事件别名: OnPCUseItemFinishEvent
+
+事件描述: 
+	当玩家成功使用“非装备”类型道具时, 此事件会被触发 (关联到物品使用者)
+
+参数说明:
+	@useitem_nameid		玩家所使用的物品编号
+	@useitem_idx		玩家所使用物品的背包序号
+	@useitem_pos 		为了兼容SEA和CSEA服务端, 被赋予了和 @useitem_idx 一样的值
+
+---------------------------------------
+
+*OnPCMoveFilter:
+
+事件别名: OnPCMoveEvent
+
+事件描述: 
+	当玩家点击地面的某个格子想要移动时, 此事件会在玩家开始走路之前触发 (关联到想要移动的玩家)
+	
+	若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 0
+	那么永远不会触发此事件
+	
+	若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 1
+	那么必须先调用 when_pcmove_doevent; 脚本指令后, 玩家的下一次移动才会触发本事件
+	
+	若 conf/battle/extend.conf 的 pc_move_event_trigger_type 值为 2
+	那么玩家的所有移动都会触发本事件(人多的话可能会影响性能)
+
+中断说明: 
+	中断后服务端会无视玩家本次移动的请求
+
+参数说明:
+	@moveto_x	玩家想要移动到的目标位置的x坐标
+	@moveto_y	玩家想要移动到的目标位置的y坐标
+
+---------------------------------------
+
+*OnPCWillLoadMapEvent:
+
+事件别名: OnPCBeforeLoadMapEvent
+
+事件描述:
+	当玩家登录后准备进入地图、或者准备切换地图时, 都会触发此事件 (关联到想要过图的玩家)
+
+参数说明:
+	@loadmap_oldmap_id		玩家准备过图时, 老地图的地图编号, 若为0则表示玩家刚登录, 没有老地图
+	@loadmap_oldmap_name$	玩家准备过图时, 老地图的地图名称
+	@loadmap_oldmap_x		玩家准备过图时, 在老地图中所处的x坐标
+	@loadmap_oldmap_y		玩家准备过图时, 在老地图中所处的y坐标
+	
+	@loadmap_newmap_id		玩家准备过图时, 目的地地图的地图编号
+	@loadmap_newmap_name$	玩家准备过图时, 目的地地图的地图名称
+	@loadmap_newmap_x		玩家准备过图时, 会在目的地地图的哪个x坐标出现
+	@loadmap_newmap_y		玩家准备过图时, 会在目的地地图的哪个y坐标出现
+
+---------------------------------------
+
+*OnPCChangeTitleFilter:
+
+事件别名: OnPCChangeTitleEvent
+
+事件描述: 
+	当玩家的称号变更的时候, 就会触发此事件 (关联到称号变更的玩家)
+	
+	符合上述条件的时机有:
+	
+	- 当玩家在装备窗口的“称号”界面中双击了某个称号时
+	- 使用setchartitle脚本指令去设置称号时
+	- 使用GM指令@title去设置称号时
+	
+	若下面的 @now_title_id 参数为 0 则表示玩家双击了 “Title Release”
+
+中断说明: 
+	中断后服务端将不会根据 @now_title_id 变量的值来设定玩家的称号
+
+参数说明:
+	@trigger_mode	为0表示通过装备面板触发、为1表示通过setchartitle脚本指令触发、为2表示通过GM指令@title触发
+	@now_title_id	即将变更成的目标称号ID(该值可在事件中被修改)
+	@pre_title_id	之前的称号ID是多少
+
+	鉴于 @now_title_id 是可被修改的
+	所以你可以用很粗暴的方法, 直接修改 @now_title_id 的方式来篡改最终的称号ID
+	但是要注意, 采用这种方法的话, 后面别跟 processhalt;
+
+---------------------------------------
+
+*OnPCIdentifyFilter:
+
+事件别名: OnBeforeIdentifiedItem
+
+事件描述: 
+	玩家在鉴定列表中选择好装备, 点确定时触发 (关联到发起鉴定的玩家)
+
+中断说明: 
+	中断后服务端会无视玩家本次鉴定道具的请求, 系统不再鉴定此装备
+
+参数说明:
+	@identify_idx	为物品的背包序号
+
+---------------------------------------
+
+*OnPCIdentifyEvent:
+
+事件别名: OnIdentifiedItem
+
+事件描述:
+	玩家已经完成对一件装备的鉴定时触发此事件 (关联到发起鉴定的玩家)
+
+参数说明:
+	@identify_idx	为物品的背包序号
+
+---------------------------------------
+
+*OnPCProgressAbortEvent:
+
+事件别名: OnProgressbarAbortEvent
+事件描述: 当 progressbar 被打断时候的触发事件
+
+---------------------------------------
+
+*OnPCOpenRouletteFilter:
+
+事件描述: 
+	准备打开乐透大转盘时候的触发事件
+
+中断说明:
+	中断后服务端会无视玩家本次打开乐透大转盘的请求
+
+注意事项:
+	此选项依赖客户端和服务端的一些条件, 首先客户端必须是 2014-10-22 或更新的版本,
+	并且服务端在 conf/battle/feature.conf 中的 feature.roulette 选项要设置为 on, 否则此事件将不会被触发.
+
+---------------------------------------
+
+*OnPCCloseRouletteEvent:
+
+事件描述:
+	已经成功关闭乐透大转盘时的触发事件
+
+注意事项:
+	此选项依赖客户端和服务端的一些条件, 首先客户端必须是 2014-10-22 或更新的版本,
+	并且服务端在 conf/battle/feature.conf 中的 feature.roulette 选项要设置为 on, 否则此事件将不会被触发.
+
+---------------------------------------

@@ -5169,15 +5169,15 @@
 12724,Poison_Fatigue,疲劳毒药,0,2,,100,,,,,0xFFFFFFFF,7,2,,,,,,{ sc_start SC_VENOMBLEED,15000,0,10,0; },{},{}
 
 // Rune Knight's Rune Stones
-12725,Runstone_Nosiege,束缚符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_REFRESH",1; },{},{}
-12726,Runstone_Rhydo,调和符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_CRUSHSTRIKE",1; },{},{}
-12727,Runstone_Verkana,再生符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_MILLENNIUMSHIELD",1; },{},{}
-12728,Runstone_Isia,静止符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_VITALITYACTIVATION",1; },{},{}
-12729,Runstone_Asir,联合符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_FIGHTINGSPIRIT",1; },{},{}
-12730,Runstone_Urj,轮回符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_ABUNDANCE",1; },{},{}
-12731,Runstone_Turisus,自省符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_GIANTGROWTH",1; },{},{}
-12732,Runstone_Pertz,恐惧符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_STORMBLAST",1; },{},{}
-12733,Runstone_Hagalas,毁灭符文石,11,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ itemskill "RK_STONEHARDSKIN",1; },{},{}
+12725,Runstone_Nosiege,束缚符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_REFRESH",1; },{},{}
+12726,Runstone_Rhydo,调和符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_CRUSHSTRIKE",1; },{},{}
+12727,Runstone_Verkana,再生符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_MILLENNIUMSHIELD",1; },{},{}
+12728,Runstone_Isia,静止符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_VITALITYACTIVATION",1; },{},{}
+12729,Runstone_Asir,联合符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_FIGHTINGSPIRIT",1; },{},{}
+12730,Runstone_Urj,轮回符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_ABUNDANCE",1; },{},{}
+12731,Runstone_Turisus,自省符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_GIANTGROWTH",1; },{},{}
+12732,Runstone_Pertz,恐惧符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_STORMBLAST",1; },{},{}
+12733,Runstone_Hagalas,毁灭符文石,2,100,,100,,,,,0xFFFFFFFF,8,2,,,,,,{ if ((eaclass()&EAJ_THIRDMASK) == EAJ_RUNE_KNIGHT) unitskilluseid getcharid(3),"RK_STONEHARDSKIN",1; },{},{}
 
 // Rune Knight Rune Ores
 12734,Runstone_Quality,高级符文原石,0,2,,100,,,,,0x00000080,8,2,,,,,,{ makerune 5; },{},{}

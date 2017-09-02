@@ -1,0 +1,342 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthenaCN Script =======================================
+//= 邮件发送演示脚本
+//===== By: ==================================================
+//= Sola丶小克
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthenaCN 开发团队
+//===== Description: =========================================
+//= 演示如何通过 rAthenaCN 拓展的 sendmail 系列指令,
+//= 来给玩家发送各种不同类型的邮件.
+//============================================================
+//= 此脚本演示的指令请见 doc/rAthenaCN_script_commands.txt
+//= 相关指令名称为: sendmail,sendmail2,sendmail3
+//============================================================
+
+// -----------------------------------------------------------
+// 给定一个角色编号, 返回这个角色编号是否有效
+// 用法: callfunc("verify_charid", <角色编号>);
+// 返回值: 返回 true 为有效, 返回 false 为无效
+// -----------------------------------------------------------
+function	script	verify_charid	{
+	.@char_id = getarg(0);
+	
+	// 如果在不确定角色编号是否有效的情况下, 可以使用 query_sql 方法进行检查:
+	.@record_count = query_sql(sprintf("select `char_id` from `char` where `char_id` = %d", .@char_id), .cid);
+	
+	// 这里的 .@record_count 是数据库返回的记录数, 查询到的记录如果不等于 1 条, 那么返回 FALSE
+	return (.@record_count != 1 ? false : true);
+}
+
+// -----------------------------------------------------------
+// 找出合适指定装备的卡片, 并填充到角色临时数组 @card_filled_ret
+// 用法: callfunc("card_filled", <装备的物品编号>)
+// -----------------------------------------------------------
+function	script	card_filled	{
+	.@equip_id = getarg(0);
+	deletearray @card_filled_ret;
+	
+	// 获取这件装备的可用卡槽数
+	.@slot_ret = getiteminfo(.@equip_id, 10);
+	
+	// 如果返回值为 -1 那么说明这件装备不存在
+	// 如果返回值为 0  那么说明这件装备没有卡槽
+	if (.@slot_ret <= 0) {
+		return;
+	}
+	
+	// 记录这件装备的穿戴位置, 以便匹配合适的卡片
+	.@equip_loc = getiteminfo(.@equip_id, 5);
+	
+	// 接下来再启动一个循环, 尝试为这件装备找出合适的卡片
+	.@j = .@slot_ret;
+	while (.@j > 0) {
+		.@card_id = rand(4001,4479);
+		
+		// 获取这张卡片的插入位置
+		.@loc_ret = getiteminfo(.@card_id, 5);
+		
+		// 如果返回值为 -1 则表示这个卡片是不存在的, 重新找一件
+		if (.@loc_ret < 0) continue;
+		
+		// 如果卡片的插入位置和装备的穿戴位置不一致
+		// 那么说明这张卡片不合适这件装备, 重新找一件
+		// 这里应该使用与运算
+		if ((.@equip_loc & .@loc_ret) == 0) continue;
+		
+		@card_filled_ret[.@slot_ret - .@j] = .@card_id;
+		
+		.@j--;
+	}
+	
+	return;
+}
+
+prontera,169,125,3	script	邮件发送演示	123,{
+	mes "[rAthenaCN 演示]";
+	mes "我负责演示如何使用脚本指令直接发送邮件给指定角色编号的玩家.";
+	mes "与邮件发送配套的脚本指令如下:";
+	mes "^ff0000sendmail  - 普通附件^000000";
+	mes "^ff0000sendmail2 - 附件可携带卡片^000000";
+	mes "^ff0000sendmail3 - 附件可携带随机属性^000000";
+	next;
+	mes "[rAthenaCN 演示]";
+	mes "如果客户端版本号小于 ^ff000020150513^000000, 那么演示脚本发送的附件将为^0000ff一个^000000物品.";
+	mes "如果客户端支持 RODEX, 那么演示脚本发送的附件将为^0000ff多个^000000物品.";
+	next;
+	mes "[rAthenaCN 演示]";
+	mes "此演示NPC的脚本位于服务端的: ^ff0000npc\\racn\\racn_sendmail.txt^000000";
+	mes "您可以在下面的配置文件中移除它: ^0000ffnpc\\scripts_racn.conf^000000";
+	next;
+	
+	.@dest_charid = getcharid(0);	// 收件人的角色编号 - 这里设置为自己
+	.@body$ = "这是一封演示邮件\n发送时间为: " + gettimestr("%Y-%m-%d %H:%M:%S",21) + "\n\n支持使用/\n作为换行符.";
+	
+	// 需要注意的是: sendmail 系列指令并不会去检查角色编号是否存在, 所以需要自己检查 
+	if (!callfunc("verify_charid", .@dest_charid)) {
+		mes "[rAthenaCN 演示]";
+		mes "抱歉, 收件人的角色编号无效.";
+		close;
+	}
+	
+	switch(select("发送邮件 - 无附件:发送邮件 - 普通附件:发送邮件 - 附件携带卡片:发送邮件 - 附件携带卡片和随机属性")) {
+		case 1:
+			// 设置邮件标题
+			.@title$ = "无附件";
+			
+			// sendmail(<收件人角色编号>,"<发送者名称>","<标题>","<内容>"{,<附件中的金币>
+			// {,<附件一的物品编号>,<附件一的物品数量>
+			// {,<附件二的物品编号>,<附件二的物品数量>
+			// {,<附件三的物品编号>,<附件三的物品数量>
+			// {,<附件四的物品编号>,<附件四的物品数量>
+			// {,<附件五的物品编号>,<附件五的物品数量>}}}}}});
+			
+			// 发送邮件
+			sendmail .@dest_charid,"rAthenaCN 演示",.@title$,.@body$;
+			
+			break;
+		case 2:
+			// 设置邮件标题
+			.@title$ = "普通道具附件";
+			
+			// 随机初始化5个道具
+			for (.@i = 0; .@i < 5; .@i++) {
+				.@nameid[.@i] = rand(501,523);
+			}
+			
+			// 随机初始化附件金额
+			.@zeny = rand(1,10000);
+			
+			// sendmail(<收件人角色编号>,"<发送者名称>","<标题>","<内容>"{,<附件中的金币>
+			// {,<附件一的物品编号>,<附件一的物品数量>
+			// {,<附件二的物品编号>,<附件二的物品数量>
+			// {,<附件三的物品编号>,<附件三的物品数量>
+			// {,<附件四的物品编号>,<附件四的物品数量>
+			// {,<附件五的物品编号>,<附件五的物品数量>}}}}}});
+			
+			// 发送邮件, 道具的数量为随机 1~3 个
+			sendmail .@dest_charid,"rAthenaCN 演示",.@title$,.@body$,.@zeny,
+				.@nameid[0],rand(1,3),
+				.@nameid[1],rand(1,3),
+				.@nameid[2],rand(1,3),
+				.@nameid[3],rand(1,3),
+				.@nameid[4],rand(1,3);
+			
+			break;
+		case 3:
+			// 设置邮件标题
+			.@title$ = "携带卡片";
+			
+			// 为了演示附件能携带卡片, 我们需要找出能插卡的武器或者防具
+			// 并记住他们能插多少卡, 然后为他们随机弄一些武器卡片来插入
+			// 最后再随机给他们生成一个 1~12 的精炼值
+			
+			// 随机初始化附件金额
+			.@zeny = rand(1,10000);
+			
+			.@i = 5;
+			while (.@i > 0) {
+				.@equip_id = rand(1101,2373);	// 随机获得一个装备的编号(可能是武器, 也可能是防具)
+				
+				// 获取这件装备的可用卡槽数
+				.@slot_ret = getiteminfo(.@equip_id, 10);
+				
+				// 如果返回值为 -1 那么说明这件装备不存在, 重新找一件
+				// 如果返回值为 0  那么说明这件装备没有卡槽, 也需要重新找一件
+				if (.@slot_ret <= 0) continue;
+				
+				// 记住这件装备的编号到数组 .@nameid[] 中
+				// 这里的 .@i 最大值是 5 (表示含 6 个元素), 但是数组下标是 0, 所以应该减去 1,
+				// 这样有效的数组元素数量才是真正的 5 个: 0,1,2,3,4
+				.@nameid[5-.@i] = .@equip_id;
+				
+				// 尝试获取这个装备的类型是武器还是防具, 以便匹配合适的卡片
+				if (getiteminfo(.@equip_id, 2) == 4) {
+					// 物品类型如果为 4 应该是防具, 参考: doc/item_db.txt
+					.@type = 0;		// 我们用 0 表示防具
+				}
+				else if (getiteminfo(.@equip_id, 2) == 5) {
+					// 物品类型如果为 5 应该是武器, 参考: doc/item_db.txt
+					.@type = 1;		// 我们用 1 表示武器
+				}
+				else {
+					// 不是防具也不是武器, 按道理不可能出现
+					// 除非上面我给定的 1101~2373 物品编号区间出现了影子装备
+					// 这种情况不考虑, 重新选择道具
+					continue;
+				}
+				
+				// 记录这件装备的穿戴位置, 以便匹配合适的卡片
+				.@equip_loc = getiteminfo(.@equip_id, 5);
+				
+				// 找出合适这件装备的卡片, 并将其赋值到 
+				callfunc("card_filled", .@equip_id);
+				
+				// 我们会有多个装备, 为了区分多个装备的卡片数组
+				// 使用 setd 来实现这个目的, 让数组名称能带上与 .@nameid[] 数组匹配的下标
+				// 
+				// 比如:
+				// .@equip_0_cards[]
+				// .@equip_1_cards[]
+				// ...
+				for (.@k = 0; .@k < getarraysize(@card_filled_ret); .@k++){
+					.@var$ = sprintf(".@equip_%d_cards[%d]", (5-.@i), .@k);
+					setd .@var$, @card_filled_ret[.@k];
+				}
+				
+				.@i--;
+			}
+			
+			// 提示: 这里的说明有点长, 建议将文本编辑器调整为：不自动换行, 这样看起来会好一些
+			// 
+			// sendmail2(<收件人角色编号>,"<发送者名称>","<标题>","<内容>"{,<附件中的金币>
+			// {,<附件一的物品编号>,<附件一的物品数量>,<附件一是否已鉴定>,<附件一的精炼值>,<附件一的属性>,<附件一的第一张卡片>,<附件一的第二张卡片>,<附件一的第三张卡片>,<附件一的第四张卡片>
+			// {,<附件二的物品编号>,<附件二的物品数量>,<附件二是否已鉴定>,<附件二的精炼值>,<附件二的属性>,<附件二的第一张卡片>,<附件二的第二张卡片>,<附件二的第三张卡片>,<附件二的第四张卡片>
+			// {,<附件三的物品编号>,<附件三的物品数量>,<附件三是否已鉴定>,<附件三的精炼值>,<附件三的属性>,<附件三的第一张卡片>,<附件三的第二张卡片>,<附件三的第三张卡片>,<附件三的第四张卡片>
+			// {,<附件四的物品编号>,<附件四的物品数量>,<附件四是否已鉴定>,<附件四的精炼值>,<附件四的属性>,<附件四的第一张卡片>,<附件四的第二张卡片>,<附件四的第三张卡片>,<附件四的第四张卡片>
+			// {,<附件五的物品编号>,<附件五的物品数量>,<附件五是否已鉴定>,<附件五的精炼值>,<附件五的属性>,<附件五的第一张卡片>,<附件五的第二张卡片>,<附件五的第三张卡片>,<附件五的第四张卡片>}}}}}});
+			
+			sendmail2 .@dest_charid,"rAthenaCN 演示",.@title$,.@body$,.@zeny,
+				.@nameid[0],1,1,rand(1,12),0,.@equip_0_cards[0],.@equip_0_cards[1],.@equip_0_cards[2],.@equip_0_cards[3],
+				.@nameid[1],1,1,rand(1,12),0,.@equip_1_cards[0],.@equip_1_cards[1],.@equip_1_cards[2],.@equip_1_cards[3],
+				.@nameid[2],1,1,rand(1,12),0,.@equip_2_cards[0],.@equip_2_cards[1],.@equip_2_cards[2],.@equip_2_cards[3],
+				.@nameid[3],1,1,rand(1,12),0,.@equip_3_cards[0],.@equip_3_cards[1],.@equip_3_cards[2],.@equip_3_cards[3],
+				.@nameid[4],1,1,rand(1,12),0,.@equip_4_cards[0],.@equip_4_cards[1],.@equip_4_cards[2],.@equip_4_cards[3];
+			
+			break;
+		case 4:
+			
+			if (PACKETVER < 20150225) {
+				mes "[rAthenaCN 演示]";
+				mes "物品随机属性机制仅在版本号 ^0000ff大于^000000 ^ff000020150225^000000 的客户端上有效.";
+				mes "请使用符合要求的新版客户端程序之后, 再来找我演示吧.";
+				close;
+			}
+		
+			// 设置邮件标题
+			.@title$ = "带卡片和随机属性";
+			
+			// 除了上面单纯的设置卡片, 又多了一个随机属性
+			// 为了方便随机赋值, 我们挑出一些用来增加百分比的随机属性
+			// 然后随机给装备赋予这些属性
+			
+			// 随机初始化附件金额
+			.@zeny = rand(1,10000);
+			
+			.@i = 5;
+			while (.@i > 0) {
+				.@equip_id = rand(1101,2373);	// 随机获得一个装备的编号(可能是武器, 也可能是防具)
+				
+				// 获取这件装备的可用卡槽数
+				.@slot_ret = getiteminfo(.@equip_id, 10);
+				
+				// 如果返回值为 -1 那么说明这件装备不存在, 重新找一件
+				// 如果返回值为 0  那么说明这件装备没有卡槽, 也需要重新找一件
+				if (.@slot_ret <= 0) continue;
+				
+				// 记住这件装备的编号到数组 .@nameid[] 中
+				// 这里的 .@i 最大值是 5 (表示含 6 个元素), 但是数组下标是 0, 所以应该减去 1,
+				// 这样有效的数组元素数量才是真正的 5 个: 0,1,2,3,4
+				.@nameid[5-.@i] = .@equip_id;
+				
+				// 尝试获取这个装备的类型是武器还是防具, 以便匹配合适的卡片
+				if (getiteminfo(.@equip_id, 2) == 4) {
+					// 物品类型如果为 4 应该是防具, 参考: doc/item_db.txt
+					.@type = 0;		// 我们用 0 表示防具
+				}
+				else if (getiteminfo(.@equip_id, 2) == 5) {
+					// 物品类型如果为 5 应该是武器, 参考: doc/item_db.txt
+					.@type = 1;		// 我们用 1 表示武器
+				}
+				else {
+					// 不是防具也不是武器, 按道理不可能出现
+					// 除非上面我给定的 1101~2373 物品编号区间出现了影子装备
+					// 这种情况不考虑, 重新选择道具
+					continue;
+				}
+				
+				// 记录这件装备的穿戴位置, 以便匹配合适的卡片
+				.@equip_loc = getiteminfo(.@equip_id, 5);
+				
+				// 找出合适这件装备的卡片, 并将其赋值到 
+				callfunc("card_filled", .@equip_id);
+				
+				// 我们会有多个装备, 为了区分多个装备的卡片数组
+				// 使用 setd 来实现这个目的, 让数组名称能带上与 .@nameid[] 数组匹配的下标
+				// 
+				// 比如:
+				// .@equip_0_cards[]
+				// .@equip_1_cards[]
+				// ...
+				for (.@k = 0; .@k < getarraysize(@card_filled_ret); .@k++){
+					.@var$ = sprintf(".@equip_%d_cards[%d]", (5-.@i), .@k);
+					setd .@var$, @card_filled_ret[.@k];
+				}
+				
+				// 找出五条随机属性, 然后让他们的值随机在 1~100 之间
+				for (.@k = 0; .@k < 5; .@k++) {
+					.@ranopt_id = rand(1,75);
+					
+					setd sprintf(".@equip_%d_optid[%d]", (5-.@i), .@k), .@ranopt_id;
+					setd sprintf(".@equip_%d_value[%d]", (5-.@i), .@k), rand(1,100);
+					setd sprintf(".@equip_%d_param[%d]", (5-.@i), .@k), 0;
+				}
+				
+				.@i--;
+			}
+			
+			// 提示: 这里的说明有点长, 建议将文本编辑器调整为：不自动换行, 这样看起来会好一些
+			// 
+			// sendmail3(<收件人角色编号>,"<发送者名称>","<标题>","<内容>"{,<附件中的金币>
+			// {,<附件一的物品编号>,<附件一的物品数量>,<附件一是否已鉴定>,<附件一的精炼值>,<附件一的属性>,<附件一的第一张卡片>,<附件一的第二张卡片>,<附件一的第三张卡片>,<附件一的第四张卡片>,<附件一的RandomIDArray>,<附件一的RandomValueArray>,<附件一的RandomParamArray>
+			// {,<附件二的物品编号>,<附件二的物品数量>,<附件二是否已鉴定>,<附件二的精炼值>,<附件二的属性>,<附件二的第一张卡片>,<附件二的第二张卡片>,<附件二的第三张卡片>,<附件二的第四张卡片>,<附件二的RandomIDArray>,<附件二的RandomValueArray>,<附件二的RandomParamArray>
+			// {,<附件三的物品编号>,<附件三的物品数量>,<附件三是否已鉴定>,<附件三的精炼值>,<附件三的属性>,<附件三的第一张卡片>,<附件三的第二张卡片>,<附件三的第三张卡片>,<附件三的第四张卡片>,<附件三的RandomIDArray>,<附件三的RandomValueArray>,<附件三的RandomParamArray>
+			// {,<附件四的物品编号>,<附件四的物品数量>,<附件四是否已鉴定>,<附件四的精炼值>,<附件四的属性>,<附件四的第一张卡片>,<附件四的第二张卡片>,<附件四的第三张卡片>,<附件四的第四张卡片>,<附件四的RandomIDArray>,<附件四的RandomValueArray>,<附件四的RandomParamArray>
+			// {,<附件五的物品编号>,<附件五的物品数量>,<附件五是否已鉴定>,<附件五的精炼值>,<附件五的属性>,<附件五的第一张卡片>,<附件五的第二张卡片>,<附件五的第三张卡片>,<附件五的第四张卡片>,<附件五的RandomIDArray>,<附件五的RandomValueArray>,<附件五的RandomParamArray>}}}}}});
+			
+			sendmail3 .@dest_charid,"rAthenaCN 演示",.@title$,.@body$,.@zeny,
+				.@nameid[0],1,1,rand(1,12),0,.@equip_0_cards[0],.@equip_0_cards[1],.@equip_0_cards[2],.@equip_0_cards[3],.@equip_0_optid,.@equip_0_value,.@equip_0_param,
+				.@nameid[1],1,1,rand(1,12),0,.@equip_1_cards[0],.@equip_1_cards[1],.@equip_1_cards[2],.@equip_1_cards[3],.@equip_1_optid,.@equip_1_value,.@equip_1_param,
+				.@nameid[2],1,1,rand(1,12),0,.@equip_2_cards[0],.@equip_2_cards[1],.@equip_2_cards[2],.@equip_2_cards[3],.@equip_2_optid,.@equip_2_value,.@equip_2_param,
+				.@nameid[3],1,1,rand(1,12),0,.@equip_3_cards[0],.@equip_3_cards[1],.@equip_3_cards[2],.@equip_3_cards[3],.@equip_3_optid,.@equip_3_value,.@equip_3_param,
+				.@nameid[4],1,1,rand(1,12),0,.@equip_4_cards[0],.@equip_4_cards[1],.@equip_4_cards[2],.@equip_4_cards[3],.@equip_4_optid,.@equip_4_value,.@equip_4_param;
+			
+			break;
+	}
+	
+	mes "[rAthenaCN 演示]";
+	mes "邮件已经发送, 请查收您的邮箱.";
+	close;
+OnInit:
+	waitingroom "邮件发送演示",1;
+	end;
+}

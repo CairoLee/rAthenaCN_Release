@@ -44,9 +44,9 @@ alberta_in,16,28,4	script	Pharmacist	61,{
 	mes "[Old Pharmacist]";
 	mes "Ummmm...";
 	mes "What brings you here...?";
+	next;
 	switch(select("Make Potion:Talk.:Mixing Information:Cancel")) {
 	case 1:
-		next;
 		if (MaxWeight - Weight < 5000) {
 			mes "[Old Pharmacist]";
 			mes "Why are you carrying these so many!";
@@ -59,11 +59,11 @@ alberta_in,16,28,4	script	Pharmacist	61,{
 		} else {
 			mes "[Old Pharmacist]";
 			mes "You have all the stuff ready, right? Which one would you like?";
+			next;
 			switch(select("Red Potion.:Orange Potion.:Yellow Potion.:White Potion.:Blue Potion.:Green Potion.:Actually, I don't want anything.")) {
 			case 1:
 				callsub L_Making,507,3,501;
 			case 2:
-				next;
 				mes "[Old Pharmacist]";
 				if (countitem(507) < countitem(713)) {
 					set .@max,countitem(507);
@@ -85,9 +85,9 @@ alberta_in,16,28,4	script	Pharmacist	61,{
 					close;
 				}
 				mes "How many?";
+				next;
 				switch(select("Make as many as I can.:I want to choose an amount.:Actually, I don't want anything.")) {
 				case 1:
-					next;
 					if ((countitem(507) < .@max) || (countitem(508) < .@max) || (countitem(713) < .@max) || (Zeny < .@max*3)) {
 						mes "[Old Pharmacist]";
 						mes "You rascal! You don't even have all the materials and you want me to make you potions?!";
@@ -100,24 +100,21 @@ alberta_in,16,28,4	script	Pharmacist	61,{
 					getitem 502,.@max; //Orange_Potion
 					break;
 				case 2:
-					next;
 					mes "[Old Pharmacist]";
 					mes "Then pick a number below 100. If you don't want any, just enter '0'. With the materials you have, you can make about "+.@max+" potions.";
+					next;
 					input .@amount,0,101;
 					if (.@amount == 0) {
-						next;
 						mes "[Old Pharmacist]";
 						mes "Make up your mind, will you?!";
 						close;
 					}
 					if (.@amount > 100) {
-						next;
 						mes "[Old Pharmacist]";
 						mes "Are you deaf? I said less than 100!";
 						close;
 					}
 					if ((countitem(507) < .@amount) || (countitem(508) < .@amount) || (countitem(713) < .@amount) || (Zeny < .@amount*3)) {
-						next;
 						mes "[Old Pharmacist]";
 						mes "You rascal! You don't even have all the materials and you want me to make you potions?!";
 						close;
@@ -130,7 +127,6 @@ alberta_in,16,28,4	script	Pharmacist	61,{
 					getitem 502,.@amount; //Orange_Potion
 					break;
 				case 3:
-					next;
 					mes "[Old Pharmacist]";
 					mes "What?!";
 					mes "Grrr...";
@@ -196,7 +192,6 @@ L_Making:
 	.@item_req = getarg(0);
 	.@req_amount = getarg(1);
 
-	next;
 	mes "[Old Pharmacist]";
 	if ((countitem(.@item_req)/2) < countitem(713)) {
 		.@max = countitem(.@item_req) /2;
@@ -214,9 +209,9 @@ L_Making:
 		close;
 	}
 	mes "How many?";
+	next;
 	switch(select("Make as many as I can.:I want to choose an amount.:Actually, I don't want anything.")) {
 	case 1:
-		next;
 		if ((countitem(.@item_req) < .@max*2) || countitem(713) < .@max || (Zeny < .@max*.@req_amount)) {
 			mes "[Old Pharmacist]";
 			mes "You rascal! You don't even have all the materials and you want me to make you potions?!";
@@ -228,11 +223,10 @@ L_Making:
 		getitem getarg(2),.@max; 
 		break;
 	case 2:
-		next;
 		mes "[Old Pharmacist]";
 		mes "Then pick a number below 100. If you don't want any, just enter '0'. With the materials you have, you can make about "+.@max+" potions.";
-		input .@amount;
 		next;
+		input .@amount;
 		if (.@amount == 0) {
 			mes "[Old Pharmacist]";
 			mes "Make up your mind, will you?!";
@@ -254,7 +248,6 @@ L_Making:
 		getitem getarg(2),.@amount; 
 		break;
 	case 3:
-		next;
 		mes "[Old Pharmacist]";
 		mes "What?!";
 		mes "Grrr...";

@@ -26,41 +26,35 @@
 
 prontera,136,125,4	script	称号演示	123,{
 	if (PACKETVER < 20150513){
-		mes "[称号演示]";
+		mes "[rAthenaCN 演示]";
 		mes "官方自带的称号机制仅在版本号 ^0000ff>=^000000 ^ff000020150513^000000 的客户端上有效.";
 		mes "请使用符合要求的新版客户端程序之后, 再来找我演示吧.";
 		close;
 	}
-	mes "[称号演示]";
+	mes "[rAthenaCN 演示]";
 	mes "我负责演示2015客户端的称号机制..";
-	mes "两个相关的脚本指令如下:";
+	mes "与称号机制配套的脚本指令如下:";
 	mes "^ff0000getchartitle {<char_id>};^000000";
 	mes "^ff0000setchartitle <称号ID>{,<char_id>};^000000";
 	mes "与称号机制配套的GM指令如下:";
 	mes "^ff0000@title <称号ID>^000000";
 	next;
-	mes "[称号演示]";
+	mes "[rAthenaCN 演示]";
 	mes "称号在服务端是以一个ID存在的, 服务端并不知道这个称号ID对应的文本,";
 	mes "称号ID与文本的对应表保存在客户端的 ^ff0000data\\luafiles514\\lua files\\datainfo\\titletable.lub^000000 文件中, 大家可以去看看.";
 	next;
-	mes "[称号演示]";
-	mes "此外现在服务端不会保存称号ID,";
-	mes "但你可以通过写个角色变量来记住它,";
-	mes "然后在 ^ff0000OnPCLoginEvent^000000 中调用";
-	mes "^0000ffsetchartitle^000000 脚本指令来激活称号.";
-	next;
-	mes "[称号演示]";
+	mes "[rAthenaCN 演示]";
 	mes "请选择你要测试或了解的功能.";
 	next;
-	switch(select("setchartitle - 设置我的称号ID:getchartitle - 获取我的称号ID:OnPCChangeTitleEvent - 称号更换事件")){
+	switch(select("setchartitle - 设置我的称号ID:getchartitle - 获取我的称号ID:OnPCChangeTitleFilter - 称号更换事件")){
 		case 1:
-			mes "[称号演示]";
+			mes "[rAthenaCN 演示]";
 			mes "有效的称号ID范围在:^ff00001000~1034^000000之间,";
 			mes "^0000ff若填写的ID无效, 则称号会被取消.^000000";
 			mes "请填写你想设置的称号ID?";
 			next;
 			input .@title_id;
-			mes "[称号演示]";
+			mes "[rAthenaCN 演示]";
 			mes "你填写的称号ID为: ^ff0000" + .@title_id + "^000000";
 			if (.@title_id < 1000 || .@title_id > 1034){
 				mes "^0000ffID不在合法范围内, 称号将被取消^000000";
@@ -76,14 +70,14 @@ prontera,136,125,4	script	称号演示	123,{
 			mes "这部分功能演示结束.";
 			break;
 		case 2:
-			mes "[称号演示]";
+			mes "[rAthenaCN 演示]";
 			mes "你现在的称号ID为: ^ff0000" + getchartitle() + "^000000";
 			mes "若称号ID为 ^ff0000-1^000000 则表示函数执行失败.";
 			mes "这部分功能演示结束.";
 			break;
 		case 3:
-			mes "[称号演示]";
-			mes "使用 ^ff0000OnPCChangeTitleEvent^000000 事件";
+			mes "[rAthenaCN 演示]";
+			mes "使用 ^ff0000OnPCChangeTitleFilter^000000 事件";
 			mes "可以在玩家更换称号时获得通知.";
 			mes "具体使用方法请查看事件演示脚本: ^ff0000npc/racn/racn_events.txt^000000.";
 			break;
