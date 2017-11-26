@@ -2,6 +2,25 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.4(2017-11-26)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/4128740a1a2d3e1836a48a3f298a13c73c98afd1
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.4\upgrade_20171001.sql
+       - sql-files\upgrades\v1.7.4\upgrade_20171019.sql
+[升级] 若您不是全新安装的话, 请在您的【日志数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.4\upgrade_20171001_logs.sql
+[升级] 运行时如果提示 vcruntime140.dll 丢失, 请安装 Visual C++ 2015 可在发行组件包
+       - 下载地址: https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe
+[升级] 运行时如果地图服务器提示缺少 db/import/refine_db.yml 那么可以从安装包的 db/import-tmpl/refine_db.yml 复制一份
+[注意] 从此版本开始, rAthena 官方将精炼数据库从 txt 格式调整为 yml 格式
+[注意] 由于时隔两个多月, 合并代码可能多少会有些没被发现的错误. 在您充分测试之前, 请不要应用到正式服务器.
+[修正] rAthena官方BUG: 修正 rAthena 官方一个潜在的崩溃问题
+[修正] 修正 20170614 客户端无法发送物品链接的问题 (之前的物品链接炸弹过滤太严)
+[修正] 修正在 20170614 客户端下, 当队伍人数满员时会导致地图服务器崩溃的问题
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.3(2017-09-03)
 ------------------
 [同步] rAthena官方Github库
@@ -38,7 +57,7 @@ v1.7.2(2017-08-02)
 [升级] 若您不是全新安装的话, 请进行以下文件操作
        - 将压缩包中的 db\import-tmpl\achievement_db.yml 复制到你服务端的 db\import 目录下
 [注意] 从此版本开始, rAthena 官方弃用了原先的 db/packet_db.txt 配置文件
-[注意] 从此版本开始, rAthena 官方将成就系统的数据库文件从 conf 格式调整为 yaml 格式
+[注意] 从此版本开始, rAthena 官方将成就系统的数据库文件从 conf 格式调整为 yml 格式
 [新增] 支持设定封包混淆密钥, 详情请见 conf/map_athena.conf 中的 packet_keys 选项
 [新增] 加入战斗配置文件完整性校验机制, 当战斗配置文件中缺少选项时, 能显示警告信息 (感谢“╰づ记忆•斑驳〤”实现)
 [新增] 能够对“元素使”使用 @bodystyle 指令来切换服装风格 (客户端必须有对应的图档，否则会报错)

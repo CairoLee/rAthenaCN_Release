@@ -892,7 +892,7 @@ xmas,134,112,4	script	雪人	710,{
 		mes "我就是哪里都去不了, 永远待在同一个地方的";
 		mes "雪人.";
 		next;
-		emotion e_sob;
+		emotion ET_CRY;
 		next;
 		switch(select("^3152FF雪人是什么?^000000:询问有关圣诞村庄密穴的事:取消对话")) {
 		case 1:
@@ -941,7 +941,7 @@ xmas,134,112,4	script	雪人	710,{
 			mes "如果你有空陪我说说话的话";
 			mes "我也可以变成你倾吐心事的对象的";
 			mes "嘿嘿嘿.嘿嘿..嘿嘿.....";
-			emotion e_sob;
+			emotion ET_CRY;
 			break;
 		case 2:
 			mes "[雪人]";

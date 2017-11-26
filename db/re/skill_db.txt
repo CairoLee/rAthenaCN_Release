@@ -735,7 +735,7 @@
 504,0,6,4,0,0x1,0,1,1,no,0,0,0,weapon,0,0x0,		GS_MADNESSCANCEL,Madness Canceller(疯狂消灭)
 505,0,6,4,0,0x1,0,1,1,no,0,0,0,weapon,0,0x0,		GS_ADJUSTMENT,AdJustment(自动调整)
 506,0,6,4,0,0x1,0,1,1,no,0,0,0,weapon,0,0x0,		GS_INCREASING,Increasing Accuracy(逐渐精确)
-507,-9,6,1,8,0x20,0,1,1,no,0,0,0,misc,0,0x0,		GS_MAGICALBULLET,Magical Bullet(魔术子弹)
+507,0,6,4,0,0x1,0,1,1,no,0,0,0,magic,0,0x0,		GS_MAGICALBULLET,Magical Bullet(魔术子弹)
 508,-9,6,1,-1,0x1,0,1,1,no,0,0,0,weapon,0,0x0,	GS_CRACKER,Cracker(惊吓)
 509,0,0,0,0,0,0,10,0,no,0,0,0,none,0,0x0,		GS_SINGLEACTION,Single Action(一次性动作)
 510,0,0,0,0,0,0,10,0,no,0,0,0,none,0,0x0,		GS_SNAKEEYE,Snake Eye(蛇眼)
@@ -744,7 +744,7 @@
 513,-9,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0x0,		GS_DISARM,Disarm(放下武器)
 514,-9,6,1,-1,0x20,0,5,1,no,0,0,0,weapon,0,0x100,	GS_PIERCINGSHOT,Piercing Shot(刺穿射击)
 515,-9,8,1,-1,0,0,10,-5,no,0,0,0,weapon,0,0x100,	GS_RAPIDSHOWER,Rapid Shower(迅速淋弹)
-516,0,8,4,-1,0x2,3,10,1,no,0,0,0,weapon,0,0x0,	GS_DESPERADO,Desperado(亡命之徒)
+516,5,8,4,-1,0x2,3,10,1,no,0,0,0,weapon,0,0x0,	GS_DESPERADO,Desperado(亡命之徒)
 517,0,6,4,-1,0x1,0,10,1,no,0,0,0,weapon,0,0x0,	GS_GATLINGFEVER,Gatling Fever(格林机关枪狂热)
 518,2,6,1,-1,0,0,10,1,no,0,0,0,weapon,5,0x0,		GS_DUST,Dust(尘埃)
 519,-9,6,1,-1,0,0,10,1,yes,0,0,0,weapon,0,0x100,	GS_FULLBUSTER,Full Buster(庞然大物)
@@ -1273,24 +1273,24 @@
 //2551,0,0,0,0,0,0,10,0,no,0,0,0,none,0,0,	RL_GLITTERING_GREED,Flip The Coin Greed
 2552,0,6,4,0,0x1,0,1,1,no,0,0,0,none,0,0x0,	RL_RICHS_COIN,Rich's Coin(富翁的财货)
 2553,-9,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0x0,	RL_MASS_SPIRAL,Mass Spiral(绝对贯穿)
-2554,-9,6,1,-1,0x2,2,5,1,no,0,0,0,weapon,0,0x10020,	RL_BANISHING_BUSTER,Banishing Buster(强制驱逐)
+2554,-9,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0x10020,	RL_BANISHING_BUSTER,Banishing Buster(强制驱逐)
 2555,3:4:4:5:5,6,2,0,0x1,1,5,1,no,0,0,1,misc,0,0x0,	RL_B_TRAP,Bind Trap(暗黑地狱)
 2556,0,6,4,0,0x3,-1,1,1,no,0,0,0,none,0,0x0,	RL_FLICKER,Flicker(闪烁信号)
-2557,-9,6,1,-1,0x2,2,5,1,no,0,0,0,weapon,0,0x0,	RL_S_STORM,Shatter Storm(粉碎风暴)
+2557,-9,6,1,-1,0x2,2:2:2:2:3,5,1,no,0,0,0,weapon,0,0x0,	RL_S_STORM,Shatter Storm(粉碎风暴)
 2558,0,6,4,0,0x1,0,10,1,no,0,0,0,none,0,0x0,	RL_E_CHAIN,Eternal Chain(无限连锁)
 2559,-9,6,4,-1,0x0,10,1,1,no,0,0x0,0,weapon,0,0x0,	RL_QD_SHOT,Quick Draw Shot(瞬速子弹)
 2560,-9,6,1,0,0x1,0,1,1,no,0,0,3,none,0,0x0,	RL_C_MARKER,Crimson Marker(血色烙印)
-2561,0,6,4,-1,0x2,3,5,1,no,0,0,0,weapon,0,0x0,	RL_FIREDANCE,Fire Dance(杀戮暗舞)
+2561,5,6,4,-1,0x2,3,5,1,no,0,0,0,weapon,0,0x0,	RL_FIREDANCE,Fire Dance(杀戮暗舞)
 2562,-9,6,1,-1,0x0,2,5,1,no,0,0,0,weapon,0,0x0,	RL_H_MINE,Howling Mine(破坏怒吼)
 2563,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x0,	RL_P_ALTER,Platinum Alter(白金祭坛)
 2564,-9,6,2,0,0x1,0,5,1,no,0,0,0,none,0,0x0,	RL_FALLEN_ANGEL,Fallen Angel(堕落天使)
-2565,0,6,4,-1,0x2,3:3:4:5:6,5,1,no,0,0,0,weapon,3,0x0,	RL_R_TRIP,Round Trip(圆桌舞蹈)
-2566,0,6,4,-1,0x3,-1,5,1,no,0,0,0,weapon,0,0x0,	RL_D_TAIL,Dragon Tail(魔兽摆尾)
-2567,-9,6,2,-1,0x2,1,5,1,no,0,0,0,weapon,0,0,	RL_FIRE_RAIN,Fire Rain(火焰暴雨)
+2565,5,6,4,-1,0x2,3:3:4:5:6,5,1,no,0,0,0,weapon,3,0x0,	RL_R_TRIP,Round Trip(圆桌舞蹈)
+2566,5,6,4,0,0x30,-1,5,1,no,0,0,0,weapon,0,0x0,	RL_D_TAIL,Dragon Tail(魔兽摆尾)
+2567,2,6,2,-1,0x2,1,5,1,no,0,0,0,weapon,0,0,	RL_FIRE_RAIN,Fire Rain(火焰暴雨)
 2568,0,6,4,0,0x1,0,5,1,no,0,0,0,none,0,0x0,	RL_HEAT_BARREL,Heat Barrel(加速子弹)
 2569,-9,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0x0,	RL_AM_BLAST,Anti-Material Blast(毁灭重击)
-2570,-9,6,1,-1,0,0,5,1,no,0,0,0,weapon,6,0x0,	RL_SLUGSHOT,Slug Shot(根源破坏)
-2571,-9,6,2,-1,0x2,2,5,1,no,0,0,0,weapon,0,0x0,	RL_HAMMER_OF_GOD,Hammer of God(天神愤怒)
+2570,-9,6,1,0,0,0,5,1,no,0,0,0,weapon,6,0x0,	RL_SLUGSHOT,Slug Shot(根源破坏)
+2571,-9,6,1,0,0x2,2,5,1,no,0,0,0,weapon,0,0x0,	RL_HAMMER_OF_GOD,Hammer of God(天神愤怒)
 2572,0,6,1,-1,0x40,0,5,1,no,0,0,0,weapon,0,0,	RL_R_TRIP_PLUSATK,Round Trip Plus Attack
 //2573,0,6,1,-1,0,0,5,1,no,0,0,0,weapon,0,0,	RL_B_FLICKER_ATK,Bind Flicker Attack
 //2574,0,6,1,-1,0,0,10,1,no,0,0,0,weapon,0,0,	RL_GLITTERING_GREED_ATK,Flip The Coin Greed Attack
@@ -1399,6 +1399,11 @@
 5054,0,0,0,0,0,0,1,0,no,0,0,0,none,0,0x0,		SU_SPIRITOFLAND,Spirit of Land(大地之魂)
 5055,0,6,4,0,0x1,0,5,1,yes,0,0,0,none,0,0x0,		SU_CHATTERING,Chattering(喵喵不休)
 5056,0,0,0,0,0,0,1,0,no,0,0,0,none,0,0x0,		SU_SPIRITOFSEA,Spirit of Sea(海洋之魂)
+
+// Wedding Skills 3
+5063,1,6,4,0,0x1,0,1,1,yes,0,0x4,0,none,0,0,	WE_CALLALLFAMILY,Call All Family
+5064,3,6,16,0,0x1,0,1,1,yes,0,0x4,0,none,0,0,	WE_ONEFOREVER,One Forever
+5065,1,6,4,0,0x3,3,1,1,yes,0,0x4,0,none,0,0,	WE_CHEERUP,Cheer Up
 
 //****
 // Homunculus S

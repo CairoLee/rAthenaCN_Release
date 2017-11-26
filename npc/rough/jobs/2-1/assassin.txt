@@ -303,7 +303,7 @@ in_moc_16,19,33,1	script	工会人员#asn	1_M_JOBTESTER,{
 in_moc_16,25,90,1	script	暗杀者 凯伊#ASN2	4_M_JOB_ASSASSIN,2,2,{
 	mes "[凯伊]";
 	mes "嗯?!";
-	emotion e_gasp;
+	emotion ET_SURPRISE;
 	next;
 	mes "[凯伊]";
 	mes "站近点儿. 我喜欢和人很近的交谈. 提高嗓门才能让人听见说话, 那就太烦燥了.";

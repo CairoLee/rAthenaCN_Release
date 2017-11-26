@@ -60,7 +60,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			mes "如果您不是到厨房里来帮忙的";
 			mes "麻烦请您马上离开!";
 			next;
-			emotion e_an;
+			emotion ET_FRET;
 			mes "[夏日尔 奥日里昂]";
 			mes "没有要冒犯你的意思，";
 			mes "但有个像你这样的小鬼头";
@@ -84,7 +84,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 	else if (getequipid(EQI_HEAD_TOP) != 5026) {
 		if (Sex) {
 			cutin "orleans_5",0;
-			emotion e_an;
+			emotion ET_FRET;
 			mes "[夏日尔 奥日里昂]";
 			mes "..........................";
 			next;
@@ -124,13 +124,13 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		switch(select("......?:是我妹妹:我不认识的小孩")) {
 		case 1:
 			cutin "nyuang_3",2;
-			emotion e_ho,0,"抱着猫的小孩#cook";
+			emotion ET_DELIGHT,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "喵哈哈哈，";
 			mes "(喵喵...)";
 			next;
 			cutin "orleans_2",0;
-			emotion e_heh;
+			emotion ET_SMILE;
 			mes "[夏日尔 奥日里昂]";
 			mes "真乖巧...";
 			mes "要乖乖的喔";
@@ -138,13 +138,13 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			break;
 		case 2:
 			cutin "nyuang_1",2;
-			emotion e_what,0,"抱着猫的小孩#cook";
+			emotion ET_QUESTION,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "...喵啊?";
 			mes "(喵喵)";
 			next;
 			cutin "orleans_2",0;
-			emotion e_lv2;
+			emotion ET_BIGTHROB;
 			mes "[夏日尔 奥日里昂]";
 			mes "虽然跟姐姐感觉不太像，";
 			mes "但是真的很乖巧又可爱，";
@@ -153,14 +153,14 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			break;
 		case 3:
 			cutin "nyuang_2",2;
-			emotion e_pif,0,"抱着猫的小孩#cook";
+			emotion ET_HNG,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "喵哈哈哈，";
 			mes "(喵喵...)";
 			next;
 			cutin "orleans_4",0;
 			cutin "orleans_3",0;
-			emotion e_swt2;
+			emotion ET_PROFUSELY_SWEAT;
 			mes "[夏日尔 奥日里昂]";
 			mes "失，失礼了，竟然对小姐";
 			mes "如此没礼貌... 不知道";
@@ -217,7 +217,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 	}
 	else if (cooking_q == 0) {
 		cutin "orleans_5",0;
-		emotion e_dots;
+		emotion ET_THINK;
 		mes "[夏日尔 奥日里昂]";
 		mes "啊~啊~ 好烦啊，好烦，这是干嘛，";
 		mes "与其在这里消磨时间，";
@@ -245,7 +245,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			next;
 			cutin "orleans_4",0;
 			cutin "orleans_3",0;
-			emotion e_omg;
+			emotion ET_HUK;
 			mes "[夏日尔 奥日里昂]";
 			mes "老天啊，饶了我吧!";
 			mes "真是个有问题的小鬼";
@@ -396,7 +396,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 	else if (cooking_q == 1) {
 		if (countitem(940) > 4 && countitem(7031) > 0 && countitem(7457) > 0) {
 			cutin "orleans_4",0;
-			emotion e_an;
+			emotion ET_FRET;
 			mes "[夏日尔 奥日里昂]";
 			mes "在做什么啊！太晚了！";
 			mes "这么晚来，";
@@ -741,7 +741,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		next;
 		switch(select("名字是什么?:给你做料理怎么样?:好可爱好乖~:从这里出去！")) {
 		case 1:
-			emotion e_ok,0,"抱着猫的小孩#cook";
+			emotion ET_OK,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "喵呜~";
 			mes "喵~";
@@ -754,7 +754,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			goto L_End;
 		case 2:
 			cutin "nyuang_2",2;
-			emotion e_pif,0,"抱着猫的小孩#cook";
+			emotion ET_HNG,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "喵~嗯";
 			mes "(咕噜~)";
@@ -767,7 +767,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			goto L_End;
 		case 3:
 			cutin "nyuang_3",2;
-			emotion e_heh,0,"抱着猫的小孩#cook";
+			emotion ET_SMILE,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "喵喵喵~";
 			mes "(喵呜~喵呜~)";
@@ -778,13 +778,13 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 			mes "...那样你也跟她一起出去吧!!";
 			goto L_End;
 		case 4:
-			emotion e_dots,0,"抱着猫的小孩#cook";
+			emotion ET_THINK,0,"抱着猫的小孩#cook";
 			mes "[抱着猫的小孩]";
 			mes "......";
 			mes "(喵?)";
 			next;
 			cutin "nyuang_4",2;
-			emotion e_an,0,"抱着猫的小孩#cook";
+			emotion ET_FRET,0,"抱着猫的小孩#cook";
 			specialeffect2 EF_HIT2;
 			percentheal -10,0;
 			mes "[抱着猫的小孩]";
@@ -801,7 +801,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 	}
 	else if (cooking_q == 9) {
 		cutin "orleans_5",0;
-		emotion e_an;
+		emotion ET_FRET;
 		mes "[夏日尔 奥日里昂]";
 		mes "不行，这样下去不行，";
 		mes "动物在厨房里面，";
@@ -815,14 +815,14 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "远离我的食材!";
 		next;
 		cutin "nyuang_4",2;
-		emotion e_an,0,"抱着猫的小孩#cook";
+		emotion ET_FRET,0,"抱着猫的小孩#cook";
 		mes "[抱着猫的小孩]";
 		mes "咯嗷嗷嗷!";
 		mes "喵呜呜!";
 		next;
 		donpcevent "维罗尼卡夫人#cook::OnEnable";
-		emotion e_omg;
-		emotion e_ho,0,"抱着猫的小孩#cook";
+		emotion ET_HUK;
+		emotion ET_DELIGHT,0,"抱着猫的小孩#cook";
 		next;
 		cutin "job_black_hucke01",1;
 		mes "[维罗尼卡夫人]";
@@ -847,7 +847,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "涅雅，你是不是打扰 夏日尔 先生了?";
 		next;
 		cutin "nyuang_3",2;
-		emotion e_heh,0,"抱着猫的小孩#cook";
+		emotion ET_SMILE,0,"抱着猫的小孩#cook";
 		mes "[抱着猫的小孩]";
 		mes "喵喵~";
 		mes "(喵呜呜呜~)";
@@ -862,7 +862,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "他是不是让你离开呢?";
 		next;
 		cutin "orleans_3",0;
-		emotion e_swt2;
+		emotion ET_PROFUSELY_SWEAT;
 		mes "[夏日尔 奥日里昂]";
 		mes "哈哈...哈，怎么可能";
 		mes "我什么时候说过!";
@@ -878,7 +878,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "实在是抱歉，夫人~";
 		next;
 		cutin "job_black_hucke01",1;
-		emotion e_what,0,"维罗尼卡夫人#cook";
+		emotion ET_QUESTION,0,"维罗尼卡夫人#cook";
 		mes "[维罗尼卡夫人]";
 		mes "你确定? 夏日尔 ?";
 		mes "我知道你对待料理的认真，";
@@ -891,17 +891,17 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "帮我照顾涅雅~";
 		next;
 		cutin "nyuang_3",2;
-		emotion e_heh,0,"抱着猫的小孩#cook";
+		emotion ET_SMILE,0,"抱着猫的小孩#cook";
 		mes "[抱着猫的小孩]";
 		mes "喵喵~";
 		mes "(喵呜~)";
 		next;
 		cutin "job_black_hucke02",255;
-		emotion e_ho,0,"维罗尼卡夫人#cook";
+		emotion ET_DELIGHT,0,"维罗尼卡夫人#cook";
 		donpcevent "维罗尼卡夫人#cook::OnDisable";
 		next;
-		emotion e_dots;
-		emotion e_dots,0,"抱着猫的小孩#cook";
+		emotion ET_THINK;
+		emotion ET_THINK,0,"抱着猫的小孩#cook";
 		mes "[夏日尔 奥日里昂]";
 		mes "......";
 		next;
@@ -936,7 +936,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 		mes "毕竟这样一个人遇险和消失";
 		mes "的可能性都没有那么大...";
 		next;
-		emotion e_go;
+		emotion ET_GO;
 		mes "[夏日尔 奥日里昂]";
 		mes "赞美荣耀的崔斯特瑞姆国王，";
 		mes "您与卢恩国永在!";
@@ -944,7 +944,7 @@ prt_castle,43,30,3	script	夏日尔 奥日里昂#cook	878,{
 	}
 	else if (cooking_q == 11) {
 		cutin "orleans_5",0;
-		emotion e_dots;
+		emotion ET_THINK;
 		mes "[夏日尔 奥日里昂]";
 		mes "我真的需要休息一下...";
 		mes "如果不是特别重要的事情，";
@@ -1842,7 +1842,7 @@ prt_castle,45,28,3	script	抱着猫的小孩#cook	877,{
 	set .@nyu,rand(1,2);
 	if (.@nyu == 1) {
 		cutin "nyuang_1",2;
-		emotion e_what;
+		emotion ET_QUESTION;
 		mes "[抱着猫的小孩]";
 		mes "...喵?";
 		mes "(喵呜.)";
@@ -1851,7 +1851,7 @@ prt_castle,45,28,3	script	抱着猫的小孩#cook	877,{
 		end;
 	}
 	cutin "nyuang_3",2;
-	emotion e_ho;
+	emotion ET_DELIGHT;
 	mes "[抱着猫的小孩]";
 	mes "喵喔喔喔,";
 	mes "喵~";

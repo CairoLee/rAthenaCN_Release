@@ -1147,7 +1147,6 @@ aldeba_in,83,245,4	script	卡普拉服务中心#2alde	4_F_KAFRA2,{
 		mes "嘿嘿... 您不用确认物品的清单了...";
 		mes "没用的, ";
 		mes "我已经在您心底做了记号了. ";
-		emotion e_ok;
 		next;
 		break;
 	case 2:
@@ -1248,7 +1247,7 @@ aldeba_in,142,238,4	script	卡普拉服务中心#3alde	4_F_KAFRA4,{
 	mes "呃.... 请客人您";
 	mes "把刚才听到的对话内容";
 	mes "请.. 请您把它忘掉. 嘿嘿";
-	emotion e_swt;
+	emotion ET_SWEAT;
 	close2;
 	cutin "",255;
 	end;

@@ -51,7 +51,7 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 	next;
 	mes "[拉艾德]";
 	mes "说干就干~ !!";
-	emotion e_gg;
+	emotion ET_KIK;
 	next;
 	mes "[拉艾德]";
 	mes "............";
@@ -60,8 +60,8 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 	mes "话说回来...你觉得他";
 	mes "会轻易的开口吗?";
 	mes "应该没呢么简单.";
-	emotion e_hmm;
-	emotion e_hmm,0,"拉艾德#um";
+	emotion ET_SCRATCH;
+	emotion ET_SCRATCH,0,"拉艾德#um";
 	next;
 	select("唔? 宝物?");
 	mes "[拉艾德]";
@@ -71,7 +71,7 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 	mes "呵喔, 你也想要听有关宝物的事情啊?";
 	mes "当然你也是冒险家的话, 应该知道对重要的东西,";
 	mes "总是需要妥当的补偿吧?";
-	emotion e_gg;
+	emotion ET_KIK;
 	next;
 	mes "[拉艾德]";
 	mes "看来, 我们需要小心";
@@ -81,8 +81,8 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 	next;
 	mes "[拉艾德, 黑伊司]";
 	mes "给我1000金币的话, 我会告诉你的!";
-	emotion e_gg;
-	emotion e_gg,0,"拉艾德#um";
+	emotion ET_KIK;
+	emotion ET_KIK,0,"拉艾德#um";
 	next;
 	if (select("付1000金币给他:不付给他") == 1) {
 		if(Zeny > 999) {
@@ -116,7 +116,7 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 			mes "尼尔斯真的会轻易的告诉我们, ";
 			mes "宝物的所在地点吗..";
 			mes "你怎么看?";
-			emotion e_hmm;
+			emotion ET_SCRATCH;
 			next;
 			mes "[拉艾德]";
 			mes "尼尔斯平时都把我们当笨蛋看待!!";
@@ -141,8 +141,8 @@ comodo,171,137,1	script	黑伊司#um	4_F_03,{
 	}
 	mes "[Haith]";
 	mes "哼! 不要就算了~";
-	emotion e_hmm;
-	emotion e_hmm;
+	emotion ET_SCRATCH;
+	emotion ET_SCRATCH;
 	close;
 }
 
@@ -200,7 +200,7 @@ cmd_in01,164,115,1	script	尼尔斯#um	4_M_JOB_BLACKSMITH,{
 	mes "[尼尔斯]";
 	mes "这时候应该要来点 '咚咚' 的效果音不是吗!";
 	mes "没意思..";
-	emotion e_hmm;
+	emotion ET_SCRATCH;
 	next;
 	mes "[尼尔斯]";
 	mes "反正呢, 最好是不要问我 '那里' 怎么去, 还有 '那里' 有什么";
@@ -230,14 +230,14 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 		mes "[???]";
 		mes "吓一跳!但是很高兴认识你";
 		mes "我叫哈坦";
-		emotion e_heh;
+		emotion ET_SMILE;
 		next;
 		mes "[哈坦]";
 		mes "....但是, 现在很可惜的是";
 		mes "不能和您一起玩";
 		mes "最近, 突然在我家有雷落下后";
 		mes "把屋顶弄破了....";
-		emotion e_sob;
+		emotion ET_CRY;
 		next;
 		mes "[哈坦]";
 		mes "对了!请等一下, ";
@@ -245,7 +245,7 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 		mes "你的日子好像过的还不错, ";
 		mes "有多余的钱可以借我吗?";
 		mes "拜托你!";
-		emotion e_heh;
+		emotion ET_SMILE;
 		next;
 		if (select("给他:不给他") == 1) {
 			mes "[哈坦]";
@@ -257,25 +257,25 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 				if (checkweight(517,1)) {
 					getitem 517,1; //Meat
 				}
-				emotion e_swt2;
+				emotion ET_PROFUSELY_SWEAT;
 			}
 			else {
 				next;
 				mes "[哈坦]";
 				mes "什么!没有钱";
 				mes "却装作有钱....";
-				emotion e_pif;
+				emotion ET_HNG;
 				close;
 			}
 			next;
 			mes "[哈坦]";
 			mes "这是我的一点小意思, 谢谢你";
-			emotion e_heh;
+			emotion ET_SMILE;
 			close;
 		}
 		mes "[哈坦]";
 		mes "........这样啊";
-		emotion e_sob;
+		emotion ET_CRY;
 		close;
 	}
 	else {
@@ -287,7 +287,7 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 		mes "[???]";
 		mes "Umbah! Umbaumbah!";
 		mes "Umbahumbah Haatan babah.";
-		emotion e_sob;
+		emotion ET_CRY;
 		next;
 		mes "[Haatan]";
 		mes "........umbah,";
@@ -295,7 +295,7 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 		mes "Babaum babahum woombah umbah umbabah";
 		mes "Umbah umbah";
 		mes "..Umbah umbabah umbah...";
-		emotion e_heh;
+		emotion ET_SMILE;
 		next;
 		mes "[Haatan]";
 		mes " . . . !";
@@ -305,7 +305,7 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 		mes "Umbah umbah? Umbah umbahbah";
 		mes "abaum babahum woombah!";
 		mes "Umbahumbah umbabahumbaumhumbah! Umbah!";
-		emotion e_heh;
+		emotion ET_SMILE;
 		next;
 		if (select("(Nod head):(Shake head)") == 1) {
 			mes "[Haatan]";
@@ -317,24 +317,24 @@ umbala,70,106,3	script	雨檀族 小孩#um	4_F_UMGIRL,{
 				if (checkweight(517,1)) {
 					getitem 517,1; //Meat
 				}
-				emotion e_swt2;
+				emotion ET_PROFUSELY_SWEAT;
 			}
 			else {
 				next;
 				mes "[Haatan]";
 				mes "...umbah? Umbahumbah!! Umbaum!";
-				emotion e_pif;
+				emotion ET_HNG;
 				close;
 			}
 			next;
 			mes "[Haatan]";
 			mes "Umba umba umbaum.";
-			emotion e_sob;
+			emotion ET_CRY;
 			close;
 		}
 		mes "[Haatan]";
 		mes "........umbah..";
-		emotion e_heh;
+		emotion ET_SMILE;
 		close;
 	}
 	close;
@@ -347,7 +347,7 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 		mes ".......嘻嘻";
 		mes "....肉好吃";
 		mes "...给我肉";
-		emotion e_rock;
+		emotion ET_ROCK;
 		next;
 		if (select("给他:不给他") == 1) {
 			if (countitem(517) > 0) {
@@ -358,7 +358,7 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 				getitem 909,2; //Jellopy
 				getitem 914,2; //Fluff
 				getitem 705,2; //Clover
-				emotion e_scissors;
+				emotion ET_SCISSOR;
 				close;
 			}
 			mes "[寇坦]";
@@ -367,7 +367,7 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 			mes "雨檀族是非常";
 			mes "讨厌诈欺的!";
 			percentheal -20,0;
-			emotion e_an;
+			emotion ET_FRET;
 			close;
 		}
 		mes "[寇坦]";
@@ -375,7 +375,7 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 		mes "....肚子饿";
 		mes "....想吃肉";
 		percentheal -1,0;
-		emotion e_sob;
+		emotion ET_CRY;
 		close;
 	}
 	else {
@@ -384,7 +384,7 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 		mes "......汶巴";
 		mes ".....汶巴巴";
 		mes ".....呼巴";
-		emotion e_rock;
+		emotion ET_ROCK;
 		next;
 		if (select("给他:不给他") == 1) {
 			if (countitem(517) > 0) {
@@ -395,28 +395,28 @@ umbala,59,243,5	script	雨檀族 小孩#1	4_M_UMKID,{
 				getitem 909,2; //Jellopy
 				getitem 914,2; //Fluff
 				getitem 705,2; //Clover
-				emotion e_scissors;
+				emotion ET_SCISSOR;
 				close;
 			}
 			mes "[???]";
 			mes "Umbahumumhumbubabababah!!";
 			mes "Umbahumbababah umbahumboo!";
 			percentheal -20,0;
-			emotion e_an;
+			emotion ET_FRET;
 			close;
 		}
 		mes "[???]";
 		mes "...........";
 		mes "......woong bah.";
 		mes "....umbabababah.";
-		emotion e_sob;
+		emotion ET_CRY;
 		percentheal -1,0;
 		close;
 	}
 }
 
 umbala,177,153,3	script	帕斯托#um	4W_M_01,{
-	emotion e_gasp;
+	emotion ET_SURPRISE;
 	mes "[帕斯托]";
 	mes "呜哇-! 有人耶!?";
 	mes "没想到在这种偏僻的地方会发现人!";
@@ -445,7 +445,7 @@ umbala,177,153,3	script	帕斯托#um	4W_M_01,{
 	mes "倒不如语言相通的话...";
 	mes "不知道有没有人懂得我们的语言呢..";
 	mes "唉唷 真郁闷啊 - ! !";
-	emotion e_sob;
+	emotion ET_CRY;
 	close;
 }
 
@@ -553,7 +553,7 @@ umbala,92,159,4	script	卑乐坦#um	4_M_UMDANCEKID2,{
 		next;
 		mes "[????]";
 		mes "汶巴 汶巴巴 恩哈";
-		emotion e_ho;
+		emotion ET_DELIGHT;
 		close;
 	}
 	close;

@@ -231,13 +231,13 @@ OnTouch:
 	if (countitem(11534) == 0) {
 		mes "[懒惰的青年]";
 		mes "呃啊~~口好渴~~ 我的口好渴~~椰子汁…椰子汁~~快给我椰子汁…";
-		emotion e_an;
+		emotion ET_FRET;
 		next;
-		emotion e_an;
+		emotion ET_FRET;
 		next;
-		emotion e_an;
+		emotion ET_FRET;
 		next;
-		emotion e_an;
+		emotion ET_FRET;
 		close;
 	}
 	end;
@@ -250,11 +250,11 @@ dewata,159,81,4	script	观光客#dew-1	881,{
 	next;
 	mes "[Nasolo]";
 	mes "但是我没有女朋友…!";
-	emotion e_sob;
+	emotion ET_CRY;
 	next;
 	mes "[Nasolo]";
 	mes "我的真命天女何时才会出现呢…";
-	emotion e_sigh;
+	emotion ET_OHNO;
 	close;
 }
 
@@ -344,12 +344,12 @@ dewata,146,109,5	script	餐馆老板#dew	886,{
 dewata,147,107,6	script	美食家#dew	85,{
 	mes "[美食家]";
 	mes "喔… 天哪…世界上竟然有如此美味…";
-	emotion e_sob;
+	emotion ET_CRY;
 	next;
 	mes "[美食家]";
 	mes "老板~ 我要再点一碗~";
-	emotion e_no1;
-	emotion e_ok,0,"餐馆老板#dew";
+	emotion ET_BEST;
+	emotion ET_OK,0,"餐馆老板#dew";
 	next;
 	mes "[美食家]";
 	mes "你也一定要尝尝才行!这家店的东西都很好吃~";
@@ -359,7 +359,7 @@ dewata,147,107,6	script	美食家#dew	85,{
 dewata,154,107,4	script	闲逛中的观光客#dew	86,{
 	mes "[观光客]";
 	mes "那个人…已经吃了几碗啦?";
-	emotion e_hmm;
+	emotion ET_SCRATCH;
 	next;
 	mes "[观光客]";
 	mes "我看他根本不是美食家而是大胃王吧…";
@@ -372,19 +372,19 @@ dewata,154,107,4	script	闲逛中的观光客#dew	86,{
 dewata,95,203,6	script	导游#dew	536,{
 	mes "[导游]";
 	mes "婆罗浮屠佛塔为供奉9世纪出现于德瓦他岛巴龙的纪念塔。";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[导游]";
 	mes "此纪念塔是以6层四角形塔座、3层圆形塔座、2672个浮雕和504尊佛像所组成。";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[导游]";
 	mes "中间的圆塔伫立于圆台顶端中央，周围共有72座佛像包围。";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[导游]";
 	mes "婆罗浮屠佛塔至今依然是信奉巴龙的僧侣们朝圣的圣地，也因此吸引不少观光客前往德瓦他岛。";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[导游]";
 	mes "有关婆罗浮屠佛塔的解说差不多就是这样，有人有问题吗?没有的话我们就要前往下一个滴点啰。";
@@ -397,11 +397,11 @@ dewata,97,207,4	script	观光客#dew1	803,{
 	next;
 	mes "[观光客]";
 	mes "他的解说有够无聊的…那个人又是怎么回事…怎么那么多话…";
-	emotion e_spin;
+	emotion ET_CONFUSE;
 	next;
 	mes "[观光客]";
 	mes "跟团旅游…选对导游果然很重要…";
-	emotion e_sigh;
+	emotion ET_OHNO;
 	close;
 }
 
@@ -426,7 +426,7 @@ dewata,101,206,4	script	观光客#dew3	90,{
 dewata,99,203,4	script	观光客#dew4	755,{
 	mes "[观光客]";
 	mes "哇呜…真是有趣的故事，供奉巴龙的塔呢…";
-	emotion e_ok;
+	emotion ET_OK;
 	next;
 	mes "[观光客]";
 	mes "不过导游刚说的…这里的…这个部分我不是很懂!";
@@ -665,7 +665,7 @@ dewata,245,244,4	script	民宿服务员#dew	536,2,3,{
 OnTouch:
 	mes "[民宿服务员]";
 	mes "吼~真讨厌!";
-	emotion e_an;
+	emotion ET_FRET;
 	next;
 	mes "[民宿服务员]";
 	mes "怎么每天来的都是些新婚夫妇呀!";
@@ -682,17 +682,17 @@ dewata,233,263,8	script	新婚夫妻#1	828,2,3,{
 OnTouch:
 	mes "[老公]";
 	mes "就算花再怎么美，也比不上亲爱的呀~";
-	emotion e_kis;
+	emotion ET_CHUP;
 	next;
 	mes "[老婆]";
 	mes "真的吗?我有那么美吗?果然还是亲爱的最好了~";
-	emotion e_kis2,0,"新婚夫妻#dew2";
+	emotion ET_CHUP2,0,"新婚夫妻#dew2";
 	next;
 	mes "[新婚夫妻]";
 	mes "哈哈哈~~";
 	mes "呵呵呵~";
-	emotion e_heh;
-	emotion e_heh,0,"新婚夫妻#dew2";
+	emotion ET_SMILE;
+	emotion ET_SMILE,0,"新婚夫妻#dew2";
 	next;
 	mes "一阵厌恶感袭来，赶紧离开这里吧!";
 	close;
@@ -702,28 +702,28 @@ dewata,234,263,8	script	新婚夫妻#2	727,2,3,{
 OnTouch:
 	mes "[老婆]";
 	mes "亲~爱~的~你知道那朵花叫什么名字吗~?";
-	emotion e_what;
+	emotion ET_QUESTION;
 	next;
 	mes "[老公]";
 	mes "?这个嘛~不知道耶~不过那花真美呢!";
 	next;
 	mes "[老婆]";
 	mes "嗟~那是我美?还是那朵花美?";
-	emotion e_what;
+	emotion ET_QUESTION;
 	next;
 	mes "[老公]";
 	mes "就算花再怎么美，也比不上亲爱的呀~";
-	emotion e_kis,0,"新婚夫妻#dew1";
+	emotion ET_CHUP,0,"新婚夫妻#dew1";
 	next;
 	mes "[老婆]";
 	mes "真的吗?我有那么美吗?果然还是亲爱的最好了~";
-	emotion e_kis2;
+	emotion ET_CHUP2;
 	next;
 	mes "[新婚夫妻]";
 	mes "哈哈哈~~";
 	mes "呵呵呵~";
-	emotion e_heh,0,"新婚夫妻#dew1";
-	emotion e_heh;
+	emotion ET_SMILE,0,"新婚夫妻#dew1";
+	emotion ET_SMILE;
 	next;
 	mes "一阵厌恶感袭来，赶紧离开这里吧!";
 	close;
@@ -742,7 +742,7 @@ OnTouch:
 	next;
 	mes "[旅客]";
 	mes "所以我才回子啊这里躺一个礼拜的嘛~哈哈哈~";
-	emotion e_heh;
+	emotion ET_SMILE;
 	close;
 }
 
@@ -756,7 +756,7 @@ OnTouch:
 	next;
 	mes "[小朋友]";
 	mes "那个叔叔是做什么的呀?";
-	emotion e_what;
+	emotion ET_QUESTION;
 	next;
 	mes "[小朋友]";
 	mes "我长大以后不要像他一样!";
@@ -792,14 +792,14 @@ OnTouch:
 	next;
 	mes "[夏勒]";
 	mes "斯若找到你了!!从那边的树林里出来吧!!";
-	emotion e_gg,0,"夏勒#dew";
-	emotion e_omg;
-	emotion e_gg,0,"斯波#dew";
-	emotion e_omg,1;
+	emotion ET_KIK,0,"夏勒#dew";
+	emotion ET_HUK;
+	emotion ET_KIK,0,"斯波#dew";
+	emotion ET_HUK,1;
 	next;
 	mes "[斯若]";
 	mes "吼!!都是你害的啦~讨厌!";
-	emotion e_an;
+	emotion ET_FRET;
 	close;
 }
 
@@ -810,10 +810,10 @@ OnTouch:
 	next;
 	mes "[夏勒]";
 	mes "斯若找到你了!!从那边的树林里出来吧!!";
-	emotion e_gg,0,"夏勒#dew";
-	emotion e_omg,0,"斯若#dew";
-	emotion e_gg;
-	emotion e_omg,1;
+	emotion ET_KIK,0,"夏勒#dew";
+	emotion ET_HUK,0,"斯若#dew";
+	emotion ET_KIK;
+	emotion ET_HUK,1;
 	next;
 	mes "[斯波]";
 	mes "嘿嘿~现在换斯若当鬼~我要继续躲好才行!";
@@ -827,7 +827,7 @@ OnTouch:
 	next;
 	mes "[莫查]";
 	mes "我一直躲在这里…他们已经3小时没找到我了…";
-	emotion e_hmm;
+	emotion ET_SCRATCH;
 	next;
 	mes "[莫查]";
 	mes "怎么办?要出去吗?可是我不想当鬼…";
@@ -838,24 +838,24 @@ dewata,278,100,4	script	迷路的孩子#dew	703,2,3,{
 OnTouch:
 	mes "[优纪]";
 	mes "呜呜…";
-	emotion e_sob;
-	emotion e_swt2;
+	emotion ET_CRY;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "["+strcharinfo(0)+"]";
 	mes "喂…小朋友…";
 	next;
 	mes "[优纪]";
 	mes "呜呜…";
-	emotion e_sob;
+	emotion ET_CRY;
 	next;
 	mes "[优纪]";
 	mes "爸爸~妈妈~这里是哪里~呜呜~";
-	emotion e_sob;
-	emotion e_swt2;
+	emotion ET_CRY;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "["+strcharinfo(0)+"]";
 	mes "... ... ...";
-	emotion e_dots,1;
+	emotion ET_THINK,1;
 	close;
 }
 
@@ -863,14 +863,14 @@ dewata,249,87,4	script	优纪的妈#dew	101,2,3,{
 OnTouch:
 	mes "[优纪的妈]";
 	mes "优纪…优纪…那孩子又跑哪儿去啦?";
-	emotion e_wah;
+	emotion ET_KEK;
 	next;
 	mes "[优纪的妈]";
 	mes "真的是每分没秒都得盯紧他才行…";
 	next;
 	mes "[优纪的妈]";
 	mes "优纪…";
-	emotion e_wah;
+	emotion ET_KEK;
 	close;
 }
 
@@ -878,20 +878,20 @@ dewata,251,85,6	script	优纪的爸#dew	97,2,3,{
 OnTouch:
 	mes "[优纪的爸]";
 	mes "老婆，优纪又不见啦?";
-	emotion e_what;
+	emotion ET_QUESTION;
 	next;
 	mes "[优纪的爸]";
 	mes "真是的…以后不跟他出来旅行了啦…这都已经第几次啦…?";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[优纪的爸]";
 	mes "我算算…龙之城一次、天津町一次、莫斯科比亚一次、巴西一次、昆仑一次、哎哟泰雅一次…";
 	mes "and in Ayothaya…";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[优纪的爸]";
 	mes "天哪!! 再加上德瓦他已经七次了…七次!!!!!!";
-	emotion e_otl;
+	emotion ET_OTL;
 	close;
 }
 
@@ -911,7 +911,7 @@ dewata,278,281,4	script	情比金坚的老爷爷	534,{
 	mes "[情比金坚的老爷爷]";
 	mes "这可是我们家老太婆掳获我的口味呢!";
 	mes "厉害吧?无法想象吧?";
-	emotion e_lv;
+	emotion ET_THROB;
 	close;
 }
 
@@ -921,7 +921,7 @@ dewata,280,277,4	script	情比金坚的老奶奶	535,{
 	mes "我年轻时可不得了呢!";
 	mes "村里的年轻人为了讨我欢心，";
 	mes "情书、礼物多到我都烦了呢!";
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	next;
 	mes "[情比金坚的老奶奶]";
 	mes "后来遇到我们家老头子";
@@ -945,7 +945,7 @@ dewata,280,277,4	script	情比金坚的老奶奶	535,{
 	mes "一起携手到老，";
 	mes "是人生中";
 	mes "最幸福的事吧!";
-	emotion e_lv;
+	emotion ET_THROB;
 	close;
 }
 
@@ -1058,7 +1058,7 @@ dewata,179,204,4	script	德瓦他少女#dew	537,{
 	mes "虽然这有点像是";
 	mes "可以笑笑带过的传说，";
 	mes "但正所谓小心使得万年船!";
-	emotion e_hmm;	// 挠头表情
+	emotion ET_SCRATCH;	// 挠头表情
 	close;
 }
 
@@ -1119,7 +1119,7 @@ dewata,204,230,6	script	减肥中的女人#dew	537,{
 		mes "还是减肥不要吃好了!";
 		mes "不好意思，^006400沙嗲^000000";
 		mes "换给你吧!";
-		emotion e_sob;
+		emotion ET_CRY;
 		close;
 	case 2:
 		mes "[减肥中的女人]";
@@ -1127,7 +1127,7 @@ dewata,204,230,6	script	减肥中的女人#dew	537,{
 		mes "我还要减肥呢!";
 		mes "跟我一样需要减肥的人";
 		mes "还想吃什么美食…";
-		emotion e_pif;
+		emotion ET_HNG;
 		close;
 	}
 }
@@ -1187,7 +1187,7 @@ dewata,127,248,6	script	想变大人的孩子#dew	539,{
 	mes "可是怎么办…?";
 	mes "我想不起来今天是^FF0000第几晚^000000…";
 	mes "想不起来…呜呜…";
-	emotion e_sob;
+	emotion ET_CRY;
 	close;
 }
 

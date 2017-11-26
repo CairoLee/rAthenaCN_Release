@@ -8,23 +8,12 @@
 
 //===== rAthena Script =======================================
 //= Advanced Refiner
-//===== By: ==================================================
-//= L0ne_W0lf
-//===== Current Version: =====================================
-//= 1.6
-//===== Compatible With: =====================================
-//= rAthena Project
 //===== Description: =========================================
 //= [Official Conversion]
 //= Refiner that uses Enriched ores to increase upgrade success.
-//= After a conversation with Doddler, it's been established that
-//= the advanced refiner works similar the the "Bubble Gum" item.
-//= The success percentage is not "increased" however, if it fails
-//= You get a second try. This tries twice at the same time,
-//= effectively giving you a re-roll on your attempt.
 //= - Dialog is only partly official to iRO.
 //= - Uses the iRO position for this NPC.
-//===== Additional Comments: =================================
+//===== Changelog: ===========================================
 //= 1.0 First Version. [L0ne_W0lf]
 //= 1.1 Fixed a weird carriage return. o_o [L0ne_W0lf]
 //= 1.2 Optimizing refine method [Zephyrus]
@@ -34,6 +23,7 @@
 //= 1.4b Fixed coordinates. [Euphy]
 //= 1.5 Some official script updates. [Euphy]
 //= 1.6 Added VIP features. [Euphy]
+//= 1.7 Removed re-roll behavior. [Secret]
 //============================================================
 
 payon,157,146,6	script	龙仙儒#cash	85,{
@@ -65,7 +55,7 @@ payon,157,146,6	script	龙仙儒#cash	85,{
 		mes "[龙仙儒]";
 		mes "要不要我把你的头脑精炼得";
 		mes "聪明一点啊?";
-		emotion e_an;
+		emotion ET_FRET;
 		close;
 	}
 	if (!getequipisenableref(.@part)) {
@@ -80,22 +70,19 @@ payon,157,146,6	script	龙仙儒#cash	85,{
 		close;
 	}
 
+	.@price = getequiprefinecost(.@part, REFINE_COST_ENRICHED, REFINE_ZENY_COST);
+	.@material = getequiprefinecost(.@part, REFINE_COST_ENRICHED, REFINE_MATERIAL_ID);
+
 	// Make sure you have the neccessary items and Zeny to refine your items
 	// Determines chance of failure and verifies that you want to continue.
-	switch(getequipweaponlv(.@part)) {
-		case 1: callsub S_RefineValidate,1,7620,50,.@part; break;
-		case 2: callsub S_RefineValidate,2,7620,200,.@part; break;
-		case 3: callsub S_RefineValidate,3,7620,5000,.@part; break;
-		case 4: callsub S_RefineValidate,4,7620,20000,.@part; break;
-		default: callsub S_RefineValidate,0,7619,2000,.@part; break;
-	}
+	callsub S_RefineValidate,getequipweaponlv(.@part),.@material,.@price,.@part;
 
 	mes "[龙仙儒]";
 	mes "锵! 锵! 锵!";
-	if (getequippercentrefinery(.@part) > rand(100) || getequippercentrefinery(.@part) > rand(100)) {
+	if (getequippercentrefinery(.@part, true) > rand(100)) {
 		successrefitem .@part;
 		next;
-		emotion e_no1;
+		emotion ET_BEST;
 		mes "[龙仙儒]";
 		mes "拿去吧! 已经做好了.";
 		mes "好久没精炼出这么优质的装备了,";
@@ -104,7 +91,7 @@ payon,157,146,6	script	龙仙儒#cash	85,{
 	}
 	failedrefitem .@part;
 	next;
-	emotion (!rand(5))?e_cash:e_omg;
+	emotion (!rand(5))?ET_MONEY:ET_HUK;
 	mes "[龙仙儒]";
 	mes "咳咳咳咳咳咳咳!!!!";
 	next;

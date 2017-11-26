@@ -541,7 +541,7 @@ function	script	F_SetKafCode	{
 				set @code,callfunc("F_EntKafCode");
 				if(!@code || @code != #kafra_code) {
 					mes "呃..密码错误. 您不能修改仓库密码!";
-					emotion e_hmm;
+					emotion ET_SCRATCH;
 					break;
 				}
 				next;
@@ -555,14 +555,14 @@ function	script	F_SetKafCode	{
 				set @code,callfunc("F_EntKafCode");
 				if(!@code) {
 					mes "您的仓库密码尚未被移除!";
-					emotion e_hmm;
+					emotion ET_SCRATCH;
 					break;
 				}
 				next;
 				mes .@npc_name$;
 				if(Zeny < 1000) {
 					mes "您没有足够的钱用来取消仓库密码!";
-					emotion e_cash;
+					emotion ET_MONEY;
 					break;
 				}
 				set Zeny,Zeny-1000;
@@ -570,12 +570,12 @@ function	script	F_SetKafCode	{
 					set #kafra_code,0;
 					mes "您的仓库密码已经移除";
 					mes "感谢您使用"+.@comp_name$+"的服务.";
-					emotion e_thx;
+					emotion ET_THANKS;
 				} else {
 					mes "密码错误!";
 					mes "您上交的 1000z 我们将不予退回!";
 					mes "请想好正确的密码后, 再来找我吧.";
-					emotion e_sry;
+					emotion ET_SORRY;
 				}
 				break;
 			case 3:
@@ -608,21 +608,21 @@ S_SET:
 	set @code,callfunc("F_EntKafNewCode");
 	if(!@code) {
 		mes "密码已经设定完毕!";
-		emotion e_hmm;
+		emotion ET_SCRATCH;
 		return;
 	}
 	next;
 	mes .@npc_name$;
 	if(Zeny < 5000) {
 		mes "您没有足够的金钱!";
-		emotion e_cash;
+		emotion ET_MONEY;
 		return;
 	}
 	set Zeny,Zeny-5000;
 	set #kafra_code,@code;
 	mes "您的仓库密码已启用!";
 	mes "感谢您使用"+.@comp_name$+"的服务.";
-	emotion e_thx;
+	emotion ET_THANKS;
 	return;
 }
 

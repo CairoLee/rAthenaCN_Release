@@ -124,7 +124,7 @@
 						mes "deeds when you're overworked!";
 						mes "Rest. Your guild must be able";
 						mes "to depend on your strength.";
-						emotion e_gasp;
+						emotion ET_SURPRISE;
 						next;
 						mes "[" + .@name$ + "]";
 						mes "Your determination and";
@@ -181,7 +181,7 @@
 						mes "deeds when you're overworked!";
 						mes "Rest. Your guild must be able";
 						mes "to depend on your strength.";
-						emotion e_gasp;
+						emotion ET_SURPRISE;
 						next;
 						mes "[" + .@name$ + "]";
 						mes "Your determination and";
@@ -237,7 +237,7 @@
 					mes "deeds when you're overworked!";
 					mes "Rest. Your guild must be able";
 					mes "to depend on your strength.";
-					emotion e_gasp;
+					emotion ET_SURPRISE;
 					next;
 					mes "[" + .@name$ + "]";
 					mes "Your determination and";
@@ -301,7 +301,7 @@
 					mes "deeds when you're overworked!";
 					mes "Rest. Your guild must be able";
 					mes "to depend on your strength.";
-					emotion e_gasp;
+					emotion ET_SURPRISE;
 					next;
 					mes "[" + .@name$ + "]";
 					mes "Your determination and";
@@ -339,7 +339,7 @@
 					mes "...............................";
 					next;
 					mes "[" + .@name$ + "]";
-					emotion e_omg;
+					emotion ET_HUK;
 					mes "Oh! M-master? Wh-when";
 					mes "did you...? I'm so sorry.";
 					mes "I was busy working.";
@@ -365,7 +365,7 @@
 				case 1:
 					mes "[" + .@name$ + "]";
 					mes "Hm? That's strange.";
-					emotion e_swt;
+					emotion ET_SWEAT;
 					mes "You didn't want to take";
 					mes "the trials again, did you?";
 					close;

@@ -195,7 +195,7 @@ airplane,100,69,3	script	机组员#ein-1	852,{
 }
 
 airplane,64,94,1	script	汶巴拉 小孩#ein_p	787,{
-	emotion e_swt2;
+	emotion ET_PROFUSELY_SWEAT;
 	mes "[小孩]";
 	if (event_umbala >= 3) {
 		mes "哇, 妈妈!";
@@ -213,7 +213,7 @@ airplane,64,94,1	script	汶巴拉 小孩#ein_p	787,{
 }
 
 airplane,66,93,3	script	汶巴拉 女子#ein_p	783,{
-	emotion e_dots;
+	emotion ET_THINK;
 	mes "[女子]";
 	if (event_umbala >= 3) {
 		mes "嘘...";
@@ -237,7 +237,7 @@ airplane,71,91,7	script	汶巴拉 男子#ein_p	789,{
 		mes "从你的脸上我能看得出来,";
 		mes "你能听懂我说的话! ^333333*吹口哨...!*^000000";
 		next;
-		emotion e_pif;
+		emotion ET_HNG;
 		mes "[男子]";
 		mes "我在汶巴拉当蹦极教练,";
 		mes "帮飞空艇公司的机组成员克服恐高症.";
@@ -257,7 +257,7 @@ airplane,71,91,7	script	汶巴拉 男子#ein_p	789,{
 		mes "...";
 		mes "......";
 		next;
-		emotion e_pif;
+		emotion ET_HNG;
 		mes "[男子]";
 		mes "Shabala moow bajama";
 		mes "Airship kulaha googoona ";
@@ -349,7 +349,7 @@ airplane,221,158,2	script	驾驶员#airplane	852,{
 		mes "[驾驶员]";
 		mes "但是! 酒驾可不好!";
 		mes "但是! 这让我更想喝了!";
-		emotion e_sob;
+		emotion ET_CRY;
 		next;
 		select("你认识一个叫蒂埃里的旅客吗?");
 		mes "[驾驶员]";
@@ -363,7 +363,7 @@ airplane,221,158,2	script	驾驶员#airplane	852,{
 		mes "实际上... 飞空艇的船长是只驯鹿.";
 		mes "我应该可以脱剩一条底裤.";
 		next;
-		emotion e_omg;
+		emotion ET_HUK;
 		mes "[驾驶员]";
 		mes "哇哈!? 谁在那里!";
 		next;
@@ -383,7 +383,7 @@ airplane,221,158,2	script	驾驶员#airplane	852,{
 		mes "哪怕是一天休息一下也好.";
 		mes "可以喝喝啤酒, 吃吃薯片, 看看电视,";
 		mes "听听摇滚音乐, 好好放松放松.";
-		emotion e_sob;
+		emotion ET_CRY;
 		close;
 	case 2:
 		mes "[驾驶员]";
@@ -409,7 +409,7 @@ airplane,221,158,2	script	驾驶员#airplane	852,{
 		mes "在天上驾驶飞空艇, 是最近才发生的事情你知道么?";
 		mes "他们用很快的速度制造出了这艘飞空艇.";
 		next;
-		emotion e_omg;
+		emotion ET_HUK;
 		mes "[驾驶员]";
 		mes "他们很严肃的认为这是可行的...";
 		mes "在他们开始训练我们当驾驶员的时候,";
@@ -894,7 +894,7 @@ airplane_01,221,158,2	script	驾驶员#airplane_01	852,{
 		mes "实际上... 飞空艇的船长是只驯鹿.";
 		mes "我应该可以脱剩一条底裤.";
 		next;
-		emotion e_omg;
+		emotion ET_HUK;
 		mes "[驾驶员]";
 		mes "哦! 你, 你好!";
 		mes "坐飞空艇的感觉如何?!";
@@ -911,7 +911,7 @@ airplane_01,83,61,2	script	少女#01airplane_01	72,2,2,{
 	close;
 
 OnTouch_:
-	emotion e_sob;
+	emotion ET_CRY;
 	end;
 }
 

@@ -54,7 +54,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 986,1; // Anvil
-			set Zeny, Zeny-30000;
+			Zeny = Zeny-30000;
 			mes "[克理斯多福]";
 			mes "你选择的这一种是比较便宜的一种.";
 			close;
@@ -65,7 +65,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 987,1; // Oridecon_Anvil
-			set Zeny, Zeny-120000;
+			Zeny = Zeny-120000;
 			mes "[克理斯多福]";
 			mes "噢!看来你是个行家。这一定是一个适合铁匠的铁砧，你说是吗?";
 			close;
@@ -76,7 +76,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 988,1; // Golden_Anvil
-			set Zeny, Zeny-300000;
+			Zeny = Zeny-300000;
 			mes "[克理斯多福]";
 			mes "这一个是工作室之中的最好的一种，用这种铁砧，你绝对可以称霸铁匠界";
 			close;
@@ -124,7 +124,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 					break;
 				}
 			}
-			set .@sell,.@input * 150;
+			.@sell = .@input * 150;
 			if (Zeny < .@sell) {
 				mes "[克理斯多福]";
 				mes "我觉得这个价格已经是最低的了，因为这么低的价钱，所以也不允许赊帐……";
@@ -136,7 +136,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 612,.@input; // Portable_Furnace
-			set Zeny, Zeny-.@sell;
+			Zeny = Zeny-.@sell;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -147,7 +147,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 613,1; // Iron_Hammer
-			set Zeny, Zeny-1000;
+			Zeny = Zeny-1000;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -158,7 +158,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 614,1; // Golden_Hammer
-			set Zeny, Zeny-3000;
+			Zeny = Zeny-3000;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -169,7 +169,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 615,1; // Oridecon_Hammer
-			set Zeny, Zeny-5000;
+			Zeny = Zeny-5000;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -204,7 +204,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 					break;
 				}
 			}
-			set .@sell,.@input * 200;
+			.@sell = .@input * 200;
 			if (Zeny < .@sell) {
 				mes "[克理斯多福]";
 				mes "我觉得这个价格已经是最低的了，因为这么低的价钱，所以也不允许赊帐……";
@@ -216,7 +216,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 1010,.@input; // Phracon
-			set Zeny, Zeny-.@sell;
+			Zeny = Zeny-.@sell;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -241,7 +241,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 					break;
 				}
 			}
-			set .@sell,.@input * 1000;
+			.@sell = .@input * 1000;
 			if (Zeny < .@sell) {
 				mes "[克理斯多福]";
 				mes "我觉得这个价格已经是最低的了，因为这么低的价钱，所以也不允许赊帐……";
@@ -253,7 +253,7 @@ geffen_in,110,172,0	script	克理斯多福#1	63,{
 				close;
 			}
 			getitem 1011,.@input; // Emveretarcon
-			set Zeny, Zeny-.@sell;
+			Zeny = Zeny-.@sell;
 			mes "[克理斯多福]";
 			mes "感谢您的光临，欢迎下次光临!";
 			close;
@@ -335,7 +335,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 				close;
 			}
 			getitem 986,1; //Anvil
-			set Zeny, Zeny-30000;
+			Zeny = Zeny-30000;
 			mes "[Paul Spanner]";
 			mes "It is the cheapest anvil which has the most basic ability.";
 			mes "Thank you for using my shop. If you need anything, just let me know.";
@@ -347,7 +347,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 				close;
 			}
 			getitem 987,1; //Oridecon_Anvil
-			set Zeny, Zeny-120000;
+			Zeny = Zeny-120000;
 			mes "[Paul Spanner]";
 			mes "Ah, you have an eye for anvil. A Blacksmith needs an anvil at least as good as this.";
 			mes "Thank you for using my shop. If you need anything, just let me know.";
@@ -359,7 +359,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 				close;
 			}
 			getitem 988,1; //Golden_Anvil
-			set Zeny, Zeny-300000;
+			Zeny = Zeny-300000;
 			mes "[Paul Spanner]";
 			mes "I can tell your ambition to become a good Blacksmith just by looking at you to choose this Golden Anvil!";
 			mes "This anvil will surely aid you in creating the best weapons.";
@@ -381,27 +381,27 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 		next;
 		switch(select("Mini Furnace - 150z.:Iron Hammer - 1,000z.:Golden Hammer - 3,000z.:Oridecon Hammer - 5,000z.:Cancel.")) {
 		case 1:
-			set .@item,612;
-			set .@item_cost,150;
-			set .@item_weight,200;
+			.@item = 612;
+			.@item_cost = 150;
+			.@item_weight = 200;
 			mes "[Paul Spanner]";
 			mes "You definately need this furnce to process ores!";
 			next;
 			break;
 		case 2:
-			set .@item,613;
-			set .@item_cost,1000;
-			set .@item_weight,200;
+			.@item = 613;
+			.@item_cost = 1000;
+			.@item_weight = 200;
 			break;
 		case 3:
-			set .@item,614;
-			set .@item_cost,3000;
-			set .@item_weight,300;
+			.@item = 614;
+			.@item_cost = 3000;
+			.@item_weight = 300;
 			break;
 		case 4:
-			set .@item,615;
-			set .@item_cost,5000;
-			set .@item_weight,400;
+			.@item = 615;
+			.@item_cost = 5000;
+			.@item_weight = 400;
 			break;
 		case 5:
 			mes "[Paul Spanner]";
@@ -427,7 +427,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 				break;
 			}
 		}
-		set .@sell,.@input * .@item_cost;
+		.@sell = .@input * .@item_cost;
 		if (Zeny < .@sell) {
 			mes "[Paul Spanner]";
 			mes "You don't have enough money. Sorry, I cannot sell them at a loss.";
@@ -438,7 +438,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 			mes "Hey, you look pale. Why don't you go lighten your weight first.";
 			close;
 		}
-		set Zeny, Zeny-.@sell;
+		Zeny = Zeny-.@sell;
 		getitem .@item,.@input;
 		mes "[Paul Spanner]";
 		mes "Thank you for using my shop. If you need anything, just let me know.";
@@ -450,12 +450,12 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 		next;
 		switch(select("Phracon - 200z.:Emveretarcon - 1,000z.:Quit.")) {
 		case 1:
-			set .@item,1010;
-			set .@item_price,200;
+			.@item = 1010;
+			.@item_price = 200;
 			break;
 		case 2:
-			set .@item,1011;
-			set .@item_price,1000;
+			.@item = 1011;
+			.@item_price = 1000;
 			break;
 		case 3:
 			mes "[Paul Spanner]";
@@ -481,7 +481,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 				break;
 			}
 		}
-		set .@sell,.@input * .@item_price;
+		.@sell = .@input * .@item_price;
 		if (Zeny < .@sell) {
 			mes "[Paul Spanner]";
 			mes "You don't have enough money. Sorry, I cannot sell them at a loss.";
@@ -493,7 +493,7 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 			close;
 		}
 		getitem .@item,.@input;
-		set Zeny, Zeny-.@sell;
+		Zeny = Zeny-.@sell;
 		mes "[Paul Spanner]";
 		mes "Thank you for using my shop. If you need anything, just let me know.";
 		close;
@@ -583,7 +583,7 @@ lhz_in02,282,20,7	script	福乐	869,{
 function	script	refinemain	{
 	disable_items;
 	.@npc_name$ = getarg(0);
-	set .@features,getarg(1);
+	.@features = getarg(1);
 	mes "[" + .@npc_name$ + "]";
 	mes "我是专门精炼武器与防具的铁匠.";
 	mes "能为你精炼穿在身上的装备.";
@@ -591,27 +591,27 @@ function	script	refinemain	{
 	next;
 
 	setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
-	for(set .@i,1; .@i<getarraysize(.@indices); set .@i,.@i+1) {
+	for(.@i = 1; .@i<getarraysize(.@indices); ++.@i) {
 		if(getequipisequiped(.@indices[.@i])) {
-			set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[" + getequipname(.@indices[.@i]) + "]";
-			set .@equipped,1;
+			.@menu$ = .@menu$ + F_getpositionname(.@indices[.@i]) + "-[" + getequipname(.@indices[.@i]) + "]";
+			.@equipped = 1;
 		}
 		else
 			set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[没有装备]";
-		set .@menu$, .@menu$ + ":";
+		.@menu$ = .@menu$ + ":";
 	}
 	if (.@equipped == 0) {
 		mes "[" + .@npc_name$ + "]";
 		mes "你好歹倒是把装备穿上先...";
 		close;
 	}
-	set .@part, .@indices[select(.@menu$)];
+	.@part = .@indices[select(.@menu$)];
 
 	if(!getequipisequiped(.@part)) { //custom check
 		mes "[" + .@npc_name$ + "]";
 		mes "要不要我把你的头脑精炼得";
 		mes "聪明一点啊?";
-		emotion e_an;
+		emotion ET_FRET;
 		close;
 	}
 	//Check if the item is refinable...
@@ -627,50 +627,28 @@ function	script	refinemain	{
 		mes "以我的能力, 无法再锻造了..";
 		close;
 	}
-	set .@refineitemid, getequipid(.@part); // save id of the item
-	set .@refinerycnt, getequiprefinerycnt(.@part); //save refinery count
-	switch(getequipweaponlv(.@part)){
-	case 0: 	//Refine Armor
-		set .@price,2000;
-		set .@material,985; //Elunium
-		set .@safe,4;
-		break;
-	case 1: 	//Refine Level 1 Weapon
-		set .@price,50;
-		set .@material,1010; //Phracon
-		set .@safe,7;
-		break;
-	case 2: 	//Refine Level 2 Weapon
-		set .@price,200;
-		set .@material,1011; //Emveretarcon
-		set .@safe,6;
-		break;
-	case 3: 	//Refine Level 3 Weapon
-		set .@price,5000;
-		set .@material,984; //Oridecon
-		set .@safe,5;
-		break;
-	case 4: 	//Refine Level 4 Weapon
-		set .@price,20000;
-		set .@material,984; //Oridecon
-		set .@safe,4;
-		break;
-	case 5: 	//Refine other stuff?
-		set .@price,2000;
-		set .@material,985; //Elunium
-		set .@safe,4;
-		break;
+	.@refineitemid = getequipid(.@part); // save id of the item
+	.@refinerycnt = getequiprefinerycnt(.@part); //save refinery count
+	.@price = getequiprefinecost(.@part, REFINE_COST_NORMAL, REFINE_ZENY_COST);
+	.@material = getequiprefinecost(.@part, REFINE_COST_NORMAL, REFINE_MATERIAL_ID);
+
+	switch (getequipweaponlv(.@part)) {
+		case 1: .@safe = 7; break;
+		case 2: .@safe = 6; break;
+		case 3: .@safe = 5; break;
+		case 4:
+		default: .@safe = 4; break;
 	}
 
 	// If the VIP system is enabled, the prices for non-VIP players are considerably higher.
 	if (VIP_SCRIPT && !vip_status(VIP_STATUS_ACTIVE)) {
 		switch(getequipweaponlv(.@part)) {
-			case 0: set .@price, .@price * 10; break;
-			case 1: set .@price, .@price * 40; break;
-			case 2: set .@price, .@price * 50; break;
-			case 3: set .@price, .@price * 2; break;
-			case 4: set .@price, .@price * 2; break;
-			case 5: set .@price, .@price * 10; break;
+			case 0: .@price = .@price * 10; break;
+			case 1: .@price = .@price * 40; break;
+			case 2: .@price = .@price * 50; break;
+			case 3: .@price = .@price * 2; break;
+			case 4: .@price = .@price * 2; break;
+			case 5: .@price = .@price * 10; break;
 		}
 	}
 
@@ -725,14 +703,14 @@ function	script	refinemain	{
 			mes "回去拿一些来, 我会在这里等你的.";
 			close;
 		}
-		set Zeny, Zeny-.@price;
+		Zeny = Zeny-.@price;
 		delitem .@material,1;
 
 		// anti-hack
 		if (callfunc("F_IsEquipIDHack", .@part, .@refineitemid) ||
 		    callfunc("F_IsEquipRefineHack", .@part, .@refinerycnt)) {
 			mes "["+ .@npc_name$ +"]";
-			emotion e_an;
+			emotion ET_FRET;
 			mes "等一会儿..";
 			mes "你以为我是笨蛋吗?!";
 			mes "快出去, 不然我会用我的铁锤打你..";
@@ -742,8 +720,8 @@ function	script	refinemain	{
 		if(getequippercentrefinery(.@part) <= rand(100)) {
 			failedrefitem .@part;
 			mes "["+ .@npc_name$ +"]";
-			emotion (!rand(5))?e_cash:e_omg;
-			set .@lose,rand(1,3);
+			emotion (!rand(5))?ET_MONEY:ET_HUK;
+			.@lose = rand(1,3);
 			if (.@lose == 1) {
 				mes "哦! 我的天!! 它真的损坏了...";
 				mes "对此我真的十分非常抱歉,";
@@ -761,8 +739,8 @@ function	script	refinemain	{
 		}
 		mes "["+.@npc_name$+"]";
 		successrefitem .@part;
-		emotion e_heh;
-		set .@win,rand(1,3);
+		emotion ET_SMILE;
+		.@win = rand(1,3);
 		if (.@win == 1) {
 			mes "太棒了! 哈哈!";
 			mes "要不要再来一次呀~~";
@@ -786,12 +764,12 @@ function	script	refinemain	{
 		mes "[" + .@npc_name$ + "]";
 		mes "你可以选择直接锻冶到安全值，或是要锻冶的次数... 我都没意见......";
 		next;
-		set .@menu2,select("锻冶到安全值.","锻冶到指定值.","我改变主意了...");
+		.@menu2 = select("锻冶到安全值.","让我来指定锻冶的次数.","我改变主意了...");
 	} else
-		set .@menu2,2;
+		.@menu2 = 2;
 	switch(.@menu2){
 	case 1: 
-		set .@refinecnt,.@safe - getequiprefinerycnt(.@part);
+		.@refinecnt = .@safe - getequiprefinerycnt(.@part);
 		break;
 	case 2:
 		next;
@@ -799,14 +777,14 @@ function	script	refinemain	{
 		mes "那么，你要我帮你锻冶多少次呢?";
 		next;
 		input .@refinecnt;
-		set .@refinecheck,.@refinecnt + getequiprefinerycnt(.@part);
+		.@refinecheck = .@refinecnt + getequiprefinerycnt(.@part);
 		if (.@refinecnt < 1 || .@refinecheck > 10) {
 			mes "[" + .@npc_name$ + "]";
 			mes "我不能再精练这个物品啦.";
 			close;
 		}
 		if(.@refinecheck > .@safe) {
-			set .@refinecheck,.@refinecheck - .@safe;
+			.@refinecheck = .@refinecheck - .@safe;
 			mes "[" + .@npc_name$ + "]";
 			mes "那么，我要开始锻冶  + .@refinecheck +  次，这将超过安定值. 你的装备有可能会坏掉... 要锻冶吗?";
 			next;
@@ -823,7 +801,7 @@ function	script	refinemain	{
 		mes "这可是你说的哦...";
 		close;
 	}
-	set .@fullprice,.@price * .@refinecnt;
+	.@fullprice = .@price * .@refinecnt;
 	mes "[" + .@npc_name$ + "]";
 	mes "总共需要" + .@refinecnt + " " + getitemname(.@material) + " 以及费用 " + .@fullprice + " Zeny... 要锻冶吗?";
 	next;
@@ -837,7 +815,7 @@ function	script	refinemain	{
 		mes "这些就是你所拥有的所有物品吗?虽然很可惜，但是你的材料不足，我也实在爱莫能助，再说，我付出也应该得要有所收获嘛!";
 		close;
 	}
-	set Zeny, Zeny - .@fullprice;
+	Zeny = Zeny - .@fullprice;
 	delitem .@material,.@refinecnt;
 	while(.@refinecnt){
 		if (getequipisequiped(.@part) == 0) {
@@ -855,20 +833,20 @@ function	script	refinemain	{
 		mes "哐哐, 哐哐!!!";
 		if(.@menu2 == 2 && getequippercentrefinery(.@part) <= rand(100)) {
 			failedrefitem .@part;
-			emotion e_omg;
+			emotion ET_HUK;
 			mes "[" + .@npc_name$ + "]";
 			mes "咳咳咳咳咳咳咳!!! 武器在精炼的过程中损坏了...";
-			set .@refinecnt,.@refinecnt - 1;
+			.@refinecnt = .@refinecnt - 1;
 			if(.@refinecnt == 0) close;
 			mes "这是剩下的钱和材料...";
 			getitem .@material,.@refinecnt;
-			set .@fullprice,.@refinecnt * .@price;
-			set Zeny, Zeny + .@fullprice;
+			.@fullprice = .@refinecnt * .@price;
+			Zeny = Zeny + .@fullprice;
 			close;
 		}
 		successrefitem .@part;
-		emotion e_no1;
-		set .@refinecnt,.@refinecnt - 1;
+		emotion ET_BEST;
+		.@refinecnt = .@refinecnt - 1;
 		next;
 	}
 	mes "["+ .@npc_name$ +"]";
@@ -928,12 +906,12 @@ function	script	phramain	{
 	next;
 	switch(select("强化武器金属-级数一 - ^f56925200 金币^000000:强化武器金属-级数二 - ^f569251000 金币^000000:询问其他材料")) {
 	case 1:
-		set .@material,1010;
-		set .@price,200;
+		.@material = 1010;
+		.@price = 200;
 		break;
 	case 2:
-		set .@material,1011;
-		set .@price,1000;
+		.@material = 1011;
+		.@price = 1000;
 		break;
 	case 3:
 		mes "[" + .@npc_name$ + "]";
@@ -963,7 +941,7 @@ function	script	phramain	{
 			break;
 		}
 	}
-	set .@sell,.@input * .@price;
+	.@sell = .@input * .@price;
 	if (Zeny < .@sell) {
 		mes "[" + .@npc_name$ + "]";
 		mes "实在对不起哦.";
@@ -980,7 +958,7 @@ function	script	phramain	{
 		close;
 	}
 	getitem .@material,.@input;
-	set Zeny, Zeny-.@sell;
+	Zeny = Zeny-.@sell;
 	mes "[" + .@npc_name$ + "]";
 	mes "好嘞, 这是你要的东西, 给你!";
 	mes "非常感谢你的光顾.";
@@ -1161,7 +1139,7 @@ sch_gld,340,80,7	script	修理工#sch_gld	86,{
 // Equipment Repair Function
 //============================================================
 function	script	repairmain	{
-	set .@repairprice,5000;
+	.@repairprice = 5000;
 	.@npc_name$ = getarg(0);
 	mes "["+.@npc_name$+"]";
 	mes "你好, 冒险家!";
@@ -1172,14 +1150,14 @@ function	script	repairmain	{
 	next;
 	switch(select("恩...有东西修...:目前没有要修理的东西...")) {
 	case 1:
-		set .@checkitem,1;
+		.@checkitem = 1;
 		while (1) {
 			if (getbrokenid(.@checkitem) == 0) {
 				break;
 			}
-			set .@checkitem,.@checkitem+1;
+			.@checkitem = .@checkitem+1;
 		}
-		set .@checkitem,.@checkitem-1;
+		.@checkitem = .@checkitem-1;
 		if (!.@checkitem) {
 			mes "["+.@npc_name$+"]";
 			mes "噢! 这真是难以置信.";
@@ -1194,7 +1172,7 @@ function	script	repairmain	{
 		mes "你一共有 ^ff0000" + .@checkitem + "^000000 件物品损坏了.";
 		mes "想修理他们吗?";
 		next;
-		set .@totalcost,.@repairprice*.@checkitem;
+		.@totalcost = .@repairprice*.@checkitem;
 		mes "["+.@npc_name$+"]";
 		mes "修理一件需要 " + .@repairprice + " 金币.";
 		mes "想修好全部物品需要 " + .@totalcost + " 金币!";
@@ -1209,19 +1187,19 @@ function	script	repairmain	{
 				mes "凑够钱再来找我吧.";
 				close;
 			}
-			set .@checkitem2,1;
+			.@checkitem2 = 1;
 			while (1) {
 				if (getbrokenid(.@checkitem2) == 0) {
 					break;
 				}
-				set .@checkitem2,.@checkitem2+1;
+				.@checkitem2 = .@checkitem2+1;
 			}
-			set .@checkitem2,.@checkitem2-1;
+			.@checkitem2 = .@checkitem2-1;
 			if (.@checkitem == .@checkitem2) {
-				set Zeny, Zeny-.@totalcost;
+				Zeny = Zeny-.@totalcost;
 				while (.@checkitem) {
 					repair(.@checkitem);
-					set .@checkitem,.@checkitem-1;
+					.@checkitem = .@checkitem-1;
 				}
 				mes "["+.@npc_name$+"]";
 				mes "Ok! 全都帮你修好了.";
