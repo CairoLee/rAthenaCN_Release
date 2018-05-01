@@ -581,7 +581,7 @@
 //****
 // Clown & Gypsy
 394,9,8,1,-1,0,0,10,-9,yes,0,0,0,weapon,0,0x0,	CG_ARROWVULCAN,Vulcan Arrow(奥义箭乱舞)
-395,0,0,4,0,0x1,3,1,1,yes,0,0x40,0,misc,2,0x0,	CG_MOONLIT,Sheltering Bliss(落花伴着月光下的水车小屋)
+395,0,0,4,0,0x1,3,5,1,yes,0,0x40,0,misc,2,0x0,	CG_MOONLIT,Sheltering Bliss(落花伴着月光下的水车小屋)
 396,7,6,16,0,0x1,0,1,1,yes,0,0x600,0,none,0,0x40,	CG_MARIONETTE,Marionette Control(傀儡师的把戏)
 
 //****
@@ -851,7 +851,7 @@
 //705,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_WIDESIREN,Wide Siren's Voice
 706,0,6,4,5,0,0,10,1,no,0,0x2,0,magic,0,0x1,	NPC_VENOMFOG,Venom Fog
 //707,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_MILLENNIUMSHIELD,Millenium Shield 2
-//708,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_COMET,Comet 2
+708,0,0,0,0,0,0,1,0,no,0,0,0,none,0,0x0,	NPC_COMET,Comet 2
 //709,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_ICEMINE,Ice Mine
 //710,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_ICEEXPLO,Ice Explosion
 //711,0,0,0,0,0,0,??,0,no,0,0,0,none,0,0x0,		NPC_FLAMECROSS,Flame Cross

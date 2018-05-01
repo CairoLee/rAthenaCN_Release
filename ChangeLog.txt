@@ -2,6 +2,30 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.7(2018-05-01)
+------------------
+[同步] rAthena官方Github库
+       https://github.com/rathena/rathena/commit/924abed485a0ae078e8ca5501f526b79a316a317
+[升级] 若您不是全新安装的话, 请在您的【主数据库】上按顺序导入以下sql文件
+       - sql-files\upgrades\v1.7.7\upgrade_20180404.sql
+[新增] 新增 showvend 脚本指令, 可以在NPC的头上显示露天商店的招牌 (感谢“Jian916”实现)
+[新增] 影子装备只要在物品数据库中配置了可用的卡槽数, 就可以和普通装备一样插卡了 (感谢“Jian916”实现)
+[新增] 实现 isequipped_enchant 脚本指令, 与 isequipped 类似, 但支持判定附魔能力(如STR+1)是否已在身上的某件装备中存在 (感谢“在原七海”建议)
+[新增] 实现 isequippedcnt_enchant 脚本指令, 与 isequippedcnt 类似, 但支持计算指定附魔能力(如STR+1)装备在身上的数量
+[新增] 使 force_identified 选项支持 getgroupitem 脚本指令 (感谢“づAtメ、”反馈)
+[新增] 新增 bonus bFixedCastAddRate,n; 固定咏唱时间 + n% 支持累加 (感谢“Jian916”实现) 
+[修正] 防止部分恶意构建封包可以导致地图服务器崩溃的问题
+[修正] 修正部分技能会将部落(氏族/Clan)的加成状态移除掉的问题 (感谢“づAtメ、”反馈)
+[修正] 修正在拥有 nopet 地图标记的地图上会破坏宠物攻击支援机制的问题
+[修正] 修正在计算玩家对魔物伤害时一处可能会导致地图服务器崩溃的问题 (感谢“WEI”反馈)
+[修正] 修正服务器开启时, 反复动态开关 feature.roulette 选项可能会导致地图服务器崩溃的问题
+[修正] 修正部分拥有二段伤害的技能(如:刺客拳刃平砍)第二段伤害可能会出现异常的问题 (感谢“moonsun”反馈和协助定位)
+[修正] 修正游侠[陷阱研究]替换合金陷阱时，陷阱技能需求数量错误
+[修正] 修正从 v1.7.6 版本后直接导入 main.sql 无法保存公会仓库权限信息的问题
+[调整] 当玩家不与任何 NPC 进行对话时, 才能使用大乐透功能 (同时避免 OnPCOpenRouletteFilter 事件可被多次触发)
+[调整] 使 bonus3 bAddEffWhenHit 支持 ATF_MAGIC 跟 ATF_MISC (感谢“Jian916”实现)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.6(2018-02-04)
 ------------------
 [同步] rAthena官方Github库

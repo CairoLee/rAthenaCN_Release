@@ -20,3 +20,11 @@ bonus bCooldownRate,n;          全部技能冷却时间的 + n%
 	程序会先取得根据 bSkillCooldown 给某个技能设定的冷却时间, 再乘以 bCooldownRate 所设定的倍率
 
 ---------------------------------------
+bonus bFixedCastAddRate,n;      固定咏唱时间 + n% (可累加)
+
+效果说明:
+	此调整器扩展 bFixedCastrate 效果
+	rAthena 官方自带的 bFixedCastrate 多种渠道的加成效果中取最低的加成量生效
+	而 bFixedCastAddRate 可累加
+
+---------------------------------------

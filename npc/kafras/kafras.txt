@@ -377,7 +377,7 @@ moscovia,223,191,3	script	卡普拉 职员::kaf_mosk	114,{
 	cutin "kafra_04",2;
 	callfunc "F_Kafra",0,3,0,80,700;
 	savepoint "moscovia",221,194,1,1;
-	callfunc "F_KafEnd",0,3,"莫斯科比亚城内";
+	callfunc "F_KafEnd",0,1,"莫斯科比亚城内";
 }
 
 // Amatsu
@@ -554,7 +554,7 @@ prt_fild05,290,224,3	script	卡普拉 职员::prt_fild05	114,{
 	mes "请问您需要什么服务呢?";
 	callfunc "F_Kafra",5,1,1,40,0;
 	savepoint "prt_fild05",274,243,1,1;
-	callfunc "F_KafEnd",0,1, "普隆德拉原野";
+	callfunc "F_KafEnd",0,1, "普隆德拉下水道";
 }
 
 // - Coal Mine (Dead Pitt)
@@ -602,5 +602,5 @@ alb2trea,59,69,5	script	卡普拉 职员::kaf_alb2trea	117,{
 	mes "您需要什么服务呢?";
 	callfunc "F_Kafra",5,2,1,50,0;
 	savepoint "alb2trea",92,64,1,1;
-	callfunc "F_KafEnd",0,1,0,"沉船附近的岛屿";
+	callfunc "F_KafEnd",0,1,"沉船附近的岛屿";
 }

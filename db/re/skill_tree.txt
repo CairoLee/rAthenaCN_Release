@@ -832,7 +832,7 @@
 4008,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4008,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4008,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
-4008,359,1,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has an extra column after "MaxLevel" for Job Level 50 requirement
+4008,359,1,0,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has 2 extra columns after "MaxLevel" for Job Level 50 requirement
 4008,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4008,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
 4008,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
@@ -1059,7 +1059,7 @@
 4014,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4014,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4014,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
-4014,359,1,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has an extra column after "MaxLevel" for Job Level 50 requirement
+4014,359,1,0,50,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //It has 2 extra columns after "MaxLevel" for Job Level 50 requirement
 4014,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4014,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
 4014,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
@@ -1304,7 +1304,7 @@
 4020,313,5,321,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4020,1010,1,0,0,0,0,0,0,0,0,0,0 //BA_PANGVOICE#Pang Voice(苦痛之音)#
 4020,394,10,47,5,316,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
-4020,395,1,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
+4020,395,5,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
 4020,396,1,45,10,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
 4020,487,5,315,10,396,1,317,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4020,488,5,45,10,315,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
@@ -1340,7 +1340,7 @@
 4021,313,5,329,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4021,1011,1,0,0,0,0,0,0,0,0,0,0 //DC_WINKCHARM#Wink of Charm(媚眼)#
 4021,394,10,47,5,324,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
-4021,395,1,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
+4021,395,5,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
 4021,396,1,45,10,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
 4021,487,5,323,10,396,1,325,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4021,488,5,45,10,323,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
@@ -2756,7 +2756,7 @@
 4060,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4060,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4060,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
-4060,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra column removed. Rune Knights dont require job level 50 to use Berserk.
+4060,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra columns removed. Rune Knights dont require job level 50 to use Berserk.
 4060,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4060,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
 4060,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#
@@ -3664,7 +3664,7 @@
 4075,313,5,321,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4075,1010,1,0,0,0,0,0,0,0,0,0,0 //BA_PANGVOICE#Pang Voice(苦痛之音)#
 4075,394,10,47,5,316,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
-4075,395,1,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
+4075,395,5,45,5,315,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
 4075,396,1,45,10,315,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
 4075,487,5,315,10,396,1,317,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4075,488,5,45,10,315,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
@@ -3726,7 +3726,7 @@
 4076,313,5,329,10,0,0,0,0,0,0,0,0 //BD_SIEGFRIED#Acoustic Rhythm(不死神齐格弗里德)#
 4076,1011,1,0,0,0,0,0,0,0,0,0,0 //DC_WINKCHARM#Wink of Charm(媚眼)#
 4076,394,10,47,5,324,1,46,5,0,0,0,0 //CG_ARROWVULCAN#Vulcan Arrow(奥义箭乱舞)#
-4076,395,1,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
+4076,395,5,45,5,323,7,0,0,0,0,0,0 //CG_MOONLIT#Sheltering Bliss(落花伴着月光下的水车小屋)#
 4076,396,1,45,10,323,5,0,0,0,0,0,0 //CG_MARIONETTE#Marionette Control(傀儡师的把戏)#
 4076,487,5,323,10,396,1,325,3,0,0,0,0 //CG_LONGINGFREEDOM#Longing for Freedom(不要拘束我)#
 4076,488,5,45,10,323,10,0,0,0,0,0,0 //CG_HERMODE#Wand of Hermod(海罗默德的手杖)#
@@ -4012,7 +4012,7 @@
 4081,356,10,3,10,6,5,60,3,0,0,0,0 //LK_PARRYING#Parrying(双剑挌挡)#
 4081,357,5,4,5,55,5,63,1,0,0,0,0 //LK_CONCENTRATION#Concentration(集中攻击)#
 4081,358,1,4,10,6,5,8,3,0,0,0,0 //LK_TENSIONRELAX#Relax(极速回复)#
-4081,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra column removed. Rune Knights dont require job level 50 to use Berserk.
+4081,359,1,0,0,0,0,0,0,0,0,0,0 //LK_BERSERK#Frenzy(狂怒之枪)# //Extra columns removed. Rune Knights dont require job level 50 to use Berserk.
 4081,397,5,55,5,56,5,58,5,63,1,0,0 //LK_SPIRALPIERCE#Spiral Pierce(螺旋击刺)#
 4081,398,5,55,9,63,1,0,0,0,0,0,0 //LK_HEADCRUSH#Traumatic Blow(伤害增压)#
 4081,399,10,64,3,398,3,0,0,0,0,0,0 //LK_JOINTBEAT#Vital Strike(巧打)#

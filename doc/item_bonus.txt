@@ -267,8 +267,8 @@ bonus2 bSkillFixedCast,sk,t;   	     技能 sk 的固定咏唱时间 + t 毫秒 (仅在复兴后
 bonus bVariableCast,t;         	     所有技能变动咏唱时间 + t 毫秒 (仅在复兴后版本中有效)
 bonus2 bSkillVariableCast,sk,t;	     技能 sk 的变动咏唱时间 + t 毫秒 (仅在复兴后版本中有效)
 
-bonus bNoCastCancel,n;               防止被攻击时技能咏唱被打断 (在 GvG 中无效 | 参数 n 无意义)
-bonus bNoCastCancel2,n;              防止被攻击时技能咏唱被打断 (在 GvG 中有效 | 参数 n 无意义)
+bonus bNoCastCancel;                 防止被攻击时技能咏唱被打断 (在 GvG 中无效)
+bonus bNoCastCancel2;                防止被攻击时技能咏唱被打断 (在 GvG 中有效)
 
 bonus bDelayrate,n;                  技能延迟时间 (即: 全局冷却时间 / 公用冷却时间) 增加 n%
 bonus2 bSkillCooldown,sk,t;          技能 sk 的冷却时间 (即: 此技能的使用间隔时间) + t 毫秒
@@ -297,7 +297,7 @@ bonus2 bSubClass,c,x;                被 c 类别的单位攻击时, 减少 x% 的伤害
 bonus2 bAddSize,s,x;                 物理攻击 s 体型的单位时, 增加 x% 的伤害
 bonus2 bMagicAddSize,s,x;            魔法攻击 s 体型的单位时, 增加 x% 的伤害
 bonus2 bSubSize,s,x;                 被 s 体型的单位攻击时, 减少 x% 的伤害
-bonus bNoSizeFix,n;                  攻击时无视敌方的体型压制 (参数 n 无意义)
+bonus bNoSizeFix;                    攻击时无视敌方的体型压制
 
 bonus2 bAddDamageClass,mid,x;        物理攻击编号为 mid 的魔物时, 增加 x% 的伤害
 bonus2 bAddMagicDamageClass,mid,x;   魔法攻击编号为 mid 的魔物时, 增加 x% 的伤害
@@ -460,18 +460,18 @@ bonus bMagicDamageReturn,n;           受到魔法伤害时, 将有 n% 的机率反射全部魔法
 
 脱下/损坏装备 - Strip/Break equipment
 ---------------------
-bonus bUnstripableWeapon,n;           武器不会被脱下 (参数 n 无意义)
-bonus bUnstripableArmor,n;            盔甲不会被脱下 (参数 n 无意义)
-bonus bUnstripableHelm,n;             头盔不会被脱下 (参数 n 无意义)
-bonus bUnstripableShield,n;           盾牌不会被脱下 (参数 n 无意义)
-bonus bUnstripable,n;                 全身装备都不会被脱下 (参数 n 无意义)
+bonus bUnstripableWeapon;             武器不会被流氓的技能脱下
+bonus bUnstripableArmor;              盔甲不会被流氓的技能脱下
+bonus bUnstripableHelm;               头盔不会被流氓的技能脱下
+bonus bUnstripableShield;             盾牌不会被流氓的技能脱下
+bonus bUnstripable;                   全身装备都不会被流氓的技能脱下
 
-bonus bUnbreakableGarment,n;          披肩不会被损坏 (参数 n 无意义)
-bonus bUnbreakableWeapon,n;           武器不会被损坏 (参数 n 无意义)
-bonus bUnbreakableArmor,n;            盔甲不会被损坏 (参数 n 无意义)
-bonus bUnbreakableHelm,n;             头盔不会被损坏 (参数 n 无意义)
-bonus bUnbreakableShield,n;           盾牌不会被损坏 (参数 n 无意义)
-bonus bUnbreakableShoes,n;            鞋子不会被损坏 (参数 n 无意义)
+bonus bUnbreakableGarment;            披肩不会因任何理由而被损坏
+bonus bUnbreakableWeapon;             武器不会因任何理由而被损坏
+bonus bUnbreakableArmor;              盔甲不会因任何理由而被损坏
+bonus bUnbreakableHelm;               头盔不会因任何理由而被损坏
+bonus bUnbreakableShield;             盾牌不会因任何理由而被损坏
+bonus bUnbreakableShoes;              鞋子不会因任何理由而被损坏
 bonus bUnbreakable,n;                 减少全身装备被损坏机率 n%
 
 bonus bBreakWeaponRate,n;             增加 n/100% 破坏对方武器的机率 (可以和其他武器破坏机率叠加)
@@ -506,12 +506,12 @@ bonus bSplashRange,n;                 溅射伤害范围 n (多种渠道的加成效果中取最高
 bonus bSplashAddRange,n;              溅射伤害范围 + n (在取得最高的 bSplashRange 基础上再追加 n%)
                                       提示: n=1 表示 3*3 的范围, n=2 表示 5*5 的范围, 以此类推.
 bonus2 bAddSkillBlow,sk,n;            使用 sk 技能攻击目标时, 将目标击退 n 格
-bonus bNoKnockback,n;                 角色不会被击退 (参数 n 无意义)
-bonus bNoGemStone,n;                  使用原本需要魔力矿石的技能, 将不再消耗魔力矿石 (参数 n 无意义)
+bonus bNoKnockback;                   角色不会被敌人的技能击退
+bonus bNoGemStone;                    使用原本需要魔力矿石的技能, 将不再消耗魔力矿石
                                       提示: 随机技能还是需要扣除一个黄色魔力矿石
-bonus bIntravision,n;                 始终可以看见伪装或隐形的玩家/魔物 (参数 n 无意义)
-bonus bPerfectHide,n;                 隐藏/伪装角色, 使角色不会被拥有 'detector' 模式的魔物主动攻击 (参数 n 无意义)
-bonus bRestartFullRecover,n;          当角色复活时 HP/SP 全满 (参数 n 无意义)
+bonus bIntravision;                   始终可以看见伪装或隐形的玩家/魔物
+bonus bPerfectHide;                   隐藏/伪装角色, 使角色不会被拥有 'detector' 模式的魔物主动攻击
+bonus bRestartFullRecover;            当角色复活时 HP/SP 全满
 bonus bClassChange,n;                 使用普通攻击打击魔物时, 有 n/100% 的机率改变魔物的种类 (使魔物变形)
 bonus bAddStealRate,n;                偷窃成功率增加 n/100%
-bonus bNoMadoFuel,n;                  在魔导机甲状态时使用技能不需要消秏魔导机甲燃料 (参数 n 无意义)
+bonus bNoMadoFuel;                    在魔导机甲状态时使用技能不需要消秏魔导机甲燃料
