@@ -194,7 +194,7 @@
 在原来返回的数组基础上, rAthenaCN 新增了以下返回数组:
 
 - @inventorylist_idx[] 用来返回每个道具的背包位置序号.
-- @inventorylist_uid$[] 用来返回每个道具的装备唯一编号(字符串类型数组).
+- @inventorylist_uid$[] 用来返回每个道具的装备唯一编号(注意: 这是个字符串类型的数组).
 
 注意:
 	背包位置序号每一次登录、每一次玩家在自己的背包中增删物品(包括但不限: 
@@ -883,7 +883,7 @@ prontera,150,90,4	script	getareagid_test	123,{
 用法:
 prontera,150,150,4	shop	Vend_Title_Test	48,501:-1
 
--	script	NPC_Vend	48,{
+-	script	NPC_Vend	-1,{
 end;
 OnInit:
 	showvend("Vend_Title_Test", 1, "有招牌的商店");
@@ -892,5 +892,26 @@ end;
 
 返回值:
 	操作成功则返回 1, 失败则返回 0
+
+---------------------------------------
+
+*getitem      *getitem2      *getitem3
+*getitembound *getitembound2 *getitembound3
+*rentitem     *rentitem2     *rentitem3
+*getrandgroupitem
+
+在以上列出的与创造物品相关的脚本指令上, rAthenaCN 新增了以下返回数组:
+
+- @last_additem_idxlist[] 用来返回被创造的道具的背包序号
+
+演示脚本:
+	关于使用方法, 可以参考 npc\racn\racn_getitemidx.txt 演示脚本
+
+注意:
+	背包位置序号每一次登录、每一次玩家在自己的背包中增删物品(包括但不限: 
+	存仓、存手推车、丢弃、购买和使用道具等操作)都可能会导致背包位置序号有变化. 
+	所以请注意在一段连续、玩家不可能会停下来做其他动作的脚本中去使用“背包位置序号”. 
+	否则, 只要你在调用上述的创造道具指令之后, 还给玩家空隙去进行道具的增删, 
+	那么 @last_additem_idxlist[] 中的数据将不再可靠.
 
 ---------------------------------------

@@ -1,0 +1,79 @@
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
+//============================================================
+
+//===== rAthenaCN Script =====================================
+//= 创造道具后获取其背包序号的演示脚本
+//===== By: ==================================================
+//= Sola丶小克
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthenaCN 开发团队
+//===== Description: =========================================
+//= 演示如何通过创造道具指令返回的 @last_additem_idxlist 数组
+//= 来获取刚刚创建的道具的背包序号
+//============================================================
+
+function	script	GetRandomItemID	{
+	.@range_start = getarg(0, 501);
+	.@range_end = getarg(1, 520);
+	
+	do {
+		.@nameid = rand(.@range_start, .@range_end);
+	} while (itemexists(.@nameid) == 0);
+	
+	return .@nameid;
+}
+
+prontera,175,125,3	script	创造道具后获取背包序号	123,{
+	mes "[rAthenaCN 演示]";
+	mes "此演示NPC的脚本位于服务端的: ^ff0000npc\\racn\\racn_getitemidx.txt^000000";
+	mes "您可以在下面的配置文件中移除它: ^0000ffnpc\\scripts_racn.conf^000000";
+	next;
+	switch(select("获取单件道具并取得背包序号:获取多个相同道具并取得背包序号:获取多个不同道具并取得最后一次的背包序号")) {
+		case 1:
+			.@id = GetRandomItemID(501,2000);
+			getitem(.@id, 1);
+			dispbottom "——————————————————————————————";
+			for (.@i = 0; .@i < getarraysize(@last_additem_idxlist); .@i++) {
+				dispbottom "获得的第 " + (.@i + 1) + " 个道具的背包序号为 " + @last_additem_idxlist[.@i] + " 名称为: " + getitemname(getinventoryinfo(@last_additem_idxlist[.@i], 0));
+			}
+			break;
+		case 2:
+			.@id = GetRandomItemID(501,2000);
+			getitem(.@id, rand(4,10));
+			dispbottom "——————————————————————————————";
+			for (.@i = 0; .@i < getarraysize(@last_additem_idxlist); .@i++) {
+				dispbottom "获得的第 " + (.@i + 1) + " 个道具的背包序号为 " + @last_additem_idxlist[.@i] + " 名称为: " + getitemname(getinventoryinfo(@last_additem_idxlist[.@i], 0));
+			}
+			break;
+		case 3:
+			for (.@i = 0; .@i < 5; .@i++) {
+				dispbottom "——————————————————————————————";
+				dispbottom "以下是第 " + (.@i + 1) + " 次调用:";
+				.@id = GetRandomItemID(501,2000);
+				getitem(.@id, rand(1,3));
+			}
+			dispbottom "——————————————————————————————";
+			dispbottom "以下是最后一次调用 getitem 指令获取到的道具结果:";
+			for (.@i = 0; .@i < getarraysize(@last_additem_idxlist); .@i++) {
+				dispbottom "获得的第 " + (.@i + 1) + " 个道具的背包序号为 " + @last_additem_idxlist[.@i] + " 名称为: " + getitemname(getinventoryinfo(@last_additem_idxlist[.@i], 0));
+			}
+			break;
+	}
+	
+	// 小提示:
+	// 如果只想取得最后一个被创造的道具, 那么只需要读取 @last_additem_idxlist[] 数组的最后一个元素
+	// 例如: 
+	// dispbottom "最后一个被创造的道具的背包序号为: " + @last_additem_idxlist[getarraysize(@last_additem_idxlist) - 1];
+	
+	close;
+OnInit:
+	waitingroom "造物并获取背包序号",1;
+	end;
+}

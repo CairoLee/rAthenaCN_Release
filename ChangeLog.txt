@@ -2,6 +2,22 @@
 //= rAthenaCN 更新日志
 //============================================================
 
+v1.7.9(2018-06-23)
+------------------
+[新增] 新增特殊事件 OnSystemBonusJudge, 可用于判定部分 bonus 赋值的合法性, 详见 npc/racn/racn_bonus_judge.txt (感谢“懒一辈子”建议)
+[新增] 新增卡片插入事件 OnPCInsertCardFilter 与 OnPCInsertCardEvent, 详见 npc/racn/racn_events.txt (感谢“Jian916”实现)
+[新增] 新增 pk_damage_rate_effective_type 选项, 用来控制“PVP伤害控制选项”的作用范围, 详见 conf/battle/extend.conf
+[新增] 使用脚本指令创造道具后, 将返回一个数组用来保存刚刚创造道具的背包序号, 详见 npc/racn/racn_getitemidx.txt
+[修正] 修正 force_identified 选项设置为 64 时无效的问题 (感谢“Jian916”指出)
+[修正] 修正使用 "全力以赴" 时, 若角色死亡将造成 "缓速术" 持续倒数的问题 (感谢“づAtメ、”反馈)
+[修正] 修正 bonus bUnstripable,n; 只对盔甲有效的问题 (感谢“Jian916”修正)
+[修正] 修正 sql-files/main.sql 的注释语法错误, 导致全新建库时会报错失败的问题
+[修正] 修正 duplicate 或 copynpc 脚本指令复制出来的商店NPC, 在使用 npcshop* 系列指令时操作它们时可能出现的问题 (感谢“Jian916”修正)
+[修正] 修正 channel 系统与发言时间间隔相关的一处错误 (感谢“Jian916”实现)
+[调整] 完善 doc/item_bonus.txt 中关于 bonus2 bWeaponAtk,w,n; 的注释, 该 bonus 只在复兴前有效
+[调整] 完善 ignore_zero_range_error 选项的覆盖范围, 调整了选项的介绍说明 (感谢“糖依依”反馈)
+[汉化] 更新终端汉化配置文件 conf/msg_conf/translation.conf
+
 v1.7.8(2018-05-03)
 ------------------
 [新增] 使“二刀连击”等技能支持暴击 (只有当客户端版本大于等于 20161207 才生效)

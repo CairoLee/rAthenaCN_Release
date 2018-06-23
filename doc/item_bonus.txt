@@ -230,7 +230,7 @@ bonus2 bSkillAtk,sk,n;            技能 sk 的伤害增加 n%
 bonus bLongAtkRate,n;             增加 n% 远距离攻击伤害
 bonus bCritAtkRate,n;             增加 n% 暴击伤害
 bonus bCriticalDef,n;             减少 n% 被暴击的机率
-bonus2 bWeaponAtk,w,n;            装备 w 类型武器时增加 n 攻击力
+bonus2 bWeaponAtk,w,n;            装备 w 类型武器时增加 n 攻击力 (目前仅对复兴前版本有效)
 bonus2 bWeaponDamageRate,w,n;     装备 w 类型武器时增加 n% 攻击力
 
 bonus bNearAtkDef,n;              被近距离物理攻击受到的伤害减少 n%

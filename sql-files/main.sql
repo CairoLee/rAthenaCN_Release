@@ -534,7 +534,7 @@ CREATE TABLE IF NOT EXISTS `guild_position` (
   `guild_id` int(9) unsigned NOT NULL default '0',
   `position` tinyint(6) unsigned NOT NULL default '0',
   `name` varchar(24) NOT NULL default '',
---`mode` tinyint(11) unsigned NOT NULL default '0',
+-- `mode` tinyint(11) unsigned NOT NULL default '0',
 -- rAthena 官方这个值用的是 tinyint 需要扩充为 smallint,
 -- 否则会导致无法保存公会权限的信息, 下面这一行是调整后的 [Sola丶小克]
   `mode` smallint(11) unsigned NOT NULL default '0',

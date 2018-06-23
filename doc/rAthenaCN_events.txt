@@ -564,3 +564,103 @@ rAthenaCN 在官方的基础上做了以下改进:
 	并且服务端在 conf/battle/feature.conf 中的 feature.roulette 选项要设置为 on, 否则此事件将不会被触发.
 
 ---------------------------------------
+
+*OnSellItem:
+
+事件描述: 
+	当使用 callshop 打开某个NPC商店后, 玩家在此商店出售物品时就会触发此事件
+
+rAthenaCN 在官方的基础上做了以下改进:
+	- 在 rAthena 返回的信息数组基础上新增加 @sold_idx[] 数组, 用于保存被出售的物品在玩家身上的背包位置序号
+
+---------------------------------------
+
+*OnPCInsertCardFilter:
+
+事件描述: 
+	当玩家准备插入卡片的时候触发事件
+
+中断说明:
+	中断后服务端会无视玩家本次插入卡片的请求
+
+参数说明:
+	@insert_equip_idx	即将被插入的装备的背包序号
+	@insert_card_idx	准备插入的卡片的背包序号
+	@insert_card_id		准备插入的卡片的物品编号
+	@insert_card_slot	即将被插入卡片的卡槽编号 (返回 0 表示第一个卡槽, 返回 3 表示第四个卡槽)
+
+---------------------------------------
+
+*OnPCInsertCardEvent:
+
+事件描述:
+	已经成功将卡片插入到装备时触发事件
+
+参数说明:
+	@insert_equip_idx	已被插入的装备的背包序号
+	@insert_card_idx	已被插入的卡片的背包序号
+	@insert_card_id		已被插入卡片的物品编号
+	@insert_card_slot	已被插入卡片的卡槽编号 (返回 0 表示第一个卡槽, 返回 3 表示第四个卡槽)
+
+---------------------------------------
+
+*OnSystemBonusJudge:
+
+事件描述:
+	这是一个系统特殊事件, 它不遵守事件命名约定.
+	当被触发时, 无论玩家当前正在做什么事情, 都会立刻马上执行该事件
+	通过此事件, 您可以随意干涉被支持的 bonus 的最终值.
+	
+	具体用法演示请见: npc/racn/racn_bonus_judge.txt 演示脚本
+
+参数说明:
+	@bonus_id		-	本次被调用的 bonus 的编号
+	@bonus_param1	-	本次被调用的 bonus 的第 1 个参数
+	@bonus_param2	-	本次被调用的 bonus 的第 2 个参数
+	@bonus_param3	-	本次被调用的 bonus 的第 3 个参数
+	@bonus_param4	-	本次被调用的 bonus 的第 4 个参数
+	@bonus_val		-	本次被调用的 bonus 的关键修改值
+	@bonus_current	-	本次被调用的 bonus 它的当前值是多少
+	@bonus_finally	-	本次被调用的 bonus 您期望的最终值是多少
+	
+	@bonus_finally 也是您可以干涉 bonus 最终值的唯一手段
+	默认为 -1 表示不干涉, 否则这个 bonus 将被设定为你指定的值
+	
+被支持的 Bonus 列表:
+	除了这些 bonus 之外其他的 bonus 将不会触发 OnSystemBonusJudge 事件.
+	bonus2 bAddEle,e,x;
+	bonus3 bAddEle,e,x,bf;
+	bonus2 bMagicAddEle,e,x;
+	bonus2 bSubEle,e,x;
+	bonus3 bSubEle,e,x,bf;
+	bonus2 bSubDefEle,e,x;
+	
+	bonus2 bAddRace, r, x;
+	bonus2 bMagicAddRace, r, x;
+	bonus2 bSubRace, r, x;
+	
+	bonus2 bAddClass, c, x;
+	bonus2 bMagicAddClass, c, x;
+	bonus2 bSubClass, c, x;
+	
+	bonus2 bAddSize, s, x;
+	bonus2 bMagicAddSize, s, x;
+	bonus2 bSubSize, s, x;
+	
+	bonus2 bAddDamageClass, mid, x;
+	bonus2 bAddMagicDamageClass, mid, x;
+	bonus2 bAddDefMonster,mid,x;
+	bonus2 bAddMDefMonster,mid,x;
+	
+	bonus2 bAddRace2, mr, x;
+	bonus2 bSubRace2, mr, x;
+	bonus2 bMagicAddRace2, mr, x;
+	
+	bonus2 bSubSkill, sk, n;
+
+注意事项:
+	这个特殊事件的处理脚本中, 禁止使用任何可能会导致脚本被打断、暂停的指令, 比如:
+	mes,next,end,close,close2,menu,select,prompt,
+	input,progressbar,produce,cooking,makerune,buyingstore,openstorage,
+	openstorage2,openauction,openmail,guildopenstorage,
+	callshop,bpet,opendressroom,sleep,sleep2
